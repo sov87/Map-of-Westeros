@@ -18,15 +18,15 @@
     "yMaxKm": 4700
   },
   "heightfield": {
-    "notes": "Iteration resolution 2 km/px (1320 x 2350). Milestone / final target: 0.4 km/px (6600 x 11750 texels) - beyond WebGPU's default 8192 limit; the engine requests the adapter's own maximum (16384 on the RTX 5090) and fails loudly if a raster exceeds it.",
-    "width": 1320,
-    "height": 2350,
-    "kmPerPixel": 2,
+    "notes": "Iteration resolution 1 km/px (2640 x 4700; 2 km/px for quick passes). Milestone / final target: 0.4 km/px (6600 x 11750 texels) - beyond WebGPU's default 8192 limit; the engine requests the adapter's own maximum (16384 on the RTX 5090) and fails loudly if a raster exceeds it.",
+    "width": 2640,
+    "height": 4700,
+    "kmPerPixel": 1,
     "lookMaskDownsample": 4
   },
   "synth": {
     "notes": "Terrain synthesis (tools/bake/bake/synth.py): work grid resolution, stream-power iterations and exponent, uplift levels, the plains' summit height, detail and talus. Mountain / hill summits come from each traced feature's peakM. constraints = hard heights from VERIFIED ledger claims [{id, atKm, heightM, radiusKm}]. summits = summit heights inside a range (lower bounds, met by local uplift: [{id, atKm, heightM, radiusKm, ledger}]); relief.npz from the trace drives the range bodies.",
-    "workKmPerPixel": 4.0,
+    "workKmPerPixel": 2.0,
     "iterations": 14,
     "m": 0.45,
     "plainsPeakM": 420,

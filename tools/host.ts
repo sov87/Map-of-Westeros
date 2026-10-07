@@ -151,12 +151,12 @@ process.exit(issues.some((i) => i.startsWith('low available memory')) ? 2 : 0);
 
 /**
  * Rough peak RAM of a full bake at the current world.json heightfield: Middle-earth's 4000 × 2400 bake peaked
- * near 4 GB, and the hydro / synth steps hold a few dozen float32 grids, so ≈ 420 bytes per texel.
+ * near 4 GB and the Westeros 1 km/px bake (12.4 M texels) at 2.2 GB: ≈ 200 bytes per texel with headroom.
  */
 function bakeMemoryEstimateMB(): number | null {
   try {
     const w = JSON.parse(readFileSync(join('data', 'world', 'world.json'), 'utf8')) as { heightfield: { width: number; height: number } };
-    return Math.round((w.heightfield.width * w.heightfield.height * 420) / 2 ** 20);
+    return Math.round((w.heightfield.width * w.heightfield.height * 200) / 2 ** 20);
   } catch {
     return null;
   }

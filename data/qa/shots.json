@@ -10,6 +10,9 @@
     {"id": "vale", "tod": 10.0, "note": "the Mountains of the Moon and the Giant's Lance from the south-west", "camera": {"orbit": {"targetKm": [1922.89, 2197.91], "distanceKm": 700, "elevationDeg": 28, "azimuthDeg": 220, "fov": 32}}},
     {"id": "north", "tod": 14.0, "note": "the North from the south: Winterfell, the Wolfswood, the Wall beyond", "camera": {"orbit": {"targetKm": [1000, 3500], "distanceKm": 1600, "elevationDeg": 30, "azimuthDeg": 185, "fov": 32}}},
     {"id": "riverlands", "tod": 16.0, "note": "the Trident and the Gods Eye", "camera": {"orbit": {"targetKm": [1623.68, 1797.14], "distanceKm": 800, "elevationDeg": 32, "azimuthDeg": 200, "fov": 32}}},
-    {"id": "dorne", "tod": 15.5, "note": "the Red Mountains and the Dornish sands", "camera": {"orbit": {"targetKm": [1500, 450], "distanceKm": 1100, "elevationDeg": 30, "azimuthDeg": 170, "fov": 32}}}
+    {"id": "dorne", "tod": 15.5, "note": "the Red Mountains and the Dornish sands", "camera": {"orbit": {"targetKm": [1500, 450], "distanceKm": 1100, "elevationDeg": 30, "azimuthDeg": 170, "fov": 32}}},
+    {"id": "kings-landing-region", "tod": 16.5, "note": "Blackwater Bay, King's Landing, the Kingswood, Dragonstone beyond", "camera": {"orbit": {"targetKm": [1782.89, 1386.76], "distanceKm": 520, "elevationDeg": 30, "azimuthDeg": 235, "fov": 32}}},
+    {"id": "the-wall", "tod": 11.0, "note": "the Wall's line from Castle Black, the Haunted Forest and the Frostfangs beyond", "camera": {"orbit": {"targetKm": [1745.83, 4207.27], "distanceKm": 650, "elevationDeg": 28, "azimuthDeg": 170, "fov": 32}}},
+    {"id": "westerlands", "tod": 17.5, "note": "Casterly Rock, the westerlands hills and the Iron Islands", "camera": {"orbit": {"targetKm": [669.79, 1578.91], "distanceKm": 700, "elevationDeg": 30, "azimuthDeg": 135, "fov": 32}}}
   ]
 }
