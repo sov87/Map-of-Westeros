@@ -628,7 +628,17 @@ def synthesize(cfg: Config):
                 continue
             rad = float(c.get("radiusKm", 15)) / g.px
             yy, xx = np.mgrid[0 : g.H, 0 : g.W]
-            bump = np.exp(-(((yy - r) ** 2 + (xx - cc) ** 2) / (2 * rad * rad))).astype(np.float32)
+            if c.get("kind") == "summit":
+                # a peak, not a cone: spurs (the reach varies with the bearing, seeded per summit) on a broader
+                # shoulder; exactly 1 at the summit itself
+                th = np.arctan2(yy - r, xx - cc)
+                rng = np.random.default_rng(seed + 900 + r * 7 + cc)
+                spur = sum(np.sin(k * th + rng.uniform(0, 2 * np.pi)) / k for k in range(3, 8))
+                spur = spur / max(float(np.abs(spur).max()), 1e-6)
+                d2 = ((yy - r) ** 2 + (xx - cc) ** 2) / (1 + 0.4 * spur) ** 2
+                bump = np.maximum(np.exp(-d2 / (2 * rad * rad)), 0.45 * np.exp(-d2 / (2 * (2.2 * rad) ** 2))).astype(np.float32)
+            else:
+                bump = np.exp(-(((yy - r) ** 2 + (xx - cc) ** 2) / (2 * rad * rad))).astype(np.float32)
             d = float(c["heightM"]) - float(hm[r, cc])
             if c.get("kind") == "summit" and d < 0:
                 continue  # a summit is a lower bound: never pull a range down to it

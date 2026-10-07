@@ -47,7 +47,7 @@ instead of appending logs._
 
 ## Known issues (to fix in Phase 2 unless noted)
 - **Forests:** from far away they read as flat dark polygons. The vegetation channels are remapped to Westeros (Haunted Forest, Wolfswood, southern woods), but the tree look is still Middle-earth's.
-- **The Giant's Lance:** a smooth Gaussian summit inside the Mountains of the Moon. It needs shoulders, plus the Eyrie's shelf (a Phase 3 landmark).
+- **The Giant's Lance:** a synthesized massif (spurs that vary with the bearing, on a broad shoulder) inside the Mountains of the Moon. The Eyrie's shoulder shelf and its waycastles are Phase 3.
 - **The Wall:** not modelled yet (Phase 2 / 3). The Neck's marsh renders flat grey.
 - **Region looks:** the ground palettes are provisional on Middle-earth grades and haze; the westerlands read as sand. Phase 2 retunes all ten.
 - **Region borders:** a few are straight lines in the profile.
