@@ -13,8 +13,8 @@ landmark folders cite ledger ids instead of restating sources.
 ## Hard rules
 
 1. **The published text outranks every map; the HBO shows count for nothing.** Neither do games,
-   fan art, wikis (finding aids only), the TWOW sample chapters, the corpus folder
-   `TWOW_PRODUCTION` or any generated prose.
+   fan art, wikis (finding aids only), the unpublished The Winds of Winter preview chapters, or any
+   generated prose.
 2. **No book text is committed.** A claim is a paraphrase in our own words. The only verbatim
    text allowed is the `find` keys: at most three per citation, each at most five words, used by
    the verifier to locate the passage in the local corpus.

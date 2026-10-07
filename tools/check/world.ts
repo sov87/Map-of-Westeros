@@ -315,12 +315,18 @@ export async function checkBakedWorld(dir: string): Promise<CheckResult> {
   const { checkLandmarks } = await import('./landmarks.ts');
   const { checkBookmarks } = await import('./bookmarks.ts');
   const { checkFilm } = await import('./film.ts');
+  // the hydro geometry budgets (and continuation continuity) were tuned on a 0.4 km/px bake: at a coarser
+  // iteration resolution a channel is narrower than a texel, so they are reported as warnings there and only
+  // gate (errors) a milestone bake at <= 0.5 km/px. River levels running downhill always gate.
+  const coarse = m.kmPerPixel > 0.5;
+  const soften = (r: CheckResult): CheckResult => (coarse ? { errors: [], warnings: [...r.warnings, ...r.errors.map((e) => `${e} [iteration bake ${m.kmPerPixel} km/px: gates at <= 0.5]`)], info: r.info } : r);
+  if (coarse) out.info.push(`baked world at ${m.kmPerPixel} km/px (iteration): hydro geometry gates report as warnings`);
   for (const part of [
     checkRiverLevels(rivers, lakes),
-    checkContinuations(dir, rivers),
+    soften(checkContinuations(dir, rivers)),
     await checkRiversWin(dir, world),
     await checkStampLoss(world, landmarks),
-    checkHydroReport(dir),
+    soften(checkHydroReport(dir)),
     await checkLandmarks(world, landmarks),
     await checkBookmarks(world, landmarks),
     await checkFilm(world, landmarks),

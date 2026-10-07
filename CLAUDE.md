@@ -18,8 +18,9 @@ descriptions with citations, a short flyover film rendered offline at 2160p24, a
 - Text vs. map conflicts: log both citations in the claim, settle with `displayOffsetKm` (validator-checked).
 - **Time slice 298 AC:** Winterfell intact, Moat Cailin down to three towers, Harrenhal's towers slagged, the
   Dragonpit roofless, the Great Sept of Baelor standing. Later damage is `state-after` and ignored.
-- The corpus (`MOW_CORPUS_DIR`, on the workstation `F:\Projects\asoiaf_corpus`) is the search source:
-  published books only — `TWOW_PRODUCTION` and any generated prose are never canon (the verifier refuses them).
+- The corpus (`MOW_CORPUS_DIR`: the user's own copies of the published books, as text or EPUB) is the search
+  source for `pnpm canon --verify`: published books only — unpublished preview chapters (The Winds of Winter)
+  and generated prose are never canon (the verifier refuses them).
   Wikis are finding aids, never citations. Draft claims become hard bake constraints only once `verified`.
 
 ## Architectural principles (inherited, unchanged)

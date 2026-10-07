@@ -2,10 +2,14 @@
   "version": 1,
   "notes": "Named review shots. camera = explicit {position,target,fov} in world units, or {orbit:{place|targetKm, distanceKm, elevationDeg, azimuthDeg (compass direction from target to camera: 180 = camera south of target looking north), fov}}. 'compare' lists reference images for side-by-side QA sheets (local, never committed). Westeros is long north-south: overviews look at it from the east (north to the right) or straight down.",
   "shots": [
-    {"id": "overview-day", "tod": 11.0, "camera": {"orbit": {"targetKm": [1000, 2900], "distanceKm": 7600, "elevationDeg": 45, "azimuthDeg": 90, "fov": 32}}},
-    {"id": "overview-golden", "tod": 18.3, "camera": {"orbit": {"targetKm": [1000, 2900], "distanceKm": 7600, "elevationDeg": 45, "azimuthDeg": 90, "fov": 32}}},
-    {"id": "overview-night", "tod": 23.0, "camera": {"orbit": {"targetKm": [1000, 2900], "distanceKm": 7600, "elevationDeg": 45, "azimuthDeg": 90, "fov": 32}}},
-    {"id": "overview-top", "tod": 12.0, "note": "near-orthographic top-down (narrow fov, north up) for geography checks against the official map", "camera": {"orbit": {"targetKm": [1000, 2900], "distanceKm": 40000, "elevationDeg": 89.9, "azimuthDeg": 180, "fov": 9.5}}},
-    {"id": "overview-south", "tod": 15.0, "note": "from the south up the length of the continent", "camera": {"orbit": {"targetKm": [1000, 2600], "distanceKm": 4200, "elevationDeg": 28, "azimuthDeg": 190, "fov": 32}}}
+    {"id": "overview-day", "tod": 11.0, "camera": {"orbit": {"targetKm": [1320, 2350], "distanceKm": 6400, "elevationDeg": 42, "azimuthDeg": 90, "fov": 32}}},
+    {"id": "overview-golden", "tod": 18.3, "camera": {"orbit": {"targetKm": [1320, 2350], "distanceKm": 6400, "elevationDeg": 42, "azimuthDeg": 90, "fov": 32}}},
+    {"id": "overview-night", "tod": 23.0, "camera": {"orbit": {"targetKm": [1320, 2350], "distanceKm": 6400, "elevationDeg": 42, "azimuthDeg": 90, "fov": 32}}},
+    {"id": "overview-top", "tod": 12.0, "note": "near-orthographic top-down (narrow fov, north up) for geography checks against the map overlay", "camera": {"orbit": {"targetKm": [1320, 2350], "distanceKm": 32000, "elevationDeg": 89.9, "azimuthDeg": 180, "fov": 9.5}}},
+    {"id": "overview-south", "tod": 15.0, "note": "from Dorne up the length of the continent", "camera": {"orbit": {"targetKm": [1320, 1900], "distanceKm": 3600, "elevationDeg": 26, "azimuthDeg": 190, "fov": 32}}},
+    {"id": "vale", "tod": 10.0, "note": "the Mountains of the Moon and the Giant's Lance from the south-west", "camera": {"orbit": {"targetKm": [1922.89, 2197.91], "distanceKm": 700, "elevationDeg": 28, "azimuthDeg": 220, "fov": 32}}},
+    {"id": "north", "tod": 14.0, "note": "the North from the south: Winterfell, the Wolfswood, the Wall beyond", "camera": {"orbit": {"targetKm": [1000, 3500], "distanceKm": 1600, "elevationDeg": 30, "azimuthDeg": 185, "fov": 32}}},
+    {"id": "riverlands", "tod": 16.0, "note": "the Trident and the Gods Eye", "camera": {"orbit": {"targetKm": [1623.68, 1797.14], "distanceKm": 800, "elevationDeg": 32, "azimuthDeg": 200, "fov": 32}}},
+    {"id": "dorne", "tod": 15.5, "note": "the Red Mountains and the Dornish sands", "camera": {"orbit": {"targetKm": [1500, 450], "distanceKm": 1100, "elevationDeg": 30, "azimuthDeg": 170, "fov": 32}}}
   ]
 }

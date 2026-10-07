@@ -2,7 +2,7 @@
  * Shot-list + bookmark framing gates (CPU camera probe, tools/check/probe.ts).
  *
  * data/tour/shotlist.json: every landmark present; segments reference known landmarks; the film draft
- * totals 180–240 s. Per landmark whose shot-list `status` is "s3" (rebuilt in Session 3) the gates are
+ * totals the timeline's film.lengthS (Middle-earth: 180–240 s). Per landmark whose shot-list `status` is "s3" (rebuilt in Session 3) the gates are
  * ERRORS, otherwise warnings (the S1/S2 proxies are rebuilt wave by wave):
  *  - `<id>-close` exists, its distance within ±35 % of `heroKm`; `<id>-wide` exists when `contextKm` is set
  *  - `-close` framing: subject ≥ 25 % of frame height (225 px at 1600×900, `expect.minSubjectPx`), ≥ 60 %
@@ -41,7 +41,9 @@ export async function checkBookmarks(world: World, landmarks: LandmarkDefinition
   for (const id of Object.keys(doc.landmarks)) if (!ids.has(id)) out.errors.push(`shotlist: ${id} is not a landmark`);
   for (const s of doc.segments) for (const l of s.landmarks) if (!ids.has(l)) out.errors.push(`shotlist: segment ${s.id} names unknown landmark ${l}`);
   const seconds = doc.segments.reduce((a, s) => a + s.seconds, 0);
-  if (seconds < 180 || seconds > 240) out.errors.push(`shotlist: film draft ${seconds} s outside 180–240 s`);
+  const tl = JSON.parse(readFileSync(join(process.cwd(), 'data/tour/timeline.json'), 'utf8')) as { film: { lengthS: [number, number] } };
+  const [lo, hi] = tl.film.lengthS;
+  if (seconds < lo || seconds > hi) out.errors.push(`shotlist: film draft ${seconds} s outside ${lo}–${hi} s (timeline film.lengthS)`);
 
   // ---- bookmarks through the probe
   const { createProbeContext, probeShot, bookmarkShots, fmtProbe } = await import('./probe.ts');

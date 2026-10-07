@@ -1,17 +1,17 @@
 {
   "type": "FeatureCollection",
   "name": "regions",
-  "notes": "Authored soft-edged look regions in MAP KILOMETRES (x east, y north). Index order = look texture channel order (region 'north' is the default for uncovered land). softKm = Gaussian edge width. Overlaps are normalised. PHASE 0 PLACEHOLDER: latitude bands over the flat slab (label I) \u2014 Phase 1 redraws them on the georeferenced map (kingdom borders from The Lands of Ice and Fire, label M).",
+  "notes": "Authored soft-edged look regions in MAP KILOMETRES (x east, y north). Index order = look texture channel order (region 'north' is the default for uncovered land). softKm = Gaussian edge width. Overlaps are normalised. Written by pnpm geo regions from tools/geo/maps/westeros-crests.json (label I: soft kingdom borders).",
   "features": [
-    {"type": "Feature", "properties": {"id": "north", "index": 0, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 3650], [2000, 3650], [2000, 5100], [0, 5100], [0, 3650]]]}},
-    {"type": "Feature", "properties": {"id": "beyond-the-wall", "index": 1, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 5100], [2000, 5100], [2000, 5800], [0, 5800], [0, 5100]]]}},
-    {"type": "Feature", "properties": {"id": "iron-islands", "index": 2, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 3500], [2000, 3500], [2000, 3650], [0, 3650], [0, 3500]]]}},
-    {"type": "Feature", "properties": {"id": "riverlands", "index": 3, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 2700], [2000, 2700], [2000, 3200], [0, 3200], [0, 2700]]]}},
-    {"type": "Feature", "properties": {"id": "vale", "index": 4, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 3200], [2000, 3200], [2000, 3500], [0, 3500], [0, 3200]]]}},
-    {"type": "Feature", "properties": {"id": "westerlands", "index": 5, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 2300], [2000, 2300], [2000, 2700], [0, 2700], [0, 2300]]]}},
-    {"type": "Feature", "properties": {"id": "crownlands", "index": 6, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 1900], [2000, 1900], [2000, 2300], [0, 2300], [0, 1900]]]}},
-    {"type": "Feature", "properties": {"id": "stormlands", "index": 7, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 1500], [2000, 1500], [2000, 1900], [0, 1900], [0, 1500]]]}},
-    {"type": "Feature", "properties": {"id": "reach", "index": 8, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 700], [2000, 700], [2000, 1500], [0, 1500], [0, 700]]]}},
-    {"type": "Feature", "properties": {"id": "dorne", "index": 9, "softKm": 60}, "geometry": {"type": "Polygon", "coordinates": [[[0, 0], [2000, 0], [2000, 700], [0, 700], [0, 0]]]}}
+    {"type": "Feature", "properties": {"id": "north", "index": 0, "softKm": 140}, "geometry": {"type": "Polygon", "coordinates": [[[-46.7, 4144.1], [1463.1, 4189.4], [1943.5, 4236.1], [2698.4, 4236.1], [2698.4, 2764.8], [1531.7, 2490.3], [1531.7, 2380.5], [776.8, 2380.5], [-46.7, 2558.9], [-46.7, 4144.1]]]}},
+    {"type": "Feature", "properties": {"id": "beyond-the-wall", "index": 1, "softKm": 80}, "geometry": {"type": "Polygon", "coordinates": [[[-46.7, 5166.7], [2698.4, 5166.7], [2698.4, 4236.1], [1943.5, 4236.1], [1463.1, 4189.4], [-46.7, 4144.1], [-46.7, 5166.7]]]}},
+    {"type": "Feature", "properties": {"id": "iron-islands", "index": 2, "softKm": 40}, "geometry": {"type": "Polygon", "coordinates": [[[365.1, 2421.6], [996.4, 2421.6], [996.4, 1968.7], [365.1, 1968.7], [365.1, 2421.6]]]}},
+    {"type": "Feature", "properties": {"id": "riverlands", "index": 3, "softKm": 140}, "geometry": {"type": "Polygon", "coordinates": [[[776.8, 2380.5], [1531.7, 2380.5], [1669.0, 2078.5], [1737.6, 1872.6], [1874.8, 1776.6], [1806.2, 1598.1], [1531.7, 1488.3], [1188.6, 1460.9], [996.4, 1653.0], [914.1, 1941.3], [776.8, 2147.1], [776.8, 2380.5]]]}},
+    {"type": "Feature", "properties": {"id": "vale", "index": 4, "softKm": 90}, "geometry": {"type": "Polygon", "coordinates": [[[1531.7, 2490.3], [2698.4, 2764.8], [2698.4, 1804.0], [1874.8, 1804.0], [1737.6, 1872.6], [1669.0, 2078.5], [1531.7, 2380.5], [1531.7, 2490.3]]]}},
+    {"type": "Feature", "properties": {"id": "westerlands", "index": 5, "softKm": 160}, "geometry": {"type": "Polygon", "coordinates": [[[365.1, 1968.7], [996.4, 1968.7], [996.4, 1653.0], [1188.6, 1460.9], [1133.7, 1117.7], [776.8, 1076.6], [365.1, 1186.4], [365.1, 1968.7]]]}},
+    {"type": "Feature", "properties": {"id": "crownlands", "index": 6, "softKm": 120}, "geometry": {"type": "Polygon", "coordinates": [[[1531.7, 1488.3], [1806.2, 1598.1], [1874.8, 1776.6], [2698.4, 1804.0], [2698.4, 1117.7], [2012.1, 1227.5], [1737.6, 1255.0], [1531.7, 1323.6], [1531.7, 1488.3]]]}},
+    {"type": "Feature", "properties": {"id": "stormlands", "index": 7, "softKm": 120}, "geometry": {"type": "Polygon", "coordinates": [[[1531.7, 1323.6], [1737.6, 1255.0], [2012.1, 1227.5], [2698.4, 1117.7], [2698.4, 568.7], [1874.8, 637.4], [1531.7, 774.6], [1394.5, 980.5], [1531.7, 1323.6]]]}},
+    {"type": "Feature", "properties": {"id": "reach", "index": 8, "softKm": 160}, "geometry": {"type": "Polygon", "coordinates": [[[365.1, 1186.4], [776.8, 1076.6], [1133.7, 1117.7], [1188.6, 1460.9], [1531.7, 1488.3], [1531.7, 1323.6], [1394.5, 980.5], [1531.7, 774.6], [1325.8, 637.4], [982.7, 472.7], [776.8, 88.4], [365.1, 88.4], [365.1, 1186.4]]]}},
+    {"type": "Feature", "properties": {"id": "dorne", "index": 9, "softKm": 70}, "geometry": {"type": "Polygon", "coordinates": [[[982.7, 472.7], [1325.8, 637.4], [1531.7, 774.6], [1874.8, 637.4], [2698.4, 568.7], [2698.4, -48.9], [776.8, -48.9], [776.8, 88.4], [982.7, 472.7]]]}}
   ]
 }

@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "notes": "Single source of truth for the world frame. Source coordinates are MAP KILOMETRES [x east, y north] on the georeferenced, scale-calibrated official map (tools/geo; Phase 1). World units: 1 unit = 1 km; origin at frame centre; X east, -Z north, Y up. PHASE 0: the frame is PROVISIONAL (sized from the canon ledger's estimate of the continent: about 4,800 km from the Wall to Dorne's south coast at 300 miles for the Wall, plus the land beyond the Wall up to the Frostfangs) and the source is a flat placeholder slab; Phase 1 sets the frame from the scale calibration (docs/PROJECT_STATE.md).",
+  "notes": "Single source of truth for the world frame. Source coordinates are MAP KILOMETRES [x east, y north] on the traced map sheet (tools/geo/maps/<id>.json: the Wall = a hundred leagues = 300 miles sets the scale, 1.3725 km per sheet pixel of 'westeros-crests'; residuals in data/source/westeros/calibration.json). World units: 1 unit = 1 km; origin at frame centre; X east, -Z north, Y up.",
   "source": {
-    "kind": "placeholder",
-    "notes": "kind 'placeholder' = a flat land slab (placeholder.insetKm from the frame edge, landMetres above the sea, seaMetres below it) and no vectors: the Phase 0 boot target. kind 'synth' = Phase 1: the elevation model is synthesized (tools/bake/bake/synth.py) from traced vectors in `vectors` (GeoJSON per layer, map km), never committed.",
+    "kind": "synth",
+    "notes": "kind 'synth' (Phase 1): the elevation model is synthesized (tools/bake/bake/synth.py) from the traced vectors in `vectors` (GeoJSON per layer in map km + relief.npz, written by pnpm geo vectorize; never committed). kind 'placeholder' = the Phase 0 flat slab (placeholder.*).",
     "vectors": "data/source/westeros/vectors",
     "placeholder": {
       "insetKm": 150,
@@ -13,16 +13,36 @@
   },
   "frame": {
     "xMinKm": 0,
-    "xMaxKm": 2000,
+    "xMaxKm": 2640,
     "yMinKm": 0,
-    "yMaxKm": 5800
+    "yMaxKm": 4700
   },
   "heightfield": {
-    "notes": "Phase 0 placeholder resolution (2 km/px). Phase 1 target: 0.4 km/px (Middle-earth's), i.e. about 5000 x 14500 texels - beyond WebGPU's default 8192 limit; the engine requests the adapter's own maximum (16384 on the RTX 5090) and fails loudly if a raster exceeds it.",
-    "width": 1000,
-    "height": 2900,
+    "notes": "Iteration resolution 2 km/px (1320 x 2350). Milestone / final target: 0.4 km/px (6600 x 11750 texels) - beyond WebGPU's default 8192 limit; the engine requests the adapter's own maximum (16384 on the RTX 5090) and fails loudly if a raster exceeds it.",
+    "width": 1320,
+    "height": 2350,
     "kmPerPixel": 2,
     "lookMaskDownsample": 4
+  },
+  "synth": {
+    "notes": "Terrain synthesis (tools/bake/bake/synth.py): work grid resolution, stream-power iterations and exponent, uplift levels, the plains' summit height, detail and talus. Mountain / hill summits come from each traced feature's peakM. constraints = hard heights from VERIFIED ledger claims [{id, atKm, heightM, radiusKm}]. summits = summit heights inside a range (lower bounds, met by local uplift: [{id, atKm, heightM, radiusKm, ledger}]); relief.npz from the trace drives the range bodies.",
+    "workKmPerPixel": 4.0,
+    "iterations": 14,
+    "m": 0.45,
+    "plainsPeakM": 420,
+    "constraints": [],
+    "summits": [
+      {
+        "id": "giants-lance",
+        "atKm": [
+          1927.0,
+          2215.76
+        ],
+        "heightM": 5630,
+        "radiusKm": 14,
+        "ledger": "giants-lance-height"
+      }
+    ]
   },
   "vertical": {
     "notes": "Terrain height in world units = exaggeration * H * (h/H)^gamma with h = (DEM metres - seaLevelMetres)/1000 and H = referenceKm. Synthesized elevation is in metres above sea level (seaLevelMetres 0); seas are below-datum regions connected to coast.seaSeedsKm. Relief is split by scale (vertical v2): a Gaussian low-pass (macroSigmaKm) keeps the full exaggeration so ranges tower, the meso band between macroSigmaKm and mesoSigmaKm is scaled by detailRatio, and the micro band below mesoSigmaKm by microRatio, so ranges read as massive eroded bodies instead of needle fields while peaks stay recognisable. Inside a Gaussian band around every canon river (valleyBandKm) the split relief is pulled back down to the unsplit exaggeration where the low-pass lifted it (narrow valley floors next to ranges), never raised. seaArtefacts: declared DEM digitising artefacts under the sea (corridors) whose narrow ridges are removed by a grey opening of the sea floor (radiusKm). bathyRefMetres: synthesized sea-floor depth (metres below sea level) that counts as the full shelf depth (Middle-earth's DEM datum sat 304.8 m above its floor).",
@@ -181,7 +201,7 @@
     "bankOverrides": []
   },
   "forests": {
-    "notes": "The four named-forest channels of forests.rgba8 (R, G, B, A), each matching traced forest polygons by name prefix. The runtime vegetation still treats the channels as its Middle-earth forest kinds (R dark broadleaf, G old wood, B tall grove, A dark old forest) until Phase 2 rewrites the forest types for Westeros.",
+    "notes": "The four named-forest channels of forests.rgba8 (R, G, B, A), each matching traced forest polygons by name prefix. The runtime vegetation still treats the channels as its Middle-earth forest kinds (R dark broadleaf, G old wood, B tall golden grove, A dark old forest) until Phase 2 rewrites the forest types for Westeros: B stays empty (no Westeros forest is golden), the Kingswood and the Rainwood share A.",
     "channels": [
       {
         "id": "hauntedForest",
@@ -196,14 +216,13 @@
         ]
       },
       {
-        "id": "kingswood",
-        "names": [
-          "kingswood"
-        ]
+        "id": "unused",
+        "names": []
       },
       {
-        "id": "rainwood",
+        "id": "southernWoods",
         "names": [
+          "kingswood",
           "rainwood"
         ]
       }
@@ -217,27 +236,27 @@
     "world": 298
   },
   "coast": {
-    "notes": "Sea seeds (map km) for the coastline flood fill. PROVISIONAL: frame-edge seas for the placeholder slab; Phase 1 sets one per sea (Sunset Sea, Narrow Sea, Summer Sea, Shivering Sea, Bay of Ice).",
+    "notes": "Sea seeds (map km) for the coastline flood fill: the Sunset Sea (west), the Narrow Sea (east), the Summer Sea (south), the Shivering Sea (north-east).",
     "seaSeedsKm": [
       [
-        50,
-        50
+        60,
+        2500
       ],
       [
-        1950,
-        50
+        2580,
+        2500
       ],
       [
-        50,
-        5750
+        1300,
+        20
       ],
       [
-        1950,
-        5750
+        2580,
+        4600
       ],
       [
-        1000,
-        30
+        60,
+        4000
       ]
     ]
   },

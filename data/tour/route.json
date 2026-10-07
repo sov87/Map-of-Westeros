@@ -10,16 +10,10 @@
       "id": "placeholder",
       "points": [
         {
-          "at": [
-            1000,
-            5000
-          ]
+          "place": "castle-black"
         },
         {
-          "at": [
-            1000,
-            2000
-          ]
+          "place": "kings-landing"
         }
       ]
     }

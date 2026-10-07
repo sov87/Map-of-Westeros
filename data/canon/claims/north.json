@@ -1,0 +1,2853 @@
+{
+  "group": "north",
+  "version": 1,
+  "notes": "Drafted from recall without the corpus; every citation is unverified until pnpm canon --verify.",
+  "claims": [
+    {
+      "id": "beyond-the-wall-extent",
+      "subjects": [
+        "beyond-the-wall",
+        "haunted-forest",
+        "frostfangs"
+      ],
+      "kind": "position",
+      "claim": "Beyond the Wall is all the land north of the Wall: the Haunted Forest runs along its north side, the Frostfangs rise to the north-west, and the Lands of Always Winter fill the far north.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Beyond the Wall"
+        }
+      ],
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "Map sheet name recalled, not checked."
+    },
+    {
+      "id": "beyond-the-wall-settlements",
+      "subjects": [
+        "beyond-the-wall",
+        "haunted-forest"
+      ],
+      "kind": "state-298",
+      "claim": "The free folk live in scattered villages and holdfasts. Mormont's ranging passes the empty village of Whitetree and then Craster's Keep on its way north.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon I",
+          "find": [
+            "Whitetree"
+          ]
+        },
+        {
+          "book": "ACOK",
+          "chapter": "Jon II",
+          "find": [
+            "Craster's Keep"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "ACOK Jon chapter numbering recalled: Whitetree in Jon I, Craster's Keep in Jon II."
+    },
+    {
+      "id": "beyond-the-wall-whitetree-weirwood",
+      "subjects": [
+        "beyond-the-wall",
+        "haunted-forest"
+      ],
+      "kind": "vegetation",
+      "claim": "Whitetree, an abandoned wildling village, takes its name from a huge old weirwood with a carved face that grows among its empty dwellings.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon I",
+          "find": [
+            "Whitetree",
+            "weirwood"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "beyond-the-wall-climate",
+      "subjects": [
+        "beyond-the-wall",
+        "frostfangs",
+        "haunted-forest"
+      ],
+      "kind": "climate",
+      "claim": "Beyond the Wall is colder than the North, and the Frostfangs keep snow on their heights. At 298 AC (late summer) the lowland forest by the Wall should look cold, not buried in snow.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "AGOT Prologue: rangers beyond the Wall in bitter cold at the very end of summer. ACOK Jon IV-VI: snow and ice in the Frostfangs passes (299 AC). AGOT Bran I: the story opens as summer ends."
+    },
+    {
+      "id": "north-extent",
+      "subjects": [
+        "north",
+        "the-neck"
+      ],
+      "kind": "position",
+      "claim": "The North runs from the Neck in the south to the Wall in the north. The Sunset Sea lies along its west coast and the Shivering Sea and the Bite along its east.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "LOIAF sheet name recalled as 'Westeros'; check on the map set. TWOIAF 'The North' describes the same bounds (C)."
+    },
+    {
+      "id": "north-size",
+      "subjects": [
+        "north"
+      ],
+      "kind": "length",
+      "claim": "The North is the largest of the Seven Kingdoms, described as nearly as large as the other six combined.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The North"
+        }
+      ],
+      "value": {
+        "approx": true
+      },
+      "use": [
+        "scale"
+      ],
+      "status": "draft",
+      "notes": "Recalled with moderate confidence. Not sure of the exact wording (as large as / nearly as large as) or whether a novel says it as well. Use only as a soft scale check."
+    },
+    {
+      "id": "north-kingsroad-spine",
+      "subjects": [
+        "north",
+        "moat-cailin",
+        "winterfell",
+        "castle-black"
+      ],
+      "kind": "position",
+      "claim": "The Kingsroad is the North's north-south spine. It leaves the Neck at Moat Cailin, passes Winterfell and runs on north to end at Castle Black on the Wall.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "north-end-of-summer",
+      "subjects": [
+        "north",
+        "winterfell",
+        "climate-298"
+      ],
+      "kind": "climate",
+      "claim": "AGOT opens at the end of a long summer. The morning of the first Bran chapter near Winterfell is clear and cold, crisp enough to hint that summer is ending.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran I",
+          "find": [
+            "clear and cold",
+            "end of summer"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "north-summer-snow",
+      "subjects": [
+        "north",
+        "climate-298"
+      ],
+      "kind": "climate",
+      "claim": "Snow can fall in the North even in summer, but at 298 AC there is no winter snow cover. Show at most a dusting on high ground and peaks, with green-brown lowlands.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "AGOT Bran I (late summer, a cold morning). AGOT Catelyn I (Winterfell's hot springs keep the ground from freezing), which implies routine frost. I recall AGOT speaking of 'summer snows' but could not place the chapter, so that is not cited."
+    },
+    {
+      "id": "north-gift-depth",
+      "subjects": [
+        "north",
+        "castle-black"
+      ],
+      "kind": "distance",
+      "claim": "Brandon's Gift, the Night's Watch land along the south side of the Wall, is recalled as reaching twenty-five leagues south of the Wall. The later New Gift lies beyond it to the south.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Wall and Beyond: The Night's Watch"
+        }
+      ],
+      "value": {
+        "leagues": 25,
+        "from": "the-wall",
+        "dir": "s"
+      },
+      "use": [
+        "scale"
+      ],
+      "status": "draft",
+      "notes": "Recalled with moderate confidence. The Gift is also discussed in ADWD Jon chapters and in FAB (Queen Alysanne granting the New Gift). The New Gift's depth is deliberately not asserted."
+    },
+    {
+      "id": "north-deepwood-to-winterfell",
+      "subjects": [
+        "north",
+        "winterfell",
+        "wolfswood"
+      ],
+      "kind": "distance",
+      "claim": "Deepwood Motte is a hundred leagues from Winterfell as the raven flies. Stannis's host, struggling through snow, takes far longer than planned to cover it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "The King's Prize",
+          "find": [
+            "hundred leagues",
+            "raven flies"
+          ]
+        }
+      ],
+      "value": {
+        "leagues": 100,
+        "from": "deepwood-motte",
+        "to": "winterfell"
+      },
+      "use": [
+        "scale"
+      ],
+      "status": "draft",
+      "notes": "A straight-line figure and a round number. deepwood-motte is a place id, not a subject. It is the only within-the-North distance with a number that I recall confidently; I recall no numeric Winterfell-Wall, Moat Cailin-Winterfell or Neck-width figure, so none is given."
+    },
+    {
+      "id": "north-woods-mix",
+      "subjects": [
+        "north",
+        "wolfswood",
+        "haunted-forest"
+      ],
+      "kind": "vegetation",
+      "claim": "Northern woods are mostly evergreen (sentinels and soldier pines) mixed with oaks and ironwoods. Weirwoods grow in godswoods and in old groves.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "AGOT Catelyn I lists sentinels, oaks and ironwoods in Winterfell's godswood, around a weirwood heart tree. The AGOT Prologue and Jon VI show sentinels and weirwoods north of the Wall. Applying this mix to the North at large is an inference."
+    },
+    {
+      "id": "fist-of-the-first-men-position",
+      "subjects": [
+        "fist-of-the-first-men",
+        "haunted-forest",
+        "beyond-the-wall"
+      ],
+      "kind": "position",
+      "claim": "The Fist of the First Men stands in the forest north of the Wall. Mormont's ranging reaches it after Whitetree and Craster's Keep and makes it its base camp.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "Fist of the First Men"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The arrival may fall at the end of ACOK Jon II."
+    },
+    {
+      "id": "fist-of-the-first-men-hill",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "form",
+      "claim": "The Fist is a steep, stony hill rising well above the surrounding forest, so its top commands a long view over the trees.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "the Fist"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "Brief check ('lone hill'): a hill standing out of the forest is confirmed; 'lone' is not confirmed as book wording, and the build treats isolation as I. Which slope is gentlest is not recalled, so none is asserted."
+    },
+    {
+      "id": "fist-of-the-first-men-ringwall",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "form",
+      "claim": "The hilltop is ringed by a wall of piled stones of great age raised by the First Men, which makes it a ring fort.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "ringwall"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Prologue",
+          "find": [
+            "ringwall"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed: an ancient ring fort on a hill. The text may spell it 'ring wall'."
+    },
+    {
+      "id": "fist-of-the-first-men-ringwall-scale",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "form",
+      "claim": "Model the ringwall low and broken (about chest height, with gaps) around a broad, fairly level hilltop big enough to camp a few hundred men and their horses.",
+      "label": "I",
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "basis": "ACOK: Mormont's ranging, a few hundred brothers with horses, camps inside the ring. ASOS Prologue and Samwell I: defenders fight from behind the ringwall and the dead come over it. No height is given."
+    },
+    {
+      "id": "fist-of-the-first-men-frostfangs",
+      "subjects": [
+        "fist-of-the-first-men",
+        "frostfangs"
+      ],
+      "kind": "relative-position",
+      "claim": "The Fist lies east of the Frostfangs, close to their foothills.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Beyond the Wall"
+        }
+      ],
+      "value": {
+        "from": "fist-of-the-first-men",
+        "to": "frostfangs",
+        "dir": "w"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "value.dir is the bearing of 'to' as seen from 'from' (this convention holds for every relative-position value in this file). Text support: in ACOK Jon IV Qhorin Halfhand's small party sets out from the Fist into the mountains toward the Skirling Pass; the text gives no bearing."
+    },
+    {
+      "id": "fist-of-the-first-men-milkwater",
+      "subjects": [
+        "fist-of-the-first-men",
+        "milkwater"
+      ],
+      "kind": "relative-position",
+      "claim": "Place the Fist near the Milkwater where it comes down out of the Frostfangs. Mormont holds the hill to watch for the wildling host, which later comes down the Milkwater past it.",
+      "label": "I",
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "basis": "ACOK Jon III (the camp's purpose: watching for Mance's host). ASOS Jon I-II: the host follows the Milkwater and Jon sees the Fist's aftermath while travelling with it. Distances are not given."
+    },
+    {
+      "id": "fist-of-the-first-men-cache",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "state-298",
+      "claim": "A Night's Watch cloak wrapped around dragonglass blades and arrowheads and an old horn lies buried in the hilltop until Ghost digs it up in ACOK.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "dragonglass"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "notes": "Not visible in the model. The find may fall in Jon IV."
+    },
+    {
+      "id": "fist-of-the-first-men-state-298",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "state-298",
+      "claim": "At 298 AC the Fist is an empty ancient ring fort in the forest, with no camp, ditch, stakes or bodies.",
+      "label": "I",
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "basis": "In ACOK (299 AC) Mormont's ranging finds the hill unoccupied and only then fortifies it."
+    },
+    {
+      "id": "fist-of-the-first-men-fortified",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "state-after",
+      "claim": "In 299 AC Mormont's brothers fortify the hilltop camp with a ditch, sharpened stakes and caltrops around the ringwall.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "stakes"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Prologue",
+          "find": [
+            "caltrops"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "notes": "This happens after 298 AC, so the build ignores it. 'Caltrops' is recalled with moderate confidence."
+    },
+    {
+      "id": "fist-of-the-first-men-battle",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "state-after",
+      "claim": "In ASOS the dead overrun Mormont's camp on the Fist during a snowstorm. The survivors flee, leaving dead men and horses on the hilltop.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Samwell I",
+          "find": [
+            "Fist"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "castle-black-position",
+      "subjects": [
+        "castle-black",
+        "the-wall"
+      ],
+      "kind": "position",
+      "claim": "Castle Black stands at the foot of the Wall on its south side. It is the chief castle of the Night's Watch and the Lord Commander's seat.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion III",
+          "find": [
+            "Castle Black",
+            "Lord Commander"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "castle-black-kingsroad-end",
+      "subjects": [
+        "castle-black",
+        "winterfell",
+        "north"
+      ],
+      "kind": "relative-position",
+      "claim": "The Kingsroad ends at Castle Black, which lies north of Winterfell along it.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "castle-black",
+        "dir": "n"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Taken from the map. Text support: in AGOT (Tyrion II) Benjen, Jon and Tyrion ride the Kingsroad north from Winterfell to the Wall."
+    },
+    {
+      "id": "castle-black-manned",
+      "subjects": [
+        "castle-black",
+        "eastwatch",
+        "the-wall"
+      ],
+      "kind": "count",
+      "claim": "Of the nineteen castles along the Wall only three are still manned: Eastwatch-by-the-Sea, the Shadow Tower and Castle Black between them. The rest are abandoned.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "nineteen",
+            "Shadow Tower",
+            "Eastwatch"
+          ]
+        }
+      ],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "landmark:castle-black",
+        "landmark:eastwatch"
+      ],
+      "status": "draft",
+      "notes": "The passage is recalled clearly but the chapter is not: it is one of AGOT Jon III-VI or Tyrion III. The Wall itself (height, length) belongs to the realm group."
+    },
+    {
+      "id": "castle-black-no-curtain-wall",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "form",
+      "claim": "Castle Black has no curtain wall of its own. It was built to face north behind the Wall and lies open to the south, so in ASOS its defenders have to improvise barricades.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon VI",
+          "find": [
+            "no walls"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jon VII",
+          "find": [
+            "barricade"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (no curtain wall). Exact wording and chapter (Jon VI or VII) need verifying."
+    },
+    {
+      "id": "castle-black-layout",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "form",
+      "claim": "The castle is a loose spread of towers, keeps, halls and yards at the Wall's foot. It was built for far more men than the Watch now has, and many buildings stand empty or crumbling.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Hardin's Tower"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "The decay theme is recalled firmly; the chapter is a best guess."
+    },
+    {
+      "id": "castle-black-named-buildings",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "form",
+      "claim": "Named buildings at Castle Black include the Lord Commander's Tower, Hardin's Tower, the King's Tower and the Shieldhall.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon VII",
+          "find": [
+            "Lord Commander's Tower"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Hardin's Tower"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jon VII",
+          "find": [
+            "King's Tower"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Jon XIII",
+          "find": [
+            "Shieldhall"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "The texts give no plan of where these buildings stand relative to each other; the layout must be I."
+    },
+    {
+      "id": "castle-black-stair",
+      "subjects": [
+        "castle-black",
+        "the-wall"
+      ],
+      "kind": "form",
+      "claim": "A great timber stair climbs the Wall's south face from the castle to the top in a long zigzag of switchbacks.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion III",
+          "find": [
+            "stair"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jon VII",
+          "find": [
+            "stair"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (switchback stair)."
+    },
+    {
+      "id": "castle-black-winch-cage",
+      "subjects": [
+        "castle-black",
+        "the-wall"
+      ],
+      "kind": "form",
+      "claim": "An iron cage on a long chain, worked by a great winch at the top of the Wall, carries men and supplies up and down. Tyrion rides it up.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion III",
+          "find": [
+            "cage",
+            "winch"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (winch cage)."
+    },
+    {
+      "id": "castle-black-tunnel",
+      "subjects": [
+        "castle-black",
+        "the-wall"
+      ],
+      "kind": "form",
+      "claim": "A narrow, gated tunnel through the base of the Wall is the castle's way north. In ASOS Donal Noye and the giant Mag die fighting inside it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon VIII",
+          "find": [
+            "tunnel",
+            "Mag"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "The tunnel is the Watch's standing gate north, so it exists at 298 AC. The gate details (iron bars, oak doors) need verifying."
+    },
+    {
+      "id": "castle-black-moles-town",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "relative-position",
+      "claim": "Mole's Town, a small village whose dwellings are largely dug into the ground, lies a short way south of Castle Black along the Kingsroad.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon VI",
+          "find": [
+            "Mole's Town"
+          ]
+        }
+      ],
+      "value": {
+        "from": "castle-black",
+        "to": "moles-town",
+        "dir": "s"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "No distance is asserted. The underground houses are recalled with moderate confidence. moles-town is a place id."
+    },
+    {
+      "id": "castle-black-state-after-assault",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "state-after",
+      "claim": "In the wildling assaults of ASOS the foot of the stair is fought over and set on fire, and the tunnel is afterwards choked with rubble and ice. The build ignores this damage.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon VII",
+          "find": [
+            "stair"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jon VIII",
+          "find": [
+            "tunnel"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "Not yet verified: which flights burned, and the chapter that seals the tunnel. ADWD reopens the tunnel. Also recalled but not asserted: by ADWD the Lord Commander's Tower is a burned shell."
+    },
+    {
+      "id": "eastwatch-position",
+      "subjects": [
+        "eastwatch",
+        "the-wall"
+      ],
+      "kind": "position",
+      "claim": "Eastwatch-by-the-Sea is the easternmost castle on the Wall, at the Wall's eastern end where it meets the sea.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "landmark:eastwatch",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (the Wall's eastern end, at the sea). The castle's name supports it."
+    },
+    {
+      "id": "eastwatch-bay-of-seals",
+      "subjects": [
+        "eastwatch",
+        "bay-of-seals"
+      ],
+      "kind": "position",
+      "claim": "Eastwatch stands on the shore of the Bay of Seals.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "landmark:eastwatch",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "eastwatch-east-of-castle-black",
+      "subjects": [
+        "eastwatch",
+        "castle-black"
+      ],
+      "kind": "relative-position",
+      "claim": "Eastwatch lies east of Castle Black along the Wall.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "castle-black",
+        "to": "eastwatch",
+        "dir": "e"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "eastwatch-manned",
+      "subjects": [
+        "eastwatch"
+      ],
+      "kind": "state-298",
+      "claim": "Eastwatch is one of the three Wall castles still garrisoned at 298 AC.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Eastwatch"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:eastwatch"
+      ],
+      "status": "draft",
+      "notes": "Same passage as castle-black-manned; the chapter is uncertain."
+    },
+    {
+      "id": "eastwatch-look",
+      "subjects": [
+        "eastwatch"
+      ],
+      "kind": "climate",
+      "claim": "The books picture Eastwatch on a grey, windswept shore.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "windswept shore"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:eastwatch",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Wording recalled from the passage on the three manned castles; verify both phrase and chapter."
+    },
+    {
+      "id": "eastwatch-harbour",
+      "subjects": [
+        "eastwatch"
+      ],
+      "kind": "form",
+      "claim": "Eastwatch has a harbour where the Watch keeps its ships. In AFFC Sam, Maester Aemon and Gilly sail from there aboard the Blackbird.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Samwell I",
+          "find": [
+            "Blackbird",
+            "Eastwatch"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:eastwatch"
+      ],
+      "status": "draft",
+      "notes": "The ship may first be named in Samwell II."
+    },
+    {
+      "id": "eastwatch-hardhome-by-sea",
+      "subjects": [
+        "eastwatch",
+        "beyond-the-wall"
+      ],
+      "kind": "relative-position",
+      "claim": "In ADWD the Watch's ships sail from Eastwatch along the coast to Hardhome, beyond the Wall, to bring off the free folk gathered there.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Jon X",
+          "find": [
+            "Hardhome",
+            "Cotter Pyke"
+          ]
+        }
+      ],
+      "value": {
+        "from": "eastwatch",
+        "to": "hardhome"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Chapter guessed from ADWD Jon IX-XII. Hardhome is a place id; no bearing is asserted."
+    },
+    {
+      "id": "eastwatch-plan-unknown",
+      "subjects": [
+        "eastwatch"
+      ],
+      "kind": "form",
+      "claim": "No book describes Eastwatch's plan, towers or building stone. Any keep, towers or quays in the model are invention and must carry label I.",
+      "label": "I",
+      "use": [
+        "landmark:eastwatch"
+      ],
+      "status": "draft",
+      "basis": "I recall no description of the castle's layout in the novels; they describe only its role, its harbour and its shore."
+    },
+    {
+      "id": "winterfell-position",
+      "subjects": [
+        "winterfell",
+        "north",
+        "wolfswood"
+      ],
+      "kind": "position",
+      "claim": "Winterfell lies in the heart of the North beside the Kingsroad, south of the Wall and north of Moat Cailin, with the Wolfswood to its west.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "landmark:winterfell",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "winterfell-layout",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Winterfell is a sprawling grey stone maze of walls, towers, courtyards and tunnels. It grew over the centuries like a great stone tree, and its older halls slope up and down.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "labyrinth",
+            "stone tree"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell",
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "winterfell-walls",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "count",
+      "claim": "Two curtain walls ring the castle, one inside the other, with a moat between them. The inner wall is the higher.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "The Prince of Winterfell",
+          "find": [
+            "moat",
+            "inner wall"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Theon I",
+          "find": [
+            "moat"
+          ]
+        }
+      ],
+      "value": {
+        "count": 2
+      },
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (two walls, moat between) but 'granite' is not; see winterfell-material. The facts are recalled firmly, the chapter weakly: one of Theon's Winterfell chapters in ACOK or ADWD. In ADWD the moat is frozen, which is not the 298 AC state."
+    },
+    {
+      "id": "winterfell-inner-wall-height",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "height",
+      "claim": "The inner wall is a hundred feet high.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "The Prince of Winterfell",
+          "find": [
+            "hundred feet"
+          ]
+        }
+      ],
+      "value": {
+        "ft": 100
+      },
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Figure recalled with fair confidence; chapter is a guess (see winterfell-walls)."
+    },
+    {
+      "id": "winterfell-outer-wall-height",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "height",
+      "claim": "The outer wall is eighty feet high.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "The Prince of Winterfell",
+          "find": [
+            "eighty feet"
+          ]
+        }
+      ],
+      "value": {
+        "ft": 80
+      },
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Figure recalled with fair confidence; chapter is a guess (see winterfell-walls)."
+    },
+    {
+      "id": "winterfell-material",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "material",
+      "claim": "Build all walls and towers in grey stone. The brief's 'granite' is plausible but unconfirmed: the recalled text calls Winterfell grey stone without naming the rock.",
+      "label": "I",
+      "use": [
+        "landmark:winterfell",
+        "look"
+      ],
+      "status": "draft",
+      "basis": "AGOT Bran II calls it grey stone, and I recall no passage that names granite. Treat granite as a modelling choice, not canon."
+    },
+    {
+      "id": "winterfell-hot-springs",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "hydrology",
+      "claim": "Winterfell is built over natural hot springs. Their water runs through its walls and chambers, warming the halls, keeping the ground from freezing and filling the glass gardens with moist warmth.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "hot springs",
+            "glass gardens"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (hot springs, glass gardens). Their placement inside the walls is not given. In ADWD the godswood's warm pools steam in the snow."
+    },
+    {
+      "id": "winterfell-godswood",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Inside the walls lies the godswood: some three acres of old forest, left untouched for ten thousand years while the castle rose around it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "three acres"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (godswood). The acreage is a firm footprint constraint."
+    },
+    {
+      "id": "winterfell-godswood-trees",
+      "subjects": [
+        "winterfell",
+        "north"
+      ],
+      "kind": "vegetation",
+      "claim": "The godswood holds tall sentinels with grey-green needles, mighty oaks and ancient ironwoods, crowded close under a thick canopy with tangled roots.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "grey-green needles",
+            "ironwoods"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell",
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "winterfell-heart-tree",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "At its heart stands an ancient weirwood with bone-white bark, dark red leaves and a long, melancholy carved face. Beside it lies a still black pool where Ned cleans Ice.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "heart tree",
+            "black pool"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell",
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "winterfell-broken-tower",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "The broken tower was once Winterfell's tallest watchtower. About a century before Ned's birth lightning set it afire, its top third collapsed inward, and it was never rebuilt.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "broken tower",
+            "lightning"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (the Broken Tower). Fallen stones and charred beams fill its base, and crows roost on its jagged top. No height is given."
+    },
+    {
+      "id": "winterfell-first-keep",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "The First Keep, the oldest part of the castle, is a squat round fortress, taller than it looks and long abandoned, with gargoyles leaning out from its top. It stands close by the broken tower.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "First Keep",
+            "gargoyles"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Bran's climbing route crosses from the gargoyles on its north side to the broken tower, so the two stand very close."
+    },
+    {
+      "id": "winterfell-library-tower",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "One tower houses the library. In AGOT it is set on fire as a diversion when the catspaw comes for Bran.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn III",
+          "find": [
+            "library tower"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Its position is not given."
+    },
+    {
+      "id": "winterfell-crypts",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Beneath the castle lie the crypts: rows of stone Kings of Winter and Lords of Winterfell, seated with stone direwolves at their feet and iron swords across their laps.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Eddard I",
+          "find": [
+            "crypts",
+            "Lyanna"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Underground, so nothing shows on the surface model."
+    },
+    {
+      "id": "winterfell-state-after-sack",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "state-after",
+      "claim": "At the end of ACOK Winterfell is sacked and burned. By ADWD many towers and halls are roofless shells and the glass gardens' panes are shattered. The build shows the intact castle of 298 AC.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Bran VII",
+          "find": [
+            "Winterfell"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "The Prince of Winterfell",
+          "find": [
+            "glass gardens"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Which ADWD Theon chapter describes the shattered glass gardens is uncertain."
+    },
+    {
+      "id": "white-harbor-position",
+      "subjects": [
+        "white-harbor",
+        "white-knife",
+        "the-bite"
+      ],
+      "kind": "position",
+      "claim": "White Harbor stands where the White Knife flows into the Bite. It is the North's chief seaport.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "White Knife"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor",
+        "vectors",
+        "hydrology"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (on the White Knife). Which bank the city occupies is not asserted."
+    },
+    {
+      "id": "white-harbor-rel-winterfell",
+      "subjects": [
+        "white-harbor",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "White Harbor lies south-east of Winterfell.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "white-harbor",
+        "dir": "se"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "white-harbor-smallest-city",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "White Harbor is the smallest of the five cities of the Seven Kingdoms, but it is a walled and busy port.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "smallest"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor",
+        "scale"
+      ],
+      "status": "draft",
+      "notes": "The 'smallest of the five cities' line may be in TWOIAF ('The North') rather than ADWD. The five cities are King's Landing, Oldtown, Lannisport, Gulltown and White Harbor."
+    },
+    {
+      "id": "white-harbor-white-stone",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "material",
+      "claim": "The city's walls and many of its buildings are white or whitewashed stone.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "White Harbor"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed in substance ('white stone city'). The exact wording (white stone or whitewashed) is unverified."
+    },
+    {
+      "id": "white-harbor-new-castle",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "The New Castle, seat of House Manderly, stands on a hill rising above the harbour, and the city climbs toward it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "New Castle"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (New Castle)."
+    },
+    {
+      "id": "white-harbor-mermans-court",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "Lord Wyman holds court in the Merman's Court, the great hall of the New Castle.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "Merman's Court"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "white-harbor-wolfs-den",
+      "subjects": [
+        "white-harbor",
+        "white-knife"
+      ],
+      "kind": "form",
+      "claim": "The Wolf's Den is an older, grim stone fortress built by a Stark king to guard the river mouth against raiders from the sea. By ADWD it is a prison, where Davos is held.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos III",
+          "find": [
+            "Wolf's Den",
+            "Jon Stark"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (Wolf's Den). The builder is recalled as King Jon Stark."
+    },
+    {
+      "id": "white-harbor-seal-rock",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "Seal Rock is a large rock standing out of the water before the city, one of the sights Davos sees as his ship comes in to White Harbor.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "Seal Rock"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (Seal Rock). I do not recall whether ruins crown it, so no structure on it should be modelled until that is verified."
+    },
+    {
+      "id": "white-harbor-sept-of-the-snows",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "The Sept of the Snows, a large domed sept, rises among the city's buildings.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "Sept of the Snows"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The dome is recalled with moderate confidence."
+    },
+    {
+      "id": "moat-cailin-position",
+      "subjects": [
+        "moat-cailin",
+        "the-neck"
+      ],
+      "kind": "position",
+      "claim": "Moat Cailin guards the northern end of the Neck, where the Kingsroad's causeway comes up out of the swamps. It is the North's gateway against an army from the south.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "Moat Cailin",
+            "causeway"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "moat-cailin-rel",
+      "subjects": [
+        "moat-cailin",
+        "winterfell",
+        "the-neck",
+        "the-twins"
+      ],
+      "kind": "relative-position",
+      "claim": "Moat Cailin lies on the Kingsroad south of Winterfell, at the north end of the Neck. The Twins stand near the Neck's southern end.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "moat-cailin",
+        "dir": "s"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "moat-cailin-ruin",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "state-298",
+      "claim": "Moat Cailin is an ancient stronghold of the First Men. It was once great and is now largely a ruin.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "First Men"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "moat-cailin-basalt",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "material",
+      "claim": "It was built of huge blocks of black basalt. Many fallen blocks lie scattered and half-sunk in the soft, boggy ground where its walls once stood.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "black basalt"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The black basalt is recalled firmly, the half-sunk blocks with moderate confidence. I do not remember the original tower count well enough to give one."
+    },
+    {
+      "id": "moat-cailin-three-towers",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "count",
+      "claim": "Three towers survive: the Gatehouse Tower, the Children's Tower and the Drunkard's Tower.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "Gatehouse Tower",
+            "Children's Tower",
+            "Drunkard's Tower"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "Drunkard's Tower"
+          ]
+        }
+      ],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (three towers, names correct)."
+    },
+    {
+      "id": "moat-cailin-childrens-tower",
+      "subjects": [
+        "moat-cailin",
+        "the-neck"
+      ],
+      "kind": "form",
+      "claim": "Legend says the children of the forest called down the hammer of the waters against the First Men from the Children's Tower.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "hammer of the waters"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "notes": "I recall the tower is tall and its top broken, but not well enough to claim it."
+    },
+    {
+      "id": "moat-cailin-drunkards-tower",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "form",
+      "claim": "The Drunkard's Tower leans markedly, as its name suggests.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "Drunkard's Tower"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "Drunkard's Tower"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "notes": "The lean is recalled with moderate confidence; no angle is given."
+    },
+    {
+      "id": "moat-cailin-setting",
+      "subjects": [
+        "moat-cailin",
+        "the-neck"
+      ],
+      "kind": "form",
+      "claim": "The ruins stand in bog and swamp on either side of the causeway. The towers still command the road, so an army coming from the south has to pass beneath them.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "bog"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed ('standing in bog'). How the towers sit relative to the causeway is not recalled in detail."
+    },
+    {
+      "id": "moat-cailin-state-298",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "state-298",
+      "claim": "At 298 AC Moat Cailin is a Stark-held ruin: three standing towers among fallen basalt and bog, with no ironborn garrison and no flayed bodies.",
+      "label": "I",
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "basis": "AGOT Catelyn VIII shows it as a ruin when Robb's host gathers there. The ironborn seizure comes in ACOK and the flaying in ADWD."
+    },
+    {
+      "id": "moat-cailin-state-after",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "state-after",
+      "claim": "In ACOK the ironborn seize Moat Cailin. In ADWD the sick, dwindling garrison yields to Ramsay, who has them flayed and displays the bodies along the road.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "Moat Cailin"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "notes": "The flayed bodies may be described in Reek III instead."
+    },
+    {
+      "id": "greywater-watch-position",
+      "subjects": [
+        "greywater-watch",
+        "the-neck"
+      ],
+      "kind": "position",
+      "claim": "Greywater Watch is the seat of House Reed in the Neck. Jojen and Meera Reed come from it to Winterfell in ACOK.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Bran III",
+          "find": [
+            "Greywater Watch"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:greywater-watch"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "greywater-watch-moves",
+      "subjects": [
+        "greywater-watch"
+      ],
+      "kind": "form",
+      "claim": "Greywater Watch is said to move through the swamps, so neither outsiders nor ravens can find it unless the crannogmen lead them.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Bran IV",
+          "find": [
+            "Greywater Watch"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Bran I",
+          "find": [
+            "Greywater"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:greywater-watch"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (a moving castle no outsider can find). Not yet verified: whether the text says it floats or only moves, and which chapters say so."
+    },
+    {
+      "id": "greywater-watch-crannogmen",
+      "subjects": [
+        "greywater-watch",
+        "the-neck"
+      ],
+      "kind": "state-298",
+      "claim": "The crannogmen of the Neck, sworn to the Reeds, live among its bogs and know hidden ways through them.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "crannogmen"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:greywater-watch"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "greywater-watch-no-model",
+      "subjects": [
+        "greywater-watch",
+        "the-neck"
+      ],
+      "kind": "position",
+      "claim": "Do not model Greywater Watch as a fixed castle. Show only an uncertainty marker in the Neck's interior, away from the causeway.",
+      "label": "I",
+      "use": [
+        "landmark:greywater-watch"
+      ],
+      "status": "draft",
+      "basis": "The text makes its location unknowable to outsiders (greywater-watch-moves). The brief already asks for an uncertainty display."
+    },
+    {
+      "id": "greywater-watch-map-point",
+      "subjects": [
+        "greywater-watch"
+      ],
+      "kind": "position",
+      "claim": "If an official map prints Greywater Watch at a point, treat that point as nominal only: the text overrides it.",
+      "label": "I",
+      "use": [
+        "landmark:greywater-watch",
+        "vectors"
+      ],
+      "status": "draft",
+      "basis": "I am not sure LOIAF marks it. The rank order puts text above map, and the text says the castle moves."
+    },
+    {
+      "id": "greywater-watch-setting",
+      "subjects": [
+        "greywater-watch",
+        "the-neck"
+      ],
+      "kind": "vegetation",
+      "claim": "Surround the uncertainty zone with the Neck's black water, reeds and drowned trees, using mist to keep it vague. No description of the castle itself is recalled.",
+      "label": "I",
+      "use": [
+        "landmark:greywater-watch",
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The general swamp descriptions of the Neck (AGOT Catelyn VIII, ADWD Reek II) and the absence of any recalled description of the castle's buildings."
+    },
+    {
+      "id": "frostfangs-position",
+      "subjects": [
+        "frostfangs",
+        "beyond-the-wall"
+      ],
+      "kind": "relative-position",
+      "claim": "The Frostfangs rise beyond the Wall to the north-west of Castle Black, west of the Fist of the First Men and the Milkwater.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Beyond the Wall"
+        }
+      ],
+      "value": {
+        "from": "castle-black",
+        "to": "frostfangs",
+        "dir": "nw"
+      },
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "frostfangs-relief",
+      "subjects": [
+        "frostfangs"
+      ],
+      "kind": "form",
+      "claim": "The Frostfangs are high, jagged, snow-clad mountains crossed by narrow, wind-scoured passes such as the Skirling Pass.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon V",
+          "find": [
+            "Skirling Pass",
+            "Frostfangs"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "No peak heights are given. The pass may be described from Jon IV to Jon VI."
+    },
+    {
+      "id": "frostfangs-wildling-muster",
+      "subjects": [
+        "frostfangs",
+        "beyond-the-wall"
+      ],
+      "kind": "state-298",
+      "claim": "Mance Rayder gathers the free folk in the Frostfangs before leading them south; the Watch learns this in ACOK.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon III",
+          "find": [
+            "Frostfangs"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The muster is 299 AC news and not a physical feature."
+    },
+    {
+      "id": "northern-mountains-clans",
+      "subjects": [
+        "northern-mountains",
+        "north"
+      ],
+      "kind": "state-298",
+      "claim": "The northern hill clans (Wulls, Norreys, Liddles, Flints and others) come down from their mountains to fight for Stannis when he takes Deepwood Motte in ADWD.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "The Wayward Bride",
+          "find": [
+            "Wull",
+            "Norrey"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "northern-mountains-position",
+      "subjects": [
+        "northern-mountains",
+        "wolfswood",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "The clans' mountains lie north-west of Winterfell, between the Wolfswood and the Gift and west of the Kingsroad.",
+      "label": "I",
+      "value": {
+        "from": "winterfell",
+        "to": "northern-mountains",
+        "dir": "nw"
+      },
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft",
+      "basis": "ADWD: Stannis wins over the clans on his way from the Wall to Deepwood Motte, after Jon advises him that they hold the high country there. The LOIAF relief also shows high ground in that area. No label that names this range is recalled."
+    },
+    {
+      "id": "northern-mountains-relief",
+      "subjects": [
+        "northern-mountains"
+      ],
+      "kind": "form",
+      "claim": "Model rugged, steep hills and modest mountains with narrow valleys and high pastures, clearly lower than the Frostfangs and with snow on the tops only.",
+      "label": "I",
+      "use": [
+        "terrain",
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The clans are called hill or mountain clans, and no heights are given. The Frostfangs are the North's great range, so these must stay lower."
+    },
+    {
+      "id": "haunted-forest-position",
+      "subjects": [
+        "haunted-forest",
+        "castle-black",
+        "beyond-the-wall"
+      ],
+      "kind": "position",
+      "claim": "The Haunted Forest lies immediately north of the Wall. From Castle Black new brothers ride only a short way into it to reach a weirwood grove.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon VI",
+          "find": [
+            "haunted forest"
+          ]
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "haunted-forest-weirwood-grove",
+      "subjects": [
+        "haunted-forest",
+        "castle-black"
+      ],
+      "kind": "count",
+      "claim": "A grove of nine weirwoods stands in the forest a short ride north of Castle Black. There brothers who keep the old gods, like Jon and Sam, say their vows.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Jon VI",
+          "find": [
+            "nine",
+            "weirwoods"
+          ]
+        }
+      ],
+      "value": {
+        "count": 9
+      },
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "No distance from the Wall is asserted."
+    },
+    {
+      "id": "haunted-forest-trees",
+      "subjects": [
+        "haunted-forest",
+        "beyond-the-wall"
+      ],
+      "kind": "vegetation",
+      "claim": "The forest north of the Wall is old, dense woodland of sentinel trees and other evergreens, with groves of weirwoods.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Prologue",
+          "find": [
+            "sentinel"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Jon VI",
+          "find": [
+            "weirwood"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The Prologue's ranging is beyond the Wall but is not explicitly placed in the Haunted Forest. The soldier pines and ironwoods beyond the Wall are not recalled well enough to cite."
+    },
+    {
+      "id": "haunted-forest-extent",
+      "subjects": [
+        "haunted-forest",
+        "frostfangs",
+        "milkwater"
+      ],
+      "kind": "position",
+      "claim": "The Haunted Forest covers the land north of the Wall along most of its length and reaches north toward the foothills of the Frostfangs and along the Milkwater.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Beyond the Wall"
+        }
+      ],
+      "use": [
+        "vectors",
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wolfswood-position",
+      "subjects": [
+        "wolfswood",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "The Wolfswood spreads west of Winterfell.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "wolfswood",
+        "dir": "w"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wolfswood-near-winterfell",
+      "subjects": [
+        "wolfswood",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "The Wolfswood begins within an easy ride of Winterfell. In AGOT Bran rides into it with Robb and Theon and is attacked by wildlings and deserters camped there.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran V",
+          "find": [
+            "wolfswood"
+          ]
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Chapter recalled as Bran V; it may be Bran VI."
+    },
+    {
+      "id": "wolfswood-extent",
+      "subjects": [
+        "wolfswood",
+        "bay-of-ice"
+      ],
+      "kind": "position",
+      "claim": "The Wolfswood stretches west toward Deepwood Motte and the west coast.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Deepwood Motte appears to sit in or near the forest (ADWD Asha chapters). Verify the western edge on the map."
+    },
+    {
+      "id": "wolfswood-vegetation",
+      "subjects": [
+        "wolfswood"
+      ],
+      "kind": "vegetation",
+      "claim": "Model a dense, dark mixed forest of sentinels, soldier pines, oaks and ironwoods.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "This is the northern mix attested in Winterfell's godswood (AGOT Catelyn I). No species list for the Wolfswood itself is recalled."
+    },
+    {
+      "id": "the-neck-position",
+      "subjects": [
+        "the-neck",
+        "the-bite",
+        "north"
+      ],
+      "kind": "position",
+      "claim": "The Neck is a narrow, swampy isthmus that joins the North to the riverlands, with the Bite to its east and a western bay of the Sunset Sea to its west.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The western bay is recalled as Blazewater Bay. No width figure for the Neck is recalled."
+    },
+    {
+      "id": "the-neck-terrain",
+      "subjects": [
+        "the-neck"
+      ],
+      "kind": "hydrology",
+      "claim": "The Neck is a wet wilderness of bogs and swamps where only the causeway gives an army firm footing. The crannogmen know other ways through.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "Neck",
+            "crannogmen"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "hydrology",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Quicksands and lizard-lions are recalled for the Neck but not placed in a chapter."
+    },
+    {
+      "id": "the-neck-causeway",
+      "subjects": [
+        "the-neck",
+        "moat-cailin"
+      ],
+      "kind": "position",
+      "claim": "The Kingsroad crosses the Neck's bogs on a raised causeway, which Theon rides along to parley with the garrison at Moat Cailin in ADWD.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "causeway"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "the-neck-vegetation",
+      "subjects": [
+        "the-neck"
+      ],
+      "kind": "vegetation",
+      "claim": "Model black water, reeds, moss and stunted or drowned trees under frequent mist. There are no fields or open dry ground beyond the causeway.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The swamp descriptions in AGOT Catelyn VIII and ADWD Reek II; no species list is recalled."
+    },
+    {
+      "id": "barrowlands-position",
+      "subjects": [
+        "barrowlands",
+        "winterfell",
+        "the-neck"
+      ],
+      "kind": "relative-position",
+      "claim": "The barrowlands lie south-west of Winterfell, north of the Neck and west of the Kingsroad, around Barrowton.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "barrowlands",
+        "dir": "sw"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "barrowlands-great-barrow",
+      "subjects": [
+        "barrowlands"
+      ],
+      "kind": "form",
+      "claim": "Barrowton, home of House Dustin, stands beside the Great Barrow, said to be the grave of the First King of the First Men.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Reek III",
+          "find": [
+            "Great Barrow",
+            "First King"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Whether Barrow Hall sits on the barrow or beside it is not asserted."
+    },
+    {
+      "id": "barrowlands-terrain",
+      "subjects": [
+        "barrowlands"
+      ],
+      "kind": "form",
+      "claim": "Model open, mostly treeless, gently rolling windswept country dotted with grassy burial mounds.",
+      "label": "I",
+      "use": [
+        "terrain",
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The name, the Great Barrow (ADWD Reek III) and the wedding party's ride across open country to Winterfell in ADWD. No explicit relief description is recalled."
+    },
+    {
+      "id": "milkwater-course",
+      "subjects": [
+        "milkwater",
+        "frostfangs",
+        "haunted-forest"
+      ],
+      "kind": "hydrology",
+      "claim": "The Milkwater rises in the Frostfangs and flows generally south through the Haunted Forest.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Beyond the Wall"
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Where it ends (the sea or another river) is not asserted. Pale water is implied only by the name (I)."
+    },
+    {
+      "id": "milkwater-host",
+      "subjects": [
+        "milkwater",
+        "beyond-the-wall"
+      ],
+      "kind": "position",
+      "claim": "In ASOS Mance Rayder's host comes down out of the mountains along the Milkwater, its camp spread along the river's banks.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon I",
+          "find": [
+            "Milkwater"
+          ]
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "milkwater-fist",
+      "subjects": [
+        "milkwater",
+        "fist-of-the-first-men"
+      ],
+      "kind": "relative-position",
+      "claim": "Run the Milkwater's valley close below the Fist of the First Men, so that the hill overlooks the route the wildling host takes.",
+      "label": "I",
+      "use": [
+        "vectors",
+        "hydrology"
+      ],
+      "status": "draft",
+      "basis": "See fist-of-the-first-men-milkwater: the camp's purpose (ACOK Jon III) and the host's route (ASOS Jon I-II)."
+    },
+    {
+      "id": "white-knife-mouth",
+      "subjects": [
+        "white-knife",
+        "white-harbor",
+        "the-bite"
+      ],
+      "kind": "hydrology",
+      "claim": "The White Knife reaches the sea at White Harbor, where the Wolf's Den was built to guard its mouth.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "White Knife",
+            "Wolf's Den"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "white-knife-course",
+      "subjects": [
+        "white-knife",
+        "winterfell"
+      ],
+      "kind": "hydrology",
+      "claim": "The White Knife flows generally south through the eastern North, east of Winterfell and the Kingsroad, to White Harbor.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Its source (perhaps a lake or hills north of Winterfell) is not asserted; verify on the map."
+    },
+    {
+      "id": "long-lake-position",
+      "subjects": [
+        "long-lake",
+        "winterfell"
+      ],
+      "kind": "position",
+      "claim": "The Long Lake lies in the interior of the North, north of Winterfell and south of the Gift, near the Kingsroad.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors",
+        "hydrology"
+      ],
+      "status": "draft",
+      "notes": "Recalled loosely from the map; verify. I recall no novel passage that describes it, and do not claim which side of the road it lies on or whether it drains to the White Knife."
+    },
+    {
+      "id": "long-lake-shape",
+      "subjects": [
+        "long-lake"
+      ],
+      "kind": "form",
+      "claim": "Draw the Long Lake long and narrow, following the map's outline.",
+      "label": "I",
+      "use": [
+        "hydrology"
+      ],
+      "status": "draft",
+      "basis": "The name, and the map outline as recalled. No size is given in the text."
+    },
+    {
+      "id": "bay-of-seals-position",
+      "subjects": [
+        "bay-of-seals",
+        "eastwatch",
+        "shivering-sea"
+      ],
+      "kind": "position",
+      "claim": "The Bay of Seals is an arm of the Shivering Sea off the North's north-east coast. Eastwatch-by-the-Sea stands on its shore at the end of the Wall.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "bay-of-seals-skagos",
+      "subjects": [
+        "bay-of-seals",
+        "skagos"
+      ],
+      "kind": "relative-position",
+      "claim": "Skagos lies at the mouth of the Bay of Seals.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "bay-of-ice-position",
+      "subjects": [
+        "bay-of-ice",
+        "north"
+      ],
+      "kind": "position",
+      "claim": "The Bay of Ice is a large bay on the North's north-west coast, lying west of the Wolfswood country and south-west of the Wall's western end.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "How the Wall's western end meets it (at Westwatch-by-the-Bridge?) is recalled loosely; verify on the map."
+    },
+    {
+      "id": "bay-of-ice-bear-island",
+      "subjects": [
+        "bay-of-ice",
+        "bear-island"
+      ],
+      "kind": "relative-position",
+      "claim": "Bear Island lies within the Bay of Ice.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "bay-of-ice-climate",
+      "subjects": [
+        "bay-of-ice"
+      ],
+      "kind": "climate",
+      "claim": "Show cold, grey open water at 298 AC. Sea ice fits the name but belongs to winter, not to the late summer of 298 AC.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The name, and the late-summer time slice (north-end-of-summer)."
+    },
+    {
+      "id": "the-bite-position",
+      "subjects": [
+        "the-bite",
+        "white-harbor",
+        "the-neck"
+      ],
+      "kind": "position",
+      "claim": "The Bite is a broad bay on the east coast between the North and the Vale's Fingers, east of the Neck. White Harbor stands on it.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "the-bite-sisters",
+      "subjects": [
+        "the-bite"
+      ],
+      "kind": "position",
+      "claim": "The Three Sisters, with Sisterton on Sweetsister, are islands in the Bite. Davos lands there on his way to White Harbor in ADWD.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos I",
+          "find": [
+            "Sisterton",
+            "Sweetsister"
+          ]
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "bear-island-position",
+      "subjects": [
+        "bear-island",
+        "bay-of-ice",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "Bear Island lies off the North's north-west coast in the Bay of Ice, far north-west of Winterfell.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "bear-island",
+        "dir": "nw"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "bear-island-mormont",
+      "subjects": [
+        "bear-island"
+      ],
+      "kind": "state-298",
+      "claim": "Bear Island is the seat of House Mormont. In ADWD its young lady, Lyanna, answers Stannis that Bear Island recognises only a Stark King in the North.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Jon I",
+          "find": [
+            "Bear Island"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The letter may be read in ADWD Jon II. The Mormont seat holds at 298 AC; the letter itself is later."
+    },
+    {
+      "id": "bear-island-terrain",
+      "subjects": [
+        "bear-island"
+      ],
+      "kind": "vegetation",
+      "claim": "Model a rugged, heavily wooded island of pine and hardwood with a modest timber-built seat; no grand stone castle.",
+      "label": "I",
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "basis": "The name and the Mormont bear, and the impression the books give of a poor, hardy island house. No physical description of the island is recalled."
+    },
+    {
+      "id": "skagos-position",
+      "subjects": [
+        "skagos",
+        "bay-of-seals",
+        "winterfell"
+      ],
+      "kind": "relative-position",
+      "claim": "Skagos is a large island off the North's north-east coast at the mouth of the Bay of Seals, far north-east of Winterfell.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "winterfell",
+        "to": "skagos",
+        "dir": "ne"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "skagos-people",
+      "subjects": [
+        "skagos"
+      ],
+      "kind": "state-298",
+      "claim": "Skagos is a wild isle whose people are reputed to be cannibals who ride unicorns. In ADWD Lord Wyman sends Davos there to bring back Rickon Stark.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos IV",
+          "find": [
+            "Skagos",
+            "unicorns"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The cannibal and unicorn reputation may be voiced in another chapter or in TWOIAF; verify."
+    },
+    {
+      "id": "skagos-terrain",
+      "subjects": [
+        "skagos"
+      ],
+      "kind": "form",
+      "claim": "Model a rocky, rugged, mountainous island with little farmland.",
+      "label": "I",
+      "use": [
+        "terrain",
+        "look"
+      ],
+      "status": "draft",
+      "basis": "Its reputation as a savage, isolated isle and the map's large landmass. No relief description is recalled."
+    }
+  ]
+}

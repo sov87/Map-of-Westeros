@@ -7,6 +7,7 @@ import { Arch, archReach } from './archetypes.ts';
 import { RING, RNOM, TRUNK_LIMB, TRUNK_RING, WHOLE } from './clumpGeometry.ts';
 import { HERO_TRUNK } from './authored.ts';
 import { createFoamTexture, FOAM_PERIOD } from './foamTexture.ts';
+import { SOFT_GPU } from '../dev/softgpu.ts';
 import { Kind, KIND_COUNT, LORIEN_TRUNK_K } from './placement.ts';
 
 type N = TslNode;
@@ -236,7 +237,8 @@ export function createFoliageMaterial(world: World, opts: FoliageOptions = {}): 
   // trunk radius / horizontal crown radius (mallorns: stout silver columns)
   const trunkK = perKind({ [Kind.Lorien]: LORIEN_TRUNK_K, [Kind.Hedge]: 0 }, 0.085);
 
-  const foam = taps > 0 ? (opts.foam ?? createFoamTexture(world.spec.json.seeds.world + 71)) : null;
+  // (software-GPU smoke renders skip the 3D foam texture: src/dev/softgpu.ts)
+  const foam = taps > 0 && !SOFT_GPU.on ? (opts.foam ?? createFoamTexture(world.spec.json.seeds.world + 71)) : null;
 
   // ---------------------------------------------------------------- vertex
   const uvI = vec2(iA.x.sub(spec.xMin).div(spec.width), iA.y.sub(spec.zMin).div(spec.depth));

@@ -7,6 +7,7 @@
  *  - baked world (when a bake exists; MOW_WORLD_DIR overrides data/baked): monotone baked river levels,
  *    no stamp moves a river channel / lake ("rivers win", onRiver allowlist), per-landmark stamp loss to
  *    the river guard, the bake's hydro geometry gates (report.json) — see world.ts
+ *  - the canon ledger (tools/canon/ledger.ts): schema, IP limits on verbatim text, every subject covered
  *  - the film (S5, tools/check/film.ts): timeline / route structure always; the compiled film (determinism,
  *    length, shot-list sync, sampled camera / light / label gates) on the baked world
  * Exit code 1 on any error.
@@ -78,7 +79,11 @@ for (const d of defs) {
   }
   if (!/annotation:\s*\{/.test(src)) errors.push(`landmarks: ${d} has no annotation`);
 }
-for (const p of landmarks) if (!defPlaces.has(p.id)) (p.tier === 'A' ? errors : warnings).push(`landmarks: place ${p.id} (tier ${p.tier}) has no definition`);
+// a Tier-A place must have its definition once the shot list schedules it (Phase 3 builds them)
+const shotlisted = new Set(Object.keys((JSON.parse(readFileSync(join(ROOT, 'data/tour/shotlist.json'), 'utf8')) as { landmarks: Record<string, unknown> }).landmarks ?? {}));
+const unbuilt = landmarks.filter((p) => !defPlaces.has(p.id));
+for (const p of unbuilt) if (p.tier === 'A' && shotlisted.has(p.id)) errors.push(`landmarks: place ${p.id} (tier A, in the shot list) has no definition`);
+if (unbuilt.length) warnings.push(`landmarks: ${unbuilt.length} placed landmark(s) have no definition yet: ${unbuilt.map((p) => p.id).join(', ')}`);
 
 // ------------------------------------------------------------------ assets vs credits
 const credits = readFileSync(join(ROOT, 'CREDITS.md'), 'utf8').toLowerCase();
@@ -126,6 +131,14 @@ if (hasBake(baked)) {
 } else warnings.push(`baked world: no bake at ${baked} — river / stamp checks skipped`);
 for (const [list, add] of Object.entries(await (await import('./gates.ts')).checkGates())) ({ errors, warnings, info: bakedInfo })[list as 'errors' | 'warnings' | 'info'].push(...add); // S4 W2-D light gates
 for (const [list, add] of Object.entries(await (await import('./effects.ts')).checkEffects())) ({ errors, warnings, info: bakedInfo })[list as 'errors' | 'warnings' | 'info'].push(...add); // S4 W3-E effects
+{
+  // the canon ledger (data/canon): schema, IP limits, coverage of every planned subject
+  const { loadLedger, validateLedger } = await import('../canon/ledger.ts');
+  const c = validateLedger(loadLedger(ROOT));
+  errors.push(...c.errors);
+  warnings.push(...c.warnings);
+  bakedInfo.push(...c.info);
+}
 for (const [list, add] of Object.entries(await (await import('./film.ts')).checkFilmStructure())) ({ errors, warnings, info: bakedInfo })[list as 'errors' | 'warnings' | 'info'].push(...add); // S5 film (structure; the compiled film in world.ts)
 
 // ------------------------------------------------------------------ report

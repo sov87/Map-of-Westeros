@@ -1,0 +1,1444 @@
+{
+  "group": "south",
+  "version": 1,
+  "notes": "Drafted from recall without the corpus; every citation is unverified until pnpm canon --verify.",
+  "claims": [
+    {
+      "id": "crownlands-around-blackwater-bay",
+      "subjects": ["crownlands", "blackwater-bay", "kings-landing", "dragonstone", "kingswood"],
+      "kind": "position",
+      "claim": "The crownlands, the lands ruled directly by the crown, wrap around Blackwater Bay: King's Landing at its inner end, Crackclaw Point on the north shore, the kingswood to the south, and Driftmark and Dragonstone off its mouth.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Region borders are not drawn sharply on the maps; the kingswood straddles the crownlands-stormlands line. LOIAF sheet name recalled loosely."
+    },
+    {
+      "id": "crownlands-hub-of-roads",
+      "subjects": ["crownlands", "kings-landing", "blackwater-rush", "goldroad", "roseroad"],
+      "kind": "relative-position",
+      "claim": "King's Landing is the hub of the crownlands: the Blackwater Rush reaches the bay there, and the kingsroad, the Goldroad and the Roseroad all start from the city.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "stormlands-extent",
+      "subjects": ["stormlands", "shipbreaker-bay", "sea-of-dorne", "dornish-marches", "kingswood"],
+      "kind": "position",
+      "claim": "The stormlands fill the south-east of Westeros between the crownlands and Dorne: the Narrow Sea and Shipbreaker Bay on the east, the Sea of Dorne on the south, and the Dornish Marches along the south-western edge.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate reading of the map from memory."
+    },
+    {
+      "id": "stormlands-storms",
+      "subjects": ["stormlands", "shipbreaker-bay"],
+      "kind": "climate",
+      "claim": "The region is named for the violent storms that blow in off the Narrow Sea and batter its coast, worst of all around Shipbreaker Bay.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Shipbreaker Bay"] }],
+      "use": ["look"],
+      "status": "draft"
+    },
+    {
+      "id": "reach-extent",
+      "subjects": ["reach", "mander", "oldtown", "the-arbor", "dornish-marches", "red-mountains"],
+      "kind": "position",
+      "claim": "The Reach spans the south-west of Westeros: the broad basin of the Mander and the Sunset Sea coast down to Oldtown and the Arbor, with the westerlands and riverlands to the north and the Dornish Marches and Red Mountains to the south.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "reach-fertility",
+      "subjects": ["reach"],
+      "kind": "vegetation",
+      "claim": "The Reach is the most fertile land of the Seven Kingdoms: a green country of fields, orchards, vineyards and flowers whose harvests feed much of the realm.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["Highgarden"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Brief's 'Reach's fertility' confirmed from the companion book. The novels echo it (King's Landing's food supply depends on the Reach once the Tyrells side with the Lannisters) but no chapter is pinned here."
+    },
+    {
+      "id": "dorne-extent",
+      "subjects": ["dorne", "red-mountains", "sea-of-dorne"],
+      "kind": "position",
+      "claim": "Dorne is the southernmost land of Westeros, shut off from the Reach and the stormlands by the Red Mountains, with the Summer Sea along its southern coast and the Sea of Dorne off its north-eastern shore.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "dorne-three-peoples",
+      "subjects": ["dorne", "dornish-desert", "red-mountains"],
+      "kind": "form",
+      "claim": "Dornishmen are reckoned in three kinds: salty ones along the coasts, sandy ones in the deserts and long river valleys, and stony ones holding the passes and heights of the Red Mountains.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Soiled Knight", "find": ["salty Dornishmen", "stony Dornishmen"] }],
+      "use": ["look", "terrain"],
+      "status": "draft",
+      "notes": "Recalled as Arys Oakheart's reflection; it could sit in another AFFC Dorne chapter."
+    },
+    {
+      "id": "dorne-climate",
+      "subjects": ["dorne", "dornish-desert"],
+      "kind": "climate",
+      "claim": "Dorne is the hottest and driest part of the realm: red mountains, sand and scrub, with water and good land found mostly along its few rivers and its coasts.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Greenblood"] }],
+      "use": ["look", "terrain"],
+      "status": "draft"
+    },
+
+    {
+      "id": "kings-landing-river-mouth",
+      "subjects": ["kings-landing", "blackwater-rush", "blackwater-bay"],
+      "kind": "position",
+      "claim": "King's Landing lies on the north bank of the Blackwater Rush where the river enters Blackwater Bay; Stannis's army, marching up from the south, had to cross the river to reach the city.",
+      "label": "T",
+      "cites": [
+        { "book": "ACOK", "chapter": "Davos III", "find": ["south bank", "Blackwater Rush"] },
+        { "book": "LOIAF", "chapter": "Westeros" }
+      ],
+      "value": { "from": "blackwater-rush", "to": "kings-landing", "dir": "n" },
+      "use": ["vectors", "hydrology", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Brief confirmed (city at the mouth of the Blackwater Rush). value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "kings-landing-three-hills",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "The city spreads over three hills: Aegon's High Hill under the Red Keep, Visenya's Hill under the Great Sept of Baelor, and Rhaenys's Hill under the ruined Dragonpit.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Catelyn IV", "find": ["Aegon's High Hill", "Great Sept of Baelor", "Dragonpit"] }],
+      "value": { "count": 3 },
+      "use": ["terrain", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Brief confirmed. Recalled from Catelyn's first view of the city as her ship comes upriver. No hill heights are given; only the name 'Aegon's High Hill' implies it is the highest."
+    },
+    {
+      "id": "kings-landing-red-keep-towers",
+      "subjects": ["kings-landing"],
+      "kind": "count",
+      "claim": "The Red Keep has seven great drum towers capped with iron ramparts, a massive forbidding barbican, vaulted halls and covered bridges, barracks, dungeons and granaries, and thick curtain walls set with archers' nests.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Catelyn IV", "find": ["seven huge drum towers", "barbican"] }],
+      "value": { "count": 7 },
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "count = the drum towers. No wall or tower heights are given in the passage."
+    },
+    {
+      "id": "kings-landing-red-keep-stone",
+      "subjects": ["kings-landing"],
+      "kind": "material",
+      "claim": "The Red Keep is built of pale red stone, which gives the castle its name.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Catelyn IV", "find": ["pale red stone"] }],
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-maegors-holdfast",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "At the heart of the Red Keep stands Maegor's Holdfast, a fortress within the castle, cut off by a deep dry moat whose bottom bristles with iron spikes and reached by a drawbridge.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Sansa V", "find": ["Maegor's Holdfast", "spikes"] }],
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Content confident, chapter not: the holdfast and its spiked dry moat recur in several Sansa chapters (AGOT and ACOK); Sansa V is the Blackwater night in the holdfast."
+    },
+    {
+      "id": "kings-landing-red-keep-tunnels",
+      "subjects": ["kings-landing", "blackwater-rush"],
+      "kind": "form",
+      "claim": "Cellars and tunnels run under the Red Keep's hill: the Targaryen dragon skulls are stored in a cellar there, and Arya, lost in the passages, eventually comes out by the river below the castle.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Arya III", "find": ["skulls"] }],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Where she comes out (a drain or sewer mouth near the river) is recalled loosely."
+    },
+    {
+      "id": "kings-landing-red-keep-above-river",
+      "subjects": ["kings-landing", "blackwater-rush"],
+      "kind": "relative-position",
+      "claim": "The Red Keep stands on high ground directly above the river: Sansa escapes by climbing down the steep cliff below the castle to a small boat waiting on the water.",
+      "label": "T",
+      "cites": [{ "book": "ASOS", "chapter": "Sansa V", "find": ["cliff", "Dontos"] }],
+      "use": ["terrain", "vectors", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "The escape after Joffrey's wedding feast; the cliff's height is not given."
+    },
+    {
+      "id": "kings-landing-great-sept",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "The Great Sept of Baelor crowns Visenya's Hill and is topped by seven crystal towers.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Catelyn IV", "find": ["seven crystal towers"] }],
+      "value": { "count": 7 },
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Brief confirmed. A great central dome is also described in later books (AFFC, Tywin's lying in state) but is not pinned here."
+    },
+    {
+      "id": "kings-landing-great-sept-plaza",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "Marble steps rise from a broad plaza to the Great Sept's doors; a statue of Baelor the Blessed stands in the plaza, and Arya climbs onto its plinth to see her father brought out on the steps.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Arya V", "find": ["Baelor the Blessed"] }],
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-great-sept-standing",
+      "subjects": ["kings-landing"],
+      "kind": "state-298",
+      "claim": "The Great Sept is intact at 298 AC and still standing at the end of A Dance with Dragons, where Cersei's walk of atonement begins on its steps; the novels never destroy it.",
+      "label": "T",
+      "cites": [{ "book": "ADWD", "chapter": "Cersei II", "find": ["Great Sept", "Baelor"] }],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Brief confirmed. Its destruction belongs to the HBO show only, which this ledger excludes."
+    },
+    {
+      "id": "kings-landing-dragonpit-ruin",
+      "subjects": ["kings-landing"],
+      "kind": "state-298",
+      "claim": "At 298 AC the Dragonpit on Rhaenys's Hill is a ruin: its great dome has fallen in and its bronze doors have stayed shut since the last dragons died.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Catelyn IV", "find": ["Dragonpit", "bronze doors"] }],
+      "use": ["look", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Corrects the brief's 'roofless': the text speaks of a collapsed dome over a still-standing ruin; how much of the dome came down should be taken from TPATQ / FAB."
+    },
+    {
+      "id": "kings-landing-dragonpit-dome-fall",
+      "subjects": ["kings-landing"],
+      "kind": "state-298",
+      "claim": "The Dragonpit's dome came down in 130 AC, during the Dance of the Dragons, when a mob stormed the pit and the dragons kept there died in the fighting.",
+      "label": "T",
+      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Dragonpit", "Dreamfyre"] }],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Background to the 298 AC ruin; also told in FAB. TPATQ has no chapter headings, so the novella title stands in for the chapter."
+    },
+    {
+      "id": "kings-landing-mud-gate",
+      "subjects": ["kings-landing", "blackwater-rush"],
+      "kind": "position",
+      "claim": "The Mud Gate opens onto the riverfront and docks below the city walls; it is the main target of Stannis's attack from the river.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Tyrion XIV", "find": ["Mud Gate"] }],
+      "use": ["vectors", "landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Chapter recalled as the Battle of the Blackwater from Tyrion's side (XIII or XIV). Wall heights and a gate count are not claimed: none recalled with confidence."
+    },
+    {
+      "id": "kings-landing-blackwater-battle",
+      "subjects": ["kings-landing", "blackwater-rush", "blackwater-bay"],
+      "kind": "state-after",
+      "claim": "Not at 298 AC: for the Battle of the Blackwater (299 AC) Tyrion raises two new towers at the river mouth with a great chain between them, and wildfire burns Stannis's fleet and much of the riverfront.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Davos III", "find": ["chain", "wildfire"] }],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Build ignores: no chain towers and no burned waterfront at 298 AC."
+    },
+    {
+      "id": "kings-landing-tower-of-the-hand-burned",
+      "subjects": ["kings-landing"],
+      "kind": "state-after",
+      "claim": "Not at 298 AC: after Tywin's death (300 AC) Cersei has the pyromancers burn the Tower of the Hand; at 298 AC it stands in the Red Keep as the Hand's residence, where Eddard Stark will live.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Cersei IV", "find": ["Tower of the Hand"] }],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Chapter is a guess among the early AFFC Cersei chapters."
+    },
+
+    {
+      "id": "dragonstone-island-position",
+      "subjects": ["dragonstone", "blackwater-bay", "kings-landing"],
+      "kind": "relative-position",
+      "claim": "Dragonstone is a small island in the Narrow Sea off the mouth of Blackwater Bay, out to the east of King's Landing.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "kings-landing", "to": "dragonstone", "dir": "e", "approx": true },
+      "use": ["vectors", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "No sailing time between King's Landing and Dragonstone is recalled from the text, so none is claimed. value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "dragonstone-shaped-stone",
+      "subjects": ["dragonstone"],
+      "kind": "material",
+      "claim": "The castle's walls and figures were not cut and laid block by block but shaped in place by Valyrian craft, so its dragons and gargoyles are part of the fabric of the walls.",
+      "label": "I",
+      "basis": "Dragonstone was the Valyrians' westernmost outpost before the Doom (FAB, Aegon's Conquest), and ACOK's Prologue describes whole buildings formed as dragons; the books are believed to credit Valyrian stone-shaping, but no passage is pinned here.",
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft"
+    },
+    {
+      "id": "dragonstone-dragon-shaped-buildings",
+      "subjects": ["dragonstone"],
+      "kind": "form",
+      "claim": "The castle's buildings are themselves dragons: the Great Hall is a dragon lying on its belly, entered through its open jaws, and the kitchens a coiled dragon that vents oven smoke and steam through its nostrils.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["nostrils", "Great Hall"] }],
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Brief confirmed ('castle shaped like dragons'). Recalled from Maester Cressen's walk through the castle."
+    },
+    {
+      "id": "dragonstone-towers",
+      "subjects": ["dragonstone"],
+      "kind": "form",
+      "claim": "Its towers are dragons crouched on the walls or rearing to take wing; among them are the Windwyrm and the Sea Dragon Tower, which looks out to sea, while smaller dragons frame the lesser gates.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["Windwyrm", "Sea Dragon Tower"] }],
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft"
+    },
+    {
+      "id": "dragonstone-gargoyles",
+      "subjects": ["dragonstone"],
+      "kind": "form",
+      "claim": "Gargoyles and grotesque stone beasts crowd Dragonstone's walls and battlements.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["gargoyles"] }],
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Stone claws serving as torch sconces are also recalled from the same passage, with less confidence; not claimed."
+    },
+    {
+      "id": "dragonstone-stone-drum",
+      "subjects": ["dragonstone"],
+      "kind": "form",
+      "claim": "The central keep is the Stone Drum, named for the booming of its old walls in a storm; the Chamber of the Painted Table is at its top, a round room with tall windows facing the four quarters.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["Stone Drum", "Painted Table"] }],
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "The round four-windowed chamber is recalled with less confidence than the keep's name and its origin."
+    },
+    {
+      "id": "dragonstone-painted-table",
+      "subjects": ["dragonstone"],
+      "kind": "length",
+      "claim": "The Painted Table, made for Aegon before the Conquest, is a great wooden slab cut to the outline of Westeros, more than fifty feet long and about half as wide at its widest, every bay and cape sawn out.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["Painted Table"] }],
+      "value": { "ft": 50, "approx": true },
+      "use": ["landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Text says 'more than' fifty feet. An interior prop only."
+    },
+    {
+      "id": "dragonstone-stannis-298",
+      "subjects": ["dragonstone"],
+      "kind": "state-298",
+      "claim": "At the opening of A Game of Thrones Stannis Baratheon has left the small council and withdrawn to Dragonstone, his seat.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Eddard IV", "find": ["Dragonstone"] }],
+      "use": ["landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Recalled from Ned's first small council, where Stannis's absence is explained."
+    },
+    {
+      "id": "dragonmont-above-castle",
+      "subjects": ["dragonmont", "dragonstone"],
+      "kind": "relative-position",
+      "claim": "The Dragonmont is the mountain of Dragonstone island, rising behind and above the castle.",
+      "label": "T",
+      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Dragonmont"] }],
+      "use": ["terrain", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Also in FAB. A mention in the main novels (ACOK Prologue or the ASOS Davos chapters) is likely but not pinned."
+    },
+    {
+      "id": "dragonmont-smoking",
+      "subjects": ["dragonmont"],
+      "kind": "form",
+      "claim": "The Dragonmont is a smoking, fire-filled mountain; in the Targaryen era wild dragons such as the Cannibal and the Grey Ghost laired in its caves and on its slopes.",
+      "label": "T",
+      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Cannibal", "Grey Ghost", "Dragonmont"] }],
+      "use": ["terrain", "look", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Brief's 'smoking Dragonmont' confirmed from TPATQ / FAB; no height is given anywhere I recall."
+    },
+
+    {
+      "id": "storms-end-on-shipbreaker-bay",
+      "subjects": ["storms-end", "shipbreaker-bay"],
+      "kind": "position",
+      "claim": "Storm's End stands on the shore of Shipbreaker Bay, close enough that the boy Stannis watched from its walls as his parents' ship, the Windproud, broke apart in the bay.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["Windproud", "Shipbreaker Bay"] }],
+      "use": ["vectors", "landmark:storms-end"],
+      "status": "draft",
+      "notes": "Brief confirmed ('above Shipbreaker Bay'). Recalled as Maester Cressen's memory; whether Robert watched too is not claimed."
+    },
+    {
+      "id": "storms-end-curtain-wall-height",
+      "subjects": ["storms-end"],
+      "kind": "height",
+      "claim": "The great curtain wall of Storm's End is a hundred feet high.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["hundred feet high"] }],
+      "value": { "ft": 100 },
+      "use": ["terrain", "landmark:storms-end"],
+      "status": "draft",
+      "notes": "Recalled from Catelyn's first sight of the castle at the parley with Stannis."
+    },
+    {
+      "id": "storms-end-curtain-wall-form",
+      "subjects": ["storms-end"],
+      "kind": "form",
+      "claim": "The curtain wall has neither arrow slits nor posterns; it slopes and curves all the way round, its stones fitted so closely that the wind finds no gap to work into.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["postern"] }],
+      "use": ["look", "landmark:storms-end"],
+      "status": "draft"
+    },
+    {
+      "id": "storms-end-curtain-wall-thickness",
+      "subjects": ["storms-end"],
+      "kind": "length",
+      "claim": "The wall is said to be forty feet thick at its thinnest and close to eighty on the seaward side: two courses of stone with a core of sand and rubble between them.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["sand and rubble", "seaward side"] }],
+      "value": { "ft": 40, "approx": true },
+      "use": ["landmark:storms-end"],
+      "status": "draft",
+      "notes": "value = thinnest section; the seaward side is near 80 ft. The text hedges ('said to be'), hence approx."
+    },
+    {
+      "id": "storms-end-single-drum-tower",
+      "subjects": ["storms-end"],
+      "kind": "count",
+      "claim": "Storm's End has only one tower, a colossal drum tower inside the wall that is granary, barracks, feast hall and lord's dwelling at once, and has no windows on the side facing the sea.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["drum tower", "granary"] }],
+      "value": { "count": 1 },
+      "use": ["look", "landmark:storms-end"],
+      "status": "draft",
+      "notes": "Brief confirmed (massive curtain wall and one great drum tower). The tower's height is not given."
+    },
+    {
+      "id": "storms-end-spiked-fist",
+      "subjects": ["storms-end"],
+      "kind": "form",
+      "claim": "Heavy battlements crown the drum tower, so that from a distance the castle looks like a spiked fist raised on an arm.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["spiked fist"] }],
+      "use": ["look", "landmark:storms-end"],
+      "status": "draft"
+    },
+    {
+      "id": "storms-end-sheltered-ward",
+      "subjects": ["storms-end"],
+      "kind": "form",
+      "claim": "Stables, kitchens and yards lie inside the curtain wall, sheltered there from wind and waves.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["stables"] }],
+      "use": ["landmark:storms-end"],
+      "status": "draft"
+    },
+    {
+      "id": "storms-end-sea-cave",
+      "subjects": ["storms-end", "shipbreaker-bay"],
+      "kind": "form",
+      "claim": "A sea passage runs in under the castle and can be reached at night by a small boat: Davos used it to smuggle food in during the siege of Robert's Rebellion and later rows Melisandre there.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Davos II", "find": ["onions"] }],
+      "use": ["landmark:storms-end"],
+      "status": "draft",
+      "notes": "Recalled loosely (a cave under the cliff with a portcullis at its inner end); confirm the wording before using it as geometry."
+    },
+    {
+      "id": "storms-end-durran-legend",
+      "subjects": ["storms-end", "stormlands"],
+      "kind": "name",
+      "claim": "Legend says Durran Godsgrief raised Storm's End as the seventh of his castles after the gods' storms threw down the first six; some tales credit Brandon the Builder with its making.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Durran", "Godsgrief"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "The legend is also told in the novels; no chapter pinned."
+    },
+    {
+      "id": "storms-end-from-kings-landing",
+      "subjects": ["storms-end", "kings-landing", "kingswood"],
+      "kind": "relative-position",
+      "claim": "Storm's End lies south-east of King's Landing, beyond the kingswood, on the western side of Shipbreaker Bay.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "kings-landing", "to": "storms-end", "dir": "se", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "No distance or travel time between the two is recalled from the text. value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "storms-end-siege",
+      "subjects": ["storms-end"],
+      "kind": "state-after",
+      "claim": "Not at 298 AC: Stannis besieges Storm's End in 299 AC; it yields after its castellan Ser Cortnay Penrose is killed, without its walls being stormed.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Davos II", "find": ["Cortnay Penrose"] }],
+      "use": ["landmark:storms-end"],
+      "status": "draft",
+      "notes": "Logged so the build knows no later damage applies to the 298 AC fabric; the surrender itself is reported in a later chapter."
+    },
+
+    {
+      "id": "summerhall-ruin-298",
+      "subjects": ["summerhall"],
+      "kind": "state-298",
+      "claim": "At 298 AC Summerhall, once a Targaryen summer palace, is a burned-out ruin; Prince Rhaegar, born there on the day of the disaster, used to go back alone and sleep in its ruined hall.",
+      "label": "T",
+      "cites": [
+        { "book": "ASOS", "chapter": "Daenerys I", "find": ["Summerhall"] },
+        { "book": "TWOIAF", "chapter": "Aegon V", "find": ["Summerhall"] }
+      ],
+      "use": ["look", "landmark:summerhall"],
+      "status": "draft",
+      "notes": "Brief confirmed. The Rhaegar passage is recalled as Ser Barristan's account to Daenerys; the chapter is a low-confidence guess (could be a later ASOS Daenerys chapter)."
+    },
+    {
+      "id": "summerhall-tragedy",
+      "subjects": ["summerhall"],
+      "kind": "state-298",
+      "claim": "The palace was destroyed in 259 AC by a great fire during a royal gathering there, in which King Aegon V and others died; the fire is tied to an attempt to bring back dragons, but the account is left vague.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Aegon V", "find": ["Summerhall"] }],
+      "use": ["landmark:summerhall"],
+      "status": "draft"
+    },
+    {
+      "id": "summerhall-location",
+      "subjects": ["summerhall", "dornish-marches", "stormlands"],
+      "kind": "position",
+      "claim": "Summerhall lies inland in the southern stormlands, in the Dornish Marches north of the Red Mountains.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "landmark:summerhall"],
+      "status": "draft",
+      "notes": "Placement recalled loosely; check against LOIAF."
+    },
+    {
+      "id": "summerhall-from-storms-end",
+      "subjects": ["summerhall", "storms-end"],
+      "kind": "relative-position",
+      "claim": "Summerhall lies well inland, west to south-west of Storm's End.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "storms-end", "to": "summerhall", "dir": "w", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'; direction approximate."
+    },
+
+    {
+      "id": "highgarden-on-the-mander",
+      "subjects": ["highgarden", "mander", "reach"],
+      "kind": "position",
+      "claim": "Highgarden stands beside the Mander in the heart of the Reach, downstream (west) of Bitterbridge, where the Roseroad crosses the river.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "hydrology", "landmark:highgarden"],
+      "status": "draft",
+      "notes": "Which bank it stands on is not recalled; check on LOIAF."
+    },
+    {
+      "id": "highgarden-hill",
+      "subjects": ["highgarden", "mander"],
+      "kind": "position",
+      "claim": "The castle rises on a hill overlooking the Mander, surrounded by gardens, orchards and fields of flowers.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["Highgarden"] }],
+      "use": ["terrain", "look", "landmark:highgarden"],
+      "status": "draft",
+      "notes": "Brief's 'on a hill above the Mander' kept as a companion-book claim; the novels give almost no physical description of Highgarden."
+    },
+    {
+      "id": "highgarden-ring-walls",
+      "subjects": ["highgarden"],
+      "kind": "count",
+      "claim": "Highgarden is enclosed by three concentric ring walls.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["Highgarden"] }],
+      "value": { "count": 3 },
+      "use": ["look", "landmark:highgarden"],
+      "status": "draft",
+      "notes": "Brief asked to check the ring count: three is recalled from TWOIAF, not from the novels; verify."
+    },
+    {
+      "id": "highgarden-white-stone",
+      "subjects": ["highgarden"],
+      "kind": "material",
+      "claim": "Highgarden's walls and towers are of white stone.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["Highgarden"] }],
+      "use": ["look", "landmark:highgarden"],
+      "status": "draft",
+      "notes": "From the companion text and its illustration as recalled; not a novel statement."
+    },
+    {
+      "id": "highgarden-briar-maze",
+      "subjects": ["highgarden"],
+      "kind": "form",
+      "claim": "Between two of the ring walls lies a great maze of thorny briar hedges, a pleasure for guests and a snare for any attacker who breaks through the outer wall.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["briar"] }],
+      "use": ["look", "landmark:highgarden"],
+      "status": "draft",
+      "notes": "Brief's briar maze confirmed from TWOIAF; recalled as lying between the outer and middle walls."
+    },
+    {
+      "id": "highgarden-oldtown-relative",
+      "subjects": ["highgarden", "oldtown"],
+      "kind": "relative-position",
+      "claim": "Oldtown lies south of Highgarden (somewhat west), on the coast at the head of the Whispering Sound.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "highgarden", "to": "oldtown", "dir": "s", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "highgarden-kings-landing-relative",
+      "subjects": ["highgarden", "kings-landing", "roseroad"],
+      "kind": "relative-position",
+      "claim": "Highgarden lies far to the south-west of King's Landing, reached from the capital by the Roseroad.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "kings-landing", "to": "highgarden", "dir": "sw", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "No travel time recalled. value: 'to' lies 'dir' of 'from'."
+    },
+
+    {
+      "id": "oldtown-position",
+      "subjects": ["oldtown", "honeywine", "whispering-sound"],
+      "kind": "position",
+      "claim": "Oldtown stands at the head of the Whispering Sound, where the Honeywine flows into it, on the south-western coast of the Reach.",
+      "label": "T",
+      "cites": [
+        { "book": "AFFC", "chapter": "Samwell V", "find": ["Whispering Sound", "Honeywine"] },
+        { "book": "LOIAF", "chapter": "Westeros" }
+      ],
+      "use": ["vectors", "hydrology", "landmark:oldtown"],
+      "status": "draft"
+    },
+    {
+      "id": "oldtown-hightower-battle-isle",
+      "subjects": ["oldtown"],
+      "kind": "position",
+      "claim": "The Hightower, seat of House Hightower, rises from Battle Isle in Oldtown's harbour.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Samwell V", "find": ["Battle Isle", "Hightower"] }],
+      "use": ["vectors", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Brief confirmed. Recalled from Sam's arrival by sea."
+    },
+    {
+      "id": "oldtown-battle-isle-river-mouth",
+      "subjects": ["oldtown", "honeywine"],
+      "kind": "relative-position",
+      "claim": "Battle Isle lies where the Honeywine meets the Sound, so the Hightower stands over both the city and its harbour.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Oldtown", "find": ["Battle Isle"] }],
+      "use": ["vectors", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Recalled; approximate."
+    },
+    {
+      "id": "oldtown-hightower-beacon",
+      "subjects": ["oldtown", "whispering-sound"],
+      "kind": "form",
+      "claim": "A great beacon fire burns at the top of the Hightower, seen far out to sea and guiding ships up the Sound.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Samwell V", "find": ["beacon"] }],
+      "use": ["look", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Brief confirmed (beacon). The AFFC Prologue may mention the beacon too."
+    },
+    {
+      "id": "oldtown-hightower-height",
+      "subjects": ["oldtown"],
+      "kind": "height",
+      "claim": "The Hightower is reckoned the tallest tower in Westeros.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Oldtown", "find": ["Hightower"] }],
+      "use": ["terrain", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Brief asked for the height: no figure can be confirmed from recall, so none is claimed; any comparison with the Wall's height is unverified and left out."
+    },
+    {
+      "id": "oldtown-hightower-base",
+      "subjects": ["oldtown"],
+      "kind": "material",
+      "claim": "The Hightower's lowest level is an ancient square fortress of seamless black stone whose builders are unknown; the later tower was raised on top of it.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Oldtown", "find": ["Battle Isle"] }],
+      "use": ["look", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Recalled; the 'square' shape is the least certain detail."
+    },
+    {
+      "id": "oldtown-citadel",
+      "subjects": ["oldtown", "honeywine"],
+      "kind": "position",
+      "claim": "The Citadel, where maesters are trained, stretches along the Honeywine within the city; its ravenry stands on the Isle of Ravens, an island in the river.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Prologue", "find": ["Isle of Ravens", "Citadel"] }],
+      "use": ["vectors", "landmark:oldtown"],
+      "status": "draft",
+      "notes": "Brief confirmed ('the Citadel along the Honeywine')."
+    },
+    {
+      "id": "oldtown-starry-sept",
+      "subjects": ["oldtown"],
+      "kind": "form",
+      "claim": "Oldtown holds the Starry Sept, the seat of the High Septon before the Faith moved to the Great Sept of Baelor in King's Landing.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Samwell V", "find": ["Starry Sept"] }],
+      "use": ["landmark:oldtown"],
+      "status": "draft",
+      "notes": "Chapter is a low-confidence guess; the Starry Sept is named in several AFFC chapters."
+    },
+
+    {
+      "id": "starfall-torrentine-mouth",
+      "subjects": ["starfall", "torrentine"],
+      "kind": "position",
+      "claim": "Starfall stands where the Torrentine reaches the Summer Sea, on the coast of western Dorne.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "hydrology", "landmark:starfall"],
+      "status": "draft",
+      "notes": "Brief confirmed (at the mouth of the Torrentine)."
+    },
+    {
+      "id": "starfall-island",
+      "subjects": ["starfall", "torrentine"],
+      "kind": "position",
+      "claim": "The castle is built on an island at the place where the Torrentine flows into the sea.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Starfall", "Torrentine"] }],
+      "use": ["vectors", "landmark:starfall"],
+      "status": "draft",
+      "notes": "Recalled with moderate confidence; check whether the island is in the river mouth or just offshore."
+    },
+    {
+      "id": "starfall-palestone-sword",
+      "subjects": ["starfall"],
+      "kind": "form",
+      "claim": "Starfall's great tower is called the Palestone Sword.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Palestone Sword"] }],
+      "use": ["look", "landmark:starfall"],
+      "status": "draft",
+      "notes": "Brief asked to check: the name is confirmed from recall of the companion material and may also occur in ASOS (Edric Dayne on Lady Ashara's death). Pale stone is implied by the name only; no height is given."
+    },
+    {
+      "id": "starfall-falling-star",
+      "subjects": ["starfall"],
+      "kind": "name",
+      "claim": "Legend holds that the first Daynes built Starfall where a falling star came to earth, and that the sword Dawn was forged from the star's heart.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Dawn", "Starfall"] }],
+      "use": ["look"],
+      "status": "draft"
+    },
+    {
+      "id": "starfall-by-the-sea",
+      "subjects": ["starfall"],
+      "kind": "position",
+      "claim": "Edric Dayne tells Arya that Starfall is his family's seat, that Eddard Stark brought the sword Dawn back there, and that his aunt Lady Ashara threw herself into the sea.",
+      "label": "T",
+      "cites": [{ "book": "ASOS", "chapter": "Arya VIII", "find": ["Starfall", "Ashara"] }],
+      "use": ["landmark:starfall"],
+      "status": "draft",
+      "notes": "Chapter is a low-confidence guess among the ASOS Arya chapters with Edric Dayne. Supports a castle set right on the sea."
+    },
+    {
+      "id": "starfall-west-of-sunspear",
+      "subjects": ["starfall", "sunspear", "dorne"],
+      "kind": "relative-position",
+      "claim": "Starfall lies near the western end of Dorne's southern coast, far to the west of Sunspear.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "sunspear", "to": "starfall", "dir": "w", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+
+    {
+      "id": "sunspear-position",
+      "subjects": ["sunspear", "greenblood", "dorne"],
+      "kind": "position",
+      "claim": "Sunspear, seat of House Martell, stands on the coast of south-eastern Dorne, east of the mouth of the Greenblood.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "landmark:sunspear"],
+      "status": "draft",
+      "notes": "Approximate; which sea its walls face is not claimed."
+    },
+    {
+      "id": "sunspear-old-palace",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "The Martells' castle at Sunspear is the Old Palace; its chief towers are the Tower of the Sun and the slender Spear Tower.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["Old Palace", "Tower of the Sun", "Spear Tower"] }],
+      "use": ["look", "landmark:sunspear"],
+      "status": "draft",
+      "notes": "Brief confirmed (Old Palace, Tower of the Sun, Spear Tower). Recalled from Areo Hotah's arrival at Sunspear with Prince Doran."
+    },
+    {
+      "id": "sunspear-tower-of-the-sun",
+      "subjects": ["sunspear"],
+      "kind": "material",
+      "claim": "The Tower of the Sun is crowned by a great dome of gold and leaded glass.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["leaded glass"] }],
+      "use": ["look", "landmark:sunspear"],
+      "status": "draft"
+    },
+    {
+      "id": "sunspear-spear-tower-height",
+      "subjects": ["sunspear"],
+      "kind": "height",
+      "claim": "The Spear Tower is a hundred and fifty feet tall and is topped by a spear of gilded steel that adds about thirty feet more.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["gilded steel"] }],
+      "value": { "ft": 150 },
+      "use": ["terrain", "look", "landmark:sunspear"],
+      "status": "draft",
+      "notes": "value = the tower without the spear (about 180 ft with it). Both figures are recalled and must be confirmed."
+    },
+    {
+      "id": "sunspear-winding-walls",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "The Winding Walls, long serpentine ramparts, enclose the Old Palace and the Shadow City huddled below it, a tangle of crooked alleys, hidden courts and noisy bazaars.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["Winding Walls", "shadow city"] }],
+      "use": ["look", "landmark:sunspear"],
+      "status": "draft",
+      "notes": "Brief confirmed (Winding Walls round the Shadow City)."
+    },
+    {
+      "id": "sunspear-threefold-gate",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "At the Threefold Gate three gates are set one behind another in a straight line, so a visitor can pass directly to the Old Palace without threading the Shadow City's lanes.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["Threefold Gate"] }],
+      "value": { "count": 3 },
+      "use": ["look", "landmark:sunspear"],
+      "status": "draft"
+    },
+    {
+      "id": "sunspear-mud-brick-quarter",
+      "subjects": ["sunspear"],
+      "kind": "material",
+      "claim": "Beyond the Winding Walls sprawls a poorer quarter of mud-brick shops and windowless hovels.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["mud-brick", "hovels"] }],
+      "use": ["look", "landmark:sunspear"],
+      "status": "draft",
+      "notes": "Low confidence on how the quarters are named and bounded: recalled as the sand city outside the walls and the Shadow City within them."
+    },
+    {
+      "id": "sunspear-spear-tower-cell",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "Near the top of the Spear Tower is a furnished chamber in which Arianne is confined after her failed plot.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Princess in the Tower", "find": ["Spear Tower"] }],
+      "use": ["landmark:sunspear"],
+      "status": "draft"
+    },
+
+    {
+      "id": "water-gardens-pools-fountains",
+      "subjects": ["water-gardens", "sunspear"],
+      "kind": "form",
+      "claim": "The Water Gardens are a Martell palace near Sunspear laid out around pools and fountains; at the start of AFFC Prince Doran lives there, watching from his chair on a terrace.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["blood oranges", "fountains"] }],
+      "use": ["look", "landmark:water-gardens"],
+      "status": "draft",
+      "notes": "Brief confirmed (pools and fountains of the Martells' palace near Sunspear)."
+    },
+    {
+      "id": "water-gardens-children",
+      "subjects": ["water-gardens"],
+      "kind": "form",
+      "claim": "Children of lords and of commoners alike are welcome to splash and swim in the pools.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["pools"] }],
+      "use": ["look", "landmark:water-gardens"],
+      "status": "draft"
+    },
+    {
+      "id": "water-gardens-pink-marble",
+      "subjects": ["water-gardens"],
+      "kind": "material",
+      "claim": "The terraces, pools and walks of the Water Gardens are of pink marble.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["pink marble"] }],
+      "use": ["look", "landmark:water-gardens"],
+      "status": "draft",
+      "notes": "Material recalled with moderate confidence; confirm before it drives the look."
+    },
+    {
+      "id": "water-gardens-blood-oranges",
+      "subjects": ["water-gardens"],
+      "kind": "vegetation",
+      "claim": "Blood orange trees grow beside the pools; overripe fruit has fallen onto the terrace when the chapter opens.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["blood oranges"] }],
+      "use": ["look", "landmark:water-gardens"],
+      "status": "draft"
+    },
+    {
+      "id": "water-gardens-built-for-daenerys",
+      "subjects": ["water-gardens"],
+      "kind": "form",
+      "claim": "Prince Maron Martell built the Water Gardens for his bride Daenerys Targaryen, sister of King Daeron II, after the marriage that brought Dorne into the realm.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Water Gardens", "Maron"] }],
+      "use": ["landmark:water-gardens"],
+      "status": "draft",
+      "notes": "May also be told in the AFFC Dorne chapters; not pinned."
+    },
+    {
+      "id": "water-gardens-near-sunspear",
+      "subjects": ["water-gardens", "sunspear"],
+      "kind": "relative-position",
+      "claim": "The Water Gardens lie a short way from Sunspear along the coast.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "landmark:water-gardens"],
+      "status": "draft",
+      "notes": "Approximate; direction not claimed. No distance or travel time is recalled from the text, though Doran's party travels between the two by litter within one AFFC chapter."
+    },
+
+    {
+      "id": "red-mountains-position",
+      "subjects": ["red-mountains", "dorne", "reach", "stormlands"],
+      "kind": "position",
+      "claim": "The Red Mountains run west to east across northern Dorne, a wall between Dorne and the Reach and stormlands to the north.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["terrain", "vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "red-mountains-passes",
+      "subjects": ["red-mountains", "dornish-marches"],
+      "kind": "form",
+      "claim": "Two main passes cross the range: the Prince's Pass in the west, coming down from the Reach, and the Boneway in the east, coming down from the stormlands.",
+      "label": "M",
+      "cites": [
+        { "book": "LOIAF", "chapter": "Westeros" },
+        { "book": "TWOIAF", "chapter": "Dorne", "find": ["Prince's Pass", "Boneway"] }
+      ],
+      "use": ["terrain", "vectors"],
+      "status": "draft",
+      "notes": "Brief confirmed (Boneway and Prince's Pass)."
+    },
+    {
+      "id": "red-mountains-pass-holds",
+      "subjects": ["red-mountains"],
+      "kind": "position",
+      "claim": "Mountain holds guard the passes: Skyreach of House Fowler watches the Prince's Pass, and Yronwood, whose lords are Wardens of the Stone Way, commands the Boneway from the Dornish side.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Skyreach", "Yronwood", "Stone Way"] }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Recalled; check the castle placements against LOIAF."
+    },
+    {
+      "id": "dornish-marches-position",
+      "subjects": ["dornish-marches", "stormlands", "reach", "red-mountains"],
+      "kind": "position",
+      "claim": "The Dornish Marches are the hilly, mountainous borderlands of the southern stormlands and Reach along the northern flank of the Red Mountains, long contested with Dorne.",
+      "label": "M",
+      "cites": [
+        { "book": "LOIAF", "chapter": "Westeros" },
+        { "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Dornish Marches"] }
+      ],
+      "use": ["terrain", "vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "dornish-marches-holds",
+      "subjects": ["dornish-marches", "summerhall"],
+      "kind": "position",
+      "claim": "Marcher seats include Nightsong of House Caron and Blackhaven of House Dondarrion, and the ruin of Summerhall lies in the marches.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Nightsong", "Blackhaven"] }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+
+    {
+      "id": "kingswood-position",
+      "subjects": ["kingswood", "kings-landing", "storms-end", "blackwater-rush"],
+      "kind": "position",
+      "claim": "The kingswood is a great forest south of the Blackwater Rush, stretching across the country between King's Landing and Storm's End.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "look"],
+      "status": "draft"
+    },
+    {
+      "id": "kingswood-royal-hunt",
+      "subjects": ["kingswood"],
+      "kind": "vegetation",
+      "claim": "The kingswood is royal hunting ground with wild boar; King Robert is mortally wounded by a boar while hunting there.",
+      "label": "T",
+      "cites": [{ "book": "AGOT", "chapter": "Eddard XIII", "find": ["kingswood", "boar"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Chapter recalled as Robert's deathbed scene; to be confirmed."
+    },
+    {
+      "id": "kingswood-brotherhood",
+      "subjects": ["kingswood"],
+      "kind": "vegetation",
+      "claim": "In the reign of Aerys II the forest sheltered the Kingswood Brotherhood, an outlaw band finally broken by a royal force; Jaime Lannister was knighted during that campaign.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Aerys II", "find": ["Kingswood Brotherhood"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Also remembered by Jaime in the novels; not pinned."
+    },
+    {
+      "id": "rainwood-position",
+      "subjects": ["rainwood", "stormlands", "sea-of-dorne"],
+      "kind": "position",
+      "claim": "The rainwood is a forest in the south-east of the stormlands, covering much of Cape Wrath above the Sea of Dorne.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors", "look"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "rainwood-wet-forest",
+      "subjects": ["rainwood"],
+      "kind": "vegetation",
+      "claim": "The rainwood is a dense, very wet forest, lusher and darker than the kingswood.",
+      "label": "I",
+      "basis": "Its name, its place on the storm-beaten south-eastern coast (see stormlands-storms) and Cape Wrath's reputation as wild country; no detailed text description is pinned.",
+      "use": ["look"],
+      "status": "draft"
+    },
+    {
+      "id": "rainwood-golden-company",
+      "subjects": ["rainwood", "stormlands"],
+      "kind": "position",
+      "claim": "In A Dance with Dragons the Golden Company comes ashore on Cape Wrath and moves through the rainwood to seize castles of the stormlands.",
+      "label": "T",
+      "cites": [{ "book": "ADWD", "chapter": "The Griffin Reborn", "find": ["rainwood", "Cape Wrath"] }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Recalled; confirm that 'rainwood' occurs in this chapter."
+    },
+    {
+      "id": "dornish-desert-extent",
+      "subjects": ["dornish-desert", "dorne", "red-mountains", "greenblood"],
+      "kind": "position",
+      "claim": "Much of Dorne's interior south of the Red Mountains is sandy desert; settled, watered land clings to the Greenblood and the coasts.",
+      "label": "C",
+      "cites": [
+        { "book": "TWOIAF", "chapter": "Dorne", "find": ["Greenblood"] },
+        { "book": "LOIAF", "chapter": "Westeros" }
+      ],
+      "use": ["look", "terrain"],
+      "status": "draft"
+    },
+    {
+      "id": "dornish-desert-shandystone",
+      "subjects": ["dornish-desert"],
+      "kind": "position",
+      "claim": "Out in the sands stands Shandystone, an abandoned castle where Arianne's party halts on its secret ride with Myrcella.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Queenmaker", "find": ["Shandystone"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Its direction from Sunspear and the Greenblood is not claimed."
+    },
+
+    {
+      "id": "blackwater-rush-course",
+      "subjects": ["blackwater-rush", "crownlands", "blackwater-bay"],
+      "kind": "hydrology",
+      "claim": "The Blackwater Rush flows broadly eastward across the crownlands and empties into Blackwater Bay at King's Landing.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft",
+      "notes": "Its source and upper course are not claimed."
+    },
+    {
+      "id": "blackwater-rush-crossing",
+      "subjects": ["blackwater-rush", "kings-landing"],
+      "kind": "hydrology",
+      "claim": "At King's Landing the river is a real barrier: Stannis's plan needs his fleet to clear the river so that his army can be carried over from the south bank.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Davos III", "find": ["south bank"] }],
+      "use": ["hydrology"],
+      "status": "draft",
+      "notes": "No width is claimed: none recalled with confidence."
+    },
+    {
+      "id": "mander-course",
+      "subjects": ["mander", "reach", "highgarden"],
+      "kind": "hydrology",
+      "claim": "The Mander is the great river of the Reach, flowing broadly west past Bitterbridge and Highgarden to the Sunset Sea.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "mander-shield-islands",
+      "subjects": ["mander", "reach"],
+      "kind": "hydrology",
+      "claim": "The Shield Islands lie off the mouth of the Mander, guarding the river's entrance from the sea.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Reaver", "find": ["Shield Islands", "Mander"] }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "mander-ironborn-raids",
+      "subjects": ["mander"],
+      "kind": "state-after",
+      "claim": "Not at 298 AC: in 300 AC the ironborn seize the Shield Islands and raid up the Mander.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Reaver", "find": ["Shield Islands"] }],
+      "use": ["hydrology"],
+      "status": "draft"
+    },
+    {
+      "id": "honeywine-through-oldtown",
+      "subjects": ["honeywine", "oldtown", "whispering-sound"],
+      "kind": "hydrology",
+      "claim": "The Honeywine runs through Oldtown to the Whispering Sound, with the Citadel's buildings along its banks and on islands in the stream.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Prologue", "find": ["Honeywine"] }],
+      "use": ["hydrology", "landmark:oldtown"],
+      "status": "draft"
+    },
+    {
+      "id": "honeywine-course",
+      "subjects": ["honeywine", "reach"],
+      "kind": "hydrology",
+      "claim": "The Honeywine is a modest river of the southern Reach, coming down from the north to reach the sea at Oldtown.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft",
+      "notes": "Upper course recalled loosely."
+    },
+    {
+      "id": "torrentine-course",
+      "subjects": ["torrentine", "red-mountains", "starfall"],
+      "kind": "hydrology",
+      "claim": "The Torrentine flows south out of the western Red Mountains to the Summer Sea, reaching it at Starfall.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "torrentine-west-of-greenblood",
+      "subjects": ["torrentine", "greenblood", "dornish-desert"],
+      "kind": "relative-position",
+      "claim": "The Torrentine lies far to the west of the Greenblood, with the Dornish sands between the two rivers.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "greenblood", "to": "torrentine", "dir": "w", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "greenblood-course",
+      "subjects": ["greenblood", "dorne", "sunspear"],
+      "kind": "hydrology",
+      "claim": "The Greenblood gathers tributaries from the Dornish interior and flows south-east to the Summer Sea, reaching it at Planky Town, west of Sunspear.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["hydrology", "vectors"],
+      "status": "draft",
+      "notes": "Tributaries recalled as the Vaith and the Scourge; not claimed."
+    },
+    {
+      "id": "greenblood-orphans",
+      "subjects": ["greenblood"],
+      "kind": "hydrology",
+      "claim": "River folk called the orphans of the Greenblood, descended from the Rhoynar, live on poleboats on the river; Arianne's party heads for the river to meet one of their boats.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Queenmaker", "find": ["orphans of the Greenblood", "poleboat"] }],
+      "use": ["hydrology", "look"],
+      "status": "draft",
+      "notes": "Shows the river is navigable by shallow poled boats."
+    },
+    {
+      "id": "greenblood-lifeline",
+      "subjects": ["greenblood", "dornish-desert"],
+      "kind": "vegetation",
+      "claim": "As Dorne's chief river, the Greenblood waters a green ribbon of farmland through the dry country.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Greenblood"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Brief's 'the Greenblood's role' confirmed in outline."
+    },
+
+    {
+      "id": "blackwater-bay-kings-landing",
+      "subjects": ["blackwater-bay", "kings-landing", "blackwater-rush"],
+      "kind": "position",
+      "claim": "King's Landing sits at the inner end of Blackwater Bay where the Blackwater Rush flows in; Stannis's fleet sails in from the bay to force the river mouth.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Davos III", "find": ["Blackwater Bay"] }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "blackwater-bay-shape",
+      "subjects": ["blackwater-bay", "dragonstone"],
+      "kind": "form",
+      "claim": "The bay opens eastward onto the Narrow Sea between Crackclaw Point to the north and Massey's Hook to the south, with Driftmark and Dragonstone lying off its mouth.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "blackwater-bay-shipbreaker-relative",
+      "subjects": ["blackwater-bay", "shipbreaker-bay"],
+      "kind": "relative-position",
+      "claim": "Shipbreaker Bay lies south of Blackwater Bay, the two separated by Massey's Hook.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "blackwater-bay", "to": "shipbreaker-bay", "dir": "s", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "shipbreaker-bay-shape",
+      "subjects": ["shipbreaker-bay", "storms-end", "tarth"],
+      "kind": "form",
+      "claim": "Shipbreaker Bay opens east onto the Narrow Sea between Massey's Hook to the north and Cape Wrath to the south; Storm's End is on its western shore and Tarth lies off its southern entrance.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "shipbreaker-bay-wrecks",
+      "subjects": ["shipbreaker-bay"],
+      "kind": "climate",
+      "claim": "As its name says, the bay is notorious for storms that drive ships to their ruin.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Shipbreaker Bay"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "The Windproud's loss (storms-end-on-shipbreaker-bay) is the novels' example."
+    },
+    {
+      "id": "whispering-sound-approach",
+      "subjects": ["whispering-sound", "oldtown"],
+      "kind": "position",
+      "claim": "Ships bound for Oldtown come in from the open sea up the Whispering Sound, as Sam's ship does at the end of A Feast for Crows.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "Samwell V", "find": ["Whispering Sound"] }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "whispering-sound-shape",
+      "subjects": ["whispering-sound", "the-arbor"],
+      "kind": "form",
+      "claim": "The Sound is a long, narrow arm of the sea reaching inland from the Sunset Sea to Oldtown, with the Arbor lying off its seaward end.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "sea-of-dorne-position",
+      "subjects": ["sea-of-dorne", "dorne", "stormlands"],
+      "kind": "position",
+      "claim": "The Sea of Dorne lies between the north-eastern coast of Dorne and the stormlands' Cape Wrath, opening eastward toward the Stepstones and the Narrow Sea.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    },
+    {
+      "id": "sea-of-dorne-shores",
+      "subjects": ["sea-of-dorne", "rainwood"],
+      "kind": "relative-position",
+      "claim": "Its northern shore is the rainwood-covered coast of Cape Wrath; its southern shore is the north-eastern coast of Dorne.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "tarth-position",
+      "subjects": ["tarth", "stormlands", "storms-end", "shipbreaker-bay"],
+      "kind": "relative-position",
+      "claim": "Tarth is an island in the Narrow Sea off the stormlands, east to south-east of Storm's End, separated from Cape Wrath by the Straits of Tarth.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "storms-end", "to": "tarth", "dir": "se", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "tarth-sapphire-isle",
+      "subjects": ["tarth"],
+      "kind": "name",
+      "claim": "Tarth is called the Sapphire Isle for the deep blue of the waters around it, not for any gems.",
+      "label": "T",
+      "cites": [{ "book": "ASOS", "chapter": "Jaime III", "find": ["Sapphire Isle"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Jaime plays on the name so the captors expect a ransom in sapphires; the explanation of the name may fall in a later Jaime chapter."
+    },
+    {
+      "id": "tarth-evenfall",
+      "subjects": ["tarth"],
+      "kind": "position",
+      "claim": "House Tarth rules the island from Evenfall Hall.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Stormlands", "find": ["Evenfall"] }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Its placement on the island is not claimed."
+    },
+    {
+      "id": "the-arbor-position",
+      "subjects": ["the-arbor", "reach", "oldtown"],
+      "kind": "relative-position",
+      "claim": "The Arbor is a large island off the south-western tip of the Reach, across the Redwyne Straits from the mainland and south-west of Oldtown.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "value": { "from": "oldtown", "to": "the-arbor", "dir": "sw", "approx": true },
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "the-arbor-vineyards",
+      "subjects": ["the-arbor"],
+      "kind": "vegetation",
+      "claim": "The Arbor is famous for its vineyards and wines and is the seat of House Redwyne, whose war fleet is among the strongest in the realm.",
+      "label": "C",
+      "cites": [{ "book": "TWOIAF", "chapter": "The Reach", "find": ["Arbor", "Redwyne"] }],
+      "use": ["look"],
+      "status": "draft",
+      "notes": "Arbor wine (gold and red) recurs throughout the novels; no single chapter is pinned."
+    },
+
+    {
+      "id": "goldroad-course",
+      "subjects": ["goldroad", "kings-landing", "crownlands", "reach"],
+      "kind": "position",
+      "claim": "The Goldroad runs west from King's Landing through the crownlands and the northern Reach into the westerlands, ending at Lannisport below Casterly Rock.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Course recalled in outline only; check its western end and river crossings on LOIAF."
+    },
+    {
+      "id": "goldroad-north-of-roseroad",
+      "subjects": ["goldroad", "roseroad", "kings-landing"],
+      "kind": "relative-position",
+      "claim": "From King's Landing the Goldroad heads west while the Roseroad heads south-west, so the Goldroad lies north of the Roseroad across the Reach.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft"
+    },
+    {
+      "id": "roseroad-bitterbridge",
+      "subjects": ["roseroad", "mander"],
+      "kind": "position",
+      "claim": "The Roseroad crosses the Mander at Bitterbridge, where Renly's great host is camped when Catelyn comes to treat with him.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Catelyn II", "find": ["Bitterbridge", "roseroad"] }],
+      "use": ["vectors", "hydrology"],
+      "status": "draft"
+    },
+    {
+      "id": "roseroad-course",
+      "subjects": ["roseroad", "kings-landing", "highgarden", "oldtown", "reach"],
+      "kind": "position",
+      "claim": "The Roseroad runs south-west from King's Landing across the Reach, over the Mander at Bitterbridge and on toward Highgarden and Oldtown.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Brief confirmed in outline; whether the road passes through Highgarden itself or only near it needs checking on LOIAF. No travel times recalled."
+    },
+    {
+      "id": "ocean-road-course",
+      "subjects": ["ocean-road", "reach"],
+      "kind": "position",
+      "claim": "The Ocean Road runs south from Lannisport near the Sunset Sea coast, linking the westerlands with the Reach and heading toward Highgarden.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Southern end recalled loosely; no novel passage describing the road is recalled."
+    },
+    {
+      "id": "ocean-road-and-goldroad",
+      "subjects": ["ocean-road", "goldroad"],
+      "kind": "relative-position",
+      "claim": "The Ocean Road and the Goldroad both leave Lannisport: the Goldroad east toward King's Landing, the Ocean Road south along the coast.",
+      "label": "M",
+      "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
+      "use": ["vectors"],
+      "status": "draft",
+      "notes": "Approximate."
+    }
+  ]
+}

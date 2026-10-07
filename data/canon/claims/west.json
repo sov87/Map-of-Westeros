@@ -1,0 +1,2938 @@
+{
+  "group": "west",
+  "version": 1,
+  "notes": "Drafted from recall without the corpus; every citation is unverified until pnpm canon --verify.",
+  "claims": [
+    {
+      "id": "iron-islands-principal-isles",
+      "subjects": [
+        "iron-islands",
+        "pyke"
+      ],
+      "kind": "count",
+      "claim": "The Iron Islands are counted as seven principal isles (Pyke, Great Wyk, Old Wyk, Harlaw, Saltcliffe, Blacktyde and Orkmont) with many lesser rocks and islets around them.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Iron Islands",
+          "find": [
+            "Great Wyk",
+            "Orkmont",
+            "Blacktyde"
+          ]
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "count": 7
+      },
+      "use": [
+        "vectors",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Seven is the conventional count of the major isles. Remote Lonely Light, far out to the west, and small isles are additional and not counted here. Section title recalled, not verified."
+    },
+    {
+      "id": "iron-islands-great-wyk-largest",
+      "subjects": [
+        "iron-islands",
+        "pyke"
+      ],
+      "kind": "form",
+      "claim": "Great Wyk is the largest of the isles. Pyke, the Greyjoy seat, is the political centre but not the biggest island.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Iron Islands",
+          "find": [
+            "Great Wyk"
+          ]
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The relative size of Great Wyk is recalled with good confidence. No areas are given."
+    },
+    {
+      "id": "iron-islands-position",
+      "subjects": [
+        "iron-islands",
+        "ironmans-bay",
+        "riverlands",
+        "westerlands"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the isles lie off the west coast of Westeros. They are west of the riverlands across Ironman's Bay and north-west of the westerlands coast.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "riverlands",
+        "to": "iron-islands",
+        "dir": "w"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "iron-islands-land",
+      "subjects": [
+        "iron-islands"
+      ],
+      "kind": "vegetation",
+      "claim": "The isles are stony, wind-scoured and grey, with thin, poor soil that supports little farming. The ironborn live by the sea (fishing, trade and raiding) and by their mines of iron, tin and lead.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Iron Islands",
+          "find": [
+            "ironborn"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "The barren, stony character also comes through in ACOK Theon I (Theon's return to Pyke). The list of ores is recalled with moderate confidence. Treat it as flavour for the look, not a hard constraint."
+    },
+    {
+      "id": "iron-islands-naggas-bones",
+      "subjects": [
+        "iron-islands"
+      ],
+      "kind": "form",
+      "claim": "On Old Wyk the kingsmoot meets on a grassy hill where huge petrified ribs, called Nagga's bones and said to be a sea dragon's, rise from the ground like the pillars of a ruined hall.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "The Drowned Man",
+          "find": [
+            "Nagga's",
+            "Old Wyk"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "This kingsmoot chapter is told by Aeron. The bones are a small feature, a candidate for a detail prop only."
+    },
+    {
+      "id": "riverlands-character",
+      "subjects": [
+        "riverlands",
+        "trident"
+      ],
+      "kind": "vegetation",
+      "claim": "The riverlands are rich, well-watered lowland farm country, laced by the Trident's forks and their tributaries and thick with castles, holdfasts, villages and septs.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Riverlands",
+          "find": [
+            "Trident"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "The novels show the same farmland, villages and mills along the roads (Arya's and Brienne's journeys in ACOK, ASOS and AFFC), but that is mostly war-damaged after 298. See riverlands-war-damage."
+    },
+    {
+      "id": "riverlands-open-country",
+      "subjects": [
+        "riverlands"
+      ],
+      "kind": "form",
+      "claim": "The riverlands lack the mountain or sea ramparts of their neighbours. As largely open country they have been invaded and fought over by the surrounding kingdoms again and again.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Riverlands",
+          "find": [
+            "riverlands"
+          ]
+        }
+      ],
+      "use": [
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "The theme of a frequent battleground is recalled with confidence. The 'no natural defences' wording is a paraphrase of the gist, not a recalled sentence. Terrain use: keep the region low and rolling, with no ranges inside it."
+    },
+    {
+      "id": "riverlands-bounds",
+      "subjects": [
+        "riverlands",
+        "mountains-of-the-moon",
+        "westerlands-hills",
+        "ironmans-bay"
+      ],
+      "kind": "position",
+      "claim": "On the maps the riverlands run from the Neck in the north to the crownlands in the south. The Mountains of the Moon and the Bay of Crabs lie east, the westerlands hills west, and a stretch of coast on Ironman's Bay north-west.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The boundaries are approximate. The map draws no political borders; these follow the drawn landforms."
+    },
+    {
+      "id": "riverlands-whispering-wood",
+      "subjects": [
+        "riverlands",
+        "riverrun"
+      ],
+      "kind": "vegetation",
+      "claim": "The Whispering Wood, a forest cut by a narrow valley, lies in the western riverlands near Riverrun. Robb ambushed and captured Jaime there.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn X",
+          "find": [
+            "Whispering Wood"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The exact position relative to Riverrun (recalled as on the approach from the north) is not asserted. The battle itself is after the opening of AGOT, but the forest predates it."
+    },
+    {
+      "id": "riverlands-war-damage",
+      "subjects": [
+        "riverlands"
+      ],
+      "kind": "state-after",
+      "claim": "From late 298 AC the war burns riverlands villages, septs, mills and crops. By AFFC much farmland lies untended and the roads are haunted by broken men. The build ignores this ruin.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Brienne V",
+          "find": [
+            "broken men"
+          ]
+        },
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Septon Meribald's speech on broken men is recalled as being in this Brienne chapter. The ACOK cite stands for the burned villages that Gregor's raiders leave along the march to Harrenhal. Chapter numbers are best recollection."
+    },
+    {
+      "id": "vale-fertile",
+      "subjects": [
+        "vale",
+        "mountains-of-the-moon"
+      ],
+      "kind": "vegetation",
+      "claim": "Past the Bloody Gate the Vale opens as a green, fertile valley of rich black earth, with wide, slow rivers and many small lakes shining in the sun, walled in by mountains.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Bloody Gate",
+            "Gates of the Moon"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain",
+        "hydrology"
+      ],
+      "status": "draft",
+      "notes": "This is Catelyn's first view of the Vale from the pass. The wording is paraphrased. The detail of slow rivers and many small lakes is recalled with good confidence."
+    },
+    {
+      "id": "vale-bloody-gate",
+      "subjects": [
+        "vale",
+        "high-road",
+        "mountains-of-the-moon"
+      ],
+      "kind": "position",
+      "claim": "The high road enters the Vale through the Bloody Gate, a fortified narrow pass at the Vale's western approach held by the Knight of the Gate.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Bloody Gate",
+            "Knight of the Gate"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "look"
+      ],
+      "status": "draft",
+      "notes": "In 298 Ser Donnel Waynwood is the Knight of the Gate. No detailed plan of the gate's towers is asserted here."
+    },
+    {
+      "id": "vale-bounds",
+      "subjects": [
+        "vale",
+        "mountains-of-the-moon",
+        "narrow-sea"
+      ],
+      "kind": "position",
+      "claim": "On the maps the Vale lies east of and within the Mountains of the Moon, opening toward the narrow sea, with Gulltown and the Fingers on its coast.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "vale-winter-descent",
+      "subjects": [
+        "vale",
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "climate",
+      "claim": "Winter snow and ice make the climb up the Giant's Lance impassable, so the Lord of the Eyrie's household comes down each winter to the Gates of the Moon on the valley floor.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Alayne II",
+          "find": [
+            "Gates of the Moon",
+            "Mya"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The descent with Mya Stone is in an Alayne chapter of AFFC, recalled as the second. At 298 AC (late summer) the Eyrie is occupied, so no snow cover is implied for the build."
+    },
+    {
+      "id": "westerlands-mines",
+      "subjects": [
+        "westerlands",
+        "westerlands-hills",
+        "casterly-rock"
+      ],
+      "kind": "material",
+      "claim": "The westerlands are hill and mountain country, rich in gold and silver mines. That wealth is the root of House Lannister's power.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands",
+          "find": [
+            "Casterly Rock"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "westerlands-golden-tooth",
+      "subjects": [
+        "westerlands",
+        "westerlands-hills",
+        "river-road",
+        "riverlands"
+      ],
+      "kind": "position",
+      "claim": "The Golden Tooth, a castle on a mountain pass, guards the main way between the riverlands and the westerlands. Jaime's host came through it into the riverlands in 298.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands",
+          "find": [
+            "Golden Tooth"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "The AGOT war news (Jaime defeating Lords Vance and Piper near the Golden Tooth) also places the pass on the border, but the chapter is not recalled, so only the companion is cited."
+    },
+    {
+      "id": "westerlands-position",
+      "subjects": [
+        "westerlands",
+        "sunset-sea",
+        "casterly-rock"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the westerlands lie west of the riverlands, south of the Iron Islands and north of the Reach, with a long coast on the Sunset Sea where Casterly Rock and Lannisport stand.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "riverlands",
+        "to": "westerlands",
+        "dir": "w"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from'."
+    },
+    {
+      "id": "westerlands-hills-gold-mines",
+      "subjects": [
+        "westerlands-hills",
+        "westerlands"
+      ],
+      "kind": "material",
+      "claim": "Gold mines lie in the westerlands hills. Robb's western campaign seized mines at Castamere, Nunn's Deep and the Pendric Hills.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Catelyn II",
+          "find": [
+            "Nunn's Deep",
+            "Pendric Hills"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "The chapter is recalled as Robb's return to Riverrun with Jeyne Westerling. The same list may first appear in ACOK (Catelyn VII), so verify the chapter. The campaign is after 298 AC, but the mines predate it."
+    },
+    {
+      "id": "westerlands-hills-form",
+      "subjects": [
+        "westerlands-hills",
+        "westerlands"
+      ],
+      "kind": "form",
+      "claim": "Much of the westerlands is rugged hill country and low mountains, highest toward the riverlands border, with valleys and a lower coastal strip on the Sunset Sea.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands",
+          "find": [
+            "westerlands"
+          ]
+        }
+      ],
+      "use": [
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "No heights are given in any source recalled. The detail of the hills being highest toward the border is softened from memory, so treat it as approximate."
+    },
+    {
+      "id": "westerlands-hills-pass",
+      "subjects": [
+        "westerlands-hills",
+        "river-road",
+        "riverrun",
+        "casterly-rock"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the border hills are crossed at the Golden Tooth, which lies between Riverrun to the east and Lannisport to the west.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "riverrun",
+        "to": "casterly-rock",
+        "dir": "w",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Lannisport may lie south-west rather than due west of Riverrun. The direction is approximate."
+    },
+    {
+      "id": "westerlands-hills-headwaters",
+      "subjects": [
+        "westerlands-hills",
+        "red-fork",
+        "tumblestone"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the Red Fork and the Tumblestone rise in the hills on the westerlands–riverlands border and flow east into the riverlands.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The source areas are recalled loosely from the map. Check them against the traced river lines."
+    },
+    {
+      "id": "ironmans-bay-position",
+      "subjects": [
+        "ironmans-bay",
+        "iron-islands",
+        "riverlands"
+      ],
+      "kind": "position",
+      "claim": "On the maps Ironman's Bay is the stretch of sea between the Iron Islands and the riverlands' western coast, opening south toward the westerlands coast.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The exact placement of the bay's label relative to the isles is recalled loosely."
+    },
+    {
+      "id": "ironmans-bay-seagard",
+      "subjects": [
+        "ironmans-bay",
+        "riverlands",
+        "iron-islands"
+      ],
+      "kind": "position",
+      "claim": "Seagard, seat of House Mallister, stands on the riverlands coast of the bay and was built to guard that shore against ironborn raids.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Riverlands",
+          "find": [
+            "Seagard"
+          ]
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "the-twins-form",
+      "subjects": [
+        "the-twins",
+        "green-fork"
+      ],
+      "kind": "form",
+      "claim": "The Twins are two massive castles, near mirror images of each other, standing face to face on opposite banks of the Green Fork.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IX",
+          "find": [
+            "Twins",
+            "Green Fork"
+          ]
+        }
+      ],
+      "value": {
+        "count": 2
+      },
+      "use": [
+        "look",
+        "landmark:the-twins"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed: twin castles on either side of the Green Fork."
+    },
+    {
+      "id": "the-twins-bridge",
+      "subjects": [
+        "the-twins",
+        "green-fork"
+      ],
+      "kind": "form",
+      "claim": "A great stone bridge spans the river between the two castles, and a tower, the Water Tower, rises at the bridge's midpoint.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IX",
+          "find": [
+            "Water Tower"
+          ]
+        }
+      ],
+      "value": {
+        "count": 1
+      },
+      "use": [
+        "look",
+        "landmark:the-twins"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed: a bridge with a central tower. The count is of mid-bridge towers. The bridge's length and number of arches are not given in any text recalled."
+    },
+    {
+      "id": "the-twins-crossing-toll",
+      "subjects": [
+        "the-twins",
+        "green-fork"
+      ],
+      "kind": "state-298",
+      "claim": "Lord Walder Frey holds the crossing. His house has kept it, and taken a toll from all who pass, for about six hundred years.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IX",
+          "find": [
+            "Lord Walder"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-twins"
+      ],
+      "status": "draft",
+      "notes": "The six-hundred-year figure is recalled with fair confidence but is not used as a find key. It is not a physical constraint."
+    },
+    {
+      "id": "the-twins-only-crossing",
+      "subjects": [
+        "the-twins",
+        "green-fork"
+      ],
+      "kind": "hydrology",
+      "claim": "Around the Twins the Green Fork runs too deep and fast to ford, so the Frey bridge is the only way the northern host can cross without a long detour.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IX",
+          "find": [
+            "Green Fork"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "Robb's council discusses the need for the crossing in Catelyn VIII and IX. No distance to the next ford is asserted. Build use: model the Green Fork here as a broad, unfordable river."
+    },
+    {
+      "id": "the-twins-host-split",
+      "subjects": [
+        "the-twins",
+        "green-fork",
+        "riverrun",
+        "kingsroad"
+      ],
+      "kind": "relative-position",
+      "claim": "Robb's host comes down the east side of the Green Fork. At the Twins the horse crosses west toward Riverrun while the foot under Roose Bolton marches on south to face Tywin.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IX",
+          "find": [
+            "Riverrun",
+            "Roose Bolton"
+          ]
+        }
+      ],
+      "value": {
+        "from": "green-fork",
+        "to": "riverrun",
+        "dir": "w"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "value: 'to' lies 'dir' of 'from' (Riverrun is on the west side of the Green Fork). This agrees with realm claim kingsroad-twins-off-road (kingsroad on the east side)."
+    },
+    {
+      "id": "the-twins-position",
+      "subjects": [
+        "the-twins",
+        "green-fork",
+        "riverrun"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the Twins stand on the Green Fork in the northern riverlands, near the southern end of the Neck, well upstream of the forks' junction and north to north-east of Riverrun.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "riverrun",
+        "to": "the-twins",
+        "dir": "n",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The direction is approximate (between north and north-east). No leagues or days between the Twins and Riverrun are recalled from the text, so none are given."
+    },
+    {
+      "id": "riverrun-confluence",
+      "subjects": [
+        "riverrun",
+        "tumblestone",
+        "red-fork"
+      ],
+      "kind": "position",
+      "claim": "Riverrun stands where the Tumblestone flows into the Red Fork of the Trident, in the angle between the two rivers.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn X",
+          "find": [
+            "Tumblestone",
+            "Red Fork"
+          ]
+        },
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VI",
+          "find": [
+            "Tumblestone",
+            "Red Fork"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "hydrology",
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed. The AGOT description may fall in Catelyn XI instead; the AFFC siege chapter describes the same setting."
+    },
+    {
+      "id": "riverrun-moat-island",
+      "subjects": [
+        "riverrun",
+        "tumblestone",
+        "red-fork"
+      ],
+      "kind": "hydrology",
+      "claim": "On two sides the walls rise straight out of the rivers. On the third a deep moat can be flooded through sluice gates, and when it is full the castle becomes an island.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn X",
+          "find": [
+            "Riverrun"
+          ]
+        },
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VI",
+          "find": [
+            "moat"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "look",
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed: the moat makes it an island. The moat is man-made (dug by the Tullys' forebears). The sluice-gate detail is recalled with good confidence."
+    },
+    {
+      "id": "riverrun-moat-side",
+      "subjects": [
+        "riverrun",
+        "tumblestone",
+        "red-fork"
+      ],
+      "kind": "relative-position",
+      "claim": "Build assumption: the moat cuts across the castle's landward west side, and the eastern point of the castle faces the confluence.",
+      "label": "I",
+      "basis": "Both rivers flow in from the west and north-west and meet at Riverrun (riverrun-confluence, westerlands-hills-headwaters). A castle in the angle between them is closed by water on its north and south faces, leaving the upstream west side to be cut off by a dug moat.",
+      "value": {
+        "dir": "w",
+        "approx": true
+      },
+      "use": [
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "value: the moat's side of the castle. No text recalled names the moat's compass side. Revise if the corpus says otherwise."
+    },
+    {
+      "id": "riverrun-water-gate",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "form",
+      "claim": "A Water Gate lets boats pass from inside the castle straight out onto the river. Lord Hoster's funeral boat is pushed out through it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Catelyn IV",
+          "find": [
+            "Water Gate"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "The funeral is in 299 AC, but the gate predates it. The chapter is recalled as the funeral chapter (Catelyn IV); verify."
+    },
+    {
+      "id": "riverrun-wheel-tower",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "form",
+      "claim": "One of Riverrun's towers, the Wheel Tower, houses a great waterwheel turned by the river.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VI",
+          "find": [
+            "Wheel Tower"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "The name and the waterwheel are recalled with good confidence. The chapter is uncertain: it may be an ASOS Catelyn chapter or AFFC Jaime VII."
+    },
+    {
+      "id": "riverrun-position",
+      "subjects": [
+        "riverrun",
+        "the-twins",
+        "river-road"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps Riverrun lies in the western riverlands, south-west of the Twins and west of the Trident's forks, with the river road running east from it toward the kingsroad.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "the-twins",
+        "to": "riverrun",
+        "dir": "sw",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "This is the inverse of the-twins-position. Both are approximate, from about south to south-west."
+    },
+    {
+      "id": "riverrun-tully-seat",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "state-298",
+      "claim": "At 298 AC Riverrun is the seat of Lord Hoster Tully, Catelyn's ailing father, who is bedridden by the time she returns.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn XI",
+          "find": [
+            "Hoster"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:riverrun"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "riverrun-siege-after",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "state-after",
+      "claim": "In 300 AC Frey and Lannister forces besiege Riverrun, with camps, siege works and a gallows. It yields to Jaime without being stormed. The build ignores the siege works.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VI",
+          "find": [
+            "Edmure"
+          ]
+        },
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VII",
+          "find": [
+            "Blackfish"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "Jaime's siege in 298 (AGOT) is also after the opening moment and is ignored too. See tumblestone-divides-ground."
+    },
+    {
+      "id": "inn-at-the-crossroads-position",
+      "subjects": [
+        "inn-at-the-crossroads",
+        "kingsroad",
+        "river-road"
+      ],
+      "kind": "position",
+      "claim": "The inn stands at a crossroads on the kingsroad in the riverlands, where the river road from the west meets it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn V",
+          "find": [
+            "crossroads",
+            "Masha Heddle"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "landmark:inn-at-the-crossroads"
+      ],
+      "status": "draft",
+      "notes": "Brief partly confirmed: the kingsroad and river road junction is recalled from the text. The wording naming the river road is not used as a find key because the exact phrasing is unsure. See inn-at-the-crossroads-high-road for the third road."
+    },
+    {
+      "id": "inn-at-the-crossroads-high-road",
+      "subjects": [
+        "inn-at-the-crossroads",
+        "high-road",
+        "kingsroad"
+      ],
+      "kind": "position",
+      "claim": "Build assumption: the high road to the Vale branches east from the kingsroad at or close to the same crossroads.",
+      "label": "I",
+      "basis": "Catelyn's party leaves the inn with Tyrion (AGOT Catelyn V) and is next found on the high road, riding east into the Mountains of the Moon (AGOT Tyrion IV, Catelyn VI). Realm claim kingsroad-crossroads says the same. No sentence recalled makes the inn a three-road junction.",
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Brief not confirmed as text: 'where the Kingsroad meets the river road and the high road' is only half supported. The high-road branch may leave the kingsroad some way north of the inn. Check LOIAF."
+    },
+    {
+      "id": "inn-at-the-crossroads-keeper",
+      "subjects": [
+        "inn-at-the-crossroads"
+      ],
+      "kind": "state-298",
+      "claim": "In 298 AC the inn is kept by Masha Heddle. Its common room is big enough to hold Catelyn's party, other travellers and the men-at-arms of several river lords at once.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn V",
+          "find": [
+            "Masha Heddle"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:inn-at-the-crossroads"
+      ],
+      "status": "draft",
+      "notes": "The building's size, material and number of storeys are not recalled with confidence, so none are asserted."
+    },
+    {
+      "id": "inn-at-the-crossroads-tywin-camp",
+      "subjects": [
+        "inn-at-the-crossroads",
+        "green-fork",
+        "kingsroad"
+      ],
+      "kind": "relative-position",
+      "claim": "Later in AGOT Tywin's host camps around the inn, then marches north up the kingsroad to meet Roose Bolton's northern host near the Green Fork.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion VII",
+          "find": [
+            "crossroads"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion VIII",
+          "find": [
+            "Roose Bolton"
+          ]
+        }
+      ],
+      "value": {
+        "from": "inn-at-the-crossroads",
+        "to": "green-fork",
+        "dir": "n",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Tyrion brings the mountain clans down to his father at the inn where he was seized. The battle site is north of the inn but no distance is given."
+    },
+    {
+      "id": "inn-at-the-crossroads-relative",
+      "subjects": [
+        "inn-at-the-crossroads",
+        "harrenhal",
+        "gods-eye",
+        "trident"
+      ],
+      "kind": "relative-position",
+      "claim": "Build assumption: the crossroads lies north of the Gods Eye and Harrenhal, close to the Trident where the kingsroad crosses it.",
+      "label": "I",
+      "basis": "The kingsroad passes east of the Gods Eye and crosses the Trident north of it (gods-eye-position, trident-kingsroad-crossing). A junction with a road coming east along the Red Fork from Riverrun must therefore lie near the Trident, north of the lake.",
+      "value": {
+        "from": "harrenhal",
+        "to": "inn-at-the-crossroads",
+        "dir": "n",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Which bank of the Trident the inn stands on is not recalled and not asserted."
+    },
+    {
+      "id": "inn-at-the-crossroads-after",
+      "subjects": [
+        "inn-at-the-crossroads"
+      ],
+      "kind": "state-after",
+      "claim": "By AFFC Masha Heddle is dead and the inn is kept by orphaned children with Gendry working its forge. This later state is ignored.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Brienne VII",
+          "find": [
+            "Gendry",
+            "Willow"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:inn-at-the-crossroads"
+      ],
+      "status": "draft",
+      "notes": "Willow Heddle is recalled as Masha's niece. Any physical damage to the inn by then is not asserted."
+    },
+    {
+      "id": "trident-forks",
+      "subjects": [
+        "trident",
+        "green-fork",
+        "blue-fork",
+        "red-fork"
+      ],
+      "kind": "hydrology",
+      "claim": "The Trident is formed by three rivers, the Green Fork, the Blue Fork and the Red Fork, which join in the heart of the riverlands and flow on as one.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Riverlands",
+          "find": [
+            "Blue Fork",
+            "Green Fork"
+          ]
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The three fork names are used throughout the novels. Whether all three meet at one point or in two steps is not asserted. Follow the traced map."
+    },
+    {
+      "id": "trident-mouth",
+      "subjects": [
+        "trident"
+      ],
+      "kind": "hydrology",
+      "claim": "The Quiet Isle lies in the mouth of the Trident. At low tide it is reached on foot across mudflats, which are dangerous when the tide turns.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AFFC",
+          "chapter": "Brienne VI",
+          "find": [
+            "Quiet Isle"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "This shows a broad, tidal estuary. The Quiet Isle itself is not a modelled subject."
+    },
+    {
+      "id": "trident-course",
+      "subjects": [
+        "trident"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the joined Trident flows east from the forks' junction across the riverlands to the Bay of Crabs.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "dir": "e"
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "trident-kingsroad-crossing",
+      "subjects": [
+        "trident",
+        "kingsroad"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the kingsroad crosses the main stream of the Trident below the forks, on its way south from the Neck toward King's Landing.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The crossing is by ford: see realm claim kingsroad-trident-crossing (I, 'ruby ford')."
+    },
+    {
+      "id": "green-fork-course",
+      "subjects": [
+        "green-fork",
+        "the-twins"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the Green Fork flows south from the country below the Neck, past the Twins, to join the other forks.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "dir": "s"
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "green-fork-kingsroad-east",
+      "subjects": [
+        "green-fork",
+        "kingsroad"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the kingsroad runs south along the east side of the Green Fork, keeping that river between the road and Riverrun.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "green-fork",
+        "to": "kingsroad",
+        "dir": "e"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "This is consistent with the-twins-host-split (T)."
+    },
+    {
+      "id": "red-fork-course",
+      "subjects": [
+        "red-fork",
+        "riverrun",
+        "westerlands-hills"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the Red Fork rises in the border hills of the westerlands and flows east across the riverlands, past Riverrun where the Tumblestone joins it, to meet the other forks.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "dir": "e"
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "red-fork-navigable",
+      "subjects": [
+        "red-fork",
+        "riverrun"
+      ],
+      "kind": "hydrology",
+      "claim": "Below Riverrun the Red Fork carries small boats and river galleys. Brienne takes Jaime downriver from Riverrun in a skiff and a galley gives chase.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jaime I",
+          "find": [
+            "galley"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology"
+      ],
+      "status": "draft",
+      "notes": "The river is recalled as the Red Fork, but that name is not used as a find key. The voyage is in 299 AC and the river is unchanged."
+    },
+    {
+      "id": "blue-fork-course",
+      "subjects": [
+        "blue-fork",
+        "green-fork",
+        "red-fork"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the Blue Fork is the middle fork. It flows south-east from the north-western riverlands, between the Green Fork and the Red Fork, to join them.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "dir": "se",
+        "approx": true
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The Blue Fork appears in the text mostly by name. Its course is from map memory only."
+    },
+    {
+      "id": "tumblestone-divides-ground",
+      "subjects": [
+        "tumblestone",
+        "red-fork",
+        "riverrun"
+      ],
+      "kind": "hydrology",
+      "claim": "Around Riverrun the Tumblestone and the Red Fork split the ground into separate parts. Jaime's besieging host was divided into camps on different sides of the rivers that could not support one another.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn X",
+          "find": [
+            "Tumblestone"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "This is the geometry of the Battle of the Camps. The plan may be laid out in Catelyn IX rather than X. Build use: both rivers must be unfordable barriers close to the castle."
+    },
+    {
+      "id": "tumblestone-course",
+      "subjects": [
+        "tumblestone",
+        "riverrun"
+      ],
+      "kind": "hydrology",
+      "claim": "On the maps the Tumblestone comes down from the hills to the west and north-west and runs to Riverrun, where it ends in the Red Fork.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "dir": "se",
+        "approx": true
+      },
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "river-road-course",
+      "subjects": [
+        "river-road",
+        "riverrun",
+        "inn-at-the-crossroads",
+        "casterly-rock"
+      ],
+      "kind": "position",
+      "claim": "On the maps the river road runs west from the kingsroad crossroads to Riverrun, then on through the westerlands hills by the Golden Tooth toward Lannisport.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The western continuation to Lannisport is recalled from the map with moderate confidence."
+    },
+    {
+      "id": "river-road-follows-red-fork",
+      "subjects": [
+        "river-road",
+        "red-fork"
+      ],
+      "kind": "relative-position",
+      "claim": "Build assumption: between the crossroads and Riverrun the river road keeps near the Red Fork valley, which gives it its name.",
+      "label": "I",
+      "basis": "It links the kingsroad junction near the Trident to Riverrun on the Red Fork (inn-at-the-crossroads-position, river-road-course). The name implies it follows a river, and the Red Fork is the one joining those two points.",
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Which bank it runs on is not asserted."
+    },
+    {
+      "id": "high-road-route",
+      "subjects": [
+        "high-road",
+        "mountains-of-the-moon",
+        "vale"
+      ],
+      "kind": "position",
+      "claim": "The high road runs east from the riverlands up into the Mountains of the Moon and through them to the Bloody Gate, the entrance to the Vale.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "high road",
+            "Bloody Gate"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion IV",
+          "find": [
+            "high road"
+          ]
+        }
+      ],
+      "value": {
+        "dir": "e"
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "No length or number of days for the crossing is recalled reliably, so none is given."
+    },
+    {
+      "id": "high-road-clans",
+      "subjects": [
+        "high-road",
+        "mountains-of-the-moon"
+      ],
+      "kind": "state-298",
+      "claim": "In 298 AC the high road is dangerous. Mountain clans attack travellers, and Catelyn's party fights off an ambush on the way to the Vale.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion IV",
+          "find": [
+            "high road"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "harrenhal-lakeshore",
+      "subjects": [
+        "harrenhal",
+        "gods-eye"
+      ],
+      "kind": "position",
+      "claim": "Harrenhal stands on the shore of the Gods Eye. Gregor's captives are marched along the lake to reach it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal",
+            "Gods Eye"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (beside the Gods Eye). The arrival may be Arya VI. Realm claim slice-harrenhal-slagged cites Arya V as well."
+    },
+    {
+      "id": "harrenhal-north-shore",
+      "subjects": [
+        "harrenhal",
+        "gods-eye"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps Harrenhal sits on the northern shore of the Gods Eye, toward its eastern end.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "gods-eye",
+        "to": "harrenhal",
+        "dir": "n"
+      },
+      "use": [
+        "vectors",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "The detail 'toward its eastern end' is a softer recollection; treat it as approximate."
+    },
+    {
+      "id": "harrenhal-largest-castle",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "form",
+      "claim": "Harrenhal is the largest castle ever raised in Westeros. Its walls, halls, yards and towers are built at a monstrous scale meant to outdo every other seat.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Conquest",
+          "find": [
+            "Harren the Black"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "The novels say the same in substance (Arya's chapters in ACOK, where the castle swallows Tywin's garrison). No ground area or wall length is recalled from any source, so the scale must come from the build's own judgement."
+    },
+    {
+      "id": "harrenhal-built",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "name",
+      "claim": "King Harren the Black, whose ironborn line ruled the isles and the riverlands, spent some forty years building the castle and moved in on the day Aegon landed.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Conquest",
+          "find": [
+            "Harren the Black"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "The forty-year figure is recalled with fair confidence. The section title is 'The Conquest' within the history of the Targaryen kings, as best recalled."
+    },
+    {
+      "id": "harrenhal-tower-count",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "count",
+      "claim": "Five great towers rise from Harrenhal.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "value": {
+        "count": 5
+      },
+      "use": [
+        "look",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (five huge towers)."
+    },
+    {
+      "id": "harrenhal-towers-melted",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "form",
+      "claim": "Dragonfire in Aegon's Conquest melted the towers' stone. They still stand, but twisted and slumped like half-melted candles, their upper parts misshapen and cracked.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed with a precision: the towers are slagged and deformed, not toppled. The candle image is our paraphrase of the sense, not a quotation. No per-tower damage is asserted."
+    },
+    {
+      "id": "harrenhal-tower-names",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "name",
+      "claim": "The five towers are the Kingspyre Tower, the Widow's Wail, the Wailing Tower, the Tower of Dread and the Tower of Ghosts.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya VI",
+          "find": [
+            "Wailing Tower",
+            "Widow's Wail",
+            "Kingspyre"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jaime IV",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "value": {
+        "count": 5
+      },
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "The names are scattered across Arya's Harrenhal chapters (ACOK Arya VI to IX) and Jaime's ASOS chapters there. No single chapter is recalled as listing all five. The set of names is recalled with good confidence, 'Tower of Dread' a little less."
+    },
+    {
+      "id": "harrenhal-walls",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "form",
+      "claim": "The curtain walls are colossal, sheer and so high they read like mountain cliffs rather than masonry.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "value": {
+        "approx": true
+      },
+      "use": [
+        "look",
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "This is qualitative. No wall height in feet is recalled from any source, so none is given. The cliff comparison is recalled as Arya's first impression."
+    },
+    {
+      "id": "harrenhal-hall",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "name",
+      "claim": "Harrenhal's great hall is called the Hall of a Hundred Hearths.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya VII",
+          "find": [
+            "Hundred Hearths"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "The actual hearth count is not asserted, since the name may exaggerate. The chapter is uncertain; the hall also appears in ASOS Jaime chapters."
+    },
+    {
+      "id": "harrenhal-bear-pit",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "form",
+      "claim": "The castle has a sunken bear pit, watched from above, where Brienne is thrown in to fight a bear and Jaime leaps down to save her.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jaime VI",
+          "find": [
+            "bear pit"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "This is a feature inside the walls, a detail prop at most."
+    },
+    {
+      "id": "harrenhal-state-298",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "state-298",
+      "claim": "Build assumption: at 298 AC Harrenhal is held by the dwindled House Whent, whose small household can use only a fraction of the vast, largely empty castle.",
+      "label": "I",
+      "basis": "House Whent are its lords before the war (Lord Whent's tourney of 281 AC is recalled in AGOT and ASOS, and Lady Whent is named as its lady). In ACOK even Tywin's host leaves much of the castle unused and decaying. This agrees with realm claim slice-harrenhal-slagged.",
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "harrenhal-occupation-after",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "state-after",
+      "claim": "From ACOK the castle changes hands again and again (Gregor Clegane, Tywin, Roose Bolton and the Brave Companions, then Gregor's men). These garrisons and their camps postdate the slice.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya VI",
+          "find": [
+            "Harrenhal"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Jaime IV",
+          "find": [
+            "Harrenhal"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "No new structural damage is recalled from these occupations."
+    },
+    {
+      "id": "isle-of-faces-in-gods-eye",
+      "subjects": [
+        "isle-of-faces",
+        "gods-eye"
+      ],
+      "kind": "position",
+      "claim": "The Isle of Faces is an island in the great lake called the Gods Eye.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran VI",
+          "find": [
+            "Isle of Faces",
+            "Gods Eye"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (island in the Gods Eye). The passage is Maester Luwin's lesson on the children of the forest."
+    },
+    {
+      "id": "isle-of-faces-pact",
+      "subjects": [
+        "isle-of-faces"
+      ],
+      "kind": "name",
+      "claim": "On the isle the First Men and the children of the forest made the Pact that ended their long war.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran VI",
+          "find": [
+            "Isle of Faces"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "TWOIAF (The Coming of the First Men) tells the same story at length; it is not cited here so the T label stays novel-only."
+    },
+    {
+      "id": "isle-of-faces-weirwoods",
+      "subjects": [
+        "isle-of-faces"
+      ],
+      "kind": "vegetation",
+      "claim": "The isle is wooded with weirwoods whose trunks were carved with faces at the Pact so the gods could witness it, which gives the isle its name.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Coming of the First Men",
+          "find": [
+            "Isle of Faces"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (weirwood island). The detail that faces were carved on its weirwoods is recalled with moderate confidence. It may come from Luwin's lesson in AGOT Bran VI rather than TWOIAF. No count of trees and no other vegetation is asserted."
+    },
+    {
+      "id": "isle-of-faces-green-men",
+      "subjects": [
+        "isle-of-faces"
+      ],
+      "kind": "state-298",
+      "claim": "Legend says the green men, an order of guardians set to keep the isle's sacred groves, still dwell there unseen. Nobody in the story sets foot on the isle.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran VI",
+          "find": [
+            "green men"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "The guardians are told of as legend. The text does not confirm them."
+    },
+    {
+      "id": "isle-of-faces-no-settlement",
+      "subjects": [
+        "isle-of-faces"
+      ],
+      "kind": "state-298",
+      "claim": "Build assumption: the isle has no castle, town or quay, only weirwood forest and shore.",
+      "label": "I",
+      "basis": "No castle or holdfast on the isle is named in the novels or shown on the maps recalled. Its only inhabitants are the legendary green men (isle-of-faces-green-men).",
+      "use": [
+        "look",
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "isle-of-faces-map",
+      "subjects": [
+        "isle-of-faces",
+        "gods-eye",
+        "harrenhal"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the Isle of Faces is a large island near the middle of the Gods Eye, south of Harrenhal across the water.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "from": "harrenhal",
+        "to": "isle-of-faces",
+        "dir": "s",
+        "approx": true
+      },
+      "use": [
+        "vectors",
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "Its size relative to the lake is a map impression. Trace it from the map rather than relying on this."
+    },
+    {
+      "id": "gods-eye-lake",
+      "subjects": [
+        "gods-eye",
+        "harrenhal",
+        "isle-of-faces"
+      ],
+      "kind": "hydrology",
+      "claim": "The Gods Eye is a great lake in the southern riverlands, with Harrenhal on its shore and the Isle of Faces within it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran VI",
+          "find": [
+            "Gods Eye"
+          ]
+        },
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Gods Eye"
+          ]
+        }
+      ],
+      "use": [
+        "hydrology",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "No dimensions for the lake are recalled from any text, so its size must come from the traced map."
+    },
+    {
+      "id": "gods-eye-position",
+      "subjects": [
+        "gods-eye",
+        "kingsroad",
+        "trident",
+        "blackwater-rush"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the Gods Eye lies south of the Trident and its forks and north of the Blackwater Rush, with the kingsroad passing to the east of it.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "kingsroad",
+        "to": "gods-eye",
+        "dir": "w"
+      },
+      "use": [
+        "vectors",
+        "hydrology"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "the-eyrie-shoulder",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "position",
+      "claim": "The Eyrie is built on a shoulder of the Giant's Lance, high above the Vale but well below the mountain's summit.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Giant's Lance"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Brief corrected: the Eyrie is not on the peak of the Giant's Lance but on a shoulder (a high ledge) of it, with the summit rising above."
+    },
+    {
+      "id": "the-eyrie-towers",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "count",
+      "claim": "The Eyrie is small by the standard of great castles: seven slender white towers clustered tightly together, like arrows in a quiver.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "white towers",
+            "arrows in a quiver"
+          ]
+        }
+      ],
+      "value": {
+        "count": 7
+      },
+      "use": [
+        "look",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "The seven towers, their whiteness and slenderness are recalled with high confidence. Tower heights are not given."
+    },
+    {
+      "id": "the-eyrie-waycastles",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance",
+        "vale"
+      ],
+      "kind": "count",
+      "claim": "The way up starts at the Gates of the Moon, a castle at the mountain's foot, and climbs past three waycastles (Stone, then Snow, then Sky) before reaching the Eyrie.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Gates of the Moon",
+            "Snow",
+            "Sky"
+          ]
+        }
+      ],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "landmark:the-eyrie",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed: waycastles Stone, Snow and Sky above the Gates of the Moon, in that order going up."
+    },
+    {
+      "id": "the-eyrie-trail",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "form",
+      "claim": "The trail is a narrow, steep path up the mountainside, travelled on mules. Between Snow and Sky it crosses a thin saddle of rock with sheer drops on either side, and Catelyn has to be led across.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Mya Stone"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Mya Stone guides the climb. Whether the saddle is crossed on foot or by mule is recalled with moderate confidence. The time taken for the whole climb is not recalled reliably, so no travel value is given."
+    },
+    {
+      "id": "the-eyrie-sky",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "form",
+      "claim": "Sky, the highest waycastle, is little more than a curved wall against the mountain. Above it the final climb is too steep for mules, and supplies are hauled up to the Eyrie by winch and basket.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Mya Stone"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "How Catelyn herself makes the last stretch (a stair or 'chimney' cut in the rock, or the basket) is not asserted."
+    },
+    {
+      "id": "the-eyrie-above-sky",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "relative-height",
+      "claim": "The Eyrie stands roughly six hundred feet above Sky.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Sky"
+          ]
+        }
+      ],
+      "value": {
+        "ft": 600,
+        "approx": true,
+        "dir": "above"
+      },
+      "use": [
+        "terrain",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "The figure is recalled with moderate confidence. The 600 ft may instead belong to the drop below the Moon Door, so verify before use. Not a find key."
+    },
+    {
+      "id": "the-eyrie-high-hall",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "material",
+      "claim": "The High Hall, where the Lady of the Eyrie holds court, is built of pale white marble veined with blue.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion V",
+          "find": [
+            "High Hall"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VII",
+          "find": [
+            "High Hall"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "This is an interior. It matters only if the miniature shows cut-aways. The milky white of the towers comes from the-eyrie-towers."
+    },
+    {
+      "id": "the-eyrie-moon-door",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "form",
+      "claim": "A Moon Door set in the wall of the High Hall opens directly onto empty air above the long drop down the mountain. Prisoners are put to death through it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion V",
+          "find": [
+            "Moon Door"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VII",
+          "find": [
+            "Moon Door"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "The door implies that one wall of the High Hall stands right on the cliff edge."
+    },
+    {
+      "id": "the-eyrie-sky-cells",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "form",
+      "claim": "The sky cells are open on one side to the void, with floors that slope down toward the edge.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion V",
+          "find": [
+            "sky cell"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Small open-sided chambers on the cliff face would be visible from outside. Their number and placement are not given."
+    },
+    {
+      "id": "the-eyrie-garden",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "form",
+      "claim": "The towers enclose a small garden at the castle's heart, open to the sky. Sansa builds a snow model of Winterfell there.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Sansa VII",
+          "find": [
+            "Winterfell"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "The snow is a 299 to 300 AC event. At 298 the garden is in late summer. Any statue in it is not asserted."
+    },
+    {
+      "id": "the-eyrie-alyssas-tears",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance",
+        "vale"
+      ],
+      "kind": "hydrology",
+      "claim": "Alyssa's Tears, a waterfall named for a long-dead Arryn lady, pours off the heights of the mountain near the Eyrie. Legend says not a drop of it has yet reached the valley floor.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Alyssa's Tears"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "hydrology",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Build reading: a very tall, thin fall that turns to spray and mist, with no pool and no river at its foot. Where it falls relative to the castle is not asserted."
+    },
+    {
+      "id": "the-eyrie-approach",
+      "subjects": [
+        "the-eyrie",
+        "high-road",
+        "vale"
+      ],
+      "kind": "relative-position",
+      "claim": "Past the Bloody Gate Catelyn's party rides on across the Vale to the Gates of the Moon at the Giant's Lance's foot. The Eyrie thus lies further into the Vale than the gate.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Bloody Gate",
+            "Gates of the Moon"
+          ]
+        }
+      ],
+      "value": {
+        "dir": "e",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "value: the Eyrie lies 'dir' of the Bloody Gate. The compass direction is inferred from the gate being the Vale's western entrance. The distance from the gate to the Gates of the Moon is not recalled."
+    },
+    {
+      "id": "the-eyrie-impregnable",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "form",
+      "claim": "Its site makes the Eyrie all but impossible to assault. The only way up is the single narrow trail past the waycastles, and Lysa trusts it as a refuge no army can take.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Eyrie"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Build use: model no road or ramp to the castle other than the trail."
+    },
+    {
+      "id": "giants-lance-height",
+      "subjects": [
+        "giants-lance",
+        "mountains-of-the-moon",
+        "vale"
+      ],
+      "kind": "height",
+      "claim": "The Giant's Lance rises about three and a half miles above the valley floor, one of the great peaks of the Mountains of the Moon.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Giant's Lance"
+          ]
+        }
+      ],
+      "value": {
+        "miles": 3.5,
+        "approx": true
+      },
+      "use": [
+        "terrain",
+        "scale",
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "The 3.5-mile figure is recalled from Catelyn's view of the mountain with moderate confidence (it may be phrased as 'nearly'). It is not a find key. Verify before using it as a hard terrain height. Whether the peak is the range's highest is not asserted."
+    },
+    {
+      "id": "giants-lance-snow",
+      "subjects": [
+        "giants-lance"
+      ],
+      "kind": "climate",
+      "claim": "Above the Eyrie the Giant's Lance climbs on into ice and snow, its head often lost in cloud.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "Giant's Lance"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain"
+      ],
+      "status": "draft",
+      "notes": "This is recalled with moderate confidence as part of the same description as giants-lance-height. Snow on the summit even in summer is the build reading."
+    },
+    {
+      "id": "mountains-of-the-moon-position",
+      "subjects": [
+        "mountains-of-the-moon",
+        "riverlands",
+        "vale"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the Mountains of the Moon rise east of the riverlands and wrap the Vale on its western and northern sides, between the Trident country and the narrow sea.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "riverlands",
+        "to": "mountains-of-the-moon",
+        "dir": "e"
+      },
+      "use": [
+        "vectors",
+        "terrain"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "mountains-of-the-moon-high-road",
+      "subjects": [
+        "mountains-of-the-moon",
+        "high-road"
+      ],
+      "kind": "form",
+      "claim": "The high road climbs into the range by a narrow, stony way through high passes. Travellers must cross it to reach the Vale from the west.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion IV",
+          "find": [
+            "high road"
+          ]
+        }
+      ],
+      "use": [
+        "terrain",
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The narrow, stony character is paraphrased from the general sense of Tyrion's and Catelyn's crossing, not from a recalled sentence."
+    },
+    {
+      "id": "mountains-of-the-moon-clans",
+      "subjects": [
+        "mountains-of-the-moon"
+      ],
+      "kind": "state-298",
+      "claim": "The range is home to hostile hill clans, among them the Stone Crows, Black Ears, Burned Men and Moon Brothers, who raid travellers and the Vale's borders.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion VI",
+          "find": [
+            "Stone Crows",
+            "Burned Men",
+            "Black Ears"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion VII",
+          "find": [
+            "Moon Brothers"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "This tells the build the mountains are wild and lightly settled (no castles in the passes). Other clans named elsewhere, such as the Milk Snakes, are left out."
+    },
+    {
+      "id": "pyke-position",
+      "subjects": [
+        "pyke",
+        "iron-islands"
+      ],
+      "kind": "position",
+      "claim": "Pyke, seat of House Greyjoy, stands on the coast of the island of Pyke, a ride from the harbour town of Lordsport where Theon lands on his return.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Lordsport"
+          ]
+        }
+      ],
+      "use": [
+        "vectors",
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "The ride is short (part of a day), but no distance is given, so no value is set."
+    },
+    {
+      "id": "pyke-sea-stacks",
+      "subjects": [
+        "pyke"
+      ],
+      "kind": "form",
+      "claim": "The castle was raised on a headland that the sea has since cut apart. Its keeps and towers now stand on separate stacks and pillars of rock rising out of the surf, with the sea crashing below.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Pyke"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain",
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (keeps on sea stacks). The text frames them as remnants of a once-continuous point of land, not as naturally separate crags. No stack heights are given."
+    },
+    {
+      "id": "pyke-bridges",
+      "subjects": [
+        "pyke"
+      ],
+      "kind": "form",
+      "claim": "Bridges link the stacks. Some are arched stone, others swaying walkways of rope and wooden planks that move in the wind.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Bloody Keep"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (linked by bridges), with the precision that some are rope bridges. Which stacks have stone and which rope bridges is not asserted, beyond pyke-sea-tower."
+    },
+    {
+      "id": "pyke-parts",
+      "subjects": [
+        "pyke"
+      ],
+      "kind": "name",
+      "claim": "Named parts of the castle include the Great Keep, the Kitchen Keep, the Bloody Keep and the Sea Tower.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Bloody Keep",
+            "Kitchen Keep",
+            "Sea Tower"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "The list may be incomplete. The total number of keeps and towers is not recalled, so no count is set."
+    },
+    {
+      "id": "pyke-sea-tower",
+      "subjects": [
+        "pyke"
+      ],
+      "kind": "form",
+      "claim": "The Sea Tower stands on its own stack, the farthest out, reached by a rope bridge. Lord Balon falls to his death from a bridge there during a storm.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Sea Tower"
+          ]
+        },
+        {
+          "book": "AFFC",
+          "chapter": "The Prophet",
+          "find": [
+            "Balon"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "Balon's fall is in 299 AC and changes nothing physically; it is cited only as evidence of the rope bridge. The detail that the Sea Tower stack is the farthest out is recalled with moderate confidence."
+    },
+    {
+      "id": "pyke-wild-coast",
+      "subjects": [
+        "pyke",
+        "iron-islands"
+      ],
+      "kind": "climate",
+      "claim": "Theon finds Pyke grim and wind-lashed, under grey skies over a cold, rough sea, with little green about it.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Theon I",
+          "find": [
+            "Lordsport"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "This is mood rather than measurement, paraphrased from the overall impression of the chapter. It matches iron-islands-land (C)."
+    },
+    {
+      "id": "pyke-isles-map",
+      "subjects": [
+        "pyke",
+        "iron-islands",
+        "ironmans-bay"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps the island of Pyke is one of the main isles in the group, facing the mainland across Ironman's Bay. Lordsport is on its coast.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "Where Pyke lies within the group (for example, which isle is east or south of which) is not recalled reliably and is left to the traced map."
+    },
+    {
+      "id": "casterly-rock-form",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "form",
+      "claim": "Casterly Rock is a castle hollowed out of a colossal stone hill, the Rock, standing over the Sunset Sea. Its halls, galleries and passages are cut into the living rock, not built on top.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands: Casterly Rock",
+          "find": [
+            "Casterly Rock"
+          ]
+        }
+      ],
+      "use": [
+        "look",
+        "terrain",
+        "landmark:casterly-rock"
+      ],
+      "status": "draft",
+      "notes": "Brief confirmed (castle within the Rock), from the companion. The novels name the Rock constantly but describe its form little. A height comparison may be given in TWOIAF but is not recalled reliably, so the Rock's height is not asserted."
+    },
+    {
+      "id": "casterly-rock-scale",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "form",
+      "claim": "The Rock is a mountain-sized mass of stone that dwarfs both Lannisport and any built castle. The castle is the Rock itself, not walls set on it.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands: Casterly Rock",
+          "find": [
+            "the Rock"
+          ]
+        }
+      ],
+      "value": {
+        "approx": true
+      },
+      "use": [
+        "look",
+        "terrain",
+        "landmark:casterly-rock"
+      ],
+      "status": "draft",
+      "notes": "This is qualitative only. No height or length of the Rock is asserted (see casterly-rock-form)."
+    },
+    {
+      "id": "casterly-rock-name",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "name",
+      "claim": "The Rock is named for House Casterly, who held it until Lann the Clever won it from them by guile in the Age of Heroes.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands: Casterly Rock",
+          "find": [
+            "Lann the Clever"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:casterly-rock"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "casterly-rock-lannisport",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "relative-position",
+      "claim": "Lannisport lies at the foot of the Rock, on the shore beside it, the city spreading below the castle.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands: Lannisport",
+          "find": [
+            "Lannisport"
+          ]
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
+      ],
+      "value": {
+        "dir": "below"
+      },
+      "use": [
+        "vectors",
+        "landmark:casterly-rock"
+      ],
+      "status": "draft",
+      "notes": "value: the city lies 'dir' (below) the castle. Brief confirmed (castle above Lannisport). The compass side on which the city lies is not recalled reliably and is left to the map."
+    },
+    {
+      "id": "casterly-rock-lannisport-city",
+      "subjects": [
+        "casterly-rock",
+        "westerlands"
+      ],
+      "kind": "form",
+      "claim": "Lannisport is a large, rich port city, the westerlands' chief harbour and one of the greatest cities of the realm.",
+      "label": "C",
+      "cites": [
+        {
+          "book": "TWOIAF",
+          "chapter": "The Westerlands: Lannisport",
+          "find": [
+            "Lannisport"
+          ]
+        }
+      ],
+      "value": {
+        "approx": true
+      },
+      "use": [
+        "look",
+        "landmark:casterly-rock"
+      ],
+      "status": "draft",
+      "notes": "Its exact rank among the cities is not asserted. The brief asked for Lannisport's walls, but no description of them is recalled with confidence, so none is given. The build should treat any wall as I."
+    },
+    {
+      "id": "casterly-rock-position",
+      "subjects": [
+        "casterly-rock",
+        "westerlands",
+        "iron-islands",
+        "sunset-sea"
+      ],
+      "kind": "relative-position",
+      "claim": "On the maps Casterly Rock and Lannisport lie on the westerlands' Sunset Sea coast, south of the Iron Islands and west of the Golden Tooth pass.",
+      "label": "M",
+      "cites": [
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
+      ],
+      "value": {
+        "from": "iron-islands",
+        "to": "casterly-rock",
+        "dir": "s",
+        "approx": true
+      },
+      "use": [
+        "vectors"
+      ],
+      "status": "draft",
+      "notes": "The direction is approximate (south to south-east)."
+    },
+    {
+      "id": "casterly-rock-state-298",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "state-298",
+      "claim": "Build assumption: at 298 AC the Rock is the seat of Lord Tywin Lannister, intact and unthreatened. Nothing in the main series damages it.",
+      "label": "I",
+      "basis": "Robb's western campaign (ACOK and ASOS) takes border castles and mines in the westerlands, but no assault on the Rock or damage to it is described in any novel recalled.",
+      "use": [
+        "landmark:casterly-rock"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "blue-fork-between",
+      "subjects": [
+        "blue-fork",
+        "the-twins",
+        "riverrun"
+      ],
+      "kind": "relative-position",
+      "claim": "Build assumption: an overland route from the Twins' west bank south-west to Riverrun has to cross the Blue Fork somewhere along its course.",
+      "label": "I",
+      "basis": "On the maps the Blue Fork flows south-east between the Green Fork (the Twins) and the Red Fork (Riverrun) to join the Trident (blue-fork-course, the-twins-position). Any land route between the two castles therefore crosses it.",
+      "use": [
+        "vectors",
+        "hydrology"
+      ],
+      "status": "draft",
+      "notes": "No text crossing point is recalled. If the traced map has the Blue Fork rising east of that route, drop this claim."
+    }
+  ]
+}

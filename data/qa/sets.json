@@ -3,6 +3,7 @@
   "notes": "Named QA shot sets for `pnpm qa --set <name>`. Ids are data/qa shots or landmark bookmarks (resolved in the page).",
   "sets": {
     "overview": ["overview-day", "overview-golden", "overview-night", "overview-top", "overview-south"],
-    "smoke": ["overview-day"]
+    "smoke": ["overview-day"],
+    "regions": ["vale", "north", "riverlands", "dorne"]
   }
 }

@@ -1522,6 +1522,13 @@ def run_hydro(cfg: Config, h_pre: np.ndarray, land: np.ndarray) -> tuple[np.ndar
         masks = {"river_channel": z, "river_valley": z.copy(), "river_dist": np.full(h_pre.shape, 1e6, np.float32), "near_level": np.zeros(h_pre.shape, np.float32), "lake": z.copy()}
         return h_pre.copy(), masks, {"rivers": [], "lakes": [], "log": [], "report": None}
     lines, log, snap_stats = solve(cfg, h_pre, land, lakes)
+    # a traced network can hold stems the solver never reaches (a braid that closes a loop through a lake or
+    # another line): such a line has no profile — it is dropped from the carve, the masks and the export
+    unsolved = [l for l in lines if not l.absorbed and (l.level is None or np.ndim(l.level) == 0)]
+    for l in unsolved:
+        l.absorbed = True
+    if unsolved:
+        log.append(f"dropped {len(unsolved)} unprofiled line(s) (loops in the traced network): " + ", ".join(l.id for l in unsolved[:12]) + ("…" if len(unsolved) > 12 else ""))
     h = h_pre.copy()
     with Timer("hydro: lake shores"):
         shape_lakes(cfg, h, land, lakes, lines)
@@ -1556,10 +1563,22 @@ def run_hydro(cfg: Config, h_pre: np.ndarray, land: np.ndarray) -> tuple[np.ndar
     print(f"[bake]   report: river length raw {ln['rawKm']} km → {ln['km']} km; source trims {ln['trimKm']} km (max {ln['maxTrimKm']}): " + ", ".join(f"{x['id']} {x['trimKm']}" for x in sorted(ln["lines"], key=lambda x: -x["trimKm"])[:8] if x["trimKm"] > 0))
     ef = report["edgeFloat"]
     print(f"[bake]   report: ribbon edges > 0.15 above the ground on {ef['totalKm']} of {ef['lengthKm']} km ({100 * ef['share']:.2f} %): " + ", ".join(f"{e['id']} {e['km']} km (max {e['max']})" for e in ef["lines"][:6]))
+    # a line whose parent was absorbed (a traced network has short parents inside a bigger channel's core)
+    # drains where the absorbed parent drained: follow the chain to an exported line, a lake or the sea
+    by_id = {l.id: l for l in lines}
+
+    def live_into(t):
+        seen = set()
+        while t is not None and t in by_id and by_id[t].absorbed and t not in seen:
+            seen.add(t)
+            t = by_id[t].into
+        return None if (t is not None and t in by_id and by_id[t].absorbed) else t
+
     rivers = []
     for l in lines:
         if l.absorbed:
             continue
+        l.into = live_into(l.into)
         rivers.append(
             {
                 "id": l.id,

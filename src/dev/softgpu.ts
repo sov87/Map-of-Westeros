@@ -7,7 +7,15 @@
  * Dropping the identity swizzle changes nothing about sampling; the shim is installed only in software-GPU
  * smoke mode, so hardware renders (Chrome 154+) run three unmodified.
  */
+export const SOFT_GPU = { on: false };
+
+/**
+ * Also: that Chromium's software path cannot upload a 3D texture slice by slice (Queue.writeTexture validates
+ * a 2D view of the 3D texture), so the foliage's 3D foam micro-structure is switched off (SOFT_GPU.on, read
+ * by vegetation/foliageMaterial.ts) — smoke renders only.
+ */
 export function installSoftGpuShims(): void {
+  SOFT_GPU.on = true;
   const T = (globalThis as { GPUTexture?: { prototype: { createView: (d?: GPUTextureViewDescriptor) => GPUTextureView } } }).GPUTexture;
   if (!T) return;
   const createView = T.prototype.createView;

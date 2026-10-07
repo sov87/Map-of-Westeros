@@ -25,6 +25,10 @@ export interface PlaceDef {
   parent?: string;
   /** the landmark sits on / over water by design: its stamps may raise river or lake cells */
   onRiver?: boolean;
+  /** evidence label (data/canon/books.json): T text, M official map, C companion, I inferred */
+  label?: 'T' | 'M' | 'C' | 'I';
+  /** the traced map sheet the position was read from (tools/geo/maps/<id>.json) */
+  map?: string;
 }
 
 export interface Place extends PlaceDef {
@@ -147,7 +151,7 @@ export class World {
     lookTex.needsUpdate = true;
 
     const places = new Map<string, Place>();
-    for (const def of placesJson.places as PlaceDef[]) {
+    for (const def of placesJson.places as unknown as PlaceDef[]) {
       const off = def.displayOffsetKm ?? [0, 0];
       const [cx, cz] = spec.kmToWorld(def.canonical[0], def.canonical[1]);
       const [x, z] = spec.kmToWorld(def.canonical[0] + off[0], def.canonical[1] + off[1]);

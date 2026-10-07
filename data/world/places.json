@@ -1,10 +1,37 @@
 {
   "version": 2,
-  "notes": "Every named place. 'canonical' = map km [x east, y north] measured on the georeferenced official map (Phase 1). 'label' = evidence label (T text, M official map, C companion, I inferred / invented; data/canon/books.json) and 'ledger' = the canon claims it rests on. 'displayOffsetKm' moves the miniature (never more than maxDisplayOffsetKm) to settle a text-vs-map conflict or a scale conflict, logged in the claim's 'conflict'. 'footprintKm' = display radius used by stamps, vegetation exclusion and the overlap validator. Tier A = hero landmark, B = supporting landmark; kind 'poi' / 'feature' / 'peak' are not validated for overlap. PHASE 0: empty — no position is guessed before the map is georeferenced.",
+  "notes": "Every named place. 'canonical' = map km [x east, y north] measured on the georeferenced official map (Phase 1). 'label' = evidence label (T text, M official map, C companion, I inferred / invented; data/canon/books.json) and 'ledger' = the canon claims it rests on. 'displayOffsetKm' moves the miniature (never more than maxDisplayOffsetKm) to settle a text-vs-map conflict or a scale conflict, logged in the claim's 'conflict'. 'footprintKm' = display radius used by stamps, vegetation exclusion and the overlap validator. Tier A = hero landmark, B = supporting landmark; kind 'poi' / 'feature' / 'peak' are not validated for overlap.",
   "maxDisplayOffsetKm": 30,
-  "wideShotPxTarget": {
-    "A": 30,
-    "B": 16
-  },
-  "places": []
+  "wideShotPxTarget": {"A": 30, "B": 16},
+  "places": [
+    {"id": "fist-of-the-first-men", "name": "The Fist of the First Men", "kind": "landmark", "tier": "A", "canonical": [1449.37, 4450.2], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "beyond-the-wall"},
+    {"id": "castle-black", "name": "Castle Black", "kind": "landmark", "tier": "A", "canonical": [1745.83, 4207.27], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "north"},
+    {"id": "eastwatch", "name": "Eastwatch-by-the-Sea", "kind": "landmark", "tier": "B", "canonical": [1939.36, 4211.39], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "north"},
+    {"id": "winterfell", "name": "Winterfell", "kind": "landmark", "tier": "A", "canonical": [1394.47, 3455.13], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "north"},
+    {"id": "white-harbor", "name": "White Harbor", "kind": "landmark", "tier": "B", "canonical": [1657.99, 2958.28], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "north"},
+    {"id": "moat-cailin", "name": "Moat Cailin", "kind": "landmark", "tier": "B", "canonical": [1442.51, 2860.84], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "north"},
+    {"id": "greywater-watch", "name": "Greywater Watch", "kind": "landmark", "tier": "B", "canonical": [1313.49, 2557.51], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "north"},
+    {"id": "the-twins", "name": "The Twins", "kind": "landmark", "tier": "A", "canonical": [1342.32, 2326.93], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "riverlands"},
+    {"id": "riverrun", "name": "Riverrun", "kind": "landmark", "tier": "A", "canonical": [1262.71, 1944.0], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "riverlands"},
+    {"id": "inn-at-the-crossroads", "name": "The Inn at the Crossroads", "kind": "landmark", "tier": "B", "canonical": [1631.92, 1953.61], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 3, "region": "riverlands"},
+    {"id": "harrenhal", "name": "Harrenhal", "kind": "landmark", "tier": "A", "canonical": [1623.68, 1797.14], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "riverlands"},
+    {"id": "isle-of-faces", "name": "The Isle of Faces", "kind": "landmark", "tier": "B", "canonical": [1612.7, 1746.36], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "riverlands"},
+    {"id": "the-eyrie", "name": "The Eyrie", "kind": "landmark", "tier": "A", "canonical": [1922.89, 2197.91], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "vale"},
+    {"id": "pyke", "name": "Pyke", "kind": "landmark", "tier": "A", "canonical": [710.96, 2097.72], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "iron-islands"},
+    {"id": "casterly-rock", "name": "Casterly Rock", "kind": "landmark", "tier": "A", "canonical": [669.79, 1578.91], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "westerlands"},
+    {"id": "lannisport", "name": "Lannisport", "kind": "poi", "canonical": [667.04, 1530.87], "src": "M", "label": "M", "map": "westeros-crests", "region": "westerlands"},
+    {"id": "kings-landing", "name": "King's Landing", "kind": "landmark", "tier": "A", "canonical": [1782.89, 1386.76], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 8, "region": "crownlands"},
+    {"id": "dragonstone", "name": "Dragonstone", "kind": "landmark", "tier": "A", "canonical": [2248.17, 1653.03], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "crownlands"},
+    {"id": "dragonmont", "name": "The Dragonmont", "kind": "peak", "canonical": [2259.15, 1664.01], "src": "M", "label": "M", "map": "westeros-crests", "region": "crownlands"},
+    {"id": "storms-end", "name": "Storm's End", "kind": "landmark", "tier": "A", "canonical": [2139.74, 995.59], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "stormlands"},
+    {"id": "summerhall", "name": "Summerhall", "kind": "landmark", "tier": "B", "canonical": [1726.62, 922.85], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "stormlands"},
+    {"id": "highgarden", "name": "Highgarden", "kind": "landmark", "tier": "A", "canonical": [956.64, 848.74], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "reach"},
+    {"id": "oldtown", "name": "Oldtown", "kind": "landmark", "tier": "A", "canonical": [678.02, 519.33], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 8, "region": "reach"},
+    {"id": "starfall", "name": "Starfall", "kind": "landmark", "tier": "B", "canonical": [1001.93, 357.38], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "dorne"},
+    {"id": "sunspear", "name": "Sunspear", "kind": "landmark", "tier": "A", "canonical": [2316.8, 231.11], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "dorne"},
+    {"id": "water-gardens", "name": "The Water Gardens", "kind": "landmark", "tier": "B", "canonical": [2301.7, 214.64], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "dorne"},
+    {"id": "deepwood-motte", "name": "Deepwood Motte", "kind": "poi", "canonical": [1098.01, 3744.73], "src": "M", "label": "M", "map": "westeros-crests", "region": "north"},
+    {"id": "westwatch", "name": "Westwatch-by-the-Bridge", "kind": "poi", "canonical": [1458.98, 4164.72], "src": "M", "label": "M", "map": "westeros-crests", "region": "north"},
+    {"id": "giants-lance", "name": "The Giant's Lance", "kind": "peak", "canonical": [1927.0, 2215.76], "src": "M", "label": "M", "map": "westeros-crests", "region": "vale"}
+  ]
 }
