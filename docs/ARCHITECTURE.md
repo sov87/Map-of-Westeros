@@ -10,7 +10,8 @@ session history belongs in `PROJECT_STATE.md`.
 
 ## Data flow
 ```
-data/source (third-party, fetched)          data/world/*.json (authored truth)
+data/source (map images + their trace,      data/world/*.json (authored truth)
+             local only; pnpm geo …)
         │  pnpm bake [--steps …] (tools/bake, Python; heavy-job lock, cached steps)
         ▼                                          ▼
 data/baked/  height.u16 · water/landcover/forests/look/terrain .rgba8 · rivers/lakes/roads.json ·
@@ -582,3 +583,75 @@ heavy-job lock (`tools/heavy.ts music --min-free-mb 1500`), so it never overlaps
 - `tools/check/stamploss.ts [id…]` — where the river guard bites a landmark's stamps (totals and the
   largest corrected cells with the nearest river). `tools/bake/overlay.py` — CT-1980 geography overlay QA
   against `data/qa/ct1980-points.json` (CPU, the bake's uv env).
+
+## Geography pipeline (Westeros; tools/geo + tools/bake)
+Westeros has no DEM or GIS layers, so the project makes both from the user's map images. Nothing traced is
+committed: images, vectors, the overlay page and the calibration report all live in the gitignored
+`data/source/` (`MOW_SOURCE_DIR` in worktrees). Committed: the map **profiles** (`tools/geo/maps/<id>.json`,
+coordinates and thresholds only), `places.json`, `regions.geojson` and `world.json`.
+
+```
+data/source/maps/<id>/map.png      the user's sheet (base: westeros-crests)
+        │  tools/geo/maps/<id>.json   scale.wallPx · frame crop · water / river / teal colour rules · classifier
+        │                             training windows · range / forest anchors (names, peakM) · places · regions
+        ▼  pnpm geo vectorize --map <id>
+data/source/westeros/vectors/      land · lakes · rivers · forests · mountains · hills · wetlands .geojson (map km,
+                                   label M) + relief.npz (mountain / hill density) + debug/*.png
+        │  pnpm geo places | regions | calibrate | overlay
+        ▼
+data/world/places.json · regions.geojson    data/source/westeros/{calibration.json, overlay/index.html}
+        │  pnpm bake (world.json source.kind 'synth')
+        ▼
+tools/bake/bake/source.py → synth.py (elevation) → the inherited steps (coast, vectors, regions, relief, hydro, …)
+```
+
+- **Sheet ↔ map km** (`vectorize.Sheet`): the base sheet *defines* the frame. Its scale comes from the
+  Wall's length: the pixel distance from Westwatch to Eastwatch equals 300 mi. Its origin is the frame crop's
+  bottom-left. A further sheet is pinned to that frame by a least-squares affine from ≥ 3 control points on
+  known places (`pnpm geo georef --map <id>`, stored as `affine` in its profile with residuals).
+- **Vectorize** (`tools/geo/vectorize.py`): the docstring lists every step.
+  - **Water:** blue-grey colour rules, plus a teal rule for the Gods Eye.
+  - **Sea:** flood from the frame border; Essos is dropped east of `exclude.essosX`; an islet must pass a paint test, which rejects labels and crests.
+  - **Lakes:** opening, then small holes filled.
+  - **Rivers:** skeleton → graph → gap bridging → orientation toward the sea or a lake.
+  - **Terrain:** a QDA classifier on blurred Lab colour, texture and stroke-density features gives forests, marsh (kept only near `marsh.keepNear`), mountain / hill polygons and `relief.npz`.
+  - **Labels:** every feature is label M with `src` = the map id. Range peak heights from the anchors are label I.
+- **Overlay** (`tools/geo/overlay.py`): the review page. The sheet carries toggleable SVG layers and an opacity slider; hovering a feature shows its name, label and peak. `composite.png` is the flattened copy.
+  The user judges the trace here. Corrections go into the profile, never into hand-traced lines.
+- **Calibration** (`places.calibrate`): every ledger `distance` / `length` claim between two placed points
+  becomes a residual against the Wall scale (`calibration.json`). The sheet's own scale bar is reported
+  alongside it.
+- **Synthesis** (`tools/bake/bake/synth.py`, `world.json → synth`):
+  - **Uplift:** from `relief.npz` (range bodies), plus low plains uplift.
+  - **Stream power:** solved at equilibrium on a `workKmPerPixel` grid (n = 1, dt → ∞: hᵢ = h_rcv + dᵢ·U / A^m), with priority-flood receivers (numba). Traced river cells are forced receivers, so the valleys follow the map.
+  - **Range gains:** grouped by range name at the 99.5th percentile to meet each range's peakM.
+  - **Summits** (`synth.summits`): lower bounds met by local uplift. Hard `constraints` come from verified ledger heights only.
+  - **Finish:** upsampling, ridged detail scaled by the local relief, a gully pass, a talus limit (`talusDeg`), the inland rise (keeps lowlands off the beach shading), and the sea shelf and floor.
+  - **Determinism:** seeded from `seeds.world`. The report goes to `data/baked/cache/synth_report.json`.
+- **Source layer** (`tools/bake/bake/source.py`): reads the GeoJSON layers (km → metres) so the inherited bake runs unchanged. Missing layers are empty, and empty frames keep object-dtype columns. `stamp()` keys the cache on the layer files' digests.
+- **Hydro on a traced network:** unprofiled lines (skeleton loops) are marked absorbed, and `into` references are re-pointed past absorbed lines. The geometry gates in `tools/check/world.ts` are warnings while the bake is coarser than 0.5 km/px.
+
+## Canon ledger (data/canon, tools/canon)
+- `books.json`: book ids and ranks (the novels and novellas, then *The Lands of Ice and Fire*, then *The World of Ice & Fire* and the other companions). It also holds the label meanings and the time slice (298 AC).
+- `subjects.json`: every planned landmark, range, river, region and slice fact (88), grouped north / west / south / realm.
+- `claims/<group>.json`: one claim per fact.
+  - Fields: `{id, subjects, kind, claim, label T|M|C|I, cites [{book, chapter, find[]}], value?, use[], status draft|verified|corrected|disputed, notes?, conflict?, basis?}`.
+  - `data/canon/README.md` holds the full schema, the kinds and the values.
+  - `find` holds at most 3 short search keys of at most 5 words each. A key locates the passage in the reader's own copy and never quotes it.
+- `pnpm canon`: validates the schema and coverage (every subject has at least one claim) and checks that each claim's label agrees with its sources. It also runs inside `pnpm check`.
+- `pnpm canon --index`: indexes the corpus at `MOW_CORPUS_DIR` (.txt / .md / .html / .epub, with a minimal zip reader). The corpus is the user's own copies of the published books and is never committed.
+  - The indexer refuses *The Winds of Winter* previews and generated prose.
+- `pnpm canon --verify [--apply]`: checks that every key of a citation occurs in one chapter of the cited book, and sets `verified` only then. `--find <text>` searches the corpus; `--selftest` tests the verifier.
+- The bake uses claims only when they are `verified`, and then only as hard heights (`synth.constraints`).
+  Drafts may feed `synth.summits` lower bounds, which carry their ledger id.
+
+## Westeros changes to the engine
+- **Adapter limits:** `Engine` requests the adapter's `maxTextureDimension2D` / buffer limits (16384 on the RTX 5090). `World.load` throws when a baked raster exceeds them. `CAMERA_FAR_KM` is 60000 for the 4700 km board.
+- **Software WebGPU (cloud sessions):** `?softgpu=1` (set by the capture tools under `MOW_SOFTWARE_GPU=1`, with `MOW_CHROME` as the browser) allows a fallback adapter.
+  - Shims for Chromium 141 SwiftShader (`src/dev/softgpu.ts`): the identity texture-view swizzle is dropped, and the foliage foam 3D texture is skipped (its `writeTexture` fails there).
+  - Renders made this way are geometry checks, not looks.
+- **Terrain:** the CDLOD vertex xz is clamped to the frame, and CDLOD skips nodes beyond its east / south edges (the root tiles overhang the 2640 × 4700 km frame).
+- **Places:** `PlaceDef` gains `label` and `map`. The volcano look keys on `VOLCANO_PLACE = 'dragonmont'`, which has no lava flows yet.
+- **Vegetation:** forest channels are named in `world.json → forests.channels`: R haunted forest, G wolfswood, B unused, A southern woods (Kingswood, Rainwood).
+  - `placement.ts` has the Westeros fertile and barren region tables.
+- **Landmarks:** only the kit and the system remain; Phase 3 adds the 24 Westeros folders.

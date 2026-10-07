@@ -43,7 +43,7 @@
     "maxSat": 0.42,
     "minMax": 60,
     "maxMax": 175,
-    "notes": "Water = B - R > minBR, B - G > minBG, saturation < maxSat, minMax < max(R,G,B) < maxMax: the sea, lakes and rivers are mid-dark blue-grey or teal; saturated blue crests and pale blue / lavender crests are not water. Teal water (the Gods Eye): G - R > teal.minGR and B - R > teal.minBR — no land paint on this sheet is teal.",
+    "notes": "Water = B - R > minBR, B - G > minBG, saturation < maxSat, minMax < max(R,G,B) < maxMax: the sea, lakes and rivers are mid-dark blue-grey or teal; saturated blue crests and pale blue / lavender crests are not water. Teal water (the Gods Eye): G - R > teal.minGR and B - R > teal.minBR and saturation < teal.maxSat: the Gods Eye's teal is muted (median saturation 0.22); the green, teal and blue house crests are saturated (0.41–0.83) and read as lakes without the cap.",
     "river": {
       "minBR": -6,
       "minBG": -20,
@@ -55,8 +55,26 @@
       "minGR": 8,
       "minBR": 0,
       "maxMax": 175,
-      "minMax": 50
+      "minMax": 50,
+      "maxSat": 0.38
     }
+  },
+  "notLakes": {
+    "notes": "Sheet px of house crests whose muted paint passes the lake colour rule (a lake component within 8 px is dropped): Crow's Nest's crow (stormlands), House Reed's lizard-lion at Greywater Watch, a blue shield on the Crackclaw coast. Found on the overlay review.",
+    "px": [
+      [
+        1466,
+        3133
+      ],
+      [
+        991,
+        1880
+      ],
+      [
+        1278,
+        1944
+      ]
+    ]
   },
   "train": {
     "notes": "Training windows [x0, y0, x1, y1] in sheet pixels for the terrain classifier (tools/geo/vectorize.py). Picked by eye on a gridded render; crests and labels inside them are a minority.",

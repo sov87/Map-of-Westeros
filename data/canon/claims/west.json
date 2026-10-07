@@ -785,7 +785,7 @@
         "vectors"
       ],
       "status": "draft",
-      "notes": "The direction is approximate (between north and north-east). No leagues or days between the Twins and Riverrun are recalled from the text, so none are given."
+      "notes": "On the westeros-crests sheet the Twins lie about 390 km from Riverrun at a bearing of about 12° (north, a little east). No leagues or days between the Twins and Riverrun are recalled from the text. Inverse: riverrun-position."
     },
     {
       "id": "riverrun-confluence",
@@ -934,7 +934,7 @@
         "river-road"
       ],
       "kind": "relative-position",
-      "claim": "On the maps Riverrun lies in the western riverlands, south-west of the Twins and west of the Trident's forks, with the river road running east from it toward the kingsroad.",
+      "claim": "On the maps Riverrun lies in the western riverlands, south and a little west of the Twins and west of the Trident's forks, with the river road running east from it toward the kingsroad.",
       "label": "M",
       "cites": [
         {
@@ -949,14 +949,14 @@
       "value": {
         "from": "the-twins",
         "to": "riverrun",
-        "dir": "sw",
+        "dir": "s",
         "approx": true
       },
       "use": [
         "vectors"
       ],
       "status": "draft",
-      "notes": "This is the inverse of the-twins-position. Both are approximate, from about south to south-west."
+      "notes": "The inverse of the-twins-position (Riverrun → the Twins: north, a little east)."
     },
     {
       "id": "riverrun-tully-seat",
@@ -1047,12 +1047,12 @@
       "kind": "position",
       "claim": "Build assumption: the high road to the Vale branches east from the kingsroad at or close to the same crossroads.",
       "label": "I",
-      "basis": "Catelyn's party leaves the inn with Tyrion (AGOT Catelyn V) and is next found on the high road, riding east into the Mountains of the Moon (AGOT Tyrion IV, Catelyn VI). Realm claim kingsroad-crossroads says the same. No sentence recalled makes the inn a three-road junction.",
+      "basis": "Catelyn's party leaves the inn with Tyrion (AGOT Catelyn V) and is next found on the high road, riding east into the Mountains of the Moon (AGOT Tyrion IV, Catelyn VI). No sentence recalled makes the inn a three-road junction.",
       "use": [
         "vectors"
       ],
       "status": "draft",
-      "notes": "Brief not confirmed as text: 'where the Kingsroad meets the river road and the high road' is only half supported. The high-road branch may leave the kingsroad some way north of the inn. Check LOIAF."
+      "notes": "The only record of where the high road leaves the kingsroad (realm kingsroad-crossroads states only the journey). The branch may leave the kingsroad some way north of the inn. Check LOIAF."
     },
     {
       "id": "inn-at-the-crossroads-keeper",

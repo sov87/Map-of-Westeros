@@ -159,9 +159,12 @@ export function validateLedger(L: Ledger): LedgerReport {
       const find = ct.find ?? [];
       if (find.length > MAX_FIND_KEYS) E(`${at}: ${find.length} find keys (max ${MAX_FIND_KEYS})`);
       for (const k of find) if (typeof k !== 'string' || !k.trim() || words(k) > MAX_FIND_WORDS) E(`${at}: find key '${k}' must be 1–${MAX_FIND_WORDS} words (IP rule)`);
-      if (c.label === 'T' && L.books.books[ct.book] && L.books.books[ct.book].rank !== 1) W(`${at}: label T cites ${ct.book} (rank ${L.books.books[ct.book].rank}): T means the novels / novellas`);
-      if (c.label === 'M' && ct.book !== 'LOIAF' && ct.chapter !== 'Map') W(`${at}: label M should cite LOIAF or a novel's endpaper map (chapter 'Map')`);
     }
+    // the label names the claim's own kind of source; further citations of another rank may support it
+    const isNovel = (ct: Cite) => L.books.books[ct.book]?.rank === 1 && ct.chapter !== 'Map';
+    const isMap = (ct: Cite) => ct.book === 'LOIAF' || ct.chapter === 'Map';
+    if (c.label === 'T' && cites.length && !cites.some(isNovel)) W(`${at}: label T but no novel / novella chapter is cited (T means the novels' text)`);
+    if (c.label === 'M' && cites.length && !cites.some(isMap)) W(`${at}: label M should cite LOIAF or a novel's endpaper map (chapter 'Map')`);
     if ((c.status === 'verified' || c.status === 'corrected') && c.label !== 'I' && cites.some((ct) => !(ct.find ?? []).length)) W(`${at}: ${c.status} but a citation has no find keys`);
   }
   // coverage

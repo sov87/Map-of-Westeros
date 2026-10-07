@@ -33,7 +33,7 @@
         "haunted-forest"
       ],
       "kind": "state-298",
-      "claim": "The free folk live in scattered villages and holdfasts. Mormont's ranging passes the empty village of Whitetree and then Craster's Keep on its way north.",
+      "claim": "The free folk live in scattered villages and holdfasts beyond the Wall, Whitetree among them; Craster's Keep stands in the Haunted Forest north of it.",
       "label": "T",
       "cites": [
         {
@@ -55,7 +55,31 @@
         "look"
       ],
       "status": "draft",
-      "notes": "ACOK Jon chapter numbering recalled: Whitetree in Jon I, Craster's Keep in Jon II."
+      "notes": "ACOK Jon chapter numbering recalled: Whitetree in Jon I, Craster's Keep in Jon II. The villages Mormont's ranging finds empty in ACOK were abandoned as their people went to join Mance (claim beyond-the-wall-villages-abandoned, state-after); at 298 AC they are lived in."
+    },
+    {
+      "id": "beyond-the-wall-villages-abandoned",
+      "subjects": [
+        "beyond-the-wall",
+        "haunted-forest"
+      ],
+      "kind": "state-after",
+      "claim": "When Mormont's ranging passes Whitetree and the other villages near the Wall in ACOK, they stand freshly empty: their people have gone into the mountains to join Mance Rayder. The build ignores this.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Jon I",
+          "find": [
+            "Whitetree"
+          ]
+        }
+      ],
+      "use": [
+        "look"
+      ],
+      "status": "draft",
+      "notes": "Split out of beyond-the-wall-settlements on the Lore critic (books only, 2026-10-07)'s time-slice finding."
     },
     {
       "id": "beyond-the-wall-whitetree-weirwood",
@@ -64,7 +88,7 @@
         "haunted-forest"
       ],
       "kind": "vegetation",
-      "claim": "Whitetree, an abandoned wildling village, takes its name from a huge old weirwood with a carved face that grows among its empty dwellings.",
+      "claim": "Whitetree, a wildling village, takes its name from a huge old weirwood with a carved face that grows in its midst.",
       "label": "T",
       "cites": [
         {
@@ -139,7 +163,7 @@
         "scale"
       ],
       "status": "draft",
-      "notes": "Recalled with moderate confidence. Not sure of the exact wording (as large as / nearly as large as) or whether a novel says it as well. Use only as a soft scale check."
+      "notes": "Recalled with moderate confidence. Not sure of the exact wording (as large as / nearly as large as) or whether a novel says it as well. Use only as a soft scale check. Held out of every scale use until the corpus finds the wording in TWOIAF; if it does not, delete this claim and keep realm westeros-north-largest (M). The common 'as big as the other six' line may come from an author interview, which is not a source."
     },
     {
       "id": "north-kingsroad-spine",
@@ -210,12 +234,20 @@
         "castle-black"
       ],
       "kind": "distance",
-      "claim": "Brandon's Gift, the Night's Watch land along the south side of the Wall, is recalled as reaching twenty-five leagues south of the Wall. The later New Gift lies beyond it to the south.",
+      "claim": "Brandon's Gift, the Night's Watch land along the south side of the Wall, reaches twenty-five leagues south of it; the New Gift, granted later, lies beyond it to the south.",
       "label": "C",
       "cites": [
         {
           "book": "TWOIAF",
           "chapter": "The Wall and Beyond: The Night's Watch"
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Jon I",
+          "find": [
+            "Brandon's Gift",
+            "New Gift"
+          ]
         }
       ],
       "value": {
@@ -227,7 +259,7 @@
         "scale"
       ],
       "status": "draft",
-      "notes": "Recalled with moderate confidence. The Gift is also discussed in ADWD Jon chapters and in FAB (Queen Alysanne granting the New Gift). The New Gift's depth is deliberately not asserted."
+      "notes": "The one Gift-depth claim (realm the-wall-gift points here). Recalled with moderate confidence; the ADWD chapter is a guess. The New Gift is recalled as about as deep again (fifty leagues together); that is not asserted."
     },
     {
       "id": "north-deepwood-to-winterfell",
@@ -251,14 +283,16 @@
       ],
       "value": {
         "leagues": 100,
+        "mode": "raven",
         "from": "deepwood-motte",
-        "to": "winterfell"
+        "to": "winterfell",
+        "approx": true
       },
       "use": [
         "scale"
       ],
       "status": "draft",
-      "notes": "A straight-line figure and a round number. deepwood-motte is a place id, not a subject. It is the only within-the-North distance with a number that I recall confidently; I recall no numeric Winterfell-Wall, Moat Cailin-Winterfell or Neck-width figure, so none is given."
+      "notes": "A straight-line figure and a round number. deepwood-motte is a place id, not a subject. It is the only within-the-North distance with a number that I recall confidently; I recall no numeric Winterfell-Wall, Moat Cailin-Winterfell or Neck-width figure, so none is given. The single record of this distance (the realm duplicate was merged here); a straight-line round figure, hence approx."
     },
     {
       "id": "north-woods-mix",
@@ -661,7 +695,7 @@
         },
         {
           "book": "ASOS",
-          "chapter": "Jon VII",
+          "chapter": "Jon VI",
           "find": [
             "King's Tower"
           ]
@@ -748,7 +782,7 @@
       "cites": [
         {
           "book": "ASOS",
-          "chapter": "Jon VIII",
+          "chapter": "Jon VII",
           "find": [
             "tunnel",
             "Mag"
@@ -759,7 +793,7 @@
         "landmark:castle-black"
       ],
       "status": "draft",
-      "notes": "The tunnel is the Watch's standing gate north, so it exists at 298 AC. The gate details (iron bars, oak doors) need verifying."
+      "notes": "The tunnel is the Watch's standing gate north, so it exists at 298 AC. The gate details (iron bars, oak doors) need verifying. Chapter per the lore critic's recollection (Noye and Mag: ASOS Jon VII, not VIII); verify."
     },
     {
       "id": "castle-black-moles-town",
@@ -800,7 +834,7 @@
       "cites": [
         {
           "book": "ASOS",
-          "chapter": "Jon VII",
+          "chapter": "Jon VI",
           "find": [
             "stair"
           ]
@@ -817,7 +851,7 @@
         "landmark:castle-black"
       ],
       "status": "draft",
-      "notes": "Not yet verified: which flights burned, and the chapter that seals the tunnel. ADWD reopens the tunnel. Also recalled but not asserted: by ADWD the Lord Commander's Tower is a burned shell."
+      "notes": "Not yet verified: which flights burned, and the chapter that seals the tunnel. ADWD reopens the tunnel. Also recalled but not asserted: by ADWD the Lord Commander's Tower is a burned shell. The stair fire is recalled as ASOS Jon VI (the Thenn attack), the sealed tunnel as Jon VIII."
     },
     {
       "id": "eastwatch-position",
@@ -2040,7 +2074,7 @@
         "north"
       ],
       "kind": "state-298",
-      "claim": "The northern hill clans (Wulls, Norreys, Liddles, Flints and others) come down from their mountains to fight for Stannis when he takes Deepwood Motte in ADWD.",
+      "claim": "The northern hill clans (Wulls, Norreys, Liddles, Flints and others) live in the mountains of the North; they are named when they come down to join Stannis at Deepwood Motte in ADWD.",
       "label": "T",
       "cites": [
         {

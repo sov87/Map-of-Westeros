@@ -1,44 +1,34 @@
-# data/source — third-party geography source data
+# data/source — the geography's source images and everything traced from them
 
-> **This folder is gitignored and its data must NEVER be committed or pushed** (only this
-> README and `manifest.json` are tracked). It holds third-party data whose redistribution
-> terms are unclear or restrictive. Build tools read from here and emit derived,
-> project-specific assets elsewhere.
->
-> Restore / verify: `pnpm data:fetch` (`node tools/refs/fetch-data.mjs --only data [--check]`),
-> driven by `data/source/manifest.json` (URLs, sizes, sha256).
+> **This folder is gitignored, and nothing in it may be committed or pushed.** Only this README and
+> `manifest.json` are tracked. It holds the user's map images, which are copyrighted, and data traced
+> from them, which is a derivative.
+> Build tools read from here and write project assets elsewhere. Worktrees point `MOW_SOURCE_DIR` at the
+> main checkout's copy.
 
-## arda/ — bburns/Arda (https://github.com/bburns/Arda, branch `main`)
+Map of Westeros fetches no third-party geography: `manifest.json` has no items, so `pnpm data:fetch` only
+restores the CC0 textures and samples. Everything below comes from the user's own copies and is
+regenerated with `pnpm geo …`. See `docs/ARCHITECTURE.md` → Geography pipeline.
 
-Licence: **MIT for code; DEM/vector data provenance uncertain** (original ME-DEM
-project by the Outerra Worlds Forum team: monks, SeerBlue, Redrobes; maintained by
-jvangeld; packaged by bburns). The repo README says: "This project is MIT, though the
-original 3d DEM elevation data (10k/dem.jpg) and vector layers are uncertain." No
-LICENSE file exists in the repo. Treat the data as dev-only; ask before redistribution.
-
-| File | Source | What it is |
-|---|---|---|
-| `arda/vectors/vectors.gpkg` | `data/vectors/vectors.gpkg` | GeoPackage (SQLite) of vector layers: coastlines, rivers, lakes, forests, roads, places, etc. |
-| `arda/rasters/10k/dem.jpg` | `data/rasters/10k/dem.jpg` | 10000x10000 8-bit greyscale DEM (JPEG) |
-| `arda/rasters/10k/dem.wld` | `data/rasters/10k/dem.wld` | World file: 200.1 m/px, origin (-900, 2001100) |
-| `arda/rasters/32k/dem.vrt` | `data/rasters/32k/dem.vrt` | GDAL VRT mosaic, 32257x32257 UInt16, EPSG:32631, ~62.03 m/px |
-| `arda/rasters/32k/dem_{nw,ne,sw,se}.tif` | GitHub release `dem-32k-v1` | Four UInt16 GeoTIFF quadrants referenced by the VRT (relativeToVRT, same folder). `hillshade.tif` intentionally not downloaded. |
-| `arda/docs/README.md` | `README.md` | Repo README (credits, licence note) |
-| `arda/docs/2026-09-20-32k-dem.md` | `docs/2026-09-20-32k-dem.md` | Calibration / build notes for the 32k DEM |
-| `arda/docs/build-dem.ps1` | `scripts/build-dem.ps1` | DEM build script (reference only, not run here) |
-
-## me-gis/ — andrewheiss/ME-GIS (https://github.com/andrewheiss/ME-GIS, branch `master`)
-
-Terms: **ask before use; usually approved for personal/educational use** (see README
-for credits/terms). Dev reference only.
-
-| File | What it is |
+## maps/ — the user's map images
+| Path | What it is |
 |---|---|
-| `me-gis/README.md` | Repo README: terms and credits |
-| `me-gis/Combined_Placenames.xyz` | Text export of place-name label anchors (NAME / DESCRIPTION / coordinates) |
+| `maps/westeros-crests/map.png` | The **base sheet**: the "Map of Westeros" crests map (2688 × 3840 px, digitally hand-drawn, posted on r/mapmaking; supplied by the user). It defines the frame: its scale comes from the Wall (300 mi) and its frame crop is px 34..1957 × 340..3764. Its profile, with coordinates and thresholds only, is `tools/geo/maps/westeros-crests.json`. |
 
-## Canonical maps
+A further sheet goes in `maps/<id>/` (for example a scan of *The Lands of Ice and Fire* or an ebook's endpaper map). It needs a profile `tools/geo/maps/<id>.json` with `file` (the image path) and `controlPoints`. It is pinned to the base frame with `pnpm geo georef --map <id>`.
 
-Reference maps live in the local, never-committed `reference/maps/` (indexed by the local
-`reference/manifest.json`). Most are copyrighted (Tolkien Estate / HarperCollins /
-New Line) and are dev reference only; a few Wikimedia Commons files are CC BY / CC BY-SA / PD.
+## westeros/ — derived (regenerate, never edit by hand)
+| Path | Written by | What it is |
+|---|---|---|
+| `westeros/vectors/*.geojson` | `pnpm geo vectorize --map westeros-crests` | land, lakes, rivers, forests, mountains, hills, wetlands in map km (x east, y north); label M, `src` = map id. These are the bake's source layers (`world.json → source.vectors`). |
+| `westeros/vectors/relief.npz` | 〃 | Mountain, hill and desert density on the frame crop (half resolution). It drives the synthesized uplift. |
+| `westeros/vectors/vectorize.json`, `debug/*.png` | 〃 | Run report, water mask and terrain class images for checking the trace. |
+| `westeros/overlay/index.html` (+ `sheet.jpg`, `composite.png`) | `pnpm geo overlay` | The **review page**: the sheet with toggleable traced layers and the places. Open it locally in a browser. It embeds the map, so it never leaves this folder. |
+| `westeros/calibration.json` | `pnpm geo calibrate` | km/px from the Wall, the scale bar's figure, and the residual of every ledger distance between placed points. |
+| `westeros/sketch/` | `pnpm geo sketch` | Superseded: the from-memory sketch used before the map arrived. Kept only as a test fixture. |
+
+## canon/ — the book corpus index (optional)
+`pnpm canon --index` writes its index here (`canon/corpus-index.json`: chapter ids and key hits only, no book text). The books themselves stay wherever `MOW_CORPUS_DIR` points:
+the user's own copies of the published novels and companions (.txt / .md / .html / .epub). Preview chapters
+of *The Winds of Winter* and generated prose are refused. Verification reports also land here, because
+they hold corpus hits.

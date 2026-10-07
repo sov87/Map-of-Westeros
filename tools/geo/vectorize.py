@@ -98,7 +98,7 @@ def water_mask(img: np.ndarray, w: dict) -> np.ndarray:
     m = (B - R > w["minBR"]) & (B - G > w["minBG"]) & (sat < w["maxSat"]) & (mx > w["minMax"]) & (mx < w.get("maxMax", 256))
     t = w.get("teal")
     if t:
-        m |= (G - R > t["minGR"]) & (B - R > t["minBR"]) & (mx < t["maxMax"]) & (mx > t["minMax"])
+        m |= (G - R > t["minGR"]) & (B - R > t["minBR"]) & (mx < t["maxMax"]) & (mx > t["minMax"]) & (sat < t.get("maxSat", 1.0))
     return m
 
 
@@ -261,11 +261,24 @@ def bridge_gaps(sk: np.ndarray, targets: np.ndarray, reach: int) -> np.ndarray:
     return out > 0
 
 
-def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len_px: int, gap_px: int, bridge_px: int = 16) -> list[list[tuple[float, float]]]:
+def fill_small_holes(mask: np.ndarray, max_px: int) -> np.ndarray:
+    """Fill enclosed holes up to max_px (8-connected background counts as one hole)."""
+    holes = ndimage.binary_fill_holes(mask) & ~mask
+    hl, hn = ndimage.label(holes)
+    if not hn:
+        return mask
+    hs = ndimage.sum(holes, hl, range(1, hn + 1))
+    return mask | np.isin(hl, [k + 1 for k, v in enumerate(hs) if v <= max_px])
+
+
+def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len_px: int, gap_px: int, bridge_px: int = 16, ring_hole_px: int = 300, ink: np.ndarray | None = None) -> list[list[tuple[float, float]]]:
     from skimage.morphology import skeletonize
 
-    # rivers are drawn 1–3 px wide; close tiny breaks, thin to one pixel
+    # rivers are drawn 1–3 px wide; close tiny breaks, thin to one pixel. A small closed ring (a castle marker's
+    # circle, a river drawn round a label) is filled first, so it thins to a short spur that is pruned below
+    # instead of a loop: a loop in a traced river becomes a drainage cycle in the bake.
     rv = cv2.morphologyEx(rivers.astype(np.uint8), cv2.MORPH_CLOSE, disk(2)) > 0
+    rv = fill_small_holes(rv, ring_hole_px)
     sk = skeletonize(rv)
     # bridge the breaks a castle dot, crest or label leaves in a river: every loose end looks ahead (its own
     # direction ± 60°) up to bridgePx for another river piece, a lake or the sea, and joins it with a line
@@ -273,7 +286,7 @@ def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len
     sizes = ndimage.sum(sk, lab, range(1, n + 1))
     sk = np.isin(lab, [k + 1 for k, s in enumerate(sizes) if s >= 10])
     sk = bridge_gaps(sk, sea | lakes, bridge_px)
-    sk = skeletonize(cv2.dilate(sk.astype(np.uint8), disk(1)) > 0)
+    sk = skeletonize(fill_small_holes(cv2.dilate(sk.astype(np.uint8), disk(1)) > 0, ring_hole_px))
     # drop skeleton components shorter than min_len (label fragments, crest bits)
     lab, n = ndimage.label(sk, structure=np.ones((3, 3)))
     sizes = ndimage.sum(sk, lab, range(1, n + 1))
@@ -286,6 +299,36 @@ def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len
             for e in (b[0], b[-1]):
                 endc[e] = endc.get(e, 0) + 1
         branches = [b for b in branches if not (len(b) < min_len_px // 2 and (endc[b[0]] == 1 or endc[b[-1]] == 1) and not (endc[b[0]] == 1 and endc[b[-1]] == 1))]
+    # a river network is a tree. Where branches close a loop (a river's name lettered along it in the same blue,
+    # a crest's ring, a bridge back into its own river) keep the darkest ink and drop the palest branch of each
+    # loop: a minimum spanning forest by the branch's mean brightness on the sheet (bridged gaps read as paper)
+    if ink is not None and branches:
+        par: dict = {}
+
+        def find(x):
+            while par.setdefault(x, x) != x:
+                par[x] = par[par[x]]
+                x = par[x]
+            return x
+
+        def pale(b):
+            rr, cc = np.array(b).T
+            return float(ink[rr, cc].mean())
+
+        # junction stubs (a few px between skeleton nodes) are part of their junction: contracted first, so a
+        # loop is decided between real branches, never by dropping a stub
+        tree = []
+        for b in (b for b in branches if len(b) <= 3):
+            ra, rz = find(b[0]), find(b[-1])
+            if ra != rz:  # a stub closing a triangle inside its junction is redundant
+                par[ra] = rz
+                tree.append(b)
+        for b in sorted((b for b in branches if len(b) > 3), key=pale):
+            ra, rz = find(b[0]), find(b[-1])
+            if ra != rz:
+                par[ra] = rz
+                tree.append(b)
+        branches = tree
     # outlets: branch ends next to the sea or a lake (within gap_px)
     sea_d = ndimage.distance_transform_edt(~sea)
     lake_d = ndimage.distance_transform_edt(~lakes) if lakes.any() else np.full(sea.shape, 1e9)
@@ -455,6 +498,15 @@ def vectorize(source: Path, map_id: str) -> None:
         cut = np.isin(llab, inlets)
         land &= ~cut
         lakes &= ~cut
+    # crests whose paint matches lake water too closely for the colour rule: listed in the profile (sheet px)
+    if prof.get("notLakes", {}).get("px"):
+        llab, ln = ndimage.label(lakes)
+        drop = set()
+        for x, y in prof["notLakes"]["px"]:
+            r, c = int(round(y - y0)), int(round(x - x0))
+            win = llab[max(r - 8, 0) : r + 9, max(c - 8, 0) : c + 9]
+            drop |= {int(v) for v in np.unique(win) if v}
+        lakes &= ~np.isin(llab, sorted(drop))
     sea = ~land
     print(f"[geo]   land {land.mean() * 100:.1f} % of the frame, {info}; lakes {int(ndimage.label(lakes)[1])}; river pixels {int(rivers.sum())}")
     Image.fromarray((np.dstack([land, lakes, rivers]) * 255).astype(np.uint8)).resize((W // 2, H // 2)).save(dbg / "water.png")
@@ -464,7 +516,7 @@ def vectorize(source: Path, map_id: str) -> None:
     save(out, "land", [feat(p, src, name="Westeros") for p in land_polys])
     lake_polys = polygons(lakes, sheet, x0, y0, 1.0, 0.8, 30)
     save(out, "lakes", [feat(p, src, name=None) for p in lake_polys])
-    lines = trace_rivers(rivers, sea, lakes, int(prof.get("minRiverComponentPx", prof.get("minRiverPx", 30))), int(prof.get("gapPx", 6)), int(prof.get("bridgePx", 16)))
+    lines = trace_rivers(rivers, sea, lakes, int(prof.get("minRiverComponentPx", prof.get("minRiverPx", 30))), int(prof.get("gapPx", 6)), int(prof.get("bridgePx", 16)), int(prof.get("ringHolePx", 300)), ink=img.max(axis=-1))
     rfeats = []
     for i, ln in enumerate(lines):
         g = LineString([sheet.km(x0 + x, y0 + y) for x, y in ln]).simplify(0.7 * sheet.km_per_px)

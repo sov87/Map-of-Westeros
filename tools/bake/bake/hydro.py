@@ -1502,6 +1502,8 @@ def geometry_report(cfg: Config, h_pre: np.ndarray, h_lakes: np.ndarray, h_carve
         if l.absorbed or not l.cont_main or l.down[0] != "line":
             continue
         C = lines[l.down[1]]
+        if C.absorbed:
+            continue  # not exported: the feeder is re-pointed past it (live_into below)
         conts.append({"id": l.id, "into": C.id, "gapKm": round(float(np.hypot(*(l.pts[-1] - C.pts[0]))), 4), "dLevel": round(float(l.level[-1] - C.level[0]), 4)})
     rep["continuations"] = conts
     # 10. lengths: raw ME-GIS (clipped to the frame) → processed, and where the difference went

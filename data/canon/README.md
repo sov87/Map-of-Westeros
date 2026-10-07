@@ -56,7 +56,7 @@ build ignores), `name`.
 
 **values** — `ft`, `miles`, `leagues` (1 league = 3 miles in the books' usage), `km`, `count`,
 `days` (+ `mode`: foot / horse / ship / raven), `from` / `to` (subject or place ids), `dir`
-(n, ne, e, se, s, sw, w, nw, upstream, downstream, above, below), `approx` (true when the text hedges).
+(n, ne, e, se, s, sw, w, nw, upstream, downstream, above, below), `approx` (true when the text hedges), `atLeast` (true when the text gives only a lower bound — never a calibration point).
 
 **use** tags — `scale` (scale calibration: distances and lengths), `terrain` (heights and relief
 constraints), `hydrology`, `vectors` (coast / river / road checks on the traced map), `look`,

@@ -31,16 +31,17 @@ LAYERS = [
 
 
 def _rings(geom: dict):
+    """(ring, is_hole) for every polygon ring or line part."""
     t, c = geom["type"], geom["coordinates"]
-    if t == "Polygon":
-        yield from c
-    elif t == "MultiPolygon":
-        for p in c:
-            yield from p
-    elif t == "LineString":
-        yield c
+    polys = [c] if t == "Polygon" else c if t == "MultiPolygon" else []
+    for p in polys:
+        for k, ring in enumerate(p):
+            yield ring, k > 0
+    if t == "LineString":
+        yield c, False
     elif t == "MultiLineString":
-        yield from c
+        for ln in c:
+            yield ln, False
 
 
 def build_overlay(root: Path, source: Path, map_id: str | None, vectors: str | None) -> None:
@@ -57,7 +58,6 @@ def build_overlay(root: Path, source: Path, map_id: str | None, vectors: str | N
     to_px = lambda x, y: (sheet.px(x, y)[0] - x0, sheet.px(x, y)[1] - y0)  # noqa: E731
     comp = img.convert("RGBA")
     over = Image.new("RGBA", comp.size, (0, 0, 0, 0))
-    dr = ImageDraw.Draw(over)
     svg = []
     for name, color, fill_op, width in LAYERS:
         p = vdir / f"{name}.geojson"
@@ -65,6 +65,8 @@ def build_overlay(root: Path, source: Path, map_id: str | None, vectors: str | N
             continue
         feats = json.loads(p.read_text(encoding="utf-8"))["features"]
         rgb = tuple(int(color[i : i + 2], 16) for i in (1, 3, 5))
+        lay = Image.new("RGBA", comp.size, (0, 0, 0, 0))  # one image per layer: a hole clears only its own layer
+        dr = ImageDraw.Draw(lay)
         parts = []
         for f in feats:
             g = f.get("geometry")
@@ -74,17 +76,21 @@ def build_overlay(root: Path, source: Path, map_id: str | None, vectors: str | N
             tip = html.escape(f"{name}: {props.get('name') or ''} [{props.get('label', '?')}]" + (f" peak {props['peakM']} m" if props.get("peakM") else ""))
             is_poly = g["type"] in ("Polygon", "MultiPolygon")
             d = ""
-            for ring in _rings(g):
+            # exteriors first, then the holes cut back to the sheet (a hole in the trace must show on review)
+            for ring, hole in sorted(_rings(g), key=lambda rh: rh[1]):
                 pts = [to_px(x, y) for x, y in ring]
                 if len(pts) < 2:
                     continue
                 d += "M" + " L".join(f"{a:.1f},{b:.1f}" for a, b in pts) + (" Z " if is_poly else " ")
                 if is_poly:
-                    dr.polygon(pts, outline=rgb + (230,), fill=rgb + (int(255 * fill_op),) if fill_op else None)
+                    fill = (0, 0, 0, 0) if hole else rgb + (int(255 * fill_op),) if fill_op else None
+                    dr.polygon(pts, outline=rgb + (230,), fill=fill)
                 else:
                     dr.line(pts, fill=rgb + (230,), width=max(1, int(round(width))))
-            parts.append(f'<path d="{d}" fill="{color if is_poly and fill_op else "none"}" fill-opacity="{fill_op}" stroke="{color}" stroke-width="{width}"><title>{tip}</title></path>')
+            parts.append(f'<path d="{d}" fill="{color if is_poly and fill_op else "none"}" fill-rule="evenodd" fill-opacity="{fill_op}" stroke="{color}" stroke-width="{width}"><title>{tip}</title></path>')
         svg.append(f'<g id="L-{name}" class="layer">{"".join(parts)}</g>')
+        over = Image.alpha_composite(over, lay)
+    dr = ImageDraw.Draw(over)
     # places
     places_path = root / "data" / "world" / "places.json"
     pl = json.loads(places_path.read_text(encoding="utf-8"))["places"] if places_path.exists() else []

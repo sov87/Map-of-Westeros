@@ -44,7 +44,7 @@ descriptions with citations, a short flyover film rendered offline at 2160p24, a
 
 ## Geography (Phase 1 pipeline)
 Westeros has no elevation data: the project makes its own (`docs/ARCHITECTURE.md` → Geography pipeline).
-Official map scans → `tools/geo` georeference (control points) → vectorize (Claude segments; the user reviews
+The user's map images (base sheet `westeros-crests` defines the frame; further sheets are pinned by control points) → `tools/geo` vectorize (Claude segments; the user reviews
 the overlay page, never traces) → scale calibration from the Wall's length, residuals vs. every ledger distance
 logged → `tools/bake` synthesis (uplift from mountain / hill areas, stream-power erosion along the fixed traced
 rivers, lakes, fine erosion, sea shelf; T-labelled heights as hard constraints) → the inherited bake.
@@ -56,8 +56,8 @@ rivers, lakes, fine erosion, sea shelf; T-labelled heights as hard constraints) 
   (`%LOCALAPPDATA%\map-of-westeros\gpu.lock`) behind a free-RAM guard (4 GB for captures, 6 GB for the bake).
   Captures in bounded batches, in the foreground, ≤ 10 min per call (split with `qa --only a,b,…`). Iterate at
   1920×1080 spp 4; milestone QA at 3840×2160 spp 4. Agents never run `pnpm build` or long-lived dev servers.
-- **Bake memory scales with texels**: a 0.4 km/px Westeros heightfield is ≈ 7× Middle-earth's (≈ 72 M texels,
-  tens of GB at peak). Iterate at a coarser `heightfield.kmPerPixel` (0.8–1.6) and bake full resolution only for
+- **Bake memory scales with texels**: a 0.4 km/px Westeros heightfield is ≈ 8× Middle-earth's (≈ 78 M texels,
+  ≈ 15 GB at peak; ≈ 200 bytes per texel). Iterate at a coarser `heightfield.kmPerPixel` (0.8–1.6) and bake full resolution only for
   milestones; `pnpm host` prints the estimate. Blender (`pnpm models`) runs headless under the same lock.
 - A full film render (hours) runs unbudgeted in its own window via `tools/capture/film-overnight.ps1` on a
   pinned Chrome copy (`MOW_CHROME`); no commit that touches the render inputs until it is assembled.
@@ -93,7 +93,7 @@ rivers, lakes, fine erosion, sea shelf; T-labelled heights as hard constraints) 
 
 ## Commands
 `pnpm host [--fix|--prune]` · `pnpm dev` · `pnpm typecheck` · `pnpm check` · `pnpm canon [--check|--verify]` ·
-`pnpm geo <georef|vectorize|calibrate|overlay|sketch> …` · `pnpm bake [-- --steps …]` ·
+`pnpm geo <vectorize|places|regions|calibrate|overlay|georef|sketch> …` · `pnpm bake [--steps …]` ·
 `pnpm shots --smoke|--shot <id>` · `pnpm qa [--set <name>] [--only a,b] [--batch 8]` · `pnpm perf [--gate]` ·
 `pnpm models [--only id]` · `pnpm review` · `pnpm lock --write|--verify|--compare` · `pnpm showcase` ·
 `pnpm film --at|--every|--render|--assemble …` · `pnpm music --cues <cue sheet>` · `pnpm data:fetch`

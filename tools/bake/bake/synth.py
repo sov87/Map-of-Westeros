@@ -222,7 +222,65 @@ def flood_receivers(h, base, forced, px, eps, DR, DC, DD):
             dist[i] = DD[best] * px
         elif on_edge:
             rec[i] = i  # drains off the frame: a base node
-    # donor-BFS stack from every self-receiving node
+    # donor-BFS stack from every self-receiving node. A forced river can close a cycle (a traced river that
+    # loops back on itself, or an open end whose steepest descent runs back up its own chain): everything
+    # draining into it would be cut off from the base level. Each cycle is broken where it stands — its
+    # cells lose their forced receiver and take the steepest descent on the flooded surface, which is acyclic
+    # — and the order is rebuilt until every cell is reached.
+    while True:
+        stack, seen, top = _donor_order(rec)
+        if top == N:
+            break
+        mark = np.zeros(N, np.int64)
+        broke = 0
+        for s0 in range(N):
+            if seen[s0] or mark[s0] != 0:
+                continue
+            i = s0
+            while not seen[i] and mark[i] == 0:
+                mark[i] = s0 + 1
+                i = rec[i]
+            if seen[i] or mark[i] != s0 + 1:
+                continue
+            j = i  # i lies on a cycle found by this walk
+            while True:
+                nxt = rec[j]
+                r = j // W
+                c = j - r * W
+                best = -1
+                bs = 0.0
+                for k in range(8):
+                    rr = r + DR[k]
+                    cc = c + DC[k]
+                    if rr < 0 or rr >= H or cc < 0 or cc >= W:
+                        continue
+                    s = (hf[j] - hf[rr * W + cc]) / (DD[k] * px)
+                    if s > bs:
+                        bs = s
+                        best = k
+                if best >= 0:
+                    rec[j] = (r + DR[best]) * W + c + DC[best]
+                    dist[j] = DD[best] * px
+                else:
+                    rec[j] = j
+                    dist[j] = 0.0
+                broke += 1
+                j = nxt
+                if j == i:
+                    break
+        if broke == 0:
+            # should not happen; keep the old fallback so the solver always terminates
+            for i in range(N):
+                if not seen[i]:
+                    rec[i] = i
+                    dist[i] = 0.0
+    return rec, dist, stack
+
+
+@njit(cache=True)
+def _donor_order(rec):
+    """Base-level-first order (donor BFS from every self-receiving node); top < N when cycles remain."""
+    N = rec.shape[0]
     ndon = np.zeros(N, np.int64)
     for i in range(N):
         if rec[i] != i:
@@ -254,14 +312,7 @@ def flood_receivers(h, base, forced, px, eps, DR, DC, DD):
                 seen[j] = True
                 stack[top] = j
                 top += 1
-    # cells caught in a cycle (cannot happen with a consistent river graph): make them base nodes
-    for i in range(N):
-        if not seen[i]:
-            rec[i] = i
-            dist[i] = 0.0
-            stack[top] = i
-            top += 1
-    return rec, dist, stack
+    return stack, seen, top
 
 
 @njit(cache=True)
@@ -380,6 +431,7 @@ def river_chains(grid: Grid, rivers, land_b: np.ndarray, lake_b: np.ndarray) -> 
                     if not cells or cells[-1] != (r, c):
                         cells.append((r, c))
             chain = []
+            pos: dict[int, int] = {}
             end = "open"
             for r, c in cells:
                 i = r * W + c
@@ -396,6 +448,11 @@ def river_chains(grid: Grid, rivers, land_b: np.ndarray, lake_b: np.ndarray) -> 
                     break
                 if chain and i == chain[-1]:
                     continue
+                if i in pos:  # the trace loops back on itself (a ring in the skeleton): erase the loop
+                    del chain[pos[i] + 1 :]
+                    pos = {v: q for q, v in enumerate(chain)}
+                    continue
+                pos[i] = len(chain)
                 chain.append(i)
             # the chain's own cells (a joined cell keeps its owner's receiver)
             for a in range(len(chain) - 1):

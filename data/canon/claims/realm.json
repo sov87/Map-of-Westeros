@@ -210,7 +210,7 @@
       ],
       "use": ["terrain", "look"],
       "status": "draft",
-      "notes": "In ADWD the Gift is discussed when Stannis and Jon talk about settling wildlings south of the Wall; the chapter is a guess. I recall each grant being twenty-five leagues deep, which would make the two together fifty leagues south of the Wall, but that is unverified and not used. Its thin, largely abandoned settlement is also unverified."
+      "notes": "In ADWD the Gift is discussed when Stannis and Jon talk about settling wildlings south of the Wall; the chapter is a guess. Its depth is north-gift-depth. Its thin, largely abandoned settlement is unverified."
     },
     {
       "id": "the-wall-new-gift-origin",
@@ -271,7 +271,7 @@
       "cites": [
         { "book": "AGOT", "chapter": "Tyrion II", "find": ["fortnight", "The north went on forever"] }
       ],
-      "value": { "days": 14, "mode": "horse", "from": "winterfell", "to": "castle-black", "approx": true },
+      "value": { "days": 14, "mode": "horse", "from": "winterfell", "to": "castle-black", "approx": true, "atLeast": true },
       "use": ["scale"],
       "status": "draft",
       "notes": "A lower bound only. The chapter opens after about two weeks on the road, the party has not yet arrived, and the passage gives no total. The party is mounted with pack animals; its pace is not stated. Use it as a soft check (Winterfell–Wall well over 14 days of riding), not a calibration point."
@@ -308,7 +308,7 @@
       "id": "kingsroad-crossroads",
       "subjects": ["kingsroad", "inn-at-the-crossroads"],
       "kind": "position",
-      "claim": "In the riverlands the kingsroad passes the inn at the crossroads, a junction of roads. From there Catelyn turns east onto the high road toward the Vale.",
+      "claim": "In the riverlands the kingsroad passes the inn at the crossroads. Catelyn's party leaves the inn and is next found riding east on the high road into the Mountains of the Moon.",
       "label": "T",
       "cites": [
         { "book": "AGOT", "chapter": "Catelyn V", "find": ["crossroads", "kingsroad"] },
@@ -316,7 +316,7 @@
       ],
       "use": ["vectors", "film"],
       "status": "draft",
-      "notes": "Which other roads meet here (river road to the west, high road to the east) and whether the inn lies north or south of the Trident belong to the west group and the map. I have not settled them here."
+      "notes": "Where the high road branches from the kingsroad is label I, recorded only in west inn-at-the-crossroads-high-road. Which other roads meet at the inn, and whether it lies north or south of the Trident, belong to the west group and the map."
     },
     {
       "id": "kingsroad-trident-crossing",
@@ -395,7 +395,7 @@
       ],
       "use": ["scale"],
       "status": "draft",
-      "notes": "I faintly recall a statement (TWOIAF 'The North', or a novel) that the North is about as large as the other kingdoms combined. It is unverified and not cited; if the verifier finds it, add a C or T claim."
+      "notes": "The text-based size statement is north-size (C, held out of scale use until verified)."
     },
     {
       "id": "westeros-arm-of-dorne",
@@ -430,20 +430,6 @@
       "basis": "I recall none in AGOT–ADWD. TWOIAF's regional sections give comparisons, not measurements, as far as I recall. Continent-size figures from author interviews are excluded by rule. The cross-checks are kingsroad-winterfell-wall-travel and westeros-deepwood-winterfell-distance.",
       "use": ["scale"],
       "status": "draft"
-    },
-    {
-      "id": "westeros-deepwood-winterfell-distance",
-      "subjects": ["westeros", "winterfell"],
-      "kind": "distance",
-      "claim": "Deepwood Motte lies about a hundred leagues from Winterfell as the raven flies.",
-      "label": "T",
-      "cites": [
-        { "book": "ADWD", "chapter": "The King's Prize", "find": ["hundred leagues", "Deepwood"] }
-      ],
-      "value": { "leagues": 100, "mode": "raven", "from": "deepwood-motte", "to": "winterfell", "approx": true },
-      "use": ["scale"],
-      "status": "draft",
-      "notes": "Both places are in the North. I included it because it is one of the very few explicit distances, and an independent check on the Wall-based scale; the north group may record the same fact. My recall is moderate: the text may give it as three hundred miles rather than in leagues, which is the same under the convention. approx is set because the distance is a straight-line rough reckoning. Stannis's march along this line, bogged down by snow some days short of Winterfell, gives no usable rate."
     },
 
     {
@@ -595,7 +581,7 @@
       "id": "slice-harrenhal-slagged",
       "subjects": ["climate-298", "harrenhal"],
       "kind": "state-298",
-      "claim": "Harrenhal's five huge towers were melted and twisted by dragonfire in Aegon's Conquest and stand slagged and misshapen. The vast castle is largely empty at 298 AC.",
+      "claim": "Harrenhal's five huge towers were melted and twisted by dragonfire in Aegon's Conquest and stand slagged and misshapen.",
       "label": "T",
       "cites": [
         { "book": "ACOK", "chapter": "Arya V", "find": ["Harrenhal"] }
@@ -603,7 +589,7 @@
       "value": { "count": 5 },
       "use": ["landmark:harrenhal"],
       "status": "draft",
-      "notes": "This confirms the brief. The description is from Arya's arrival at Harrenhal in ACOK (perhaps the end of Arya IV rather than Arya V). It describes damage nearly three centuries old, so it holds for the slice. Tower names (Kingspyre, Widow's Wail, Wailing Tower, Tower of Dread, Tower of Ghosts) appear in Arya's ACOK chapters; they are not verified here. FAB ('Aegon's Conquest') tells the burning itself; it is not cited, to keep this T claim novels-only."
+      "notes": "This confirms the brief. The description is from Arya's arrival at Harrenhal in ACOK (perhaps the end of Arya IV rather than Arya V). It describes damage nearly three centuries old, so it holds for the slice. Tower names (Kingspyre, Widow's Wail, Wailing Tower, Tower of Dread, Tower of Ghosts) appear in Arya's ACOK chapters; they are not verified here. FAB ('Aegon's Conquest') tells the burning itself; it is not cited, to keep this T claim novels-only. How empty the castle is at 298 AC is the I claim harrenhal-state-298, not this one."
     },
     {
       "id": "slice-dragonpit-roofless",
