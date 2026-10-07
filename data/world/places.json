@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "notes": "Every named place. 'canonical' = map km [x east, y north] measured on the georeferenced official map (Phase 1). 'label' = evidence label (T text, M official map, C companion, I inferred / invented; data/canon/books.json) and 'ledger' = the canon claims it rests on. 'displayOffsetKm' moves the miniature (never more than maxDisplayOffsetKm) to settle a text-vs-map conflict or a scale conflict, logged in the claim's 'conflict'. 'footprintKm' = display radius used by stamps, vegetation exclusion and the overlap validator. Tier A = hero landmark, B = supporting landmark; kind 'poi' / 'feature' / 'peak' are not validated for overlap. PHASE 0: empty — no position is guessed before the map is georeferenced.",
+  "maxDisplayOffsetKm": 30,
+  "wideShotPxTarget": {
+    "A": 30,
+    "B": 16
+  },
+  "places": []
+}

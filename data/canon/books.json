@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "notes": "The sources a ledger citation may name, in rank order (BRIEF.md: Book accuracy). Only the published books count. Excluded everywhere: the HBO shows (Game of Thrones, House of the Dragon) and anything derived from them, games, fan art, the TWOW sample / preview chapters, the corpus folder TWOW_PRODUCTION and any generated prose. Wikis are finding aids only, never citations. Chapter ids follow each book's own headings: POV name + roman numeral for the novels (e.g. 'Bran I', 'Prologue', 'Epilogue'), the section title for the companion books.",
+  "ranks": {
+    "1": "the published novels and novellas: descriptions, heights, distances, relative positions (label T)",
+    "2": "The Lands of Ice and Fire: positions of coasts, rivers, roads and castles (label M)",
+    "3": "The World of Ice & Fire, Fire & Blood, the novels' endpaper maps: gaps the first two leave (label C; an endpaper map is M)",
+    "4": "official illustrations in those books: the look of things the text leaves open, lowest weight (label C)"
+  },
+  "books": {
+    "AGOT": { "title": "A Game of Thrones", "year": 1996, "rank": 1, "kind": "novel" },
+    "ACOK": { "title": "A Clash of Kings", "year": 1998, "rank": 1, "kind": "novel" },
+    "ASOS": { "title": "A Storm of Swords", "year": 2000, "rank": 1, "kind": "novel" },
+    "AFFC": { "title": "A Feast for Crows", "year": 2005, "rank": 1, "kind": "novel" },
+    "ADWD": { "title": "A Dance with Dragons", "year": 2011, "rank": 1, "kind": "novel" },
+    "THK": { "title": "The Hedge Knight", "year": 1998, "rank": 1, "kind": "novella" },
+    "TSS": { "title": "The Sworn Sword", "year": 2003, "rank": 1, "kind": "novella" },
+    "TMK": { "title": "The Mystery Knight", "year": 2010, "rank": 1, "kind": "novella" },
+    "TPATQ": { "title": "The Princess and the Queen", "year": 2013, "rank": 1, "kind": "novella" },
+    "TRP": { "title": "The Rogue Prince", "year": 2014, "rank": 1, "kind": "novella" },
+    "TSOTD": { "title": "The Sons of the Dragon", "year": 2017, "rank": 1, "kind": "novella" },
+    "LOIAF": { "title": "The Lands of Ice and Fire", "year": 2012, "rank": 2, "kind": "maps" },
+    "TWOIAF": { "title": "The World of Ice & Fire", "year": 2014, "rank": 3, "kind": "companion" },
+    "FAB": { "title": "Fire & Blood", "year": 2018, "rank": 3, "kind": "companion" }
+  },
+  "labels": {
+    "T": "stated in the text (book and chapter)",
+    "M": "shown on an official map (The Lands of Ice and Fire, or a novel's endpaper map)",
+    "C": "from a companion book or official art",
+    "I": "inferred or invented: may never contradict a T or M claim"
+  },
+  "timeSlice": {
+    "year": "298 AC",
+    "moment": "the opening of A Game of Thrones",
+    "notes": "Physical state is frozen here. Later books may DESCRIBE a place (Moat Cailin in ADWD, Harrenhal in ACOK), and such descriptions count for anything that has not changed since 298 AC; damage done after it (a sack, a burning) is excluded from the build and logged as state-after."
+  }
+}

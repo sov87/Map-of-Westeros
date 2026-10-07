@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "notes": "The film's route. PHASE 0 PLACEHOLDER: one leg down the length of the provisional slab. Phase 5 authors the real route (default: down the Kingsroad from Castle Black to King's Landing; BRIEF.md 'Decisions').",
+  "defaults": {
+    "spacingKm": 0.25,
+    "liftKm": 0.02
+  },
+  "legs": [
+    {
+      "id": "placeholder",
+      "points": [
+        {
+          "at": [
+            1000,
+            5000
+          ]
+        },
+        {
+          "at": [
+            1000,
+            2000
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "map-of-westeros",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A book-accurate floating miniature diorama of Westeros at the opening of A Game of Thrones (three.js WebGPU + TSL). Engine forked from earthwalker17's Map of Middle-Earth (MIT). Non-commercial fan project.",
+  "license": "MIT",
+  "author": "sov87",
+  "homepage": "https://github.com/sov87/Map-of-Westeros#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sov87/Map-of-Westeros.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sov87/Map-of-Westeros/issues"
+  },
+  "keywords": [
+    "threejs",
+    "webgpu",
+    "tsl",
+    "terrain",
+    "diorama",
+    "westeros",
+    "a-song-of-ice-and-fire",
+    "offline-rendering",
+    "procedural"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "packageManager": "pnpm@11.1.3",
+  "scripts": {
+    "dev": "vite",
+    "build": "node --import tsx tools/heavy.ts build -- vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "data:fetch": "node tools/refs/fetch-data.mjs",
+    "refs:fetch": "node tools/refs/fetch.mjs",
+    "bake": "node --import tsx tools/heavy.ts bake --min-free-mb 6000 -- uv run --project tools/bake python tools/bake/run.py",
+    "shots": "node --import tsx tools/capture/shots.ts",
+    "qa": "node --import tsx tools/capture/qa.ts",
+    "check": "node --import tsx tools/check/run.ts",
+    "perf": "node --import tsx tools/capture/perf.ts",
+    "review": "node --import tsx tools/capture/review.ts",
+    "lock": "node --import tsx tools/capture/lock.ts",
+    "film": "node --import tsx tools/capture/film.ts",
+    "music": "node --import tsx tools/heavy.ts music --min-free-mb 1500 -- uv run --project tools/music python tools/music/run.py",
+    "showcase": "node --import tsx tools/capture/showcase.ts",
+    "host": "node --import tsx tools/host.ts",
+    "models": "node --import tsx tools/blender/run.ts"
+  },
+  "dependencies": {
+    "lil-gui": "0.21.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/three": "0.186.0",
+    "playwright": "1.63.0",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$comment": "Fetchable third-party geography sources (never committed or redistributed). Map of Westeros fetches none: its geography comes from the user's own copies of the official maps (scans and ebook maps) and the book corpus, which live only on the user's machine — see data/source/README.md. The fetch tooling (pnpm data:fetch) keeps working for the CC0 textures and samples.",
+  "restore": "pnpm data:fetch  (node tools/refs/fetch-data.mjs --only data [--check])",
+  "generated": "2026-10-07",
+  "items": []
+}

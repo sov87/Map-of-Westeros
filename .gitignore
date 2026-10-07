@@ -1,0 +1,51 @@
+# dependencies / builds
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# third-party source data & derived bake outputs (never pushed — regenerate with `pnpm data:fetch` + `pnpm bake`)
+# (data/source/ keeps only its README + manifest; git cannot re-include a file under an excluded dir,
+#  so ignore the directory's *contents* instead of the directory itself)
+data/source/*
+!data/source/README.md
+!data/source/manifest.json
+data/baked/
+data/baked-*/
+
+# reference material is dev-only and local: images, index and manifest are never committed (S4.5)
+reference/
+
+# third-party CC0 texture sources are fetched by script (manifest committed) and never shipped;
+# the runtime terrain detail layers in public/textures/ are derived from them (tools/textures/prep.mjs)
+data/textures-src/*
+!data/textures-src/manifest.json
+public/textures/**
+
+# S5 music: third-party CC0 sample libraries + the sfizz renderer, fetched by tools/music/fetch.py (manifest
+# committed, never shipped); rendered stems / mixes live under renders/music/
+data/music-src/*
+!data/music-src/manifest.json
+
+# renders, captures, caches (review/ holds the curated per-session review stills — local only;
+# final/ holds the finished film and its master — local only until the data authors give permission)
+renders/
+review/
+final/
+.cache/
+*.log
+
+# editors / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# agent worktrees (Claude Code)
+.claude/worktrees/

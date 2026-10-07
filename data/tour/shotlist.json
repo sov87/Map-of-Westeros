@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "notes": "Shot list: the film and, per landmark, its role in it, hero framing (class, distance), context framing and the detail budget that follows from it. The film block and the segments mirror the compiled film (data/tour/timeline.json via src/tour/compile.ts; `pnpm check` keeps them in sync). PHASE 0 PLACEHOLDER: no landmarks yet (Phase 3).",
+  "film": {
+    "seconds": 10,
+    "fps": 24,
+    "aspect": "16:9",
+    "shutterDeg": 180,
+    "beats": 1,
+    "timeline": "data/tour/timeline.json"
+  },
+  "classes": {
+    "wide": [
+      300,
+      8000
+    ],
+    "regional": [
+      60,
+      300
+    ],
+    "mid": [
+      15,
+      60
+    ],
+    "close": [
+      2,
+      15
+    ]
+  },
+  "detail": {
+    "refW": 1600,
+    "refH": 900,
+    "refFov": 35,
+    "minFeaturePx": 3,
+    "heroMinFrac": 0.25,
+    "lodPx": [
+      160,
+      40
+    ],
+    "policy": "Fixed design scale per landmark (never distance-dependent). Hero silhouette spans >= 25 % of frame height at `-close` and stays below 0.6x the host relief within 20 km; `-wide` extent >= places.json wideShotPxTarget (A 30 / B 16 px) or the landmark carries an emission / contrast cue; wide shots (>300 km) rely on terrain silhouette, contrast halo and emission sparkles. minFeatureKm = minFeaturePx x heroKm / 1427."
+  },
+  "segments": [
+    {
+      "id": "title",
+      "route": null,
+      "seconds": 10,
+      "tod": 11.05,
+      "mix": {
+        "wide": 1
+      },
+      "landmarks": [],
+      "beats": [
+        "open"
+      ]
+    }
+  ],
+  "landmarks": {}
+}

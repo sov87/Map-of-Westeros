@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "notes": "Geography review shots (Phase 1): the north and the south halves of the continent from above, north up, for side-by-side checks against the official map overlay.",
+  "shots": [
+    { "id": "geo-north", "tod": 12.0, "camera": { "orbit": { "targetKm": [1000, 4300], "distanceKm": 9000, "elevationDeg": 89.9, "azimuthDeg": 180, "fov": 20 } } },
+    { "id": "geo-south", "tod": 12.0, "camera": { "orbit": { "targetKm": [1000, 1500], "distanceKm": 9000, "elevationDeg": 89.9, "azimuthDeg": 180, "fov": 20 } } }
+  ]
+}

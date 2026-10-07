@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "status": "draft",
+  "notes": "PHASE 0 PLACEHOLDER: one overview hold so the film tooling and its checks run. Phase 5 authors the film (BRIEF.md).",
+  "film": {
+    "fps": 24,
+    "shutter": 0.5,
+    "dayOfYear": 200,
+    "lengthS": [
+      5,
+      300
+    ],
+    "tFxScale": 0.6,
+    "weather": {
+      "cloudCoverage": 0.2,
+      "wind": [
+        0.6,
+        0.2
+      ]
+    }
+  },
+  "defaults": {
+    "move": {
+      "rho": 1.4,
+      "vTarget": 1.2,
+      "minS": 2.5,
+      "maxS": 9,
+      "apexEl": 26,
+      "headLeadS": 0.6
+    },
+    "hero": {
+      "drift": {
+        "azDegPerS": 0.35,
+        "pushPerS": -0.01
+      }
+    },
+    "stop": {
+      "drift": {
+        "azDegPerS": 0.5,
+        "pushPerS": -0.012
+      }
+    },
+    "open": {
+      "drift": {
+        "pushPerS": -0.004
+      }
+    },
+    "end": {
+      "drift": {
+        "azDegPerS": 0.15
+      }
+    }
+  },
+  "beats": [
+    {
+      "hold": "open",
+      "style": "open",
+      "dur": 10,
+      "camera": {
+        "shot": "overview-day"
+      },
+      "tod": [
+        11.0,
+        11.1
+      ],
+      "routeGlow": 0,
+      "captions": [
+        {
+          "kind": "title",
+          "text": "Map of Westeros",
+          "sub": "Phase 0 placeholder",
+          "in": 1.0,
+          "out": -1.0
+        }
+      ],
+      "music": {
+        "mood": "prologue",
+        "intensity": 0.25
+      }
+    }
+  ]
+}
