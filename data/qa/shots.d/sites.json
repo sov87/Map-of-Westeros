@@ -358,6 +358,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-starfall",
+      "tod": 12.0,
+      "note": "top-down site check of Starfall: the island in the estuary's head, the river mouth to the north, the bridge to the east bank, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            997.43,
+            333.38
+          ],
+          "distanceKm": 4,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

@@ -545,6 +545,27 @@
         "lod0Tris": 30000,
         "lights": 0
       }
+    },
+    "starfall": {
+      "status": "s2",
+      "segment": "dorne",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 3.0,
+      "contextKm": 26,
+      "tod": 16.2,
+      "screenSeconds": 6,
+      "framing": "from the estuary to the south-west in the afternoon sun: the island castle in the river mouth, the Palestone Sword standing pale over the sea, the bridge to the east bank behind",
+      "features": [
+        "the island castle",
+        "the Palestone Sword",
+        "the bridge to the east bank"
+      ],
+      "budget": {
+        "minFeatureKm": 0.01,
+        "lod0Tris": 40000,
+        "lights": 60
+      }
     }
   }
 }

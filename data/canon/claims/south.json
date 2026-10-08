@@ -915,7 +915,8 @@
       "cites": [{ "book": "LOIAF", "chapter": "Westeros" }],
       "use": ["vectors", "hydrology", "landmark:starfall"],
       "status": "draft",
-      "notes": "Brief confirmed (at the mouth of the Torrentine)."
+      "notes": "Brief confirmed (at the mouth of the Torrentine).",
+      "conflict": "The westeros-crests sheet draws the Torrentine's estuary as a long, narrow sea inlet and sets Starfall's marker ~23 km up the land beyond its head. The companion and the text put the castle at the mouth, by the sea (starfall-island, starfall-by-the-sea). Settled with a display offset of ~24 km south-south-west onto the estuary's head, off the river's mouth (places.json)."
     },
     {
       "id": "starfall-island",
@@ -959,6 +960,17 @@
       "use": ["landmark:starfall"],
       "status": "draft",
       "notes": "Chapter is a low-confidence guess among the ASOS Arya chapters with Edric Dayne. Supports a castle set right on the sea."
+    },
+    {
+      "id": "starfall-plan",
+      "subjects": ["starfall"],
+      "kind": "form",
+      "claim": "Build assumption: a rocky island in the estuary's head, cliff-girt; a pale curtain with towers round its top, a square keep and hall, the Palestone Sword tall and slender at the seaward end, a bridge to the east bank.",
+      "label": "I",
+      "basis": "The companion gives an island where the Torrentine meets the sea (starfall-island) and a great tower named the Palestone Sword (starfall-palestone-sword); the text sets the seat by the sea (starfall-by-the-sea). The rock, the plan, the stone's colour beyond the tower's name, the bridge and the quay are invented and contradict nothing.",
+      "use": ["landmark:starfall"],
+      "status": "draft",
+      "notes": "Whether the island lies in the river's mouth or just offshore is open (starfall-island notes); the build sets it in the estuary's head just off the mouth. No height of the tower is given."
     },
     {
       "id": "starfall-west-of-sunspear",
