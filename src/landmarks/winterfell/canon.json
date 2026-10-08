@@ -1,0 +1,21 @@
+{
+  "notes": "Winterfell: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the heart of the North beside the kingsroad, the wolfswood to the west", "label": "M", "claims": ["winterfell-position", "wolfswood-position"] },
+    { "part": "whole and lived in at 298 AC (no sack, no burning)", "label": "T", "claims": ["slice-winterfell-intact", "winterfell-state-after-sack"] },
+    { "part": "two curtain walls with a moat between, the inner the higher (100 ft vs 80 ft)", "label": "T", "claims": ["winterfell-walls", "winterfell-inner-wall-height", "winterfell-outer-wall-height"] },
+    { "part": "grey stone", "label": "I", "claims": ["winterfell-material"] },
+    { "part": "a maze of walls, towers and yards", "label": "T", "claims": ["winterfell-layout"] },
+    { "part": "the Great Keep, the Great Hall, the Guards Hall, the armory, the kitchens", "label": "T", "claims": ["winterfell-named-buildings"] },
+    { "part": "the First Keep: squat, round, gargoyles; beside the broken tower", "label": "T", "claims": ["winterfell-first-keep"] },
+    { "part": "the broken tower: its top third fallen in", "label": "T", "claims": ["winterfell-broken-tower"] },
+    { "part": "the library tower, the bell tower, the maester's turret and rookery", "label": "T", "claims": ["winterfell-library-tower", "winterfell-bell-tower-rookery"] },
+    { "part": "Catelyn's sept", "label": "T", "claims": ["winterfell-sept"] },
+    { "part": "the godswood: old forest of sentinels, oaks and ironwoods", "label": "T", "claims": ["winterfell-godswood", "winterfell-godswood-trees"] },
+    { "part": "the heart tree (weirwood, red leaves) and the black pool", "label": "T", "claims": ["winterfell-heart-tree"] },
+    { "part": "the hot springs (steam over the wood) and the glass gardens", "label": "T", "claims": ["winterfell-hot-springs"] },
+    { "part": "the Hunter's Gate (west, toward the wolfswood)", "label": "T", "claims": ["winterfell-hunters-gate"] },
+    { "part": "the winter town outside the main gate, half empty in summer", "label": "T", "claims": ["winterfell-winter-town"] },
+    { "part": "the plan: square walls, gate positions, where each building, the godswood and the glass gardens stand; roofs; the town's lanes", "label": "I", "claims": ["winterfell-plan"] }
+  ]
+}

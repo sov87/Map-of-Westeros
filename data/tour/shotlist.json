@@ -78,6 +78,30 @@
         "lod0Tris": 160000,
         "lights": 400
       }
+    },
+    "winterfell": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 8.5,
+      "contextKm": 70,
+      "tod": 15.2,
+      "screenSeconds": 9,
+      "framing": "from the south-east over the winter town and the main gate: the two grey walls, the Great Keep and the Great Hall, the First Keep beside the broken tower's jagged top, the godswood's dark crowns with steam rising, the glass gardens along the south",
+      "features": [
+        "two curtain walls, the inner higher, moat between",
+        "the Great Keep, the Great Hall",
+        "the First Keep and the broken tower",
+        "the godswood, heart tree and hot-spring steam",
+        "the glass gardens",
+        "the winter town"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 90000,
+        "lights": 160
+      }
     }
   }
 }
