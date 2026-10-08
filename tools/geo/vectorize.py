@@ -532,6 +532,40 @@ def vectorize(source: Path, map_id: str) -> None:
         rm = rivers.astype(np.uint8)
         cv2.polylines(rm, [pl], False, 1, thickness=2)
         rivers = rm.astype(bool) & land
+    # rivers drawn too faintly for the colour rule (dark green-teal strokes on the Reach's olive paint): the
+    # profile's forceRivers.routes give waypoints (sheet px, source → mouth); each waypoint snaps to the nearest
+    # river-ink pixel and consecutive ones are joined by the least-cost path through the ink, so the trace
+    # follows the drawn line rather than the waypoints
+    routes = prof.get("forceRivers", {}).get("routes", [])
+    if routes:
+        from skimage.graph import route_through_array
+
+        a = img.astype(np.int16)
+        mxa = a.max(-1)
+        sat_a = (mxa - a.min(-1)) / np.maximum(mxa, 1)
+        ink = ((a[..., 1] - a[..., 0]) >= 8) & ((a[..., 2] - a[..., 0]) >= -12) & (mxa < 210) & (mxa > 45) & (sat_a < 0.5)
+        ink |= rw | rivers
+        cost = np.where(ink, 1.0, 25.0)
+        H_, W_ = cost.shape
+        rm = rivers.astype(np.uint8)
+        for wps in routes:
+            pts = []
+            for x, y in wps:
+                c, r = int(round(x - x0)), int(round(y - y0))
+                win = ink[max(r - 8, 0) : r + 9, max(c - 8, 0) : c + 9]
+                ys, xs = np.nonzero(win)
+                if len(ys):
+                    k_ = int(np.argmin((ys + max(r - 8, 0) - r) ** 2 + (xs + max(c - 8, 0) - c) ** 2))
+                    r, c = int(ys[k_] + max(r - 8, 0)), int(xs[k_] + max(c - 8, 0))
+                pts.append((r, c))
+            for (ra, ca), (rb, cb) in zip(pts[:-1], pts[1:]):
+                m = 30
+                r0, r1 = max(min(ra, rb) - m, 0), min(max(ra, rb) + m, H_ - 1)
+                c0, c1 = max(min(ca, cb) - m, 0), min(max(ca, cb) + m, W_ - 1)
+                path, _ = route_through_array(cost[r0 : r1 + 1, c0 : c1 + 1], (ra - r0, ca - c0), (rb - r0, cb - c0), fully_connected=True, geometric=True)
+                pl = np.array([(c + c0, r + r0) for r, c in path], np.int32)
+                cv2.polylines(rm, [pl], False, 1, thickness=2)
+        rivers = rm.astype(bool) & land
     lines = trace_rivers(rivers, sea, lakes, int(prof.get("minRiverComponentPx", prof.get("minRiverPx", 30))), int(prof.get("gapPx", 6)), int(prof.get("bridgePx", 16)), int(prof.get("ringHolePx", 300)), ink=img.max(axis=-1))
     rfeats = []
     for i, ln in enumerate(lines):

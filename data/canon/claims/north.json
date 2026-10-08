@@ -1405,6 +1405,143 @@
       "notes": "Which ADWD Theon chapter describes the shattered glass gardens is uncertain."
     },
     {
+      "id": "winterfell-named-buildings",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Winterfell's buildings named in the text include the Great Keep where the Starks live, the Great Hall where the household feasts, the Guards Hall, the armory and the kitchens.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "Great Keep"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Jon I",
+          "find": [
+            "Great Hall"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Chapters recalled for where each name first appears; the verifier settles them. The text gives no plan of where they stand."
+    },
+    {
+      "id": "winterfell-bell-tower-rookery",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Winterfell has a bell tower and a rookery where the ravens are kept below the maester's turret.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "bell tower",
+            "rookery"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Recalled from Bran's climbing routes; the chapter is a guess."
+    },
+    {
+      "id": "winterfell-sept",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "A small sept stands in the castle, built by Ned for Catelyn so that she could pray to the Seven in her husband's northern home.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "sept"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "winterfell-hunters-gate",
+      "subjects": [
+        "winterfell",
+        "wolfswood"
+      ],
+      "kind": "position",
+      "claim": "The Hunter's Gate lets riders out of the castle straight toward the fields and the wolfswood without passing through the winter town.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran V",
+          "find": [
+            "Hunter's Gate"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Recalled from Bran's ride with Robb and Theon (or ADWD's Theon chapters); the chapter is a guess. That it faces west toward the wolfswood is the build's reading (wolfswood-position)."
+    },
+    {
+      "id": "winterfell-winter-town",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Outside the castle walls lies the winter town, a market town of houses and halls that fills with smallfolk in winter and stands half empty in summer.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran IV",
+          "find": [
+            "winter town"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft",
+      "notes": "Chapter is a guess (the winter town appears in AGOT and ACOK Bran chapters and in ADWD)."
+    },
+    {
+      "id": "winterfell-plan",
+      "subjects": [
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: square walls with corner and interval towers; the main gate faces the kingsroad (east) with the winter town outside it; the godswood fills the west; the keeps stand mid and north; the glass gardens line the south.",
+      "label": "I",
+      "basis": "The novels name Winterfell's parts and give the walls' heights (winterfell-walls, -inner-wall-height, -outer-wall-height) but no plan; the arrangement is invented and contradicts nothing (the Hunter's Gate faces the wolfswood, which lies west).",
+      "use": [
+        "landmark:winterfell"
+      ],
+      "status": "draft"
+    },
+    {
       "id": "white-harbor-position",
       "subjects": [
         "white-harbor",

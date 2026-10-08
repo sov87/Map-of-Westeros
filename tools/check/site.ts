@@ -1,6 +1,6 @@
 /**
- * Landmark site probe (CPU): the local ground round a landmark, relative to its origin, before and after
- * the stamps — for laying out a landmark against the terrain it actually stands on.
+ * Landmark site probe (CPU): the local ground round a landmark (or a bare place, before its landmark exists),
+ * relative to its origin, before and after the stamps — for laying out a landmark against the terrain it actually stands on.
  *
  *   node --import tsx tools/check/site.ts <landmarkId> [--r 12] [--step 1.5] [--base] [--at x,z …]
  *
@@ -13,7 +13,7 @@ import { join } from 'node:path';
 const args = process.argv.slice(2);
 const id = args[0];
 if (!id) {
-  console.error('usage: site.ts <landmarkId> [--r 12] [--step 1.5] [--base] [--at x,z …]');
+  console.error('usage: site.ts <landmarkId | placeId> [--r 12] [--step 1.5] [--base] [--at x,z …]');
   process.exit(2);
 }
 const opt = (name: string, d: number): number => {
@@ -30,9 +30,9 @@ args.forEach((a, i) => {
 
 const dir = process.env.MOW_WORLD_DIR ?? join(process.cwd(), 'data', 'baked');
 const { world, landmarks } = await loadWorld(dir);
+// a landmark id, or a bare place id (to survey a site before its landmark exists)
 const def = landmarks.find((l) => l.id === id);
-if (!def) throw new Error(`no landmark '${id}'`);
-const p = world.place(def.placeId);
+const p = world.place(def ? def.placeId : id);
 const o = world.heights.sample(p.x, p.z);
 const ob = world.heights.sample(p.x, p.z, 'base');
 console.log(`[site] ${id}: origin world (${p.x.toFixed(2)}, ${p.z.toFixed(2)}), ground ${o.toFixed(3)} (base ${ob.toFixed(3)}); ${base ? 'BASE' : 'composite'} heights relative to the origin's composite ground`);
