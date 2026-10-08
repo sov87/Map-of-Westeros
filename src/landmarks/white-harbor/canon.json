@@ -1,0 +1,13 @@
+{
+  "notes": "White Harbor: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: where the White Knife flows into the Bite, the North's chief port, south-east of Winterfell", "label": "T", "claims": ["white-harbor-position", "white-knife-mouth", "white-knife-course", "the-bite-position", "white-harbor-rel-winterfell"] },
+    { "part": "a walled, busy port, the smallest of the five cities", "label": "T", "claims": ["white-harbor-smallest-city"] },
+    { "part": "walls and buildings of white or whitewashed stone", "label": "T", "claims": ["white-harbor-white-stone"] },
+    { "part": "the New Castle on a hill above the harbour, the city climbing to it; its great hall, the Merman's Court", "label": "T", "claims": ["white-harbor-new-castle", "white-harbor-mermans-court"] },
+    { "part": "the Wolf's Den, the older grim fortress guarding the river mouth", "label": "T", "claims": ["white-harbor-wolfs-den"] },
+    { "part": "Seal Rock standing out of the water before the city, nothing built on it", "label": "T", "claims": ["white-harbor-seal-rock"] },
+    { "part": "the domed Sept of the Snows", "label": "T", "claims": ["white-harbor-sept-of-the-snows"] },
+    { "part": "the plan: the wall's line and towers, the houses and slate roofs, the quays, wharves and ships, the castle's ring and towers, the stair, the sept's seven sides and spires, the waterfront shelf and the castle's hill", "label": "I", "claims": ["white-harbor-plan"] }
+  ]
+}

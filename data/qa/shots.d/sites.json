@@ -273,6 +273,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-white-harbor",
+      "tod": 12.0,
+      "note": "top-down site check of White Harbor: the city on the shore where the White Knife's lower course opens into the Bite, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1646.59,
+            2952.08
+          ],
+          "distanceKm": 10,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

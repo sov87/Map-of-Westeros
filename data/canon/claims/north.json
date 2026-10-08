@@ -1581,7 +1581,8 @@
         "hydrology"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (on the White Knife). Which bank the city occupies is not asserted."
+      "notes": "Brief confirmed (on the White Knife). Which bank the city occupies is not asserted.",
+      "conflict": "The westeros-crests sheet sets White Harbor's marker ~10 km inland of the traced shore, beside the White Knife's wide lower course (traced as sea) where it opens into the Bite. The text puts the city where the river meets the Bite. Settled with a display offset of ~13 km onto that shore (places.json)."
     },
     {
       "id": "white-harbor-rel-winterfell",
@@ -1772,6 +1773,21 @@
       ],
       "status": "draft",
       "notes": "The dome is recalled with moderate confidence."
+    },
+    {
+      "id": "white-harbor-plan",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a walled city of whitewashed houses with slate roofs climbs from a quayed waterfront to the New Castle's ring of white towers; the Wolf's Den squats at the waterfront's north-west end; a stair runs up to the castle.",
+      "label": "I",
+      "basis": "The text gives a walled white port, the New Castle on a hill above the harbour, the Wolf's Den guarding the river mouth, Seal Rock in the water and the domed Sept of the Snows (white-harbor-smallest-city, -white-stone, -new-castle, -wolfs-den, -seal-rock, -sept-of-the-snows). The plan, the stair and the forms are invented and contradict nothing.",
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft",
+      "notes": "The stair is recalled as the Castle Stair with stone mermen (ADWD Davos II); not claimed until verified."
     },
     {
       "id": "moat-cailin-position",

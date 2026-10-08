@@ -439,6 +439,29 @@
         "lod0Tris": 30000,
         "lights": 60
       }
+    },
+    "white-harbor": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 5,
+      "contextKm": 30,
+      "tod": 11,
+      "screenSeconds": 6,
+      "framing": "from the water to the south-west in the morning: Seal Rock before the waterfront, the white city climbing to the New Castle, the Wolf's Den at the river mouth, the Sept of the Snows' dome",
+      "features": [
+        "the New Castle",
+        "the Wolf's Den",
+        "Seal Rock",
+        "the Sept of the Snows",
+        "the white walls"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 80000,
+        "lights": 300
+      }
     }
   }
 }
