@@ -1,0 +1,10 @@
+{
+  "notes": "The Inn at the Crossroads: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: on the kingsroad in the riverlands at the crossroads where the river road from the west meets it", "label": "T", "claims": ["inn-at-the-crossroads-position", "kingsroad-crossroads", "river-road-course", "inn-at-the-crossroads-relative"] },
+    { "part": "an inn kept by Masha Heddle, its common room big enough for many travellers and several lords' men", "label": "T", "claims": ["inn-at-the-crossroads-keeper"] },
+    { "part": "the high road to the Vale branching east at the crossroads", "label": "I", "claims": ["inn-at-the-crossroads-high-road"] },
+    { "part": "the 298 state only: no camp, no orphans, no Gendry's forge", "label": "T", "claims": ["inn-at-the-crossroads-tywin-camp", "inn-at-the-crossroads-after"] },
+    { "part": "the plan: the house, its wing, the stables, the smithy, the well and the walled yard, the roads' lines", "label": "I", "claims": ["inn-at-the-crossroads-plan"] }
+  ]
+}

@@ -1211,6 +1211,21 @@
       "notes": "Willow Heddle is recalled as Masha's niece. Any physical damage to the inn by then is not asserted."
     },
     {
+      "id": "inn-at-the-crossroads-plan",
+      "subjects": [
+        "inn-at-the-crossroads"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a long two-storey inn, stone below and whitewashed above, with a wing, stables, a small smithy and a well round a walled yard on the crossroads' north-east corner.",
+      "label": "I",
+      "basis": "The text gives an inn on the kingsroad at the river road's crossroads with a common room large enough for many travellers and several lords' men (inn-at-the-crossroads-position, -keeper). Its size, stone and outbuildings are not recalled; all invented and contradicting nothing.",
+      "use": [
+        "landmark:inn-at-the-crossroads"
+      ],
+      "status": "draft",
+      "notes": "The forge Gendry works in AFFC belongs to the later state; the smithy here is invented for 298 and may be dropped if the corpus says the inn had none then."
+    },
+    {
       "id": "trident-forks",
       "subjects": [
         "trident",

@@ -307,6 +307,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-inn-at-the-crossroads",
+      "tod": 12.0,
+      "note": "top-down site check of the Inn at the Crossroads: the kingsroad, river road and high road meeting, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1632.22,
+            1953.61
+          ],
+          "distanceKm": 5,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

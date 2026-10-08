@@ -483,6 +483,26 @@
         "lod0Tris": 50000,
         "lights": 0
       }
+    },
+    "inn-at-the-crossroads": {
+      "status": "s2",
+      "segment": "riverlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 1.6,
+      "contextKm": 18,
+      "tod": 18.2,
+      "screenSeconds": 5,
+      "framing": "from the south-south-west at dusk: the inn's lit windows on the crossroads, the kingsroad running north past it, the river road and the high road branching off",
+      "features": [
+        "the inn",
+        "the crossroads"
+      ],
+      "budget": {
+        "minFeatureKm": 0.02,
+        "lod0Tris": 40000,
+        "lights": 40
+      }
     }
   }
 }
