@@ -142,7 +142,7 @@ export default defineLandmark({
       azimuthDeg: 172,
       fov: 32,
       lift: 0.1,
-      aimKm: [-0.35, 0.18],
+      aimKm: [C0[0], -C0[1]],
       tod: 16.5,
       note: 'hero: from downstream, looking up the Green Fork in the afternoon: the twin grey castles face to face across the Green Fork, the arched bridge between their gatehouses and the Water Tower standing in the river at its middle',
     },

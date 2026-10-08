@@ -114,6 +114,10 @@ export interface ModelDecl {
  * A landmark shot. Ids are `<landmarkId>-close` (the hero framing, see data/tour/shotlist.json) or
  * `<landmarkId>-wide` (context, 60–300 km); the orbit is around the landmark's display position.
  */
+/**
+ * NB `aimKm` (from OrbitSpec) is map km [east, NORTH] off the display position, not local [x, z]: a local
+ * point [x, z] aims as [x, -z].
+ */
 export interface BookmarkDecl extends Omit<OrbitSpec, 'place' | 'targetKm'> {
   id: string;
   tod?: number;

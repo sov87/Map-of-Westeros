@@ -805,7 +805,7 @@
       "cites": [{ "book": "AFFC", "chapter": "Samwell V", "find": ["Battle Isle", "Hightower"] }],
       "use": ["vectors", "landmark:oldtown"],
       "status": "draft",
-      "notes": "Brief confirmed. Recalled from Sam's arrival by sea."
+      "notes": "Brief confirmed. Recalled from Sam's arrival by sea. Lore critic: not certain Battle Isle is named in AFFC Samwell V; if the corpus misses it, relabel C on TWOIAF or recite."
     },
     {
       "id": "oldtown-battle-isle-river-mouth",
@@ -877,12 +877,12 @@
       "id": "oldtown-plan",
       "subjects": ["oldtown", "honeywine"],
       "kind": "form",
-      "claim": "Build assumption: a walled city fills the Honeywine's valley floor at the head of the Sound; the Citadel's grey halls and domes line both banks above the mouth, the Starry Sept is domed and seven-sided.",
+      "claim": "Build assumption: a walled city fills the Honeywine's valley floor at the head of the Sound; the Citadel's grey halls and towers line both banks above the mouth; the Starry Sept is domed and seven-sided; ships in the harbour.",
       "label": "I",
       "basis": "The text gives the city at the river's mouth, the Citadel along the Honeywine with the Isle of Ravens, the Starry Sept and the Hightower on Battle Isle (oldtown-position, -citadel, -starry-sept, honeywine-through-oldtown). The wall, the plan and the forms are invented and contradict nothing.",
       "use": ["landmark:oldtown"],
       "status": "draft",
-      "notes": "The synthesized terrain made the Sound a fjord between hills; the landmark widens the river's valley floor in steps that follow the water's level."
+      "notes": "The synthesized terrain made the Sound a fjord between hills; the landmark widens the river's valley floor in steps that follow the water's level. Lore critic: no book source gives the Citadel domes (the show's Citadel is domed), so it has halls and towers."
     },
     {
       "id": "oldtown-hightower-form",
@@ -1048,6 +1048,17 @@
       "cites": [{ "book": "AFFC", "chapter": "The Princess in the Tower", "find": ["Spear Tower"] }],
       "use": ["landmark:sunspear"],
       "status": "draft"
+    },
+    {
+      "id": "sunspear-plan",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "Build assumption: the Old Palace stands on the spit's corner with the sea on two sides; three serpentine walls ring the Shadow City and end at the shore; the Threefold Gate's road runs straight through; sandstone, adobe, flat roofs.",
+      "label": "I",
+      "basis": "The text gives the Old Palace with the Tower of the Sun and the Spear Tower, the Winding Walls round the Shadow City, the Threefold Gate's three gates in a line and the mud-brick sprawl beyond (sunspear-old-palace, -winding-walls, -threefold-gate, -mud-brick-quarter). The plan, the number of walls and the materials are invented and contradict nothing.",
+      "use": ["landmark:sunspear"],
+      "status": "draft",
+      "notes": "Revise the palace's place on the coast and the walls' count if the corpus describes them (AFFC The Captain of Guards, The Princess in the Tower)."
     },
 
     {

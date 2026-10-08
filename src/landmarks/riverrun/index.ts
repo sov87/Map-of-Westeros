@@ -234,7 +234,7 @@ export default defineLandmark({
       azimuthDeg: 140,
       fov: 30,
       lift: 0.1,
-      aimKm: CENTRE,
+      aimKm: [CENTRE[0], -CENTRE[1]],
       tod: 9.5,
       note: 'hero: from up the Red Fork in the morning: the castle in the point where the Tumblestone joins the Red Fork, the walls rising from both rivers, the Water Gate on the near face, the Wheel Tower and its waterwheel on the far one, the moat on the left',
     },

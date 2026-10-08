@@ -334,7 +334,7 @@
       "segment": "iron-islands",
       "role": "pause",
       "heroClass": "close",
-      "heroKm": 6.5,
+      "heroKm": 4.6,
       "contextKm": 30,
       "tod": 15,
       "screenSeconds": 7,
@@ -372,6 +372,29 @@
         "minFeatureKm": 0.03,
         "lod0Tris": 120000,
         "lights": 400
+      }
+    },
+    "sunspear": {
+      "status": "s2",
+      "segment": "dorne",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 3.6,
+      "contextKm": 30,
+      "tod": 17.0,
+      "screenSeconds": 7,
+      "framing": "from the sea to the north-east in the late afternoon: the Old Palace on the corner of the spit, the gold dome of the Tower of the Sun and the Spear Tower, the Winding Walls and the Shadow City behind",
+      "features": [
+        "the Tower of the Sun's gold dome",
+        "the Spear Tower",
+        "the Winding Walls",
+        "the Threefold Gate",
+        "the Shadow City"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 80000,
+        "lights": 200
       }
     }
   }

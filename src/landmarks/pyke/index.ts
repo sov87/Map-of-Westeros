@@ -32,21 +32,35 @@ const P = (s: number, t: number): V2 => [SEA[0] * s + ALONG[0] * t, SEA[1] * s +
 const DEG = Math.PI / 180;
 const yawOf = (a: V2, b: V2): number => -Math.atan2(b[1] - a[1], b[0] - a[0]) / DEG;
 
-/** the stacks the sea has cut from the headland (T), with their keeps (I: which stands where) */
+/**
+ * The rock the sea has cut from the headland (T: three bleak islands and a dozen towering stacks): the three
+ * islands carry the Great, Kitchen and Bloody Keeps, the Sea Tower stands on the outermost stack, lesser
+ * towers and outbuildings on some of the rest (I: which stands where).
+ */
 interface Stack {
   name: string;
   at: V2;
   r: number;
   top: number;
-  keep: { r: number; h: number; sides: number; color: number };
+  keep?: { r: number; h: number; sides: number; color: number };
 }
 const STACKS: Stack[] = [
-  { name: 'great-keep', at: P(0.84, 0), r: 0.2, top: 0.02, keep: { r: 0.13, h: 0.36, sides: 16, color: STONE_LIT } },
-  { name: 'kitchen-keep', at: P(1.22, -0.27), r: 0.13, top: -0.04, keep: { r: 0.085, h: 0.24, sides: 16, color: STONE } },
-  { name: 'bloody-keep', at: P(1.26, 0.27), r: 0.14, top: 0.0, keep: { r: 0.09, h: 0.28, sides: 4, color: DARK } },
-  { name: 'sea-tower', at: P(1.7, 0.02), r: 0.1, top: -0.07, keep: { r: 0.06, h: 0.4, sides: 16, color: STONE_LIT } },
+  { name: 'great-keep', at: P(0.86, 0), r: 0.22, top: 0.02, keep: { r: 0.13, h: 0.36, sides: 16, color: STONE_LIT } },
+  { name: 'kitchen-keep', at: P(1.25, -0.29), r: 0.15, top: -0.04, keep: { r: 0.085, h: 0.24, sides: 16, color: STONE } },
+  { name: 'bloody-keep', at: P(1.29, 0.29), r: 0.15, top: 0.0, keep: { r: 0.09, h: 0.28, sides: 4, color: DARK } },
+  { name: 'sea-tower', at: P(1.76, 0.02), r: 0.1, top: -0.07, keep: { r: 0.06, h: 0.4, sides: 16, color: STONE_LIT } },
+  { name: 'stack-1', at: P(0.74, -0.52), r: 0.07, top: -0.12 },
+  { name: 'stack-2', at: P(0.96, 0.58), r: 0.08, top: -0.06, keep: { r: 0.035, h: 0.15, sides: 16, color: STONE } },
+  { name: 'stack-3', at: P(1.5, -0.6), r: 0.07, top: -0.08, keep: { r: 0.034, h: 0.14, sides: 4, color: STONE } },
+  { name: 'stack-4', at: P(1.6, 0.66), r: 0.06, top: -0.16 },
+  { name: 'stack-5', at: P(2.02, -0.3), r: 0.06, top: -0.2 },
+  { name: 'stack-6', at: P(2.06, 0.38), r: 0.07, top: -0.1, keep: { r: 0.033, h: 0.13, sides: 16, color: DARK } },
+  { name: 'stack-7', at: P(1.22, 0.0), r: 0.06, top: -0.14 },
+  { name: 'stack-8', at: P(2.32, 0.06), r: 0.05, top: -0.26 },
+  { name: 'stack-9', at: P(1.8, -0.66), r: 0.05, top: -0.22 },
 ];
 const [GREAT, KITCHEN, BLOODY, SEA_TOWER] = STACKS;
+const byName = (n: string): Stack => STACKS.find((s) => s.name === n) as Stack;
 
 /** the ward on the cliff top: the headland's root, closed by the curtain and gatehouse (I) */
 const WARD: V2[] = [P(0.24, -0.26), P(0.24, 0.26), P(-0.22, 0.3), P(-0.24, -0.28)];
@@ -107,6 +121,7 @@ function buildStack(k: ProxyKit, s: Stack, i: number): void {
     k.rock('weathered', 0.03 + 0.035 * k.r(920 + i * 8 + j), { at: [s.at[0] + Math.cos(a) * d, k.seaLevel + 0.005, s.at[1] + Math.sin(a) * d], squash: 0.55, color: ROCK, lod: 1 });
   }
   const kp = s.keep;
+  if (!kp) return;
   k.tower('stone', kp.r, kp.h, { at: [s.at[0], s.top, s.at[1]], sides: kp.sides, roof: 'crenel', color: kp.color, rot: [0, 45 + yawOf([0, 0], SEA), 0], windows: { rows: 3, on: 0.45, size: 0.011 } });
   // a curtain round the stack's rim where it is wide enough (I)
   if (s.r > 0.1) {
@@ -146,11 +161,23 @@ function buildBridges(k: ProxyKit): void {
   // the ward to the Great Keep: an arched stone bridge over the gap (I: which bridges are stone)
   const w = P(0.22, 0);
   k.bridge('stone', [w[0], 0.004, w[1]], edge(GREAT, w), { width: 0.05, arches: 1, deck: 0.035, color: STONE });
-  // the Great Keep to the Kitchen Keep: stone
-  k.bridge('stone', edge(GREAT, KITCHEN.at), edge(KITCHEN, GREAT.at), { width: 0.04, arches: 1, deck: 0.03, color: STONE });
-  // the Great Keep to the Bloody Keep, and on out to the Sea Tower: rope and plank (T: the Sea Tower's)
-  ropeBridge(k, edge(GREAT, BLOODY.at), edge(BLOODY, GREAT.at), 0.025);
-  ropeBridge(k, edge(BLOODY, SEA_TOWER.at), edge(SEA_TOWER, BLOODY.at), 0.035);
+  // between the rocks: stone where they stand close, swaying rope and plank where the gap is long (T: both
+  // kinds, the Sea Tower's of rope; I: which is which follows the gap)
+  const links: [Stack, Stack][] = [
+    [GREAT, KITCHEN],
+    [GREAT, BLOODY],
+    [BLOODY, SEA_TOWER],
+    [BLOODY, byName('stack-2')],
+    [KITCHEN, byName('stack-3')],
+    [SEA_TOWER, byName('stack-6')],
+  ];
+  for (const [a, b] of links) {
+    const pa = edge(a, b.at);
+    const pb = edge(b, a.at);
+    const gap = Math.hypot(pb[0] - pa[0], pb[2] - pa[2]);
+    if (gap < 0.17) k.bridge('stone', pa, pb, { width: 0.035, arches: 1, deck: 0.03, color: STONE });
+    else ropeBridge(k, pa, pb, 0.02 + 0.06 * gap);
+  }
 }
 
 function buildWard(k: ProxyKit): void {
@@ -215,7 +242,7 @@ export default defineLandmark({
     { preset: 'mist', at: [GREAT.at[0], SEA_Y + 0.02, GREAT.at[1]], scale: 0.35, rate: 0.5 },
     { preset: 'mist', at: [BLOODY.at[0], SEA_Y + 0.02, BLOODY.at[1]], scale: 0.3, rate: 0.5 },
     { preset: 'mist', at: [SEA_TOWER.at[0], SEA_Y + 0.02, SEA_TOWER.at[1]], scale: 0.3, rate: 0.5 },
-    { preset: 'smoke', at: [KITCHEN.at[0], KITCHEN.top + KITCHEN.keep.h + 0.02, KITCHEN.at[1]], scale: 0.1 },
+    { preset: 'smoke', at: [KITCHEN.at[0], KITCHEN.top + (KITCHEN.keep?.h ?? 0) + 0.02, KITCHEN.at[1]], scale: 0.1 },
   ],
   vegetationExclusion: [{ at: [0, 0], r: 0.5 }],
   subjectKm: { at: P(0.9, 0), r: 1.0 },
@@ -228,12 +255,12 @@ export default defineLandmark({
   bookmarks: [
     {
       id: 'pyke-close',
-      distanceKm: 6.5,
+      distanceKm: 4.6,
       elevationDeg: 11,
       azimuthDeg: 205,
       fov: 30,
-      lift: -0.3,
-      aimKm: P(1.0, 0),
+      lift: 0.25,
+      aimKm: [P(1.0, 0)[0], -P(1.0, 0)[1]],
       tod: 15,
       weather: { cloudCoverage: 0.85 },
       note: 'hero: from the sea to the south-west under a grey sky: the stacks in a row off the cliffs, the Great Keep, the Kitchen and Bloody Keeps and the Sea Tower farthest out, the stone and rope bridges between them',

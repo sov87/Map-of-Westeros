@@ -200,7 +200,7 @@ function slope(k: ProxyKit, x: number, z: number): number {
 }
 
 function buildCitadel(k: ProxyKit): void {
-  // halls and courts of grey stone along both banks above the mouth, domes among them (I: the forms)
+  // halls and courts of grey stone along both banks above the mouth, towers among them (I: the forms)
   let n = 0;
   for (const side of [-1, 1]) {
     for (let s = CITADEL.from; s < CITADEL.to; s += 0.16) {
@@ -211,14 +211,14 @@ function buildCitadel(k: ProxyKit): void {
         const yaw = -Math.atan2(r.dir[1], r.dir[0]) / DEG;
         const i = n++;
         if (i % 6 === 3 && slope(k, p[0], p[1]) < 0.5) {
-          k.tower('stone', 0.045, 0.1, { at: [p[0], 0, p[1]], seat: 'min', sides: 12, roof: 'dome', roofColor: 0x6d7a7e, color: STONE });
+          k.tower('stone', 0.04, 0.15, { at: [p[0], 0, p[1]], seat: 'min', sides: 4, roof: 'crenel', color: STONE, rot: [0, yaw + 45, 0], windows: { rows: 2, on: 0.5, size: 0.01 } });
           continue;
         }
         k.house('stone', 'slate', 0.15 + 0.04 * (i % 3), 0.07, 0.08, { at: [p[0], 0, p[1]], rot: [0, yaw, 0], roof: 'gable', pitch: 38, dig: 0.4, color: i % 2 ? STONE : 0xa8a296, roofColor: SLATE[i % SLATE.length], windows: { count: 2, on: 0.5, sides: 2, size: 0.01 } });
       }
     }
   }
-  // the Seneschal's Court's tower near the mouth (I)
+  // a taller tower of the Citadel near the mouth (I)
   const sc = bank(0.75, -0.95);
   k.tower('stone', 0.05, 0.24, { at: [sc[0], 0, sc[1]], seat: 'min', sides: 4, roof: 'crenel', color: 0xa8a296, windows: { rows: 3, on: 0.5, size: 0.011 } });
   // the Isle of Ravens (T): an islet in the river carrying the ravenry (I: its form)
@@ -322,7 +322,7 @@ export default defineLandmark({
       azimuthDeg: 222,
       fov: 32,
       lift: 0.45,
-      aimKm: [-0.35, 0.2],
+      aimKm: [-0.35, -0.2],
       tod: 15.5,
       note: 'hero: up the Whispering Sound in the afternoon: the Hightower on Battle Isle at the river mouth, its beacon lit, the city climbing the hills behind, the Citadel along the Honeywine',
     },

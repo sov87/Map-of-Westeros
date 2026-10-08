@@ -77,7 +77,7 @@
     ]
   },
   "forceSea": {
-    "notes": "Sheet px polygons of water (sea, or lake when enclosed by land) hidden under decorations or misread as land: the inner end of Blackwater Bay under the Targaryen crest and a small house crest beside King's Landing (the city stands on the bay at the river mouth: kings-landing-river-mouth); island and castle names lettered on the sea with cream halos that the trace took for land (map critic, 2026-10-08): 'Dragonstone', 'Dragonstone Castle', 'Driftmark', the Velaryon shield; the Eastwatch-by-the-Sea labels on the Bay of Seals; 'Lordsport' and 'Pyke' off Pyke; the 'Isle of Faces' lettering filling the Gods Eye's north third (the island itself is the small one under the marker); the 'Storm's End' lettering on Shipbreaker Bay below the castle marker (it made a 49 km false peninsula), the diagonal 'Shipbreaker Bay' label and the sea half of 'Evenfall Hall' off Tarth; the Trident's mouth, whose estuary the Maidenpool crest cuts off from the Bay of Crabs (trident-course, trident-mouth): without it the estuary reads as a lake the river trace never reaches and the riverlands' rivers have no outlet.",
+    "notes": "Sheet px polygons of water (sea, or lake when enclosed by land) hidden under decorations or misread as land: the inner end of Blackwater Bay under the Targaryen crest and a small house crest beside King's Landing (the city stands on the bay at the river mouth: kings-landing-river-mouth); island and castle names lettered on the sea with cream halos that the trace took for land (map critic, 2026-10-08): 'Dragonstone', 'Dragonstone Castle', 'Driftmark', the Velaryon shield; the Eastwatch-by-the-Sea labels on the Bay of Seals; 'Lordsport' and 'Pyke' off Pyke; the 'Isle of Faces' lettering filling the Gods Eye's north third (the island itself is the small one under the marker); the 'Storm's End' lettering on Shipbreaker Bay below the castle marker (it made a 49 km false peninsula), the diagonal 'Shipbreaker Bay' label and the sea half of 'Evenfall Hall' off Tarth; the Trident's mouth, whose estuary the Maidenpool crest cuts off from the Bay of Crabs (trident-course, trident-mouth): without it the estuary reads as a lake the river trace never reaches and the riverlands' rivers have no outlet; at Sunspear, the inlet between the castle's spit and the mainland (traced as river ink inside land) and the 'Sunspear' and 'Water Gardens' labels lettered on the sea.",
     "px": [
       [
         [
@@ -357,6 +357,88 @@
         [
           1412,
           2462
+        ]
+      ],
+      [
+        [
+          1696,
+          3607
+        ],
+        [
+          1700,
+          3602
+        ],
+        [
+          1708,
+          3591
+        ],
+        [
+          1712,
+          3587
+        ],
+        [
+          1724,
+          3587
+        ],
+        [
+          1730,
+          3589
+        ],
+        [
+          1726,
+          3593
+        ],
+        [
+          1716,
+          3592
+        ],
+        [
+          1711,
+          3595
+        ],
+        [
+          1705,
+          3601
+        ],
+        [
+          1700,
+          3607
+        ]
+      ],
+      [
+        [
+          1731,
+          3584
+        ],
+        [
+          1768,
+          3584
+        ],
+        [
+          1768,
+          3601
+        ],
+        [
+          1731,
+          3601
+        ]
+      ],
+      [
+        [
+          1716,
+          3612
+        ],
+        [
+          1760,
+          3612
+        ],
+        [
+          1760,
+          3633
+        ],
+        [
+          1716,
+          3633
         ]
       ]
     ]

@@ -832,14 +832,15 @@
         "red-fork"
       ],
       "kind": "hydrology",
-      "claim": "On two sides the walls rise straight out of the rivers. On the third a deep moat can be flooded through sluice gates, and when it is full the castle becomes an island.",
+      "claim": "The rivers form two sides of the castle's triangle, its walls rising straight out of them. On the third side sluice gates upstream fill a wide moat, and when it is full the castle becomes an island.",
       "label": "T",
       "cites": [
         {
           "book": "AGOT",
           "chapter": "Catelyn X",
           "find": [
-            "Riverrun"
+            "sluice gates",
+            "Tumblestone"
           ]
         },
         {
@@ -856,7 +857,7 @@
         "landmark:riverrun"
       ],
       "status": "draft",
-      "notes": "Brief confirmed: the moat makes it an island. The moat is man-made (dug by the Tullys' forebears). The sluice-gate detail is recalled with good confidence."
+      "notes": "Brief confirmed: the moat makes it an island. The council over Jaime's three camps may sit in AGOT Catelyn IX rather than X. Lore critic (books only): the sluices are upstream on the rivers, where the moat leaves and rejoins them; 'wide' rather than 'deep' unless the corpus says otherwise."
     },
     {
       "id": "riverrun-moat-side",
@@ -868,7 +869,7 @@
       "kind": "relative-position",
       "claim": "Build assumption: the moat cuts across the castle's landward south-west side, and its north-east point faces the confluence.",
       "label": "I",
-      "basis": "On the traced map the Tumblestone comes in from the west-north-west and the Red Fork from the south (riverrun-confluence, tumblestone-course, red-fork-course). A castle in the angle between them is closed by water on its north and east faces, leaving the south-west side to be cut off by a dug moat.",
+      "basis": "On the traced map the Tumblestone comes in from the west-north-west and the Red Fork up from the south, turning east at the confluence (riverrun-confluence, tumblestone-course, red-fork-course). A castle in the angle is closed by water on its north and east faces, leaving the south-west to a dug moat.",
       "value": {
         "dir": "sw",
         "approx": true
@@ -894,6 +895,13 @@
           "find": [
             "Water Gate"
           ]
+        },
+        {
+          "book": "AFFC",
+          "chapter": "Jaime VII",
+          "find": [
+            "Water Gate"
+          ]
         }
       ],
       "use": [
@@ -901,7 +909,7 @@
         "landmark:riverrun"
       ],
       "status": "draft",
-      "notes": "The funeral is in 299 AC, but the gate predates it. The chapter is recalled as the funeral chapter (Catelyn IV); verify."
+      "notes": "The funeral is in 299 AC, but the gate predates it. The chapter is recalled as the funeral chapter (Catelyn IV); verify. AFFC Jaime VII is recalled (lore critic) to mention the Water Gate's portcullis in the Blackfish's escape; verify. Which river it opens on is not recalled."
     },
     {
       "id": "riverrun-wheel-tower",
@@ -925,7 +933,7 @@
         "landmark:riverrun"
       ],
       "status": "draft",
-      "notes": "The name and the waterwheel are recalled with good confidence. The chapter is uncertain: it may be an ASOS Catelyn chapter or AFFC Jaime VII."
+      "notes": "The name and the waterwheel are recalled with good confidence. The chapter is uncertain: it may be an ASOS Catelyn chapter or AFFC Jaime VII. Search ASOS Catelyn I–IV, ASOS Jaime I (leaving by skiff), AFFC Jaime VI and VII. Which river turns the wheel is not recalled (the Tumblestone face is riverrun-plan, I)."
     },
     {
       "id": "riverrun-position",
@@ -987,7 +995,7 @@
         "riverrun"
       ],
       "kind": "form",
-      "claim": "Build assumption: a three-sided sandstone curtain fills the point between the rivers, with a drum tower on the point, the gate on the moat face, a keep, hall and sept, the Wheel Tower on the Tumblestone and the Water Gate on the Red Fork.",
+      "claim": "Build assumption: a three-sided sandstone curtain fills the point between the rivers: a drum tower on the point, the gate on the moat face, keep, hall, sept; the Wheel Tower on the Tumblestone, the Water Gate and a basin on the Red Fork.",
       "label": "I",
       "basis": "The text gives walls rising from the rivers on two sides, the moat with sluice gates on the third, a Water Gate for boats and the Wheel Tower's waterwheel (riverrun-moat-island, -water-gate, -wheel-tower). The stone, the plan and which face holds the gates and towers are invented and contradict nothing.",
       "use": [
@@ -2677,14 +2685,15 @@
         "pyke"
       ],
       "kind": "form",
-      "claim": "The castle was raised on a headland that the sea has since cut apart. Its keeps and towers now stand on separate stacks and pillars of rock rising out of the surf, with the sea crashing below.",
+      "claim": "The castle was raised on a headland the sea has since cut apart into three bleak islands and a dozen towering stacks of rock. Its keeps and towers stand on them, rising out of the surf.",
       "label": "T",
       "cites": [
         {
           "book": "ACOK",
           "chapter": "Theon I",
           "find": [
-            "Pyke"
+            "three bleak islands",
+            "towering stacks"
           ]
         }
       ],
@@ -2694,7 +2703,7 @@
         "landmark:pyke"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (keeps on sea stacks). The text frames them as remnants of a once-continuous point of land, not as naturally separate crags. No stack heights are given."
+      "notes": "Brief confirmed (keeps on sea stacks). The counts (three islands, a dozen stacks) are recalled by the lore critic and by the build; verify the wording."
     },
     {
       "id": "pyke-bridges",
@@ -2702,14 +2711,15 @@
         "pyke"
       ],
       "kind": "form",
-      "claim": "Bridges link the stacks. Some are arched stone, others swaying walkways of rope and wooden planks that move in the wind.",
+      "claim": "Bridges link the rocks: stone ones, some covered, between close-set pillars, and long swaying walks of rope and planks over the wider gaps, moving in the wind.",
       "label": "T",
       "cites": [
         {
           "book": "ACOK",
           "chapter": "Theon I",
           "find": [
-            "Bloody Keep"
+            "covered bridges",
+            "rope"
           ]
         }
       ],
@@ -2718,7 +2728,7 @@
         "landmark:pyke"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (linked by bridges), with the precision that some are rope bridges. Which stacks have stone and which rope bridges is not asserted, beyond pyke-sea-tower."
+      "notes": "The tie between the bridge's kind and the gap is recalled (lore critic, moderately sure); verify in ACOK Theon I."
     },
     {
       "id": "pyke-parts",
@@ -2827,9 +2837,9 @@
         "pyke"
       ],
       "kind": "form",
-      "claim": "Build assumption: a curtain and gatehouse close the headland's root on the cliff top; off it four stacks carry the Great Keep (stone bridge), the Kitchen Keep (stone), the Bloody Keep and the Sea Tower (rope bridges); dark grey stone.",
+      "claim": "Build assumption: the curtain and gatehouse close the headland's root on the cliff top; the keeps stand on the three islands, the Sea Tower outermost; a hall and a road in the ward; fallen rock at the stacks' feet; dark grey stone.",
       "label": "I",
-      "basis": "The text gives keeps and towers on stacks cut from a headland, bridges of stone and of rope, the four named parts and the Sea Tower farthest out on a rope bridge (pyke-sea-stacks, -bridges, -parts, -sea-tower). The layout, which bridge is which and the forms are invented and contradict nothing.",
+      "basis": "The text gives three islands and a dozen stacks cut from the headland, stone bridges over short gaps and rope over long ones, the four named parts and the Sea Tower outermost on rope (pyke-sea-stacks, -bridges, -parts, -sea-tower). The layout and forms are invented and contradict nothing.",
       "use": [
         "landmark:pyke"
       ],
@@ -3177,7 +3187,8 @@
       "use": [
         "landmark:the-twins"
       ],
-      "status": "draft"
+      "status": "draft",
+      "notes": "Lore critic (books only): moats and drawbridges at the Twins are recalled from ASOS (Catelyn VI, Arya XI) and AGOT (bridges raised); add them to the model once verified."
     }
   ]
 }

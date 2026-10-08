@@ -1,0 +1,14 @@
+{
+  "notes": "Sunspear: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the coast of south-eastern Dorne, east of the Greenblood's mouth, the Water Gardens near", "label": "M", "claims": ["sunspear-position", "water-gardens-near-sunspear"] },
+    { "part": "the Old Palace, its chief towers the Tower of the Sun and the Spear Tower", "label": "T", "claims": ["sunspear-old-palace"] },
+    { "part": "the Tower of the Sun's great dome of gold and leaded glass", "label": "T", "claims": ["sunspear-tower-of-the-sun"] },
+    { "part": "the slender Spear Tower, a hundred and fifty feet, its spear of gilded steel thirty more", "label": "T", "claims": ["sunspear-spear-tower-height"] },
+    { "part": "the Winding Walls round the Old Palace and the Shadow City of crooked alleys", "label": "T", "claims": ["sunspear-winding-walls"] },
+    { "part": "the Threefold Gate: three gates in a straight line to the palace", "label": "T", "claims": ["sunspear-threefold-gate"] },
+    { "part": "the mud-brick shops and windowless hovels beyond the walls", "label": "T", "claims": ["sunspear-mud-brick-quarter"] },
+    { "part": "hot, dry Dornish coast", "label": "C", "claims": ["dorne-climate"] },
+    { "part": "the plan: the palace on the spit's corner, three serpentine walls ending at the shore, the gatehouses, the halls, the sandstone and adobe, flat roofs and small domes, the road", "label": "I", "claims": ["sunspear-plan"] }
+  ]
+}

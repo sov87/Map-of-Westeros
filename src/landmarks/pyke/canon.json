@@ -2,11 +2,12 @@
   "notes": "Pyke: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
   "parts": [
     { "part": "site: the coast of the isle of Pyke, a ride from Lordsport, in the Iron Islands", "label": "T", "claims": ["pyke-position", "pyke-isles-map", "iron-islands-position"] },
-    { "part": "keeps and towers on stacks of rock in the surf, the remains of a headland the sea has cut apart", "label": "T", "claims": ["pyke-sea-stacks"] },
-    { "part": "bridges between the stacks, some arched stone, some swaying rope and plank", "label": "T", "claims": ["pyke-bridges"] },
+    { "part": "keeps and towers on three bleak islands and a dozen towering stacks of rock in the surf, the remains of a headland the sea has cut apart", "label": "T", "claims": ["pyke-sea-stacks"] },
+    { "part": "bridges between the rocks: stone over the short gaps, swaying rope and plank over the long ones", "label": "T", "claims": ["pyke-bridges"] },
     { "part": "the Great Keep, the Kitchen Keep, the Bloody Keep and the Sea Tower", "label": "T", "claims": ["pyke-parts"] },
     { "part": "the Sea Tower on the farthest stack, reached by a rope bridge", "label": "T", "claims": ["pyke-sea-tower"] },
-    { "part": "grim, wind-lashed grey stone over a cold sea, little green", "label": "T", "claims": ["pyke-wild-coast", "iron-islands-land"] },
+    { "part": "grim and wind-lashed under grey skies over a cold, rough sea, little green", "label": "T", "claims": ["pyke-wild-coast"] },
+    { "part": "stony, wind-scoured grey isles of thin soil", "label": "C", "claims": ["iron-islands-land"] },
     { "part": "the plan: the curtain and gatehouse on the cliff top, the stacks' order and forms, which bridges are stone, the keeps' forms, the hall, the road toward Lordsport, the sea cliffs, fallen rock, surf and kitchen smoke", "label": "I", "claims": ["pyke-plan"] }
   ]
 }

@@ -9,6 +9,6 @@
     { "part": "the Citadel along the Honeywine, its ravenry on the Isle of Ravens in the river", "label": "T", "claims": ["oldtown-citadel", "honeywine-through-oldtown"] },
     { "part": "the Starry Sept", "label": "T", "claims": ["oldtown-starry-sept"] },
     { "part": "the stepped pale stages of the Hightower and its brazier", "label": "I", "claims": ["oldtown-hightower-form"] },
-    { "part": "the plan: the city wall and towers, the houses, the Citadel's halls and domes, the Seneschal's Court's tower, the sept's form, the ships, the widened valley floor", "label": "I", "claims": ["oldtown-plan"] }
+    { "part": "the plan: the city wall and towers, the houses, the Citadel's halls and towers, the sept's form, the ships, the widened valley floor", "label": "I", "claims": ["oldtown-plan"] }
   ]
 }
