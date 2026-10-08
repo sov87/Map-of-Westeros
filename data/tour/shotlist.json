@@ -462,6 +462,27 @@
         "lod0Tris": 80000,
         "lights": 300
       }
+    },
+    "greywater-watch": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 3.2,
+      "contextKm": 30,
+      "tod": 7.5,
+      "screenSeconds": 5,
+      "framing": "low over the mire at dawn: black pools, reeds and drowned trees fading into mist; no castle shown, the Watch is somewhere within",
+      "features": [
+        "the mire",
+        "drowned trees",
+        "mist"
+      ],
+      "budget": {
+        "minFeatureKm": 0.02,
+        "lod0Tris": 50000,
+        "lights": 0
+      }
     }
   }
 }

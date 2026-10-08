@@ -1,0 +1,8 @@
+{
+  "notes": "Greywater Watch: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the Reeds' seat somewhere in the Neck; the sheet's point is nominal only", "label": "T", "claims": ["greywater-watch-position", "greywater-watch-map-point"] },
+    { "part": "no castle modelled: it is said to move through the swamps, found by none unless the crannogmen lead them", "label": "T", "claims": ["greywater-watch-moves", "greywater-watch-crannogmen", "greywater-watch-no-model"] },
+    { "part": "the setting: black water, reeds and moss, drowned trees, mist", "label": "I", "claims": ["greywater-watch-setting", "the-neck-vegetation", "the-neck-terrain"] }
+  ]
+}
