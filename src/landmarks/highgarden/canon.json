@@ -1,0 +1,11 @@
+{
+  "notes": "Highgarden: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). The novels say little of its form; the walls and maze are C (The World of Ice & Fire). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: beside the Mander in the heart of the Reach", "label": "M", "claims": ["highgarden-on-the-mander", "mander-course"] },
+    { "part": "a hill over the Mander, gardens, orchards and fields of flowers round the castle", "label": "C", "claims": ["highgarden-hill"] },
+    { "part": "three concentric ring walls", "label": "C", "claims": ["highgarden-ring-walls"] },
+    { "part": "white stone walls and towers", "label": "C", "claims": ["highgarden-white-stone"] },
+    { "part": "the briar maze between two of the rings", "label": "C", "claims": ["highgarden-briar-maze"] },
+    { "part": "slender towers, the keep, pale slate roofs, garden courts and fountains, the gates' positions, the orchards' rows and the fields' colours", "label": "I", "claims": ["highgarden-castle-form"] }
+  ]
+}

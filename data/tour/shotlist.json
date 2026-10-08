@@ -125,6 +125,29 @@
         "lod0Tris": 90000,
         "lights": 650
       }
+    },
+    "highgarden": {
+      "status": "s2",
+      "segment": "reach",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 9,
+      "contextKm": 60,
+      "tod": 10.2,
+      "screenSeconds": 8,
+      "framing": "from the south-west across the Mander in the morning: the three white rings and the dark briar maze between the outer two, slender white towers round the keep, orchards and coloured fields of flowers on the hill",
+      "features": [
+        "three white ring walls",
+        "the briar maze",
+        "slender white towers",
+        "gardens, orchards and fields of flowers",
+        "the Mander below"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 70000,
+        "lights": 160
+      }
     }
   }
 }

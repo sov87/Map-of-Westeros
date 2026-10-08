@@ -725,6 +725,16 @@
       "status": "draft",
       "notes": "No travel time recalled. value: 'to' lies 'dir' of 'from'."
     },
+    {
+      "id": "highgarden-castle-form",
+      "subjects": ["highgarden"],
+      "kind": "form",
+      "claim": "Build assumption: inside the innermost ring stand slender white towers and a keep under pale slate roofs, their courts laid out as gardens with fountains and arbors.",
+      "label": "I",
+      "basis": "The companion text gives the white stone, the three ring walls, the briar maze and the gardens round the castle (highgarden-white-stone, -ring-walls, -briar-maze, -hill); the towers, roofs and fountains are invented and contradict nothing.",
+      "use": ["landmark:highgarden"],
+      "status": "draft"
+    },
 
     {
       "id": "oldtown-position",

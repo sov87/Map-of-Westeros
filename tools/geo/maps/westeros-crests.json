@@ -278,7 +278,7 @@
     ]
   },
   "forceRivers": {
-    "notes": "px: polylines (sheet px, source → mouth) of river reaches hidden under labels or crests (the Blackwater Rush's last reach under the 'King's Landing' label). routes: waypoints (source → mouth) of rivers drawn too faintly for the colour rule; each snaps to the nearest river ink and the trace follows the least-cost path through the ink between them (map critic, 2026-10-08): the Red Fork from Riverrun to the forks' meeting, the Trident from there to the bay, the Mander from the Reach's east to the sea by the Shield Islands.",
+    "notes": "px: polylines (sheet px, source → mouth) of river reaches hidden under labels or crests (the Blackwater Rush's last reach under the 'King's Landing' label). routes: waypoints (source → mouth) of rivers drawn too faintly for the colour rule; each snaps to the nearest river ink and the trace follows the least-cost path through the ink between them (map critic, 2026-10-08): the Red Fork from Riverrun to the forks' meeting, the Trident from there to the bay, the Mander from Bitterbridge past Highgarden to the sea by Dunstonbury, and the tributary that comes down from the north to join it at Highgarden.",
     "px": [
       [
         [
@@ -378,28 +378,66 @@
           3075
         ],
         [
+          830,
+          3083
+        ],
+        [
           800,
-          3092
+          3093
         ],
         [
-          760,
-          3102
+          770,
+          3115
         ],
         [
-          720,
-          3110
+          752,
+          3123
         ],
         [
-          680,
-          3108
+          731,
+          3143
         ],
         [
-          640,
-          3100
+          715,
+          3165
         ],
         [
-          605,
-          3097
+          690,
+          3190
+        ],
+        [
+          650,
+          3193
+        ],
+        [
+          612,
+          3187
+        ],
+        [
+          598,
+          3190
+        ]
+      ],
+      [
+        [
+          742,
+          2812
+        ],
+        [
+          745,
+          2900
+        ],
+        [
+          748,
+          3000
+        ],
+        [
+          755,
+          3060
+        ],
+        [
+          752,
+          3122
         ]
       ]
     ]
