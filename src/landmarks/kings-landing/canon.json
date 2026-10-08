@@ -1,0 +1,23 @@
+{
+  "notes": "King's Landing: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the north bank of the Blackwater Rush at Blackwater Bay", "label": "T", "claims": ["kings-landing-river-mouth", "blackwater-bay-kings-landing"] },
+    { "part": "three hills: Aegon's High Hill, Visenya's, Rhaenys's", "label": "T", "claims": ["kings-landing-three-hills"] },
+    { "part": "the hills' arrangement (High Hill south-east over the river and bay)", "label": "I", "claims": ["kings-landing-hills-arrangement", "kings-landing-red-keep-above-river"] },
+    { "part": "Red Keep: pale red stone", "label": "T", "claims": ["kings-landing-red-keep-stone"] },
+    { "part": "Red Keep: seven drum towers with iron ramparts, barbican, curtain walls with archers' nests, vaulted halls, covered bridges", "label": "T", "claims": ["kings-landing-red-keep-towers"] },
+    { "part": "Maegor's Holdfast: castle within the castle, dry moat with iron spikes, drawbridge", "label": "T", "claims": ["kings-landing-maegors-holdfast"] },
+    { "part": "the cliff over the river under the keep", "label": "T", "claims": ["kings-landing-red-keep-above-river"] },
+    { "part": "the throne room (great hall)", "label": "T", "claims": ["kings-landing-throne-room"] },
+    { "part": "the Tower of the Hand, standing at 298 AC", "label": "T", "claims": ["kings-landing-tower-of-the-hand-burned"] },
+    { "part": "the godswood (an oak heart tree)", "label": "T", "claims": ["kings-landing-godswood"] },
+    { "part": "the White Sword Tower in the angle of the wall over the bay", "label": "I", "claims": ["kings-landing-white-sword-tower"] },
+    { "part": "Great Sept of Baelor on Visenya's Hill: seven crystal towers, standing at 298 AC", "label": "T", "claims": ["kings-landing-great-sept", "kings-landing-great-sept-standing", "slice-great-sept-standing"] },
+    { "part": "Great Sept: marble steps, plaza, Baelor's statue", "label": "T", "claims": ["kings-landing-great-sept-plaza"] },
+    { "part": "Great Sept: seven-sided hall, dome, white marble", "label": "I", "claims": ["kings-landing-great-sept-dome"] },
+    { "part": "Dragonpit on Rhaenys's Hill: dome fallen in, bronze doors shut", "label": "T", "claims": ["kings-landing-dragonpit-ruin", "kings-landing-dragonpit-dome-fall", "slice-dragonpit-roofless"] },
+    { "part": "the city wall and its seven gates (names)", "label": "T", "claims": ["kings-landing-seven-gates", "kings-landing-mud-gate"] },
+    { "part": "the wall's course and stone, the gates' positions, streets, houses and roofs, wharves and ships", "label": "I", "claims": ["kings-landing-city-fabric"] },
+    { "part": "Flea Bottom: crowded hovels in the low ground", "label": "T", "claims": ["kings-landing-flea-bottom"] }
+  ]
+}

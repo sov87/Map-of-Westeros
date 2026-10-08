@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Shot list: the film and, per landmark, its role in it, hero framing (class, distance), context framing and the detail budget that follows from it. The film block and the segments mirror the compiled film (data/tour/timeline.json via src/tour/compile.ts; `pnpm check` keeps them in sync). PHASE 0 PLACEHOLDER: no landmarks yet (Phase 3).",
+  "notes": "Shot list: the film and, per landmark, its role in it, hero framing (class, distance), context framing and the detail budget that follows from it. The film block and the segments mirror the compiled film (data/tour/timeline.json via src/tour/compile.ts; `pnpm check` keeps them in sync).",
   "film": {
     "seconds": 10,
     "fps": 24,
@@ -54,5 +54,30 @@
       ]
     }
   ],
-  "landmarks": {}
+  "landmarks": {
+    "kings-landing": {
+      "status": "s2",
+      "segment": "crownlands",
+      "role": "pause",
+      "heroClass": "mid",
+      "heroKm": 30,
+      "contextKm": 120,
+      "tod": 16.3,
+      "screenSeconds": 10,
+      "framing": "from the south-east over the river mouth: the Red Keep on the High Hill over the river cliff in the right third, the roofs climbing to the Great Sept's dome and crystal towers on Visenya's Hill (left), the Dragonpit's broken drum on Rhaenys's Hill behind, the wall round it all; afternoon sun from the south-west",
+      "features": [
+        "the Red Keep: pale red stone, seven drum towers with iron ramparts, the barbican, Maegor's Holdfast",
+        "the Great Sept of Baelor: seven crystal towers",
+        "the Dragonpit, its dome fallen in",
+        "three hills",
+        "the city wall and its seven gates",
+        "the Mud Gate and the riverfront"
+      ],
+      "budget": {
+        "minFeatureKm": 0.06,
+        "lod0Tris": 160000,
+        "lights": 400
+      }
+    }
+  }
 }

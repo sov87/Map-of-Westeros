@@ -111,7 +111,8 @@
       "value": { "from": "blackwater-rush", "to": "kings-landing", "dir": "n" },
       "use": ["vectors", "hydrology", "landmark:kings-landing"],
       "status": "draft",
-      "notes": "Brief confirmed (city at the mouth of the Blackwater Rush). value: 'to' lies 'dir' of 'from'."
+      "notes": "Brief confirmed (city at the mouth of the Blackwater Rush). value: 'to' lies 'dir' of 'from'.",
+      "conflict": "The westeros-crests sheet paints its Targaryen crest and a small house crest over the inner end of Blackwater Bay and ends the river's line about 14 km short of it, leaving the city's marker inland. The text wins: the bay under the crests is restored (profile forceSea) and the river's last reach drawn to it (forceRivers), so the city stands at the river mouth on the bay."
     },
     {
       "id": "kings-landing-three-hills",
@@ -267,6 +268,99 @@
       "use": ["landmark:kings-landing"],
       "status": "draft",
       "notes": "Chapter is a guess among the early AFFC Cersei chapters."
+    },
+    {
+      "id": "kings-landing-seven-gates",
+      "subjects": ["kings-landing"],
+      "kind": "count",
+      "claim": "The city wall has seven gates: the Mud Gate on the river, the Gate of the Gods, the Lion Gate, the King's Gate, the Iron Gate, the Dragon Gate and the Old Gate.",
+      "label": "T",
+      "cites": [
+        { "book": "ACOK", "chapter": "Tyrion XIII", "find": ["Gate of the Gods", "Lion Gate", "Dragon Gate"] }
+      ],
+      "value": { "count": 7 },
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "The gates are named as Tyrion's defences are readied for Stannis; the chapter is a guess (one of the ACOK Tyrion chapters before the Blackwater). Where each gate stands on the wall is label I (kings-landing-city-fabric)."
+    },
+    {
+      "id": "kings-landing-flea-bottom",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "Flea Bottom is the city's poorest quarter, a warren of crowded alleys, pot-shops and hovels in the low ground among the hills.",
+      "label": "T",
+      "cites": [
+        { "book": "AGOT", "chapter": "Arya V", "find": ["Flea Bottom"] }
+      ],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Arya hides there after her father's arrest; the chapter is a guess (AGOT Arya V or ACOK Arya I). That it lies in the low ground between the hills is recalled, not checked."
+    },
+    {
+      "id": "kings-landing-throne-room",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "The Red Keep's throne room is a long, high hall where the Iron Throne stands on a raised dais; the Targaryen dragon skulls that once hung on its walls were taken down to the cellars.",
+      "label": "T",
+      "cites": [
+        { "book": "AGOT", "chapter": "Eddard II", "find": ["Iron Throne", "dragon skulls"] },
+        { "book": "AGOT", "chapter": "Arya III", "find": ["dragon skulls"] }
+      ],
+      "use": ["landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-godswood",
+      "subjects": ["kings-landing"],
+      "kind": "vegetation",
+      "claim": "The Red Keep has a small godswood; its heart tree is a great oak overgrown with smokeberry vines, not a weirwood.",
+      "label": "T",
+      "cites": [
+        { "book": "AGOT", "chapter": "Eddard VII", "find": ["smokeberry vines"] }
+      ],
+      "use": ["landmark:kings-landing"],
+      "status": "draft",
+      "notes": "Recalled from Ned praying there; the chapter is a guess."
+    },
+    {
+      "id": "kings-landing-hills-arrangement",
+      "subjects": ["kings-landing"],
+      "kind": "relative-position",
+      "claim": "Build assumption: Aegon's High Hill stands in the south-east corner of the city above the river mouth and the bay, Visenya's Hill in the west and Rhaenys's Hill in the north, with Flea Bottom in the low ground between them.",
+      "label": "I",
+      "basis": "The text gives the three hills and their crowns (kings-landing-three-hills) and puts the Red Keep over the river (kings-landing-red-keep-above-river) and the bay; the arrangement follows the companion city plan as recalled (not checked).",
+      "use": ["landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-great-sept-dome",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "Build assumption: the Great Sept is a seven-sided hall of white marble under a great dome, the seven crystal towers rising at its corners.",
+      "label": "I",
+      "basis": "T gives the seven crystal towers (kings-landing-great-sept) and the marble steps (kings-landing-great-sept-plaza); the dome, the seven sides and the towers' placement are the build's reading, consistent with the companion art as recalled.",
+      "use": ["landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-white-sword-tower",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "Build assumption: the White Sword Tower, the Kingsguard's quarters, is a slender round tower of white stone in an angle of the Red Keep's wall over the bay.",
+      "label": "I",
+      "basis": "The Kingsguard's White Sword Tower is named in the novels; its slender white form over the bay is recalled from AFFC, not checked, so it is labelled I until the verifier finds it.",
+      "use": ["landmark:kings-landing"],
+      "status": "draft"
+    },
+    {
+      "id": "kings-landing-city-fabric",
+      "subjects": ["kings-landing"],
+      "kind": "form",
+      "claim": "Build assumption: a towered wall of pale stone rings the city, a gate where each road leaves; plaster houses under red tile crowd the slopes in winding rows, slate on the rich hills, thatch in Flea Bottom; wharves line the riverfront.",
+      "label": "I",
+      "basis": "The novels give the wall, its seven gates, Flea Bottom and the docks by the Mud Gate (kings-landing-seven-gates, -flea-bottom, -mud-gate) but no plan, materials or roofs; these are invented and contradict nothing.",
+      "use": ["landmark:kings-landing"],
+      "status": "draft"
     },
 
     {

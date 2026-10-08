@@ -56,6 +56,8 @@ export interface Ledger {
   subjects: Subject[];
   files: { path: string; file: ClaimFile }[];
   claims: (Claim & { _file: string })[];
+  /** landmark folders and their citations (src/landmarks/<id>/canon.json) */
+  landmarks?: LandmarkCanon[];
 }
 
 export const KINDS = [
@@ -98,7 +100,24 @@ export function loadLedger(root = process.cwd()): Ledger {
     for (const f of readdirSync(claimsDir).sort())
       if (f.endsWith('.json')) files.push({ path: join('data', 'canon', 'claims', f), file: JSON.parse(readFileSync(join(claimsDir, f), 'utf8')) as ClaimFile });
   const claims = files.flatMap(({ path, file }) => (file.claims ?? []).map((c) => ({ ...c, _file: path })));
-  return { books, subjects, files, claims };
+  // each landmark folder's citations (src/landmarks/<id>/canon.json): its parts, their labels, the claims they rest on
+  const landmarks: LandmarkCanon[] = [];
+  const ldir = join(root, 'src', 'landmarks');
+  if (existsSync(ldir))
+    for (const d of readdirSync(ldir).sort()) {
+      if (!existsSync(join(ldir, d, 'index.ts'))) continue;
+      const f = join(ldir, d, 'canon.json');
+      landmarks.push({ id: d, path: join('src', 'landmarks', d, 'canon.json'), parts: existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')) as { parts: LandmarkCanon['parts'] }).parts : null });
+    }
+  return { books, subjects, files, claims, landmarks };
+}
+
+/** A landmark folder's canon.json: every modelled part with its evidence label and the ledger claims behind it. */
+export interface LandmarkCanon {
+  id: string;
+  path: string;
+  /** null: the folder has no canon.json */
+  parts: { part: string; label: Label; claims: string[] }[] | null;
 }
 
 export interface LedgerReport {
@@ -166,6 +185,21 @@ export function validateLedger(L: Ledger): LedgerReport {
     if (c.label === 'T' && cites.length && !cites.some(isNovel)) W(`${at}: label T but no novel / novella chapter is cited (T means the novels' text)`);
     if (c.label === 'M' && cites.length && !cites.some(isMap)) W(`${at}: label M should cite LOIAF or a novel's endpaper map (chapter 'Map')`);
     if ((c.status === 'verified' || c.status === 'corrected') && c.label !== 'I' && cites.some((ct) => !(ct.find ?? []).length)) W(`${at}: ${c.status} but a citation has no find keys`);
+  }
+  // landmark folders hold their citations: every part cites existing claims; a T part rests on a T claim
+  const byId = new Map(L.claims.map((c) => [c.id, c]));
+  for (const lm of L.landmarks ?? []) {
+    if (!lm.parts) {
+      W(`${lm.path}: missing — a landmark folder holds its ledger citations (parts, labels, claim ids)`);
+      continue;
+    }
+    for (const pt of lm.parts) {
+      const at = `${lm.path} '${pt.part}'`;
+      if (!LABELS.includes(pt.label)) E(`${at}: label '${pt.label}'`);
+      if (!pt.claims?.length) E(`${at}: cites no claim`);
+      for (const id of pt.claims ?? []) if (!byId.has(id)) E(`${at}: unknown claim '${id}'`);
+      if (pt.label === 'T' && !(pt.claims ?? []).some((id) => byId.get(id)?.label === 'T')) E(`${at}: label T but none of its claims is T`);
+    }
   }
   // coverage
   const covered = new Map<string, number>();

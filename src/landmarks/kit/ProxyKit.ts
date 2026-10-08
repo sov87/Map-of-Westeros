@@ -775,6 +775,74 @@ export class ProxyKit {
   }
 
   /**
+   * A sheet hugging the ground over a local outline (+ `at` x, z): a town's packed-earth streets, a paved
+   * yard, a field of rubble — what the terrain's own ground rules cannot paint. A grid of `step` km (coarser
+   * by the LOD detail factor) clipped to the outline cell by cell, every vertex `lift` km above the ground
+   * (default 0.012: clear of the terrain mesh's interpolation), normals from the ground's slope. Not seated
+   * (no contacts): it is a skin, not a body. `holes` are left uncovered.
+   */
+  drape(fam: FamilyId, outline: V2[], o: PartOpts & { step?: number; lift?: number; holes?: V2[][] } = {}): this {
+    this.begin();
+    const at: V3 = o.at ?? [0, 0, 0];
+    const ol: V2[] = outline.map((q) => [q[0] + at[0], q[1] + at[2]]);
+    const holes = (o.holes ?? []).map((hl) => hl.map((q): V2 => [q[0] + at[0], q[1] + at[2]]));
+    const step0 = o.step ?? 0.2;
+    const lift = o.lift ?? 0.012;
+    const inPoly = (poly: V2[], x: number, z: number): boolean => {
+      let c = false;
+      for (let a = 0, b = poly.length - 1; a < poly.length; b = a++) {
+        const [xa, za] = poly[a];
+        const [xb, zb] = poly[b];
+        if (za > z !== zb > z && x < ((xb - xa) * (z - za)) / (zb - za) + xa) c = !c;
+      }
+      return c;
+    };
+    let x0 = Infinity;
+    let x1 = -Infinity;
+    let z0 = Infinity;
+    let z1 = -Infinity;
+    for (const [x, z] of ol) {
+      x0 = Math.min(x0, x);
+      x1 = Math.max(x1, x);
+      z0 = Math.min(z0, z);
+      z1 = Math.max(z1, z);
+    }
+    const gen = (detail: number): Geo => {
+      const g = new Geo();
+      const st = step0 / Math.max(0.25, detail);
+      const nx = Math.max(1, Math.ceil((x1 - x0) / st));
+      const nz = Math.max(1, Math.ceil((z1 - z0) / st));
+      const idx = new Map<number, number>();
+      const vert = (ix: number, iz: number): number => {
+        const key = iz * (nx + 1) + ix;
+        const got = idx.get(key);
+        if (got !== undefined) return got;
+        const x = x0 + ix * st;
+        const z = z0 + iz * st;
+        const e = st * 0.5;
+        const gx = (this.ground(x + e, z) - this.ground(x - e, z)) / (2 * e);
+        const gz = (this.ground(x, z + e) - this.ground(x, z - e)) / (2 * e);
+        const l = Math.hypot(gx, 1, gz);
+        const v = g.v(x, this.ground(x, z) + lift, z, -gx / l, 1 / l, -gz / l);
+        idx.set(key, v);
+        return v;
+      };
+      for (let iz = 0; iz < nz; iz++) {
+        for (let ix = 0; ix < nx; ix++) {
+          const cx = x0 + (ix + 0.5) * st;
+          const cz = z0 + (iz + 0.5) * st;
+          if (!inPoly(ol, cx, cz) || holes.some((hl) => inPoly(hl, cx, cz))) continue;
+          // counter-clockwise seen from above (+y): x east, z south
+          g.quad(vert(ix, iz), vert(ix, iz + 1), vert(ix + 1, iz + 1), vert(ix + 1, iz));
+        }
+      }
+      return g;
+    };
+    this.addPart(fam, gen, null, o, { detailed: true });
+    return this;
+  }
+
+  /**
    * A house: walls box `w` (local x, the ridge direction) × `d` × `h` with a roof — gable (default),
    * hip, flat, dome, cone (pyramid) or round (barrel) — at `pitch`° with `overhang`. SEATED by default
    * (`seat: false` to place it at `at[1]`): the body stands on the minimum ground under its corners or,

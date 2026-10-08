@@ -76,6 +76,78 @@
       ]
     ]
   },
+  "forceSea": {
+    "notes": "Sheet px polygons of water hidden under decorations, where the books need it (label T beats M): the inner end of Blackwater Bay under the Targaryen crest and the small blue crest beside King's Landing — the city stands on the bay at the mouth of the Blackwater Rush (ledger kings-landing-river-mouth, blackwater-bay-kings-landing).",
+    "px": [
+      [
+        [
+          1357,
+          2722
+        ],
+        [
+          1409,
+          2720
+        ],
+        [
+          1410,
+          2779
+        ],
+        [
+          1384,
+          2790
+        ],
+        [
+          1357,
+          2781
+        ]
+      ],
+      [
+        [
+          1340,
+          2747
+        ],
+        [
+          1343,
+          2734
+        ],
+        [
+          1360,
+          2732
+        ],
+        [
+          1360,
+          2762
+        ],
+        [
+          1344,
+          2758
+        ]
+      ]
+    ]
+  },
+  "forceRivers": {
+    "notes": "Sheet px polylines (source → mouth) of river reaches hidden under labels or crests: the Blackwater Rush's last reach under the 'King's Landing' label into the bay.",
+    "px": [
+      [
+        [
+          1322,
+          2758
+        ],
+        [
+          1330,
+          2756
+        ],
+        [
+          1337,
+          2753
+        ],
+        [
+          1342,
+          2751
+        ]
+      ]
+    ]
+  },
   "train": {
     "notes": "Training windows [x0, y0, x1, y1] in sheet pixels for the terrain classifier (tools/geo/vectorize.py). Picked by eye on a gridded render; crests and labels inside them are a minority.",
     "plain": [

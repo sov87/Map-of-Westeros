@@ -483,6 +483,14 @@ def vectorize(source: Path, map_id: str) -> None:
         print(f"[geo]   scale bar: {bar:.4f} km/px → the Wall would be {math.hypot(*np.subtract(*prof['scale']['wallPx'])) * bar / 1.609344:.0f} mi ({(bar / sheet.km_per_px - 1) * 100:+.1f} % vs the Wall calibration)")
 
     water = water_mask(img, prof["water"])
+    # water the sheet hides under its decorations (a crest painted over a bay) where the books need it: the
+    # profile's forceSea polygons (sheet px), reviewed on the overlay like every other correction
+    forced_sea = np.zeros(water.shape, bool)
+    for poly in prof.get("forceSea", {}).get("px", []):
+        pm = np.zeros(water.shape, np.uint8)
+        cv2.fillPoly(pm, [np.round(np.array(poly, float) - [x0, y0]).astype(np.int32)], 1)
+        forced_sea |= pm.astype(bool)
+    water |= forced_sea
     sea, land, info = sea_and_land(water, prof["exclude"]["essosX"] - x0, min_island_px=int(prof.get("minIslandPx", 40)), img=img, islet_px=int(prof.get("isletPx", 2500)), islet_paint=float(prof.get("isletPaint", 0.55)))
     # thin protrusions of the land (sea labels' halos touching a coast) go; capes wider than ~5 px stay
     land = cv2.morphologyEx(land.astype(np.uint8), cv2.MORPH_OPEN, disk(2)) > 0
@@ -516,6 +524,14 @@ def vectorize(source: Path, map_id: str) -> None:
     save(out, "land", [feat(p, src, name="Westeros") for p in land_polys])
     lake_polys = polygons(lakes, sheet, x0, y0, 1.0, 0.8, 30)
     save(out, "lakes", [feat(p, src, name=None) for p in lake_polys])
+    # river reaches the sheet hides under a label or a crest (profile forceRivers, sheet px): drawn into the
+    # river mask before tracing, so the network is oriented through them (a reach ending in forced sea is an
+    # outlet like any mouth)
+    for fr in prof.get("forceRivers", {}).get("px", []):
+        pl = np.round(np.array(fr, float) - [x0, y0]).astype(np.int32)
+        rm = rivers.astype(np.uint8)
+        cv2.polylines(rm, [pl], False, 1, thickness=2)
+        rivers = rm.astype(bool) & land
     lines = trace_rivers(rivers, sea, lakes, int(prof.get("minRiverComponentPx", prof.get("minRiverPx", 30))), int(prof.get("gapPx", 6)), int(prof.get("bridgePx", 16)), int(prof.get("ringHolePx", 300)), ink=img.max(axis=-1))
     rfeats = []
     for i, ln in enumerate(lines):
