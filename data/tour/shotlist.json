@@ -418,6 +418,27 @@
         "lod0Tris": 30000,
         "lights": 20
       }
+    },
+    "eastwatch": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 4.2,
+      "contextKm": 32,
+      "tod": 13.5,
+      "screenSeconds": 6,
+      "framing": "from the bay to the south-south-east under a grey sky: the castle and its quay on the shore, the ships, the Wall's ice running down to the sea behind it",
+      "features": [
+        "the Wall's sea end",
+        "the castle",
+        "the harbour and ships"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 30000,
+        "lights": 60
+      }
     }
   }
 }

@@ -873,7 +873,8 @@
         "vectors"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (the Wall's eastern end, at the sea). The castle's name supports it."
+      "notes": "Brief confirmed (the Wall's eastern end, at the sea). The castle's name supports it.",
+      "conflict": "The westeros-crests sheet sets Eastwatch's marker about 11 km inland of the traced coast where the Wall meets the Bay of Seals. The text and the name put the castle on the shore at the Wall's end. Settled with a display offset of 14 km east onto a shelf on the shore just south of the Wall's end (places.json)."
     },
     {
       "id": "eastwatch-bay-of-seals",
@@ -1034,6 +1035,20 @@
       ],
       "status": "draft",
       "basis": "I recall no description of the castle's layout in the novels; they describe only its role, its harbour and its shore."
+    },
+    {
+      "id": "eastwatch-plan",
+      "subjects": [
+        "eastwatch"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a square curtain with round corner towers and a square keep on a shelf above the shore south of the Wall's end, the gate on the landward side, a stone quay and a breakwater below with three of the Watch's ships.",
+      "label": "I",
+      "basis": "No book describes Eastwatch's plan (eastwatch-plan-unknown); the text gives a manned castle at the Wall's sea end on a windswept shore with a harbour for the Watch's ships (eastwatch-manned, -harbour, the-wall-east-end). Everything modelled is invented and contradicts nothing.",
+      "use": [
+        "landmark:eastwatch"
+      ],
+      "status": "draft"
     },
     {
       "id": "winterfell-position",

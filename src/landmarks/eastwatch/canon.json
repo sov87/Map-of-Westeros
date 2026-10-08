@@ -1,0 +1,10 @@
+{
+  "notes": "Eastwatch-by-the-Sea: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the Wall's eastern end where it meets the sea, on the shore of the Bay of Seals", "label": "T", "claims": ["the-wall-east-end", "eastwatch-position", "eastwatch-bay-of-seals", "eastwatch-east-of-castle-black"] },
+    { "part": "a manned castle at 298 AC (lights, smoke)", "label": "T", "claims": ["eastwatch-manned", "the-wall-castles-manned-298"] },
+    { "part": "a grey, windswept shore", "label": "T", "claims": ["eastwatch-look"] },
+    { "part": "a harbour where the Watch keeps its ships", "label": "T", "claims": ["eastwatch-harbour", "eastwatch-hardhome-by-sea"] },
+    { "part": "the plan: the curtain, corner towers, gatehouse, keep, halls, the quay, the breakwater and the ships' forms, the shelf in the slope", "label": "I", "claims": ["eastwatch-plan", "eastwatch-plan-unknown"] }
+  ]
+}

@@ -6,7 +6,7 @@
   "places": [
     {"id": "fist-of-the-first-men", "name": "The Fist of the First Men", "kind": "landmark", "tier": "A", "canonical": [1449.37, 4450.2], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "beyond-the-wall"},
     {"id": "castle-black", "name": "Castle Black", "kind": "landmark", "tier": "A", "canonical": [1745.83, 4207.27], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "north"},
-    {"id": "eastwatch", "name": "Eastwatch-by-the-Sea", "kind": "landmark", "tier": "B", "canonical": [1939.36, 4211.39], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 4, "region": "north"},
+    {"id": "eastwatch", "name": "Eastwatch-by-the-Sea", "kind": "landmark", "tier": "B", "canonical": [1939.36, 4211.39], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [14.0, 2.4], "footprintKm": 4, "region": "north"},
     {"id": "winterfell", "name": "Winterfell", "kind": "landmark", "tier": "A", "canonical": [1394.47, 3455.13], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "north"},
     {"id": "white-harbor", "name": "White Harbor", "kind": "landmark", "tier": "B", "canonical": [1657.99, 2958.28], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 6, "region": "north"},
     {"id": "moat-cailin", "name": "Moat Cailin", "kind": "landmark", "tier": "B", "canonical": [1442.51, 2860.84], "src": "M", "label": "M", "map": "westeros-crests", "displayOffsetKm": [0, 0], "footprintKm": 5, "region": "north"},

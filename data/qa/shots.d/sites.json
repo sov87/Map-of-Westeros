@@ -256,6 +256,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-eastwatch",
+      "tod": 12.0,
+      "note": "top-down site check of Eastwatch: the castle on the shore at the Wall's sea end, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1953.06,
+            4213.34
+          ],
+          "distanceKm": 8,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }
