@@ -1985,6 +1985,21 @@
       "basis": "AGOT Catelyn VIII shows it as a ruin when Robb's host gathers there. The ironborn seizure comes in ACOK and the flaying in ADWD."
     },
     {
+      "id": "moat-cailin-plan",
+      "subjects": [
+        "moat-cailin"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the ruin's old curtain is an octagon of broken basalt stretches; the square Gatehouse Tower stands at the causeway's head, the Children's Tower tall with a broken top, the Drunkard's Tower leaning; bog pools round it.",
+      "label": "I",
+      "basis": "The text gives a great ruin of black basalt half-sunk in the bog, three towers left by name, the Drunkard's leaning, and bog on either side of the causeway (moat-cailin-ruin, -basalt, -three-towers, -drunkards-tower, -setting). The plan and forms are invented and contradict nothing.",
+      "use": [
+        "landmark:moat-cailin"
+      ],
+      "status": "draft",
+      "notes": "The Children's Tower's broken top is a recollection (moat-cailin-childrens-tower notes), not a claim. The plain here is synthesized high and dry; the landmark sinks a shallow bog round the ruin."
+    },
+    {
       "id": "moat-cailin-state-after",
       "subjects": [
         "moat-cailin"

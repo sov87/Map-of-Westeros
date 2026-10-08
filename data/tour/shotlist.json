@@ -396,6 +396,28 @@
         "lod0Tris": 80000,
         "lights": 200
       }
+    },
+    "moat-cailin": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 3.4,
+      "contextKm": 30,
+      "tod": 15.5,
+      "screenSeconds": 6,
+      "framing": "from the bog to the south-south-west under a grey afternoon: the causeway coming up out of the swamp to the Gatehouse Tower, the leaning Drunkard's Tower and the tall Children's Tower among fallen basalt",
+      "features": [
+        "three towers",
+        "fallen basalt",
+        "the causeway",
+        "the bog"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 30000,
+        "lights": 20
+      }
     }
   }
 }

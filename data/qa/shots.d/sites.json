@@ -239,6 +239,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-moat-cailin",
+      "tod": 12.0,
+      "note": "top-down site check of Moat Cailin: the ruin on the kingsroad at the Neck's northern end, the bog pools, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1442.51,
+            2860.04
+          ],
+          "distanceKm": 10,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }
