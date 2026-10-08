@@ -71,6 +71,23 @@ export interface LakePoly {
   key: string;
   level: number | null;
   ring: [number, number][];
+  /** islands: land inside the ring (absent when the lake has none) */
+  holes?: [number, number][][];
+}
+
+/** Point in a lake: inside its ring and in none of its islands. */
+export function inLake(lake: { ring: [number, number][]; holes?: [number, number][][] }, x: number, z: number): boolean {
+  return inPolygonRing(lake.ring, x, z) && !(lake.holes ?? []).some((h) => inPolygonRing(h, x, z));
+}
+
+function inPolygonRing(r: [number, number][], x: number, z: number): boolean {
+  let inside = false;
+  for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+    const [xi, zi] = r[i];
+    const [xj, zj] = r[j];
+    if (zi > z !== zj > z && x < ((xj - xi) * (z - zi)) / (zj - zi) + xi) inside = !inside;
+  }
+  return inside;
 }
 
 export type LookRegion = keyof typeof looksJson.regions;
@@ -167,7 +184,7 @@ export class World {
         halfWidth: Math.max((R.ribbonScale * r.widthKm) / 2, Math.max(r.widthKm / 2, 0.5) + R.ribbonMarginKm),
         coreHalf: Math.max(r.widthKm / 2, 0.5),
       })),
-      lakes: lakes.map((l) => ({ ring: l.ring, level: l.level })),
+      lakes: lakes.map((l) => ({ ring: l.ring, holes: l.holes, level: l.level })),
       exempt: [...places.values()].filter((p) => p.onRiver).map((p) => ({ x: p.x, z: p.z, r: p.footprintKm ?? 5 })),
       slope: R.stampBankSlope,
     });
@@ -187,14 +204,7 @@ export class World {
   waterLevelAt(x: number, z: number): number | null {
     for (const lake of this.lakes) {
       if (lake.level === null) continue;
-      let inside = false;
-      const r = lake.ring;
-      for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
-        const [xi, zi] = r[i];
-        const [xj, zj] = r[j];
-        if (zi > z !== zj > z && x < ((xj - xi) * (z - zi)) / (zj - zi) + xi) inside = !inside;
-      }
-      if (inside) return lake.level;
+      if (inLake(lake, x, z)) return lake.level;
     }
     return this.heights.sample(x, z) < 0 ? 0 : null;
   }

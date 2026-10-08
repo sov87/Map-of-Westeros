@@ -1000,11 +1000,17 @@ def shape_lakes(cfg: Config, h: np.ndarray, land: np.ndarray, lakes: dict[str, L
     keep_km = float(L.get("riverKeepKm", 2.0))
     # low shore is raised at most rimMaxRaise (a basin deeper than that stays a basin)
     max_raise = float(L.get("rimMaxRaise", 1e9))
+    island_rise = float(L.get("islandRise", 0.4))
+    island_km = float(L.get("islandRiseKm", 3.0))
+    shelf_km = float(L.get("islandShelfKm", 3.0))
+    shelf_depth = float(L.get("islandShelfDepth", 0.8))
+    shelf_slope = float(L.get("islandShelfSlope", 0.8))
     for lk in lakes.values():
         if lk.level is None:
             continue
         sl = (slice(lk.r0, lk.r0 + lk.cov.shape[0]), slice(lk.c0, lk.c0 + lk.cov.shape[1]))
         hw = h[sl]
+        nat = hw.copy()
         # the bed lies inside the polygon (the runtime lake surface); its antialiased edge pixels are shore
         wet = lk.cov >= 0.5
         d_in = ndimage.distance_transform_edt(wet) * cfg.px_km
@@ -1043,6 +1049,22 @@ def shape_lakes(cfg: Config, h: np.ndarray, land: np.ndarray, lakes: dict[str, L
         # natural shore at rimSlope — no broad embankment
         rim = np.where(delta, top, top - np.maximum(0.0, d_out - rim_flat) * rim_slope)
         hw[:] = np.where(out & landish & (hw < rim), np.minimum(rim, hw + max_raise), hw)
+        # islands (land the lake encloses: its polygon's holes — the Isle of Faces) stand above the water:
+        # their own relief lifted onto a low dome over the level, islandRise at islandRiseKm from the shore
+        # (never a bowl below the lake round it, nor a flat delta at the level)
+        isl = ndimage.binary_fill_holes(wet) & ~wet
+        if isl.any():
+            t_i = np.clip(d_out / island_km, 0, 1)
+            f_i = t_i * t_i * (3 - 2 * t_i)
+            rise = np.maximum(island_rise + (nat - float(np.median(nat[isl]))), 0.3 * island_rise)
+            hw[:] = np.where(isl, top + rise * f_i, hw)
+            # and shallows round them: the bed rises to the island over islandShelfKm (islandShelfDepth deep
+            # at its outer edge), beyond it falls away at islandShelfSlope to the lake's own bed — no
+            # drop-off under the clear water beside the island's shore
+            d_isl = ndimage.distance_transform_edt(~isl) * cfg.px_km
+            t_s = np.clip(d_isl / shelf_km, 0, 1)
+            shelf = lk.level - 0.12 - (shelf_depth - 0.12) * (t_s * t_s * (3 - 2 * t_s)) - np.maximum(0.0, d_isl - shelf_km) * shelf_slope
+            hw[:] = np.where(wet, np.maximum(hw, shelf), hw)
 
 
 def river_distance(cfg: Config, lk: Lake, conn: list[Line]) -> np.ndarray:

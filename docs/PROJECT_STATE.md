@@ -11,7 +11,7 @@ instead of appending logs._
 | 0 · Fork and sources | **Done.** Engine forked from *Map of Middle-Earth* (MIT), its content stripped (24 landmark folders, Arda / ME-GIS sources, ME places / regions / tour); host rules rewritten for the RTX 5090 rig; boots on the placeholder slab. Ledger covers all 88 planned subjects (24 landmarks, ranges, rivers, regions, slice facts). |
 | 1 · Geography | **Good enough (user, 2026-10-08: "relatively book accurate, not 1:1").** The user's map is vectorized, scale-calibrated from the Wall, synthesized into terrain and baked at 1 km/px. Every river is monotone downhill. The map critic's high findings that landmarks depend on are fixed (see below); the rest are known issues. |
 | 2 · World look | Not started. Region looks are provisional ground palettes on Middle-earth grades. |
-| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal, the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, Eastwatch, White Harbor, Greywater Watch (the setting only: the ledger forbids a fixed castle), the Inn at the Crossroads.** Next: the Isle of Faces, Summerhall, Starfall, the Water Gardens, the Fist of the First Men. All at shot-list status s2 (gates as warnings) until their looks are final. |
+| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal, the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, Eastwatch, White Harbor, Greywater Watch (the setting only: the ledger forbids a fixed castle), the Inn at the Crossroads, the Isle of Faces.** Next: Summerhall, Starfall, the Water Gardens, the Fist of the First Men. All at shot-list status s2 (gates as warnings) until their looks are final. |
 | 2, 4–6 | Not started. |
 
 ## Decisions taken (user)
@@ -65,6 +65,12 @@ instead of appending logs._
 - **Moat Cailin:** the North's synthesized plain is high and dry here, so a `lowerOnly` flatten sinks a shallow bog round the ruin, with irregular pools (landmark pools a hair above the sunk floor) ringed by moss drapes, reeds and mist. The ruin has broken stretches of a basalt octagon, fallen blocks half-sunk, the causeway as a low earth bank up to the square Gatehouse Tower, the slender Children's Tower with a broken top, and the leaning Drunkard's Tower. Note: local y is the ground at the origin AFTER stamps, while stamp heights are relative to the base ground.
 - **Eastwatch:** the sheet's marker stands ~11 km inland of the traced coast where the Wall meets the Bay of Seals. The place is offset 14 km onto the shore south of the Wall's end (conflict logged in `eastwatch-position`), on a shelf cut into the coastal slope. There a square curtain, keep and halls (I: no book gives the plan) look onto a quay, a breakwater and three ships, with the Wall's ice running down to the shore behind.
 - **White Harbor:** the White Knife's wide lower course traced as a sea channel winding down to an estuary on the Bite, with the sheet's marker ~10 km inland of it. The city is offset ~13 km onto the north-east shore where the channel opens into the Bite (conflict logged in `white-harbor-position`). A shelf cut into the shore's slope carries the waterfront district. The walled white city climbs to the New Castle on a raised hill, with the Wolf's Den at the waterfront, the domed Sept of the Snows, the castle stair, quays and ships, and Seal Rock bare in the bay.
+- **The Isle of Faces:** the sheet's island under the "Isle of Faces" lettering (~27 × 14 px) was smaller than the vectorizer's label-hole fill (400 px), so the Gods Eye had no island. Fixes:
+  - `forceIslands` (new, profile sheet-px polygons) keeps it as land, a hole in the lake;
+  - `lakes.json` exports lake holes, and `World.waterLevelAt` and the stamp guard honour them;
+  - the bake's island rule lifts an island's own relief onto a low dome over the level, with shallows round it (an island is far from any uplift, so the synthesis had left it a bowl below the water).
+
+  The isle is ~40 × 22 km. Its wood is stands of weirwoods and oaks, and on its crown a clearing is ringed by nine great weirwoods (white kit trunks under the vegetation's red crowns), their carved faces turned inward (I). There is no settlement (I), and dawn mist lies on the water.
 - **Bookmark `aimKm` is map km [east, NORTH]** off the display position, not local [x, z-south] (`src/camera/shots.ts`; noted on `BookmarkDecl`). Riverrun, Pyke, Oldtown, the Twins and Sunspear had passed local z; fixed. The earlier landmarks' heroes were framed by eye on renders, so their values stand.
 - **Lore critic (books only) on Riverrun, Pyke, Oldtown and the Twins:** no contradiction of the books, no show detail except the Citadel's domes, now halls and towers. Applied:
   - Pyke on three bleak islands and a dozen stacks (ACOK Theon I, to verify), the bridge kind following the gap;
@@ -80,6 +86,7 @@ instead of appending logs._
 - **New tools:** `tools/check/site.ts` (local ground before and after stamps, for a landmark or a bare place); `data/qa/shots.d/sites.json` (top-down site checks); the kit's `drape()` (a ground-hugging sheet: streets, yards, fields, roads) and `seaLevel`.
 - **Map fixes made for landmarks:**
   - `forceSea` polygons: the bay under King's Landing's crests; the label slivers at Dragonstone, Eastwatch and Pyke; the Isle of Faces lettering.
+  - `forceIslands` polygons: the Isle of Faces itself, below its lettering.
   - `forceRivers.routes`: waypoints routed through the river ink for the Mander (now past Highgarden), the Red Fork and the Trident.
   - **Riverlands drainage (session 2):** the Trident's estuary was traced as a lake that the Maidenpool crest cut off from the Bay of Crabs, so the whole Trident network had no outlet and every branch chose its own direction: this is why the Green Fork ran north. Fixes:
     - `forceSea` over the crest;
@@ -101,7 +108,7 @@ instead of appending logs._
 - **Region borders:** a few are straight lines in the profile.
 - **Hydro gates:** at 1 km/px they report geometry warnings, softened until the bake is ≤ 0.5 km/px.
 - **Ledger:**
-  - All 452 claims are `draft` (242 T, 100 M, 46 C, 64 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
+  - All 453 claims are `draft` (242 T, 100 M, 46 C, 65 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
   - Claims become hard constraints only once they are `verified`. The Giant's Lance height enters the bake as a `summits` lower bound for now.
   - A books-only lore critic (a fresh subagent that saw only the ledger) found no contradiction of the books and no show detail. Its 13 low/medium findings (time-slice wording, duplicate claims, three ASOS Jon chapter numbers, one lower-bound travel time) are applied.
 

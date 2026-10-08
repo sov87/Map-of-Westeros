@@ -530,6 +530,12 @@ def vectorize(source: Path, map_id: str) -> None:
             win = llab[max(r - 8, 0) : r + 9, max(c - 8, 0) : c + 9]
             drop |= {int(v) for v in np.unique(win) if v}
         lakes &= ~np.isin(llab, sorted(drop))
+    # islands in a lake that the hole filler takes for a label (smaller than max_hole_px) or that a label
+    # covers: the profile's forceIslands polygons (sheet px) are land, a hole in their lake
+    for poly in prof.get("forceIslands", {}).get("px", []):
+        pm = np.zeros(lakes.shape, np.uint8)
+        cv2.fillPoly(pm, [np.round(np.array(poly, float) - [x0, y0]).astype(np.int32)], 1)
+        lakes &= ~pm.astype(bool)
     sea = ~land
     print(f"[geo]   land {land.mean() * 100:.1f} % of the frame, {info}; lakes {int(ndimage.label(lakes)[1])}; river pixels {int(rivers.sum())}")
     Image.fromarray((np.dstack([land, lakes, rivers]) * 255).astype(np.uint8)).resize((W // 2, H // 2)).save(dbg / "water.png")

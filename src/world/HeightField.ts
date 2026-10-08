@@ -33,7 +33,7 @@ export interface RiverGuard {
   /** centreline, water level per point (null = the baked ground there), ribbon half width and carved
    * channel-core half width (km) */
   lines: { points: [number, number][]; level: number[] | null; halfWidth: number; coreHalf: number }[];
-  lakes: { ring: [number, number][]; level: number | null }[];
+  lakes: { ring: [number, number][]; holes?: [number, number][][]; level: number | null }[];
   exempt: { x: number; z: number; r: number }[];
   /** steepest bank a stamp may leave beside the water, units per km */
   slope: number;
@@ -315,8 +315,11 @@ export class HeightField {
           }
           for (const lk of rings) {
             if (keep) break;
-            // lakes (and their graded shore, LAKE_MARGIN km beyond the polygon) stay as baked
-            const de = inRing(lk.ring, x, z) ? 0 : ringDistance(lk.ring, x, z) - LAKE_MARGIN;
+            // lakes (and their graded shore, LAKE_MARGIN km beyond the polygon) stay as baked; islands
+            // (the lake's holes) are land, their shore graded like the outer one
+            const holes = lk.holes ?? [];
+            const wet = inRing(lk.ring, x, z) && !holes.some((h) => inRing(h, x, z));
+            const de = wet ? 0 : Math.min(ringDistance(lk.ring, x, z), ...holes.map((h) => ringDistance(h, x, z))) - LAKE_MARGIN;
             if (de <= 0) keep = true;
             else bank(lk.level ?? b, de);
           }

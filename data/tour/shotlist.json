@@ -503,6 +503,27 @@
         "lod0Tris": 40000,
         "lights": 40
       }
+    },
+    "isle-of-faces": {
+      "status": "s2",
+      "segment": "riverlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 0.9,
+      "contextKm": 44,
+      "tod": 7.2,
+      "screenSeconds": 6,
+      "framing": "low from the south-south-west at dawn into the grove: the great weirwoods round the clearing, white trunks and red leaves, their carved faces turned inward",
+      "features": [
+        "the weirwood grove",
+        "the carved faces",
+        "the red-wooded isle in the Gods Eye"
+      ],
+      "budget": {
+        "minFeatureKm": 0.003,
+        "lod0Tris": 20000,
+        "lights": 0
+      }
     }
   }
 }

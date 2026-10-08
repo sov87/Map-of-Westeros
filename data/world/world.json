@@ -261,7 +261,7 @@
     ]
   },
   "lakes": {
-    "notes": "Lake levels (keys = bake lake keys, as in lakes.json): levels{} authored override; else fitted with the rivers of its stem around the shorePercentile of the shore ring (low enough that little of the shore lies below the water). Beds are deepened below the level; shores above it are graded down to level + shoreEpsilon over gradeKm (default 0.3*sqrt(area), 1.5-5 km). Low shore connected to the water below the level within deltaKm of the polygon is filled flat to the level (a delta / marsh flat the inlets run across); elsewhere a lip rimFlatKm wide at the level hides the lake's edge and falls back to the natural shore at rimSlope (units/km) - no broad embankments; no shore is raised more than rimMaxRaise (a deeper basin stays a basin). The bed is deepened inside the polygon only (coverage >= 0.5: the runtime surface); its antialiased edge pixels belong to the graded shore.",
+    "notes": "Lake levels (keys = bake lake keys, as in lakes.json): levels{} authored override; else fitted with the rivers of its stem around the shorePercentile of the shore ring (low enough that little of the shore lies below the water). Beds are deepened below the level; shores above it are graded down to level + shoreEpsilon over gradeKm (default 0.3*sqrt(area), 1.5-5 km). Low shore connected to the water below the level within deltaKm of the polygon is filled flat to the level (a delta / marsh flat the inlets run across); elsewhere a lip rimFlatKm wide at the level hides the lake's edge and falls back to the natural shore at rimSlope (units/km) - no broad embankments; no shore is raised more than rimMaxRaise (a deeper basin stays a basin). The bed is deepened inside the polygon only (coverage >= 0.5: the runtime surface); its antialiased edge pixels belong to the graded shore. Islands (land a lake's polygon encloses: its holes) keep their own relief lifted onto a low dome over the level, islandRise (units) at islandRiseKm from their shore, and shallows round them: the bed rises to the island over islandShelfKm from islandShelfDepth below the level, beyond it falling away at islandShelfSlope (units/km) to the lake's own bed.",
     "shorePercentile": 25,
     "shoreEpsilon": 0.03,
     "rimFlatKm": 0.6,
@@ -269,6 +269,11 @@
     "deltaKm": 6.0,
     "riverKeepKm": 2.0,
     "rimMaxRaise": 4.5,
+    "islandRise": 0.4,
+    "islandRiseKm": 3.0,
+    "islandShelfKm": 3.0,
+    "islandShelfDepth": 0.8,
+    "islandShelfSlope": 0.8,
     "gradeKm": {},
     "levels": {}
   }

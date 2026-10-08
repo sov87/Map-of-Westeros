@@ -101,7 +101,11 @@ def export_all(cfg: Config, hy: dict, rivers: list[dict], vec: dict, reg: dict, 
             if row.key not in levels:
                 continue
             for poly in _polys(row.geometry.simplify(200 if row.geometry.area > 4e6 else 60)):
-                lakes.append({"name": row.NAME if isinstance(row.NAME, str) else None, "key": row.key, "level": levels.get(row.key), "ring": _world_coords(cfg, poly.exterior.coords)})
+                lake = {"name": row.NAME if isinstance(row.NAME, str) else None, "key": row.key, "level": levels.get(row.key), "ring": _world_coords(cfg, poly.exterior.coords)}
+                # islands (the Isle of Faces): land inside the ring, never under the lake
+                if poly.interiors:
+                    lake["holes"] = [_world_coords(cfg, h.coords) for h in poly.interiors]
+                lakes.append(lake)
         roads = []
         for row in canon_roads(cfg).itertuples():
             for ln in _lines(row.geometry.simplify(300)):

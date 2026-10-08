@@ -2102,6 +2102,21 @@
       "notes": "Its size relative to the lake is a map impression. Trace it from the map rather than relying on this."
     },
     {
+      "id": "isle-of-faces-plan",
+      "subjects": [
+        "isle-of-faces"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the isle is wooded to its shore, weirwoods among oaks, and on its crown a clearing is ringed by nine great weirwoods whose carved faces turn inward, their eyes weeping red sap.",
+      "label": "I",
+      "basis": "The isle is a weirwood island whose trees bear carved faces (isle-of-faces-weirwoods) with no settlement (isle-of-faces-no-settlement). White bark and red leaves follow the godswood weirwoods (winterfell-heart-tree). The grove, its number, the oaks and the faces' forms are invented.",
+      "use": [
+        "landmark:isle-of-faces"
+      ],
+      "status": "draft",
+      "notes": "The island's outline and height come from the sheet (forceIslands) and the bake's island rule: a low dome over the lake level. No height is stated in the text."
+    },
+    {
       "id": "gods-eye-lake",
       "subjects": [
         "gods-eye",

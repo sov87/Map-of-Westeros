@@ -324,6 +324,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-isle-of-faces",
+      "tod": 12.0,
+      "note": "top-down site check of the Isle of Faces: the grove's clearing on the isle's crown, the ring of nine weirwoods, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1612.7,
+            1746.36
+          ],
+          "distanceKm": 2.2,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }
