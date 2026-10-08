@@ -587,6 +587,26 @@
         "lod0Tris": 30000,
         "lights": 40
       }
+    },
+    "fist-of-the-first-men": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 5.5,
+      "contextKm": 32,
+      "tod": 12.5,
+      "screenSeconds": 5,
+      "framing": "from the forest to the south-south-east under a grey sky: the stony hill standing above the trees, the broken ring of piled stones round its level top",
+      "features": [
+        "the stony hill",
+        "the ringwall"
+      ],
+      "budget": {
+        "minFeatureKm": 0.01,
+        "lod0Tris": 30000,
+        "lights": 0
+      }
     }
   }
 }

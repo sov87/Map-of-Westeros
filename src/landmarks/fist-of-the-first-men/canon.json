@@ -1,0 +1,11 @@
+{
+  "notes": "The Fist of the First Men: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: in the forest north of the Wall, east of the Frostfangs near their foothills", "label": "M", "claims": ["fist-of-the-first-men-position", "fist-of-the-first-men-frostfangs"] },
+    { "part": "a steep, stony hill rising well above the forest", "label": "T", "claims": ["fist-of-the-first-men-hill"] },
+    { "part": "the ringwall of piled stones of great age round the top", "label": "T", "claims": ["fist-of-the-first-men-ringwall"] },
+    { "part": "the ringwall low and broken round a broad, fairly level top", "label": "I", "claims": ["fist-of-the-first-men-ringwall-scale"] },
+    { "part": "empty at 298: no camp, ditch, stakes or bodies (the 299 camp and battle are later states)", "label": "I", "claims": ["fist-of-the-first-men-state-298", "fist-of-the-first-men-fortified", "fist-of-the-first-men-battle"] },
+    { "part": "the hill's size and outline, the outcrops and boulders, the pines and scrub", "label": "I", "claims": ["fist-of-the-first-men-plan"] }
+  ]
+}

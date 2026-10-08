@@ -483,6 +483,21 @@
       "basis": "In ACOK (299 AC) Mormont's ranging finds the hill unoccupied and only then fortifies it."
     },
     {
+      "id": "fist-of-the-first-men-plan",
+      "subjects": [
+        "fist-of-the-first-men"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a lone, roughly round hill some 4 km across at the design scale with a level top, rough stony flanks with outcrops and boulders, wind-bent pines and scrub, the forest closing in round its foot.",
+      "label": "I",
+      "basis": "The text gives a steep, stony hill rising well above the forest with a ringwall round its top (fist-of-the-first-men-hill, -ringwall). Its size, its outline, its trees and which flank is gentlest are not recalled; all invented and contradicting nothing.",
+      "use": [
+        "landmark:fist-of-the-first-men"
+      ],
+      "status": "draft",
+      "notes": "At the 1 km/px iteration bake the stamped hill is a rounded mound; it steepens at the 0.4 km/px milestone bake."
+    },
+    {
       "id": "fist-of-the-first-men-fortified",
       "subjects": [
         "fist-of-the-first-men"
