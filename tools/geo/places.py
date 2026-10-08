@@ -60,6 +60,8 @@ def write_places(root: Path, map_id: str) -> None:
     km = place_km(prof)
     path = root / "data" / "world" / "places.json"
     doc = json.loads(path.read_text(encoding="utf-8"))
+    # authored per place and kept across re-runs: display offsets (text-vs-map settlements, logged in the claims)
+    keep = {p["id"]: p.get("displayOffsetKm") for p in doc.get("places", []) if p.get("displayOffsetKm")}
     places = []
     for pid, (x, y) in km.items():
         name, kind, tier, fp, region = META.get(pid, (pid, "poi", None, None, None))
@@ -71,7 +73,7 @@ def write_places(root: Path, map_id: str) -> None:
         p["label"] = "M"
         p["map"] = map_id
         if kind == "landmark":
-            p["displayOffsetKm"] = [0, 0]
+            p["displayOffsetKm"] = keep.get(pid, [0, 0])
             p["footprintKm"] = fp
         if region:
             p["region"] = region

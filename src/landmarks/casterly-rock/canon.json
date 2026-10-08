@@ -1,0 +1,13 @@
+{
+  "notes": "Casterly Rock and Lannisport: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). The novels say little of the Rock's form; most of it is C (The World of Ice & Fire). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the westerlands' Sunset Sea coast (display offset 7.5 km west onto the shore)", "label": "M", "claims": ["casterly-rock-position", "westerlands-position"] },
+    { "part": "the Rock: a colossal stone hill rising from the sea, dwarfing city and castle", "label": "C", "claims": ["casterly-rock-form", "casterly-rock-scale"] },
+    { "part": "the castle hollowed out of the Rock: halls and galleries in the living stone", "label": "C", "claims": ["casterly-rock-form"] },
+    { "part": "the crown of towers and walls, carved openings and lit galleries, terraces, the road and gate", "label": "I", "claims": ["casterly-rock-carving"] },
+    { "part": "the sea cave at the waterline", "label": "I", "claims": ["casterly-rock-sea-cave"] },
+    { "part": "intact seat of House Lannister at 298 AC", "label": "I", "claims": ["casterly-rock-state-298"] },
+    { "part": "Lannisport at the Rock's foot: a large rich harbour city", "label": "C", "claims": ["casterly-rock-lannisport", "casterly-rock-lannisport-city"] },
+    { "part": "Lannisport's walls, houses, sept and harbour", "label": "I", "claims": ["casterly-rock-carving"] }
+  ]
+}

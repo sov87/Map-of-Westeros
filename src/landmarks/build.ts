@@ -60,7 +60,7 @@ function buildOne(world: World, def: LandmarkDefinition, opts: BuildOptions, mod
 
   let kit: KitOutput = { lods: [], lights: [], trees: [], contacts: [], bbox: null, parts: [] };
   if (def.proxy) {
-    const k = new ProxyKit(seed, localGround);
+    const k = new ProxyKit(seed, localGround, (0 - origin[1]) / s);
     def.proxy(k);
     kit = k.buildLods({ lod0Only: !keep });
   }

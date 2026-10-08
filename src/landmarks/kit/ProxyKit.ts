@@ -314,10 +314,12 @@ export class ProxyKit {
   /**
    * @param groundFn local terrain height at local (x, z) relative to the origin's ground (y = 0),
    *                 after stamps — use `k.ground(x, z)` to sit parts on slopes.
+   * @param seaLevel local y of the sea surface (world height 0) — harbours, sea caves, ships at anchor
    */
   constructor(
     readonly seed: number,
     private readonly groundFn: (x: number, z: number) => number = () => 0,
+    readonly seaLevel = Number.NEGATIVE_INFINITY,
   ) {
     this.kseed = hash32(seed, 0x6b697432);
   }

@@ -2758,7 +2758,8 @@
         "landmark:casterly-rock"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (castle within the Rock), from the companion. The novels name the Rock constantly but describe its form little. A height comparison may be given in TWOIAF but is not recalled reliably, so the Rock's height is not asserted."
+      "notes": "Brief confirmed (castle within the Rock), from the companion. The novels name the Rock constantly but describe its form little. A height comparison may be given in TWOIAF but is not recalled reliably, so the Rock's height is not asserted.",
+      "conflict": "The westeros-crests sheet puts the castle's marker about 12 km inland from the coast; the companion text has the Rock standing over the Sunset Sea. Settled with a display offset of 7.5 km west (places.json), so the Rock's sea face rises from the shore."
     },
     {
       "id": "casterly-rock-scale",
@@ -2839,7 +2840,8 @@
         "landmark:casterly-rock"
       ],
       "status": "draft",
-      "notes": "value: the city lies 'dir' (below) the castle. Brief confirmed (castle above Lannisport). The compass side on which the city lies is not recalled reliably and is left to the map."
+      "notes": "value: the city lies 'dir' (below) the castle. Brief confirmed (castle above Lannisport). The compass side on which the city lies is not recalled reliably and is left to the map.",
+      "conflict": "The westeros-crests sheet puts Lannisport's marker about 48 km south of the Rock; the companion text and LOIAF put the city at the Rock's foot. The build models Lannisport's harbour at the Rock's southern foot as part of the Casterly Rock landmark; the sheet's Lannisport marker stays a label only."
     },
     {
       "id": "casterly-rock-lannisport-city",
@@ -2911,6 +2913,34 @@
       "claim": "Build assumption: at 298 AC the Rock is the seat of Lord Tywin Lannister, intact and unthreatened. Nothing in the main series damages it.",
       "label": "I",
       "basis": "Robb's western campaign (ACOK and ASOS) takes border castles and mines in the westerlands, but no assault on the Rock or damage to it is described in any novel recalled.",
+      "use": [
+        "landmark:casterly-rock"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "casterly-rock-carving",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: towers, walls and terraces crown the Rock and are cut into its flanks, galleries of lit windows run across its faces, and a road climbs the landward flank to a gate.",
+      "label": "I",
+      "basis": "The companion text makes the castle the Rock itself, its halls cut into the stone (casterly-rock-form, -scale); what shows outside — battlements, windows, the road — is invented and contradicts nothing.",
+      "use": [
+        "landmark:casterly-rock"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "casterly-rock-sea-cave",
+      "subjects": [
+        "casterly-rock"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a great sea cave opens in the Rock's sea face at the waterline, where ships can come into the Rock.",
+      "label": "I",
+      "basis": "Recalled from the companion lore as the Lion's Mouth, not checked; labelled I until the verifier finds it.",
       "use": [
         "landmark:casterly-rock"
       ],

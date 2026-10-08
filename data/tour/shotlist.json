@@ -102,6 +102,29 @@
         "lod0Tris": 90000,
         "lights": 160
       }
+    },
+    "casterly-rock": {
+      "status": "s2",
+      "segment": "westerlands",
+      "role": "pause",
+      "heroClass": "mid",
+      "heroKm": 30,
+      "contextKm": 90,
+      "tod": 17.6,
+      "screenSeconds": 9,
+      "framing": "from the Sunset Sea in the late sun: the Rock's banded sea face rising from the water with its carved galleries and sea cave, the crown of gold-capped towers, Lannisport's red roofs and harbour at its southern foot",
+      "features": [
+        "the Rock rising from the sea",
+        "carved galleries and windows",
+        "the sea cave",
+        "the crown of towers",
+        "Lannisport and its harbour"
+      ],
+      "budget": {
+        "minFeatureKm": 0.05,
+        "lod0Tris": 90000,
+        "lights": 650
+      }
     }
   }
 }
