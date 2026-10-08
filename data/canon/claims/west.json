@@ -3109,6 +3109,20 @@
       ],
       "status": "draft",
       "notes": "Raised by the books-only lore critic (2026-10-08), fairly confident; verify the chapter and wording."
+    },
+    {
+      "id": "the-twins-plan",
+      "subjects": [
+        "the-twins"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: each castle is a square grey curtain with round corner towers, a gatehouse facing the bridge, a massive square keep and a hall. The bridge crosses on arches, and the Water Tower is square.",
+      "label": "I",
+      "basis": "The text gives two massive castles, near mirror images face to face across the Green Fork, and the bridge with the Water Tower at its midpoint (the-twins-form, -bridge). The plan, the grey stone and the forms are invented and contradict nothing.",
+      "use": [
+        "landmark:the-twins"
+      ],
+      "status": "draft"
     }
   ]
 }

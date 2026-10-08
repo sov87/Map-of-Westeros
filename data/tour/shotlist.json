@@ -283,6 +283,28 @@
         "lod0Tris": 40000,
         "lights": 0
       }
+    },
+    "the-twins": {
+      "status": "s2",
+      "segment": "riverlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 5,
+      "contextKm": 40,
+      "tod": 16.5,
+      "screenSeconds": 7,
+      "framing": "from downstream in the afternoon: the twin grey castles face to face across the Green Fork, the arched bridge between their gatehouses and the Water Tower in the river at its middle",
+      "features": [
+        "two castles, mirror images",
+        "the great stone bridge",
+        "the Water Tower",
+        "the Green Fork"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 50000,
+        "lights": 100
+      }
     }
   }
 }

@@ -1,0 +1,10 @@
+{
+  "notes": "The Twins: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: on the Green Fork west of the kingsroad, near the Neck's southern end", "label": "M", "claims": ["the-twins-position", "kingsroad-twins-off-road", "green-fork-course"] },
+    { "part": "two massive castles, near mirror images, face to face on opposite banks", "label": "T", "claims": ["the-twins-form"] },
+    { "part": "the great stone bridge between them and the Water Tower at its midpoint", "label": "T", "claims": ["the-twins-bridge"] },
+    { "part": "the Freys' toll crossing, the only one for a long way", "label": "T", "claims": ["the-twins-crossing-toll", "the-twins-only-crossing"] },
+    { "part": "the plan, the grey stone, the curtains, towers, keeps, gatehouses and the bridge's arches", "label": "I", "claims": ["the-twins-plan"] }
+  ]
+}
