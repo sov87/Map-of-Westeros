@@ -137,6 +137,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-castle-black",
+      "tod": 12.0,
+      "note": "top-down site check of Castle Black: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1745.83,
+            4207.27
+          ],
+          "distanceKm": 30,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

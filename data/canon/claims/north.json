@@ -3019,6 +3019,20 @@
       ],
       "status": "draft",
       "basis": "Its reputation as a savage, isolated isle and the map's large landmass. No relief description is recalled."
+    },
+    {
+      "id": "castle-black-plan",
+      "subjects": [
+        "castle-black"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the towers and halls spread along the Wall's foot for about two kilometres at the design scale, the King's Tower the tallest. Hardin's Tower leans, some keeps are roofless, and twelve flights make up the stair.",
+      "label": "I",
+      "basis": "The text gives the open spread without a curtain wall, the named buildings, the empty and crumbling ones, the stair, the cage and the tunnel (castle-black-no-curtain-wall, -layout, -named-buildings, -stair, -winch-cage, -tunnel). Positions, sizes, which buildings are ruined, the lean, the Flint Tower and Old Keep names and the number of flights are invented and contradict nothing.",
+      "use": [
+        "landmark:castle-black"
+      ],
+      "status": "draft"
     }
   ]
 }

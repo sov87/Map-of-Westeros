@@ -1,0 +1,18 @@
+{
+  "notes": "Castle Black: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). The Wall itself is the-wall landmark. Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: at the foot of the Wall on its south side, where the kingsroad ends", "label": "T", "claims": ["castle-black-position", "kingsroad-north-end", "castle-black-kingsroad-end"] },
+    { "part": "no curtain wall of its own, open to the south", "label": "T", "claims": ["castle-black-no-curtain-wall"] },
+    { "part": "a loose spread of towers, keeps, halls and yards, many empty or crumbling", "label": "T", "claims": ["castle-black-layout"] },
+    { "part": "the Lord Commander's Tower, Hardin's Tower, the King's Tower and the Shieldhall", "label": "T", "claims": ["castle-black-named-buildings"] },
+    { "part": "the Wall three times the castle's highest tower", "label": "T", "claims": ["the-wall-height-vs-castle-black"] },
+    { "part": "the timber stair zigzagging up the Wall's south face", "label": "T", "claims": ["castle-black-stair", "the-wall-castle-black-access"] },
+    { "part": "the iron cage on its chain from the great winch on top", "label": "T", "claims": ["castle-black-winch-cage"] },
+    { "part": "catapults and timber cranes along the top", "label": "T", "claims": ["the-wall-top"] },
+    { "part": "the gated tunnel through the Wall's base", "label": "T", "claims": ["castle-black-tunnel"] },
+    { "part": "Mole's Town dug into the ground a short way south", "label": "T", "claims": ["castle-black-moles-town"] },
+    { "part": "the grove of nine weirwoods a short ride north in the Haunted Forest", "label": "T", "claims": ["haunted-forest-weirwood-grove", "haunted-forest-position"] },
+    { "part": "manned at 298 AC; the later assault's damage ignored", "label": "T", "claims": ["castle-black-manned", "castle-black-state-after-assault"] },
+    { "part": "positions, sizes, which buildings are ruined, Hardin's lean, the Flint Tower and Old Keep, the stair's flights", "label": "I", "claims": ["castle-black-plan"] }
+  ]
+}

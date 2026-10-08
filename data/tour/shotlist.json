@@ -240,6 +240,49 @@
         "lod0Tris": 80000,
         "lights": 120
       }
+    },
+    "castle-black": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 6,
+      "contextKm": 40,
+      "tod": 15.2,
+      "screenSeconds": 8,
+      "framing": "from the east-south-east along the Wall in a low pale sun: the ice rising a kilometre over the open spread of towers and halls at its foot, the King's Tower a third of its height, the timber stair zigzagging up the south face, the cage on its chain",
+      "features": [
+        "the Wall, seven hundred feet of ice",
+        "no curtain wall",
+        "the King's Tower, the Lord Commander's Tower, Hardin's Tower, the Shieldhall",
+        "the zigzag timber stair and the winch cage",
+        "Mole's Town"
+      ],
+      "budget": {
+        "minFeatureKm": 0.02,
+        "lod0Tris": 50000,
+        "lights": 80
+      }
+    },
+    "the-wall": {
+      "status": "s2",
+      "segment": "north",
+      "role": "pass",
+      "heroClass": "wide",
+      "heroKm": 70,
+      "contextKm": 70,
+      "tod": 15.5,
+      "screenSeconds": 6,
+      "framing": "the Wall running away east and west across the far north from Castle Black, the Haunted Forest beyond it, the Gift on this side",
+      "features": [
+        "a hundred leagues of ice",
+        "seven hundred feet high"
+      ],
+      "budget": {
+        "minFeatureKm": 0.1,
+        "lod0Tris": 40000,
+        "lights": 0
+      }
     }
   }
 }

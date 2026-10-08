@@ -1,0 +1,12 @@
+{
+  "notes": "The Wall: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "a rampart of ice seven hundred feet high", "label": "T", "claims": ["the-wall-material", "the-wall-height"] },
+    { "part": "a hundred leagues long, from the mountains in the west to the sea at Eastwatch", "label": "T", "claims": ["the-wall-length", "the-wall-west-end", "the-wall-east-end", "westeros-league-mile"] },
+    { "part": "its line: nearly straight across the far north, read off the sheet through the castles along it", "label": "M", "claims": ["the-wall-course-map"] },
+    { "part": "the top wide enough for a dozen riders abreast", "label": "T", "claims": ["the-wall-top"] },
+    { "part": "one height above its own foot, the foot following the ground", "label": "I", "claims": ["the-wall-ground"] },
+    { "part": "the base wider than the top", "label": "I", "claims": ["the-wall-thickness"] },
+    { "part": "pale blue-white old ice", "label": "I", "claims": ["the-wall-look"] }
+  ]
+}
