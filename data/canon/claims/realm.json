@@ -5,618 +5,1191 @@
   "claims": [
     {
       "id": "the-wall-height",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "height",
       "claim": "The Wall is seven hundred feet high.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["seven hundred feet"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "seven hundred feet"
+          ]
+        }
       ],
-      "value": { "ft": 700, "approx": false },
-      "use": ["terrain", "scale", "landmark:castle-black"],
+      "value": {
+        "ft": 700,
+        "approx": false
+      },
+      "use": [
+        "terrain",
+        "scale",
+        "landmark:castle-black"
+      ],
       "status": "draft",
       "notes": "Chapter is my best recollection: Jon's first chapter at Castle Black, in the passage describing the Wall above the castle. The same figure recurs in later Jon chapters (ASOS, ADWD). Every height I recall in the novels is this one figure: I know of no differing height in the text. As I recall, the sentence states it flatly with no hedge, so approx is false, but it is a round, nominal number."
     },
     {
       "id": "the-wall-height-vs-castle-black",
-      "subjects": ["the-wall", "castle-black"],
+      "subjects": [
+        "the-wall",
+        "castle-black"
+      ],
       "kind": "relative-height",
       "claim": "From Castle Black the Wall looks about three times as tall as the castle's highest tower.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["three times the height", "tallest tower"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "three times the height",
+            "tallest tower"
+          ]
+        }
       ],
-      "value": { "dir": "above", "approx": true },
-      "use": ["terrain", "landmark:castle-black"],
+      "value": {
+        "dir": "above",
+        "approx": true
+      },
+      "use": [
+        "terrain",
+        "landmark:castle-black"
+      ],
       "status": "draft",
       "notes": "Same passage as the-wall-height, as I recall it. Taken literally this makes Castle Black's tallest tower about 230 ft. Treat it as a narrative proportion that the castle model should roughly respect, not a hard figure."
     },
     {
       "id": "the-wall-top",
-      "subjects": ["the-wall", "castle-black"],
+      "subjects": [
+        "the-wall",
+        "castle-black"
+      ],
       "kind": "form",
       "claim": "The top of the Wall at Castle Black is said to be wide enough for a dozen armoured riders side by side, and catapults and big timber cranes stand along it.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["ride abreast", "catapults"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "ride abreast",
+            "catapults"
+          ]
+        }
       ],
-      "use": ["terrain", "look", "landmark:castle-black"],
+      "use": [
+        "terrain",
+        "look",
+        "landmark:castle-black"
+      ],
       "status": "draft",
       "notes": "The width is Benjen Stark's claim as Jon remembers it, not the narrator's measurement. The text gives no width for the top elsewhere along the Wall, and none for the base (see the-wall-thickness)."
     },
     {
       "id": "the-wall-length",
-      "subjects": ["the-wall", "westeros"],
+      "subjects": [
+        "the-wall",
+        "westeros"
+      ],
       "kind": "length",
       "claim": "The Wall is a hundred leagues long.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["hundred leagues"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "hundred leagues"
+          ]
+        }
       ],
-      "value": { "leagues": 100, "approx": false },
-      "use": ["scale", "terrain"],
+      "value": {
+        "leagues": 100,
+        "approx": false
+      },
+      "use": [
+        "scale",
+        "terrain"
+      ],
       "status": "draft",
       "notes": "The phrase 'a hundred leagues' (of Wall) recurs in Jon and Night's Watch chapters across AGOT, ASOS and ADWD. The chapter is a guess, so the verifier should search the whole corpus. I have not cited TWOIAF, which may restate the length as about three hundred miles; that is unverified and the figure may be polluted by interviews. The brief's 300 miles follows only from the 1 league = 3 miles convention (westeros-league-mile). I could not confirm 'from sea to sea': the text puts the east end on the sea and the west end against mountains. I also could not confirm whether the hundred leagues is measured to the Shadow Tower or to the Wall's farthest western point."
     },
     {
       "id": "the-wall-castles-count",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "count",
       "claim": "Nineteen castles were built along the Wall over the Watch's history.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["Nineteen", "Shadow Tower", "Eastwatch"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Nineteen",
+            "Shadow Tower",
+            "Eastwatch"
+          ]
+        }
       ],
-      "value": { "count": 19 },
-      "use": ["terrain"],
+      "value": {
+        "count": 19
+      },
+      "use": [
+        "terrain"
+      ],
       "status": "draft",
       "notes": "Same passage as the-wall-castles-manned-298. Most of the castles' names (Westwatch-by-the-Bridge, Sentinel Stand, Greyguard, Stonedoor, the Nightfort, Deep Lake, Queensgate, Oakenshield, Sable Hall, Long Barrow, Greenguard and others) come from later books and maps and are not cited here. In ADWD Jon regarrisons several abandoned castles; that is state-after and the build ignores it."
     },
     {
       "id": "the-wall-castles-manned-298",
-      "subjects": ["the-wall", "castle-black", "eastwatch"],
+      "subjects": [
+        "the-wall",
+        "castle-black",
+        "eastwatch"
+      ],
       "kind": "state-298",
       "claim": "When the story opens only three Wall castles are garrisoned: Eastwatch-by-the-Sea in the east, the Shadow Tower in the west near the mountains, and Castle Black between them. The others are abandoned.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["Nineteen", "windswept shore", "Shadow Tower"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Nineteen",
+            "windswept shore",
+            "Shadow Tower"
+          ]
+        }
       ],
-      "value": { "count": 3 },
-      "use": ["landmark:castle-black", "landmark:eastwatch", "look"],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "landmark:castle-black",
+        "landmark:eastwatch",
+        "look"
+      ],
       "status": "draft",
       "notes": "As I recall, the passage paints the empty castles as lonely and haunted. Chapter as for the-wall-castles-count."
     },
     {
       "id": "the-wall-east-end",
-      "subjects": ["the-wall", "eastwatch"],
+      "subjects": [
+        "the-wall",
+        "eastwatch"
+      ],
       "kind": "position",
       "claim": "In the east the Wall reaches the coast, where Eastwatch-by-the-Sea stands on a grey, wind-beaten shore.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["windswept shore", "Eastwatch"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "windswept shore",
+            "Eastwatch"
+          ]
+        }
       ],
-      "use": ["terrain", "vectors", "landmark:eastwatch"],
+      "use": [
+        "terrain",
+        "vectors",
+        "landmark:eastwatch"
+      ],
       "status": "draft",
       "notes": "The novel passage gives the shore. The name of the water at this end (the Bay of Seals) comes from the map: see the-wall-course-map. I believe later novels also name it in Eastwatch contexts, but that is not verified. The text I recall does not say whether the ice runs out into the water or stops at the shoreline, so the build should end the ice at the shore unless a verified source says otherwise."
     },
     {
       "id": "the-wall-west-end",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "position",
       "claim": "In the west the Wall ends against mountains, and the Shadow Tower stands close to them.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["Shadow Tower", "mountains"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "Shadow Tower",
+            "mountains"
+          ]
+        }
       ],
-      "use": ["terrain", "vectors"],
+      "use": [
+        "terrain",
+        "vectors"
+      ],
       "status": "draft",
       "notes": "Same passage as the-wall-castles-manned-298. Later books (ASOS/ADWD) mention the Gorge and the Bridge of Skulls beyond the Shadow Tower, and the maps show Westwatch-by-the-Bridge, so the Wall's last stretch apparently runs to a chasm in the mountains. That is unverified here, and the north group should confirm it. The passage does not name the range."
     },
     {
       "id": "the-wall-course-map",
-      "subjects": ["the-wall", "westeros", "bay-of-seals"],
+      "subjects": [
+        "the-wall",
+        "westeros",
+        "bay-of-seals"
+      ],
       "kind": "form",
       "claim": "On the official maps the Wall is a nearly straight east–west line across the far north, from the Bay of Seals west to the mountains, with Castle Black between its ends where the kingsroad meets it.",
       "label": "M",
       "cites": [
-        { "book": "AGOT", "chapter": "Map" },
-        { "book": "LOIAF", "chapter": "Westeros" }
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
       ],
-      "use": ["vectors", "scale", "terrain"],
+      "use": [
+        "vectors",
+        "scale",
+        "terrain"
+      ],
       "status": "draft",
       "notes": "The LOIAF sheet name is from memory. By the castle order on the maps, Castle Black lies somewhat east of the Wall's midpoint; take its exact position from the traced map, not from this claim."
     },
     {
       "id": "the-wall-material",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "material",
       "claim": "The Wall is a rampart built of ice.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["seven hundred feet"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "seven hundred feet"
+          ]
+        }
       ],
-      "use": ["terrain", "look"],
+      "use": [
+        "terrain",
+        "look"
+      ],
       "status": "draft",
       "notes": "The Wall is ice throughout the novels; the cite points at the main descriptive passage. I recall no stone core or stone footing in the novels: stone appears only in the castles and gates (the Black Gate, the Castle Black tunnel gates). As I recall, Sam's account at the Nightfort (ASOS) says the Wall is more than ice and stone and has old spells woven into it. That wording is unverified and is not a structural statement."
     },
     {
       "id": "the-wall-ground",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "form",
       "claim": "Build assumption: the Wall keeps one nominal height above its own foot, and its foot follows the ground over hills and valleys. The text gives a single height and no profile.",
       "label": "I",
       "basis": "The novels give one height figure (the-wall-height) and no profile. I could not confirm the brief's statement that the Wall is built along the heights in places, or that its crest stands higher where it does. Until a verified source says so, the terrain stamp should not raise the crest above about 700 ft over local ground.",
-      "use": ["terrain"],
+      "use": [
+        "terrain"
+      ],
       "status": "draft"
     },
     {
       "id": "the-wall-thickness",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "form",
       "claim": "No thickness at base or top is stated. The build takes the top as about 60–70 ft wide (a dozen riders abreast) and the base as wider.",
       "label": "I",
       "basis": "The only width statement I recall is Benjen's dozen armoured knights abreast at Castle Black (the-wall-top), about 5–6 ft per horse and rider, so roughly 60–70 ft. I recall no base thickness, tunnel length or batter in any book, so a wider base is an engineering inference, not text.",
-      "use": ["terrain"],
+      "use": [
+        "terrain"
+      ],
       "status": "draft"
     },
     {
       "id": "the-wall-castle-black-access",
-      "subjects": ["the-wall", "castle-black"],
+      "subjects": [
+        "the-wall",
+        "castle-black"
+      ],
       "kind": "form",
       "claim": "At Castle Black men reach the top either by a timber stair zigzagging up the south face or in a cage hauled up by a winch.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Tyrion III", "find": ["cage", "winch"] }
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion III",
+          "find": [
+            "cage",
+            "winch"
+          ]
+        }
       ],
-      "use": ["landmark:castle-black", "look"],
+      "use": [
+        "landmark:castle-black",
+        "look"
+      ],
       "status": "draft",
       "notes": "As I recall, Tyrion rides the cage up to stand on the Wall. Both the stair and the winch cage recur in later Jon chapters. The chapter is my best guess."
     },
     {
       "id": "the-wall-black-gate",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "form",
       "claim": "Under the abandoned Nightfort, at the bottom of a deep well, a pale weirwood door with a face — the Black Gate — passes through the Wall. It opens only to a sworn brother of the Watch who speaks the oath.",
       "label": "T",
       "cites": [
-        { "book": "ASOS", "chapter": "Samwell III", "find": ["Black Gate"] },
-        { "book": "ASOS", "chapter": "Bran IV", "find": ["Nightfort"] }
+        {
+          "book": "ASOS",
+          "chapter": "Samwell III",
+          "find": [
+            "Black Gate"
+          ]
+        },
+        {
+          "book": "ASOS",
+          "chapter": "Bran IV",
+          "find": [
+            "Nightfort"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "Sam and Gilly come up through it and meet Bran's party at the Nightfort. The maps place the Nightfort west of Castle Black (unverified). This is a hidden feature; it matters only if the Nightfort is modelled."
     },
     {
       "id": "the-wall-nightfort",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "state-298",
       "claim": "The Nightfort, one of the oldest and largest castles on the Wall, is abandoned and ruinous at the time of the story.",
       "label": "T",
       "cites": [
-        { "book": "ASOS", "chapter": "Bran IV", "find": ["Nightfort"] }
+        {
+          "book": "ASOS",
+          "chapter": "Bran IV",
+          "find": [
+            "Nightfort"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "The ASOS description comes after 298 AC, but the castle was deserted long before, so it holds for the time slice. I vaguely recall the text saying it had been empty for about two centuries; that figure is unverified and not used. In ADWD Jon plans to restore it (state-after)."
     },
     {
       "id": "the-wall-gift",
-      "subjects": ["the-wall", "north"],
+      "subjects": [
+        "the-wall",
+        "north"
+      ],
       "kind": "position",
       "claim": "South of the Wall lie the Gift and the New Gift, lands that belong to the Night's Watch for its upkeep.",
       "label": "T",
       "cites": [
-        { "book": "ADWD", "chapter": "Jon I", "find": ["New Gift", "Brandon's Gift"] }
+        {
+          "book": "ADWD",
+          "chapter": "Jon I",
+          "find": [
+            "New Gift",
+            "Brandon's Gift"
+          ]
+        }
       ],
-      "use": ["terrain", "look"],
+      "use": [
+        "terrain",
+        "look"
+      ],
       "status": "draft",
       "notes": "In ADWD the Gift is discussed when Stannis and Jon talk about settling wildlings south of the Wall; the chapter is a guess. Its depth is north-gift-depth. Its thin, largely abandoned settlement is unverified."
     },
     {
       "id": "the-wall-new-gift-origin",
-      "subjects": ["the-wall", "north"],
+      "subjects": [
+        "the-wall",
+        "north"
+      ],
       "kind": "name",
       "claim": "The New Gift was granted to the Watch by the Stark lord of Winterfell at the urging of Queen Alysanne, during her visit to the Wall. The older Gift is credited to Brandon the Builder.",
       "label": "C",
       "cites": [
-        { "book": "FAB", "chapter": "Jaehaerys and Alysanne—Their Triumphs and Tragedies", "find": ["New Gift", "Alysanne"] }
+        {
+          "book": "FAB",
+          "chapter": "Jaehaerys and Alysanne—Their Triumphs and Tragedies",
+          "find": [
+            "New Gift",
+            "Alysanne"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "The Stark lord was Alaric Stark, as I recall. TWOIAF ('The Wall and Beyond: The Night's Watch') likely covers this too. The FAB section title is my best recollection."
     },
     {
       "id": "the-wall-look",
-      "subjects": ["the-wall"],
+      "subjects": [
+        "the-wall"
+      ],
       "kind": "material",
       "claim": "Look: pale, blue-white old ice that glitters in sunshine and turns grey under cloud.",
       "label": "I",
       "basis": "The material is ice (the-wall-material) and it weeps in the sun (climate-298-wall-weeping). I recall Bran's falling dream in AGOT (Bran III) comparing the Wall to blue crystal, and other passages calling it blue-white or pale, but I cannot pin exact colour words to a chapter, so the colour is inferred.",
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft"
     },
-
     {
       "id": "kingsroad-north-end",
-      "subjects": ["kingsroad", "castle-black", "the-wall"],
+      "subjects": [
+        "kingsroad",
+        "castle-black",
+        "the-wall"
+      ],
       "kind": "position",
       "claim": "The kingsroad's northern end is at Castle Black on the Wall.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["kingsroad", "Castle Black"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "kingsroad",
+            "Castle Black"
+          ]
+        }
       ],
-      "use": ["vectors", "film"],
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "As I recall, the three-manned-castles passage places Castle Black at the end of the kingsroad. The endpaper map agrees (kingsroad-course-map)."
     },
     {
       "id": "kingsroad-north-of-winterfell",
-      "subjects": ["kingsroad", "winterfell"],
+      "subjects": [
+        "kingsroad",
+        "winterfell"
+      ],
       "kind": "form",
       "claim": "The kingsroad runs north from Winterfell to the Wall. North of Winterfell it is little more than a rough, lonely track through empty country.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Tyrion II", "find": ["The north went on forever", "wild track"] }
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion II",
+          "find": [
+            "The north went on forever",
+            "wild track"
+          ]
+        }
       ],
-      "use": ["vectors", "film", "look"],
+      "use": [
+        "vectors",
+        "film",
+        "look"
+      ],
       "status": "draft",
       "notes": "Tyrion rides north with Benjen Stark and Jon on the same day the king's party leaves Winterfell southward on the same road."
     },
     {
       "id": "kingsroad-winterfell-wall-travel",
-      "subjects": ["kingsroad", "winterfell", "castle-black"],
+      "subjects": [
+        "kingsroad",
+        "winterfell",
+        "castle-black"
+      ],
       "kind": "travel",
       "claim": "Riding north from Winterfell, Benjen Stark's party (with Jon and Tyrion) has spent a fortnight on the kingsroad and still not reached the Wall.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Tyrion II", "find": ["fortnight", "The north went on forever"] }
+        {
+          "book": "AGOT",
+          "chapter": "Tyrion II",
+          "find": [
+            "fortnight",
+            "The north went on forever"
+          ]
+        }
       ],
-      "value": { "days": 14, "mode": "horse", "from": "winterfell", "to": "castle-black", "approx": true, "atLeast": true },
-      "use": ["scale"],
+      "value": {
+        "days": 14,
+        "mode": "horse",
+        "from": "winterfell",
+        "to": "castle-black",
+        "approx": true,
+        "atLeast": true
+      },
+      "use": [
+        "scale"
+      ],
       "status": "draft",
       "notes": "A lower bound only. The chapter opens after about two weeks on the road, the party has not yet arrived, and the passage gives no total. The party is mounted with pack animals; its pace is not stated. Use it as a soft check (Winterfell–Wall well over 14 days of riding), not a calibration point."
     },
     {
       "id": "kingsroad-neck-causeway",
-      "subjects": ["kingsroad", "the-neck", "moat-cailin"],
+      "subjects": [
+        "kingsroad",
+        "the-neck",
+        "moat-cailin"
+      ],
       "kind": "form",
       "claim": "Through the Neck the kingsroad runs as a causeway across the bogs, and Moat Cailin guards its northern end.",
       "label": "T",
       "cites": [
-        { "book": "ADWD", "chapter": "Reek II", "find": ["causeway", "Moat Cailin"] }
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "causeway",
+            "Moat Cailin"
+          ]
+        }
       ],
-      "use": ["vectors", "film"],
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "Chapter id: the second 'Reek' chapter of ADWD (Theon at Moat Cailin). The causeway's length and the time needed to cross the Neck are not given in what I recall."
     },
     {
       "id": "kingsroad-twins-off-road",
-      "subjects": ["kingsroad", "the-twins", "green-fork"],
+      "subjects": [
+        "kingsroad",
+        "the-twins",
+        "green-fork"
+      ],
       "kind": "relative-position",
       "claim": "On the maps the Twins stand on the Green Fork west of the kingsroad, which runs south on the river's east side. The Twins are a detour off the road, not a stop on it.",
       "label": "M",
       "cites": [
-        { "book": "AGOT", "chapter": "Map" },
-        { "book": "LOIAF", "chapter": "Westeros" }
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
       ],
-      "value": { "dir": "w" },
-      "use": ["vectors", "film"],
+      "value": {
+        "dir": "w"
+      },
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "This fits AGOT (Catelyn IX, Tyrion VIII): Robb's host comes south from Moat Cailin and crosses the Green Fork at the Twins to reach Riverrun, while his foot moves on down the east side to meet Lord Tywin. Those chapter details are not verified. The brief's 'kingsroad → the Twins?' should read 'past the Twins (to the east)'."
     },
     {
       "id": "kingsroad-crossroads",
-      "subjects": ["kingsroad", "inn-at-the-crossroads"],
+      "subjects": [
+        "kingsroad",
+        "inn-at-the-crossroads"
+      ],
       "kind": "position",
       "claim": "In the riverlands the kingsroad passes the inn at the crossroads. Catelyn's party leaves the inn and is next found riding east on the high road into the Mountains of the Moon.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Catelyn V", "find": ["crossroads", "kingsroad"] },
-        { "book": "AGOT", "chapter": "Catelyn VI", "find": ["high road"] }
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn V",
+          "find": [
+            "crossroads",
+            "kingsroad"
+          ]
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VI",
+          "find": [
+            "high road"
+          ]
+        }
       ],
-      "use": ["vectors", "film"],
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "Where the high road branches from the kingsroad is label I, recorded only in west inn-at-the-crossroads-high-road. Which other roads meet at the inn, and whether it lies north or south of the Trident, belong to the west group and the map."
     },
     {
       "id": "kingsroad-trident-crossing",
-      "subjects": ["kingsroad", "trident"],
+      "subjects": [
+        "kingsroad",
+        "trident"
+      ],
       "kind": "form",
       "claim": "Build assumption: the kingsroad crosses the Trident by a ford, taken to be the 'ruby ford' where Robert killed Rhaegar. No bridge is modelled.",
       "label": "I",
       "basis": "The Battle of the Trident was fought at a ford, where the royal army marching north from King's Landing met Robert's host; later books call it the ruby ford. I recall no bridge carrying the kingsroad over the Trident. I faintly recall a ferry mentioned near the crossroads in flood time, but cannot place it. Whether the ruby ford lies exactly on the kingsroad is not confirmed.",
-      "use": ["vectors", "film", "hydrology"],
+      "use": [
+        "vectors",
+        "film",
+        "hydrology"
+      ],
       "status": "draft"
     },
     {
       "id": "kingsroad-kings-landing",
-      "subjects": ["kingsroad", "kings-landing", "winterfell"],
+      "subjects": [
+        "kingsroad",
+        "kings-landing",
+        "winterfell"
+      ],
       "kind": "position",
       "claim": "The kingsroad links Winterfell with King's Landing: the king's party travels it south to the capital, and Catelyn rides it north from the city.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Catelyn V", "find": ["kingsroad"] }
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn V",
+          "find": [
+            "kingsroad"
+          ]
+        }
       ],
-      "use": ["vectors", "film"],
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "I could not confirm whether, or how, the kingsroad continues south of the Blackwater to Storm's End or Dorne; check the LOIAF sheet before drawing it. I recall no bridge over the Blackwater at King's Landing: in ACOK Stannis's army must be ferried across by his fleet (unverified). No length is given for the whole road, nor any Winterfell–King's Landing distance or journey time I can place with confidence."
     },
     {
       "id": "kingsroad-course-map",
-      "subjects": ["kingsroad", "westeros"],
+      "subjects": [
+        "kingsroad",
+        "westeros"
+      ],
       "kind": "form",
       "claim": "The maps draw the kingsroad south from Castle Black past Winterfell, across the Neck by Moat Cailin, down through the riverlands to the crossroads and the Trident, and on to King's Landing.",
       "label": "M",
       "cites": [
-        { "book": "AGOT", "chapter": "Map" },
-        { "book": "LOIAF", "chapter": "Westeros" }
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
       ],
-      "use": ["vectors", "film"],
+      "use": [
+        "vectors",
+        "film"
+      ],
       "status": "draft",
       "notes": "This is the film route. River crossings north of the Trident (e.g. any stream between Winterfell and the Neck) are not stated in the text I recall; take them from the traced map."
     },
-
     {
       "id": "westeros-form-map",
-      "subjects": ["westeros"],
+      "subjects": [
+        "westeros"
+      ],
       "kind": "form",
       "claim": "Westeros is a long continent running north–south. The Wall crosses the far north, the land pinches at the Neck, widens through the riverlands and the Reach, and ends in Dorne's peninsula in the south.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "Westeros" },
-        { "book": "AGOT", "chapter": "Map" }
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
       ],
-      "use": ["vectors", "scale"],
+      "use": [
+        "vectors",
+        "scale"
+      ],
       "status": "draft"
     },
     {
       "id": "westeros-neck-narrowing",
-      "subjects": ["westeros", "the-neck", "north", "riverlands"],
+      "subjects": [
+        "westeros",
+        "the-neck",
+        "north",
+        "riverlands"
+      ],
       "kind": "form",
       "claim": "At the Neck the continent narrows to a waist of swamp between seas on the west and east, dividing the North from the riverlands.",
       "label": "M",
       "cites": [
-        { "book": "AGOT", "chapter": "Map" },
-        { "book": "LOIAF", "chapter": "Westeros" }
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        },
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft",
       "notes": "Which named bays bound the Neck on each side is left to the north group and the traced map."
     },
     {
       "id": "westeros-north-largest",
-      "subjects": ["westeros", "north"],
+      "subjects": [
+        "westeros",
+        "north"
+      ],
       "kind": "form",
       "claim": "On the maps the North, from the Wall to the Neck, is by far the largest region of the realm.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "Westeros" },
-        { "book": "AGOT", "chapter": "Map" }
+        {
+          "book": "LOIAF",
+          "chapter": "Westeros"
+        },
+        {
+          "book": "AGOT",
+          "chapter": "Map"
+        }
       ],
-      "use": ["scale"],
+      "use": [
+        "scale"
+      ],
       "status": "draft",
       "notes": "The text-based size statement is north-size (C, held out of scale use until verified)."
     },
     {
       "id": "westeros-arm-of-dorne",
-      "subjects": ["westeros", "dorne"],
+      "subjects": [
+        "westeros",
+        "dorne"
+      ],
       "kind": "form",
       "claim": "In legend Westeros was once joined to Essos by a land bridge, the Arm of Dorne, which the children of the forest shattered. What survives is the Broken Arm at Dorne's eastern tip and the islands of the Stepstones.",
       "label": "C",
       "cites": [
-        { "book": "TWOIAF", "chapter": "The Arrival of the First Men", "find": ["Arm of Dorne"] }
+        {
+          "book": "TWOIAF",
+          "chapter": "The Arrival of the First Men",
+          "find": [
+            "Arm of Dorne"
+          ]
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft",
       "notes": "I believe Maester Luwin tells Bran this in a mid-AGOT Bran chapter, but the chapter is unknown and is not cited. For the build this only fixes the broken eastern tip of Dorne and the island chain towards Essos, which the map already shows."
     },
     {
       "id": "westeros-league-mile",
-      "subjects": ["westeros", "the-wall"],
+      "subjects": [
+        "westeros",
+        "the-wall"
+      ],
       "kind": "length",
       "claim": "Unit convention: one league is three miles, so the Wall's hundred leagues is about 300 miles.",
       "label": "I",
       "basis": "This is the ledger README's convention. I recall no passage in the novels that defines a league in miles, though both units are used. The build's scale therefore rests on this convention plus the-wall-length.",
-      "value": { "leagues": 1, "miles": 3 },
-      "use": ["scale"],
+      "value": {
+        "leagues": 1,
+        "miles": 3
+      },
+      "use": [
+        "scale"
+      ],
       "status": "draft"
     },
     {
       "id": "westeros-no-stated-size",
-      "subjects": ["westeros"],
+      "subjects": [
+        "westeros"
+      ],
       "kind": "length",
       "claim": "No overall length or width of Westeros is stated in the books I recall, so the continent's scale must come from the Wall and cross-checks, not from a stated size.",
       "label": "I",
       "basis": "I recall none in AGOT–ADWD. TWOIAF's regional sections give comparisons, not measurements, as far as I recall. Continent-size figures from author interviews are excluded by rule. The cross-checks are kingsroad-winterfell-wall-travel and westeros-deepwood-winterfell-distance.",
-      "use": ["scale"],
+      "use": [
+        "scale"
+      ],
       "status": "draft"
     },
-
     {
       "id": "shivering-sea-position",
-      "subjects": ["shivering-sea", "bay-of-seals"],
+      "subjects": [
+        "shivering-sea",
+        "bay-of-seals"
+      ],
       "kind": "position",
       "claim": "The Shivering Sea is the cold sea north-east of Westeros, off the north-eastern coasts of the North and the lands beyond the Wall. The Bay of Seals, where the Wall ends, opens into it.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "The Known World" }
+        {
+          "book": "LOIAF",
+          "chapter": "The Known World"
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft",
       "notes": "The boundary with the narrow sea down the eastern coast of the North is not sharp on the maps."
     },
     {
       "id": "sunset-sea-position",
-      "subjects": ["sunset-sea"],
+      "subjects": [
+        "sunset-sea"
+      ],
       "kind": "position",
       "claim": "The Sunset Sea is the open ocean west of Westeros, washing the western coast from the North down past the Iron Islands and the westerlands to the Reach.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "The Known World" }
+        {
+          "book": "LOIAF",
+          "chapter": "The Known World"
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft"
     },
     {
       "id": "narrow-sea-position",
-      "subjects": ["narrow-sea"],
+      "subjects": [
+        "narrow-sea"
+      ],
       "kind": "position",
       "claim": "The narrow sea lies between Westeros and the Free Cities of Essos: Pentos, where the exiled Targaryens live, is across it to the east.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Daenerys I", "find": ["narrow sea", "Pentos"] }
+        {
+          "book": "AGOT",
+          "chapter": "Daenerys I",
+          "find": [
+            "narrow sea",
+            "Pentos"
+          ]
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft",
       "notes": "Which coasts it washes comes from the map: see narrow-sea-coasts."
     },
     {
       "id": "narrow-sea-coasts",
-      "subjects": ["narrow-sea"],
+      "subjects": [
+        "narrow-sea"
+      ],
       "kind": "position",
       "claim": "On the maps the narrow sea washes Westeros's eastern coasts: the Vale, the crownlands with Blackwater Bay and Dragonstone, and the stormlands, down to the Stepstones.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "The Known World" }
+        {
+          "book": "LOIAF",
+          "chapter": "The Known World"
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft",
       "notes": "Its northern limit against the Shivering Sea, along the North's eastern coast, is not sharp on the maps."
     },
     {
       "id": "summer-sea-position",
-      "subjects": ["summer-sea"],
+      "subjects": [
+        "summer-sea"
+      ],
       "kind": "position",
       "claim": "The Summer Sea lies south of Westeros along Dorne's southern coast and stretches south toward the Summer Islands.",
       "label": "M",
       "cites": [
-        { "book": "LOIAF", "chapter": "The Known World" }
+        {
+          "book": "LOIAF",
+          "chapter": "The Known World"
+        }
       ],
-      "use": ["vectors"],
+      "use": [
+        "vectors"
+      ],
       "status": "draft"
     },
-
     {
       "id": "climate-298-end-of-summer",
-      "subjects": ["climate-298", "north"],
+      "subjects": [
+        "climate-298",
+        "north"
+      ],
       "kind": "climate",
       "claim": "The opening Winterfell morning is clear and cold, with a chill that already hints the long summer is ending.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Bran I", "find": ["the end of summer"] }
+        {
+          "book": "AGOT",
+          "chapter": "Bran I",
+          "find": [
+            "the end of summer"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "Late summer, not yet autumn. I could not confirm a specific snowfall at Winterfell or on the Winterfell–Wall journey in AGOT's opening chapters, so the build should not assume snow cover in the North south of the Wall at 298 AC."
     },
     {
       "id": "climate-298-white-raven",
-      "subjects": ["climate-298"],
+      "subjects": [
+        "climate-298"
+      ],
       "kind": "climate",
       "claim": "After the story opens, the Citadel sends white ravens to announce that summer, the longest in living memory, is over. At 298 AC itself it is still late summer.",
       "label": "T",
       "cites": [
-        { "book": "ACOK", "chapter": "Prologue", "find": ["white raven"] }
+        {
+          "book": "ACOK",
+          "chapter": "Prologue",
+          "find": [
+            "white raven"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "As I recall, Maester Cressen notes the white raven on Dragonstone. The phrase 'longest in living memory' is recalled, not verified; drop it if the verifier does not find it. The announcement falls after AGOT's opening, so it is not part of the slice; it is recorded to fix the season. I recall the Citadel's reckoning of the summer as about ten years, but that is unverified and not used. The proclamation may instead be mentioned in an early ACOK chapter at Winterfell."
     },
     {
       "id": "climate-298-wall-weeping",
-      "subjects": ["climate-298", "the-wall"],
+      "subjects": [
+        "climate-298",
+        "the-wall"
+      ],
       "kind": "climate",
       "claim": "In warm sunshine the Wall's face melts and runs with water; the text calls this the Wall weeping.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Jon III", "find": ["weeping"] }
+        {
+          "book": "AGOT",
+          "chapter": "Jon III",
+          "find": [
+            "weeping"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "The image recurs in later Jon chapters (ASOS, ADWD); the AGOT chapter is a guess. For the summer slice: wet, glistening streaks on the sunlit south face."
     },
     {
       "id": "climate-298-dorne-heat",
-      "subjects": ["climate-298", "dorne"],
+      "subjects": [
+        "climate-298",
+        "dorne"
+      ],
       "kind": "climate",
       "claim": "Dorne is the hottest, driest part of the realm, with sand desert in its interior: the far end of a range that runs to a cool, late-summer North.",
       "label": "T",
       "cites": [
-        { "book": "AFFC", "chapter": "The Queenmaker", "find": ["Shandystone"] }
+        {
+          "book": "AFFC",
+          "chapter": "The Queenmaker",
+          "find": [
+            "Shandystone"
+          ]
+        }
       ],
-      "use": ["look"],
+      "use": [
+        "look"
+      ],
       "status": "draft",
       "notes": "Arianne's party crosses the deep desert to the ruin of Shandystone. TWOIAF's 'Dorne' section supports this as companion text but is not cited, to keep this claim novels-only. This is a standing climate, not specific to 298 AC."
     },
-
     {
       "id": "slice-winterfell-intact",
-      "subjects": ["climate-298", "winterfell"],
+      "subjects": [
+        "climate-298",
+        "winterfell"
+      ],
       "kind": "state-298",
       "claim": "At the opening of AGOT Winterfell is whole and lived in. The only old damage is the long-ruined broken tower, which Bran climbs.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Bran II", "find": ["broken tower", "First Keep"] }
+        {
+          "book": "AGOT",
+          "chapter": "Bran II",
+          "find": [
+            "broken tower",
+            "First Keep"
+          ]
+        }
       ],
-      "use": ["landmark:winterfell"],
+      "use": [
+        "landmark:winterfell"
+      ],
       "status": "draft",
       "notes": "State-after: Winterfell is sacked and burned in ACOK, and Bran finds it in ruins in ACOK's final Bran chapter (Bran VII). The build ignores this."
     },
     {
       "id": "slice-moat-cailin-three-towers",
-      "subjects": ["climate-298", "moat-cailin"],
+      "subjects": [
+        "climate-298",
+        "moat-cailin"
+      ],
       "kind": "state-298",
       "claim": "Moat Cailin is a ruin: of its towers only three still stand, the Gatehouse Tower, the Drunkard's Tower and the Children's Tower. The rest has fallen or been swallowed by the bog.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Catelyn VIII", "find": ["Drunkard's Tower", "Children's Tower"] },
-        { "book": "ADWD", "chapter": "Reek II", "find": ["Moat Cailin", "Drunkard's Tower"] }
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VIII",
+          "find": [
+            "Drunkard's Tower",
+            "Children's Tower"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Reek II",
+          "find": [
+            "Moat Cailin",
+            "Drunkard's Tower"
+          ]
+        }
       ],
-      "value": { "count": 3 },
-      "use": ["landmark:moat-cailin"],
+      "value": {
+        "count": 3
+      },
+      "use": [
+        "landmark:moat-cailin"
+      ],
       "status": "draft",
       "notes": "This confirms the brief. The ADWD description holds for 298 AC because the ruin predates the story. The original number of towers is not used here (I recall about twenty, unverified)."
     },
     {
       "id": "slice-harrenhal-slagged",
-      "subjects": ["climate-298", "harrenhal"],
+      "subjects": [
+        "climate-298",
+        "harrenhal"
+      ],
       "kind": "state-298",
       "claim": "Harrenhal's five huge towers were melted and twisted by dragonfire in Aegon's Conquest and stand slagged and misshapen.",
       "label": "T",
       "cites": [
-        { "book": "ACOK", "chapter": "Arya V", "find": ["Harrenhal"] }
+        {
+          "book": "ACOK",
+          "chapter": "Arya V",
+          "find": [
+            "Harrenhal"
+          ]
+        }
       ],
-      "value": { "count": 5 },
-      "use": ["landmark:harrenhal"],
+      "value": {
+        "count": 5
+      },
+      "use": [
+        "landmark:harrenhal"
+      ],
       "status": "draft",
       "notes": "This confirms the brief. The description is from Arya's arrival at Harrenhal in ACOK (perhaps the end of Arya IV rather than Arya V). It describes damage nearly three centuries old, so it holds for the slice. Tower names (Kingspyre, Widow's Wail, Wailing Tower, Tower of Dread, Tower of Ghosts) appear in Arya's ACOK chapters; they are not verified here. FAB ('Aegon's Conquest') tells the burning itself; it is not cited, to keep this T claim novels-only. How empty the castle is at 298 AC is the I claim harrenhal-state-298, not this one."
     },
     {
       "id": "slice-dragonpit-roofless",
-      "subjects": ["climate-298", "kings-landing"],
+      "subjects": [
+        "climate-298",
+        "kings-landing"
+      ],
       "kind": "state-298",
       "claim": "On Rhaenys's Hill the Dragonpit stands abandoned, its great dome fallen in since the Dance of the Dragons, more than a century and a half earlier.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Catelyn IV", "find": ["Dragonpit", "Rhaenys's Hill"] }
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn IV",
+          "find": [
+            "Dragonpit",
+            "Rhaenys's Hill"
+          ]
+        }
       ],
-      "use": ["landmark:kings-landing"],
+      "use": [
+        "landmark:kings-landing"
+      ],
       "status": "draft",
       "notes": "This confirms the brief. Catelyn's first view of the city as her ship comes in is my best recollection of the source. If the AGOT find fails, downgrade the claim to C, citing FAB 'The Dying of the Dragons—Rhaenyra Overthrown' (find keys Dreamfyre, Dragonpit). There the dome comes down when the mob storms the Dragonpit in 130 AC, during the fight with Dreamfyre."
     },
     {
       "id": "slice-great-sept-standing",
-      "subjects": ["climate-298", "kings-landing"],
+      "subjects": [
+        "climate-298",
+        "kings-landing"
+      ],
       "kind": "state-298",
       "claim": "The Great Sept of Baelor stands on Visenya's Hill at 298 AC. It is still standing at the end of ADWD; the books never destroy it.",
       "label": "T",
       "cites": [
-        { "book": "AGOT", "chapter": "Arya V", "find": ["Baelor the Blessed", "Great Sept"] },
-        { "book": "ADWD", "chapter": "Cersei II", "find": ["Great Sept"] }
+        {
+          "book": "AGOT",
+          "chapter": "Arya V",
+          "find": [
+            "Baelor the Blessed",
+            "Great Sept"
+          ]
+        },
+        {
+          "book": "ADWD",
+          "chapter": "Cersei II",
+          "find": [
+            "Great Sept"
+          ]
+        }
       ],
-      "use": ["landmark:kings-landing"],
+      "use": [
+        "landmark:kings-landing"
+      ],
       "status": "draft",
       "notes": "This confirms the brief. Ned is executed on its steps, with Arya clinging to Baelor's statue in the plaza (AGOT). Cersei's walk of atonement starts from it (ADWD). Its destruction in the TV show counts for nothing. The 'Visenya's Hill' placement is from Catelyn IV's view of the city, as I recall."
+    },
+    {
+      "id": "the-wall-castles-forms",
+      "subjects": [
+        "the-wall"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the Wall's castles stand at the sheet's castle markers along it, each a keep and a stretch of curtain at the Wall's south foot. The abandoned ones are roofless, and the Nightfort is the largest ruin.",
+      "label": "I",
+      "basis": "The text gives nineteen castles, three manned at 298 (Eastwatch, Castle Black and the Shadow Tower near the western mountains) and the Nightfort large and ruinous (the-wall-castles-count, -castles-manned-298, -nightfort, -west-end). The sheet marks their places. Their forms, and which marker is the Nightfort, are invented.",
+      "use": [
+        "landmark:the-wall"
+      ],
+      "status": "draft"
     }
   ]
 }

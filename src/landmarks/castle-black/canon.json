@@ -12,7 +12,8 @@
     { "part": "the gated tunnel through the Wall's base", "label": "T", "claims": ["castle-black-tunnel"] },
     { "part": "Mole's Town dug into the ground a short way south", "label": "T", "claims": ["castle-black-moles-town"] },
     { "part": "the grove of nine weirwoods a short ride north in the Haunted Forest", "label": "T", "claims": ["haunted-forest-weirwood-grove", "haunted-forest-position"] },
+    { "part": "the open ground north of the Wall where the forest is kept cut back", "label": "T", "claims": ["castle-black-cleared-ground"] },
     { "part": "manned at 298 AC; the later assault's damage ignored", "label": "T", "claims": ["castle-black-manned", "castle-black-state-after-assault"] },
-    { "part": "positions, sizes, which buildings are ruined, Hardin's lean, the Flint Tower and Old Keep, the stair's flights", "label": "I", "claims": ["castle-black-plan"] }
+    { "part": "positions, sizes, which buildings are ruined (the Flint Barracks among them), Hardin's lean, the stair's flights", "label": "I", "claims": ["castle-black-plan"] }
   ]
 }

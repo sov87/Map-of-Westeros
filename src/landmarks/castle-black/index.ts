@@ -14,7 +14,8 @@ import { WALL, wallLine } from '../the-wall/index.ts';
  * (castle-black-stair, -winch-cage, the-wall-castle-black-access); catapults and timber cranes along the top
  * (the-wall-top); the gated tunnel through the Wall's base (castle-black-tunnel); Mole's Town dug into the
  * ground a short way south (castle-black-moles-town); the grove of nine weirwoods a short ride north in the
- * Haunted Forest (haunted-forest-weirwood-grove); manned in 298 (castle-black-manned). I: the plan, every
+ * Haunted Forest (haunted-forest-weirwood-grove), beyond the open ground where the forest is kept cut back
+ * (castle-black-cleared-ground); manned in 298 (castle-black-manned). I: the plan, every
  * position, the forms (castle-black-plan).
  *
  * Local frame: x east, z south, origin at the sheet's marker; the Wall's centre line runs ~1.2 km north.
@@ -46,14 +47,14 @@ const TOWERS: { name: string; at: V2; r: number; h: number; lean?: number; ruin?
   { name: 'kings-tower', at: [-0.32, -0.62], r: 0.07, h: 0.36 },
   { name: 'lord-commanders-tower', at: [0.2, -0.5], r: 0.075, h: 0.3 },
   { name: 'hardins-tower', at: [0.62, -0.72], r: 0.055, h: 0.28, lean: 5 },
-  { name: 'flint-tower', at: [-0.78, -0.55], r: 0.05, h: 0.22, ruin: true },
-  { name: 'old-keep', at: [0.95, -0.42], r: 0.06, h: 0.18, ruin: true },
+  { name: 'empty-tower-west', at: [-0.78, -0.55], r: 0.05, h: 0.22, ruin: true },
+  { name: 'empty-tower-east', at: [0.95, -0.42], r: 0.06, h: 0.18, ruin: true },
 ];
 const HALLS: { name: string; at: V2; w: number; d: number; h: number; yaw: number; ruin?: boolean }[] = [
   { name: 'shieldhall', at: [-0.08, -0.28], w: 0.34, d: 0.12, h: 0.1, yaw: 4 },
   { name: 'common-hall', at: [0.3, -0.18], w: 0.26, d: 0.11, h: 0.09, yaw: -6 },
   { name: 'armory', at: [-0.42, -0.3], w: 0.18, d: 0.1, h: 0.08, yaw: 10 },
-  { name: 'barracks', at: [0.55, -0.4], w: 0.22, d: 0.09, h: 0.07, yaw: 2, ruin: true },
+  { name: 'flint-barracks', at: [0.55, -0.4], w: 0.22, d: 0.09, h: 0.07, yaw: 2, ruin: true },
   { name: 'stables', at: [-0.6, -0.18], w: 0.26, d: 0.09, h: 0.06, yaw: -4 },
   { name: 'empty-keep', at: [1.1, -0.68], w: 0.2, d: 0.12, h: 0.09, yaw: 12, ruin: true },
   { name: 'empty-hall', at: [-1.0, -0.82], w: 0.22, d: 0.1, h: 0.08, yaw: -8, ruin: true },
@@ -229,6 +230,8 @@ export default defineLandmark({
   }),
   vegetationExclusion: [
     { at: [0.05, -0.5], r: 1.4 },
+    // the open ground north of the Wall where the forest is kept cut back (T: castle-black-cleared-ground)
+    ...Array.from({ length: 11 }, (_, i) => ({ at: [-5 + i, wallZ(-5 + i) - 1.0] as V2, r: 1.0 })),
     { at: MOLES, r: 0.45 },
     { at: GROVE, r: 0.45 },
   ],

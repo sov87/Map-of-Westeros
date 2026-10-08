@@ -13,7 +13,7 @@ import { defineLandmark } from '../types.ts';
  * heavy battlements, so that from afar the castle is a spiked fist raised on an arm (storms-end-spiked-fist);
  * stables, kitchens and yards sheltered inside the wall (storms-end-sheltered-ward); a sea passage into the
  * rock under the castle (storms-end-sea-cave). Not yet besieged at 298 (storms-end-siege). I: the headland,
- * the plan, the stone's grey, the gate and the road (storms-end-plan).
+ * the plan, the stone's grey, the curtain's gentle batter, the gate and the road (storms-end-plan).
  *
  * Local frame: x east, z south, origin on the shore at the display position; the bay opens to the south and
  * south-east. Design scale ≈ ×5 like the other castles (the curtain stands as high as Winterfell's inner wall).
@@ -97,7 +97,7 @@ function buildCurtain(k: ProxyKit, top: number): void {
     at: [0, top - 0.02, 0],
     closed: true,
     step: 0.05,
-    batter: 0.45,
+    batter: 0.25,
     color: STONE,
     shadeJitter: 0.03,
     crenel: { w: 0.03, h: 0.03, gap: 0.022, lod: 0, color: STONE_LIT },
@@ -105,14 +105,10 @@ function buildCurtain(k: ProxyKit, top: number): void {
   // twice as thick to seaward (T: near eighty feet against forty): a second course inside the sea half
   const inner = arc(SEA_ARC[1] + 6, SEA_ARC[0] - 6, 24).map((b) => polar(C, b, CURTAIN.r - (CURTAIN.t + CURTAIN.seaT) * 0.42));
   k.wallPath('stone', inner, CURTAIN.h * 0.92, CURTAIN.seaT - CURTAIN.t + 0.04, { at: [0, top - 0.02, 0], step: 0.05, batter: 0.3, color: STONE });
-  // the gate (I): the one way in, landward, between two rounded bastions under the curtain's line
-  const g = polar(C, GATE_BEARING, CURTAIN.r);
-  for (const d of [-9, 9]) {
-    const b = polar(C, GATE_BEARING + d, CURTAIN.r + 0.02);
-    k.tower('stone', 0.075, CURTAIN.h + 0.04, { at: [b[0], top - 0.02, b[1]], sides: 16, taper: 0.12, roof: 'crenel', color: STONE_LIT });
-  }
-  const yaw = 90 - GATE_BEARING;
-  k.box('darkStone', 0.08, 0.1, 0.05, { at: [g[0] + Math.sin((GATE_BEARING * Math.PI) / 180) * 0.07, top - 0.02, g[1] - Math.cos((GATE_BEARING * Math.PI) / 180) * 0.07], rot: [0, yaw, 0], color: 0x1e1b18, lod: 0 });
+  // the gate (I): the one way in, landward, a passage set into the curve of the curtain — no bastions, no
+  // second tower (T: of towers there is but one), nothing to break the curve
+  const g = polar(C, GATE_BEARING, CURTAIN.r + CURTAIN.t / 2);
+  k.box('darkStone', 0.08, 0.1, 0.05, { at: [g[0], top - 0.02, g[1]], rot: [0, -GATE_BEARING, 0], color: 0x1e1b18, lod: 0 });
   const out = polar(C, GATE_BEARING, CURTAIN.r + 0.16);
   k.light([out[0], top + 0.08, out[1]], { color: 0xffb35a, intensity: 0.9, radius: 0.02, kind: 'fire', flicker: 0.35 });
 }

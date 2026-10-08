@@ -3026,13 +3026,38 @@
         "castle-black"
       ],
       "kind": "form",
-      "claim": "Build assumption: the towers and halls spread along the Wall's foot for about two kilometres at the design scale, the King's Tower the tallest. Hardin's Tower leans, some keeps are roofless, and twelve flights make up the stair.",
+      "claim": "Build assumption: the towers and halls spread along the Wall's foot for about two kilometres at the design scale, the King's Tower the tallest. Hardin's Tower leans, two towers and some keeps stand empty, the stair has twelve flights.",
       "label": "I",
-      "basis": "The text gives the open spread without a curtain wall, the named buildings, the empty and crumbling ones, the stair, the cage and the tunnel (castle-black-no-curtain-wall, -layout, -named-buildings, -stair, -winch-cage, -tunnel). Positions, sizes, which buildings are ruined, the lean, the Flint Tower and Old Keep names and the number of flights are invented and contradict nothing.",
+      "basis": "The text gives the open spread without a curtain wall, the named buildings, the empty and crumbling ones, the stair, the cage and the tunnel (castle-black-no-curtain-wall, -layout, -named-buildings, -stair, -winch-cage, -tunnel). Positions, sizes, which buildings are ruined, the lean and the number of flights are invented and contradict nothing.",
       "use": [
         "landmark:castle-black"
       ],
       "status": "draft"
+    },
+    {
+      "id": "castle-black-cleared-ground",
+      "subjects": [
+        "castle-black",
+        "haunted-forest"
+      ],
+      "kind": "form",
+      "claim": "North of the Wall at Castle Black the forest is kept cut back, leaving open ground between the ice and the treeline: the field where the wildlings mass and where Stannis's horse charges.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ASOS",
+          "chapter": "Jon IX",
+          "find": [
+            "Stannis"
+          ]
+        }
+      ],
+      "use": [
+        "vegetation",
+        "landmark:castle-black"
+      ],
+      "status": "draft",
+      "notes": "Raised by the books-only lore critic (2026-10-08); the Watch cutting the forest back is recalled from AGOT as well. Chapter to verify."
     }
   ]
 }

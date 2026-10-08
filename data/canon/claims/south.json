@@ -457,7 +457,7 @@
       "kind": "relative-position",
       "claim": "The Dragonmont is the mountain of Dragonstone island, rising behind and above the castle.",
       "label": "T",
-      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Dragonmont"] }],
+      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Dragonmont"] }, { "book": "ACOK", "chapter": "Prologue", "find": ["Dragonmont"] }],
       "use": ["terrain", "landmark:dragonstone"],
       "status": "draft",
       "notes": "Also in FAB. A mention in the main novels (ACOK Prologue or the ASOS Davos chapters) is likely but not pinned.",
@@ -469,7 +469,7 @@
       "kind": "form",
       "claim": "The Dragonmont is a smoking, fire-filled mountain; in the Targaryen era wild dragons such as the Cannibal and the Grey Ghost laired in its caves and on its slopes.",
       "label": "T",
-      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Cannibal", "Grey Ghost", "Dragonmont"] }],
+      "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Cannibal", "Grey Ghost", "Dragonmont"] }, { "book": "ACOK", "chapter": "Prologue", "find": ["Dragonmont"] }],
       "use": ["terrain", "look", "landmark:dragonstone"],
       "status": "draft",
       "notes": "Brief's 'smoking Dragonmont' confirmed from TPATQ / FAB; no height is given anywhere I recall."
@@ -503,11 +503,12 @@
       "id": "storms-end-curtain-wall-form",
       "subjects": ["storms-end"],
       "kind": "form",
-      "claim": "The curtain wall has neither arrow slits nor posterns; it slopes and curves all the way round, its stones fitted so closely that the wind finds no gap to work into.",
+      "claim": "The curtain wall has neither arrow slits nor posterns. It is rounded and curving everywhere, without an angle anywhere, its smooth stones fitted so closely that the wind finds no gap to work into.",
       "label": "T",
       "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["postern"] }],
       "use": ["look", "landmark:storms-end"],
-      "status": "draft"
+      "status": "draft",
+      "notes": "Reworded after the lore critic (2026-10-08): the text has it rounded and curving, not sloped; the model's gentle batter is the plan's (I)."
     },
     {
       "id": "storms-end-curtain-wall-thickness",
@@ -537,11 +538,12 @@
       "id": "storms-end-spiked-fist",
       "subjects": ["storms-end"],
       "kind": "form",
-      "claim": "Heavy battlements crown the drum tower, so that from a distance the castle looks like a spiked fist raised on an arm.",
+      "claim": "Heavy battlements crown the drum tower, so that from a distance the castle looks like a great spiked fist thrust up against the sky.",
       "label": "T",
       "cites": [{ "book": "ACOK", "chapter": "Catelyn III", "find": ["spiked fist"] }],
       "use": ["look", "landmark:storms-end"],
-      "status": "draft"
+      "status": "draft",
+      "notes": "The 'arm' of an earlier wording was dropped after the lore critic (2026-10-08); the exact phrase is to verify."
     },
     {
       "id": "storms-end-sheltered-ward",
@@ -557,7 +559,7 @@
       "id": "storms-end-sea-cave",
       "subjects": ["storms-end", "shipbreaker-bay"],
       "kind": "form",
-      "claim": "A sea passage runs in under the castle and can be reached at night by a small boat: Davos used it to smuggle food in during the siege of Robert's Rebellion and later rows Melisandre there.",
+      "claim": "A sea passage runs into a cave at the foot of the cliffs beneath the castle and can be reached at night by a small boat: Davos used it to smuggle food in during the siege of Robert's Rebellion and later rows Melisandre there.",
       "label": "T",
       "cites": [{ "book": "ACOK", "chapter": "Davos II", "find": ["onions"] }],
       "use": ["landmark:storms-end"],
@@ -565,10 +567,32 @@
       "notes": "Recalled loosely (a cave under the cliff with a portcullis at its inner end); confirm the wording before using it as geometry."
     },
     {
+      "id": "dragonstone-black-stone",
+      "subjects": ["dragonstone"],
+      "kind": "material",
+      "claim": "Dragonstone is built of black stone: its walls and towers are dark, and the Chamber of the Painted Table is a round room walled in black stone.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["black stone"] }],
+      "use": ["look", "landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Raised by the books-only lore critic (2026-10-08); the chamber's black walls are recalled with fair confidence, the castle's overall colour to verify."
+    },
+    {
+      "id": "dragonstone-tails-wings",
+      "subjects": ["dragonstone"],
+      "kind": "form",
+      "claim": "Dragons' tails make arches, bridges and outside stairs in the castle, great stone wings fold round the smithy and the armoury, and stone claws hold the torches.",
+      "label": "T",
+      "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["smithy", "armory"] }],
+      "use": ["landmark:dragonstone"],
+      "status": "draft",
+      "notes": "Raised by the books-only lore critic (2026-10-08) from Cressen's view of the castle; verify the wording."
+    },
+    {
       "id": "dragonstone-plan",
       "subjects": ["dragonstone", "dragonmont"],
       "kind": "form",
-      "claim": "Build assumption: the castle of black stone stands on the Dragonmont's south-west spur, the mountain a cratered cone above it, with a fishing town and harbour on the island's south shore below and a road between them.",
+      "claim": "Build assumption: the castle stands on the Dragonmont's south-west spur, the mountain a cratered cone above it with a dull glow in the crater, with a fishing town and harbour on the island's south shore below and a road between them.",
       "label": "I",
       "basis": "The text gives the Dragonmont behind and above the castle, smoking, and the castle's dragon-shaped hall, kitchens and towers, its gargoyles and the Stone Drum (dragonmont-above-castle, -smoking, dragonstone-dragon-shaped-buildings, -towers, -gargoyles, -stone-drum). The plan, the black stone, each dragon's sculpted pose, the cone's form, the volcanic ground and the town are invented and contradict nothing.",
       "use": ["landmark:dragonstone"],
@@ -578,7 +602,7 @@
       "id": "storms-end-plan",
       "subjects": ["storms-end"],
       "kind": "form",
-      "claim": "Build assumption: the castle stands on a cliff-girt headland over the bay, its round curtain of grey stone round the drum tower, a gate between two bastions on the landward side, and a road running inland.",
+      "claim": "Build assumption: the castle stands on a broad headland over the bay, its curtain round in plan with a gentle batter and a gate set into the curve, grey stone, and a road running inland.",
       "label": "I",
       "basis": "The text gives the curtain, the single drum tower and its battlements, the sheltered ward and the sea passage (storms-end-curtain-wall-*, -single-drum-tower, -spiked-fist, -sheltered-ward, -sea-cave). The headland and cliffs, the round plan, the grey stone, the gate's form and the road are invented and contradict nothing.",
       "use": ["landmark:storms-end"],

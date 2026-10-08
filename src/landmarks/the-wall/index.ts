@@ -76,13 +76,77 @@ export function wallLine(k?: ProxyKit): V2[] {
   return line;
 }
 
+/**
+ * The castles along the Wall (T: nineteen were built, three manned at 298 — Eastwatch, Castle Black and the
+ * Shadow Tower near the western mountains — the Nightfort large and ruinous; M: the sheet's castle markers
+ * along the Wall, sheet px west → east; I: their forms, which marker is which). Castle Black and Eastwatch
+ * are landmarks of their own.
+ */
+const CASTLE_PX: [number, number][] = [
+  [1096.7, 730.7],
+  [1134, 725],
+  [1184.3, 704],
+  [1200, 703.3],
+  [1216.7, 702.3],
+  [1233.3, 702.3],
+  [1246.7, 703.3],
+  [1262.3, 704.3],
+  [1323.3, 700.7],
+  [1337.7, 700.7],
+  [1350, 702.7],
+  [1363.3, 702.7],
+  [1377.3, 702.7],
+  [1393.3, 702.7],
+  [1408.3, 700],
+  [1428.3, 698.3],
+];
+/** sheet px → Castle Black's local x (km): the sheet's scale and frame (tools/geo/maps/westeros-crests.json) */
+const pxToLocalX = (px: number): number => (px - 34) * 1.3725 - 1745.83;
+const SHADOW_TOWER = 1;
+const NIGHTFORT = 5;
+
+/** the Wall's centre z at local x (the smoothed line) */
+function lineZ(line: V2[], x: number): number {
+  for (let i = 0; i + 1 < line.length; i++) {
+    const [ax, az] = line[i];
+    const [bx, bz] = line[i + 1];
+    if (x >= Math.min(ax, bx) && x <= Math.max(ax, bx)) return az + ((bz - az) * (x - ax)) / (bx - ax || 1);
+  }
+  return line[line.length - 1][1];
+}
+
+function buildCastles(k: ProxyKit, line: V2[]): void {
+  CASTLE_PX.forEach(([px], i) => {
+    const x = pxToLocalX(px);
+    const z = lineZ(line, x) + WALL.base / 2 + 0.22;
+    const manned = i === SHADOW_TOWER;
+    const big = i === NIGHTFORT;
+    const s = big ? 1.6 : 1;
+    // a keep (the Shadow Tower whole and lit; the rest roofless shells) and a stretch of curtain to the Wall
+    k.tower('stone', 0.07 * s, (manned ? 0.3 : 0.2) * s, { at: [x, 0, z], seat: 'min', sides: 4, roof: manned ? 'crenel' : 'none', color: manned ? 0x5a5855 : 0x4c4a47, ...(manned ? { windows: { rows: 3, on: 0.5, size: 0.011 } } : {}) });
+    k.wallPath('stone', [
+      [x - 0.22 * s, z - 0.18],
+      [x - 0.22 * s, z + 0.12 * s],
+      [x + 0.22 * s, z + 0.12 * s],
+      [x + 0.22 * s, z - 0.18],
+    ], 0.09, 0.04, { followGround: true, step: 0.06, color: 0x4f4d4a, crenel: manned ? { w: 0.02, h: 0.02, gap: 0.015, lod: 0 } : undefined });
+    if (big) {
+      // the Nightfort's broken halls and fallen towers
+      for (let j = 0; j < 4; j++) k.tower('stone', 0.05, 0.12 + 0.05 * k.r(30 + j), { at: [x - 0.25 + 0.17 * j, 0, z + 0.05 + 0.08 * (j % 2)], seat: 'min', sides: 12, roof: 'none', color: 0x4a4845 });
+    }
+    if (manned) k.light([x, k.ground(x, z) + 0.12, z + 0.08], { color: 0xffad5a, intensity: 0.8, radius: 0.015, kind: 'fire', flicker: 0.35 });
+  });
+}
+
 export default defineLandmark({
   id: 'the-wall',
   placeId: 'castle-black',
   tier: 'A',
   proxy: (k) => {
+    const line = wallLine(k);
+    buildCastles(k, line);
     // the ice rampart (T): one height above its own foot all along (I), battered from a wide base to the top
-    k.wallPath('plaster', wallLine(k), WALL.h, WALL.base, {
+    k.wallPath('plaster', line, WALL.h, WALL.base, {
       followGround: true,
       step: 0.5,
       batter: WALL.batter,

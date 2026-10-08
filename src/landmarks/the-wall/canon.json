@@ -7,6 +7,8 @@
     { "part": "the top wide enough for a dozen riders abreast", "label": "T", "claims": ["the-wall-top"] },
     { "part": "one height above its own foot, the foot following the ground", "label": "I", "claims": ["the-wall-ground"] },
     { "part": "the base wider than the top", "label": "I", "claims": ["the-wall-thickness"] },
-    { "part": "pale blue-white old ice", "label": "I", "claims": ["the-wall-look"] }
+    { "part": "pale blue-white old ice", "label": "I", "claims": ["the-wall-look"] },
+    { "part": "the castles along the Wall: nineteen built, the Shadow Tower near the western mountains manned and lit, the Nightfort a great ruin, the rest abandoned", "label": "T", "claims": ["the-wall-castles-count", "the-wall-castles-manned-298", "the-wall-nightfort", "the-wall-west-end"] },
+    { "part": "the castles' places at the sheet's markers along the Wall; their forms, which marker is which", "label": "I", "claims": ["the-wall-castles-forms", "the-wall-course-map"] }
   ]
 }

@@ -247,6 +247,46 @@ function buildCastle(k: ProxyKit, top: number): V3 {
   // the kitchens (T: a coiled dragon venting smoke and steam through its nostrils)
   const kitchen = polar(CC, 225, 0.33);
   const nostrils = coiled(k, [kitchen[0], top - 0.02, kitchen[1]], 60, 0.03);
+  // dragons' tails arch over the lanes of the yard (T: tails make arches), tapering from the root to the tip
+  for (const [b, r, yawDeg] of [
+    [35, 0.32, 125],
+    [262, 0.36, 172],
+  ] as const) {
+    const m = polar(CC, b, r);
+    const half = 0.07;
+    const n = 9;
+    const ax = Math.sin(yawDeg * DEG);
+    const az = -Math.cos(yawDeg * DEG);
+    const pts: V3[] = Array.from({ length: n + 1 }, (_, i) => {
+      const t = (i / n) * Math.PI;
+      return [m[0] + ax * half * Math.cos(t), top - 0.02 + 0.075 * Math.sin(t), m[1] + az * half * Math.cos(t)];
+    });
+    for (let i = 0; i < n; i++) {
+      const [x0, y0, z0] = pts[i];
+      const [x1, y1, z1] = pts[i + 1];
+      const L = Math.hypot(x1 - x0, y1 - y0, z1 - z0);
+      const r0 = 0.012 * (1 - 0.75 * (i / n));
+      k.cylinder('stone', r0 * 0.85, r0, L, { at: pts[i], rot: [0, (Math.atan2(z1 - z0, -(x1 - x0)) * 180) / Math.PI, (Math.acos((y1 - y0) / L) * 180) / Math.PI], seg: 6, color: BLACK_LIT, lod: 0 });
+    }
+  }
+  // the smithy and the armoury, great stone wings folded round them (T)
+  for (const [b, r, yawDeg] of [
+    [70, 0.48, 70],
+    [150, 0.46, 150],
+  ] as const) {
+    const [x, z] = polar(CC, b, r);
+    k.house('stone', 'slate', 0.11, 0.07, 0.05, { at: [x, top - 0.02, z], seat: false, rot: [0, 90 - yawDeg, 0], roof: 'gable', pitch: 40, color: BLACK, roofColor: ROOF });
+    const { P, yaw } = frame([x, top - 0.02, z], yawDeg);
+    const wing: V2[] = [
+      [0, -0.07],
+      [0.1, -0.05],
+      [0.085, 0.02],
+      [0.06, 0.0],
+      [0.045, 0.05],
+      [0, 0.07],
+    ];
+    for (const side of [1, -1]) k.extrude('stone', wing, 0.006, { at: P(0, 0.1, side * 0.01), rot: [0, yaw(side * 90), -48], color: BLACK_LIT, lod: 0 });
+  }
   // the yard (I): dark flags
   k.extrude('weathered', ring.map(([x, z]): V2 => [CC[0] + (x - CC[0]) * 0.94, CC[1] + (z - CC[1]) * 0.94]), 0.003, { at: [0, top - 0.02, 0], color: 0x403c38, lod: 1 });
   return nostrils;

@@ -3,13 +3,16 @@
   "parts": [
     { "part": "site: the island off the mouth of Blackwater Bay, the castle at the sheet's marker", "label": "M", "claims": ["dragonstone-island-position", "blackwater-bay-shape", "crownlands-around-blackwater-bay"] },
     { "part": "the Dragonmont rising behind and above the castle (display offset onto the island)", "label": "T", "claims": ["dragonmont-above-castle"] },
-    { "part": "the Dragonmont smoking, fire in its crater", "label": "T", "claims": ["dragonmont-smoking"] },
+    { "part": "the Dragonmont smoking", "label": "T", "claims": ["dragonmont-smoking"] },
+    { "part": "a dull glow in the Dragonmont's crater", "label": "I", "claims": ["dragonstone-plan"] },
+    { "part": "the castle of black stone", "label": "T", "claims": ["dragonstone-black-stone"] },
+    { "part": "dragons' tails arching over the yard's lanes; stone wings folded round the smithy and the armoury", "label": "T", "claims": ["dragonstone-tails-wings"] },
     { "part": "the Great Hall a dragon lying on its belly, entered through its open jaws; the kitchens a coiled dragon venting smoke", "label": "T", "claims": ["dragonstone-dragon-shaped-buildings"] },
     { "part": "towers crowned by dragons crouched or rearing to take wing: the Windwyrm, the Sea Dragon Tower looking to sea; small dragons framing a lesser gate", "label": "T", "claims": ["dragonstone-towers"] },
     { "part": "gargoyles crowding the walls", "label": "T", "claims": ["dragonstone-gargoyles"] },
     { "part": "the Stone Drum, the central keep, the Chamber of the Painted Table at its top with windows to the four quarters", "label": "T", "claims": ["dragonstone-stone-drum", "dragonstone-painted-table"] },
     { "part": "Stannis's seat, lived in at 298 AC", "label": "T", "claims": ["dragonstone-stannis-298"] },
     { "part": "the walls and dragons shaped in place by Valyrian craft", "label": "I", "claims": ["dragonstone-shaped-stone"] },
-    { "part": "the plan, the black stone, each dragon's pose, the cone's form, the volcanic ground, the town, harbour and road", "label": "I", "claims": ["dragonstone-plan"] }
+    { "part": "the plan, each dragon's pose, the cone's form, the volcanic ground, the town, harbour and road", "label": "I", "claims": ["dragonstone-plan"] }
   ]
 }
