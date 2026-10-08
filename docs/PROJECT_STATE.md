@@ -3,15 +3,16 @@
 _Rolling document: roadmap, current state, decisions, next steps. Keep it compact; replace stale detail
 instead of appending logs._
 
-**Last updated:** 2026-10-07 · Session 1 (cloud, software WebGPU) — Phases 0 and 1.
+**Last updated:** 2026-10-08 · Session 1 (cloud, software WebGPU) — Phases 0, 1 and Phase 3 under way.
 
 ## Where we are
 | Phase | State |
 |---|---|
 | 0 · Fork and sources | **Done.** Engine forked from *Map of Middle-Earth* (MIT), its content stripped (24 landmark folders, Arda / ME-GIS sources, ME places / regions / tour); host rules rewritten for the RTX 5090 rig; boots on the placeholder slab. Ledger covers all 88 planned subjects (24 landmarks, ranges, rivers, regions, slice facts). |
-| 1 · Geography | **Built; waiting on the user's overlay review.** The user's map is vectorized, scale-calibrated from the Wall, synthesized into terrain and baked at 1 km/px. Every river is monotone downhill (`pnpm check` OK). The single T-labelled height constraint (the Giant's Lance) holds. |
+| 1 · Geography | **Good enough (user, 2026-10-08: "relatively book accurate, not 1:1").** The user's map is vectorized, scale-calibrated from the Wall, synthesized into terrain and baked at 1 km/px. Every river is monotone downhill. The map critic's high findings that landmarks depend on are fixed (see below); the rest are known issues. |
 | 2 · World look | Not started. Region looks are provisional ground palettes on Middle-earth grades. |
-| 3–6 | Not started. |
+| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal.** Next: the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, then the rest of the 24. All at shot-list status s2 (gates as warnings) until their looks are final. |
+| 2, 4–6 | Not started. |
 
 ## Decisions taken (user)
 - **Scope:** do what *Map of Middle-Earth* did, for Westeros. Not connected to any TV production. The brief's TWOW production references were mistakes and have been removed.
@@ -44,6 +45,15 @@ instead of appending logs._
   - Junction stubs are contracted first.
 - **Crests read as lakes:** 27 of the 46 "lakes" were house crests in teal, green or blue, which passed the teal rule that catches the Gods Eye. That rule now has a saturation cap (the Gods Eye's median is 0.22; crests run 0.41–0.83). Three muted crests are listed in the profile's `notLakes`.
 - **Overlay:** the review page painted polygon holes as filled. Holes now show, so gaps in the trace are visible on review.
+
+## Phase 3 notes (landmarks)
+- **Design scale ≈ ×5** of a plausible real size in all three axes, like Middle-earth's landmarks: the terrain is exaggerated ×12, so castles must be too to read. Harrenhal's walls stand twice Winterfell's (C: the largest castle).
+- **Book first:** T features are modelled as the text describes them. C (*The World of Ice & Fire*) fills in where the novels are silent (Casterly Rock, Highgarden). Everything else is an I claim per landmark (`<id>-plan`, `-city-fabric`, `-carving`, `-castle-form`), so the inventions are visible in the ledger.
+- **Text vs. map settled with display offsets** (places.json, logged in the claims' `conflict`): Casterly Rock moves 7.5 km west onto the shore (the sheet has it inland; C has it over the sea). Harrenhal moves 4.4 km south onto the Gods Eye shore (T). King's Landing keeps its marker, with the bay restored under the sheet's crests instead. Lannisport is modelled at the Rock's foot (C), not at the sheet's marker 48 km south.
+- **New tools:** `tools/check/site.ts` (local ground before and after stamps, for a landmark or a bare place); `data/qa/shots.d/sites.json` (top-down site checks); the kit's `drape()` (a ground-hugging sheet: streets, yards, fields, roads) and `seaLevel`.
+- **Map fixes made for landmarks:**
+  - `forceSea` polygons: the bay under King's Landing's crests; the label slivers at Dragonstone, Eastwatch and Pyke; the Isle of Faces lettering.
+  - `forceRivers.routes`: waypoints routed through the river ink for the Mander (now past Highgarden), the Red Fork and the Trident.
 
 ## Known issues (to fix in Phase 2 unless noted)
 - **Forests:** from far away they read as flat dark polygons. The vegetation channels are remapped to Westeros (Haunted Forest, Wolfswood, southern woods), but the tree look is still Middle-earth's.
