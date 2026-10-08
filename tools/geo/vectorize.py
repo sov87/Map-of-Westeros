@@ -348,15 +348,28 @@ def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len
         elif lake_d[v] <= gap_px:
             dist[v] = 1.0  # a lake is an outlet, slightly worse than the sea
             heapq.heappush(q, (1.0, v))
-    while q:
-        d, v = heapq.heappop(q)
-        if d > dist.get(v, 1e18):
-            continue
-        for u, L, _ in adj[v]:
-            nd = d + L
-            if nd < dist.get(u, 1e18):
-                dist[u] = nd
-                heapq.heappush(q, (nd, u))
+    def drain(q: list) -> None:
+        while q:
+            d, v = heapq.heappop(q)
+            if d > dist.get(v, 1e18):
+                continue
+            for u, L, _ in adj[v]:
+                nd = d + L
+                if nd < dist.get(u, 1e18):
+                    dist[u] = nd
+                    heapq.heappush(q, (nd, u))
+
+    drain(q)
+    # a network that reaches no outlet (its mouth hidden under a crest or a label at the coast) drains as one
+    # toward its node nearest the sea or a lake, so its branches agree on the direction instead of each
+    # choosing its own
+    def shore(v) -> float:
+        return float(min(sea_d[v], lake_d[v]))
+
+    for v0 in sorted(adj, key=shore):
+        if v0 not in dist:
+            dist[v0] = 2.0 + shore(v0)
+            drain([(dist[v0], v0)])
     lines = []
     for b in branches:
         a, z = b[0], b[-1]
@@ -524,6 +537,15 @@ def vectorize(source: Path, map_id: str) -> None:
     save(out, "land", [feat(p, src, name="Westeros") for p in land_polys])
     lake_polys = polygons(lakes, sheet, x0, y0, 1.0, 0.8, 30)
     save(out, "lakes", [feat(p, src, name=None) for p in lake_polys])
+    # crest paint the river colour rule picks up as stray streams (profile forceRivers.erase, sheet px
+    # polygons): cleared from the river ink before the forced reaches and routes are drawn through them
+    erased = np.zeros(rivers.shape, bool)
+    for poly in prof.get("forceRivers", {}).get("erase", []):
+        pm = np.zeros(rivers.shape, np.uint8)
+        cv2.fillPoly(pm, [np.round(np.array(poly, float) - [x0, y0]).astype(np.int32)], 1)
+        erased |= pm.astype(bool)
+    rivers &= ~erased
+    rw = rw & ~erased
     # river reaches the sheet hides under a label or a crest (profile forceRivers, sheet px): drawn into the
     # river mask before tracing, so the network is oriented through them (a reach ending in forced sea is an
     # outlet like any mouth)
@@ -545,6 +567,7 @@ def vectorize(source: Path, map_id: str) -> None:
         sat_a = (mxa - a.min(-1)) / np.maximum(mxa, 1)
         ink = ((a[..., 1] - a[..., 0]) >= 8) & ((a[..., 2] - a[..., 0]) >= -12) & (mxa < 210) & (mxa > 45) & (sat_a < 0.5)
         ink |= rw | rivers
+        ink &= ~erased
         cost = np.where(ink, 1.0, 25.0)
         H_, W_ = cost.shape
         rm = rivers.astype(np.uint8)

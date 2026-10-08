@@ -23,13 +23,16 @@ export function localToWorldXZ(world: World, def: LandmarkDefinition, p: V2, sca
   return [place.x + r[0], place.z + r[1]];
 }
 
+/** a water-anchored landmark on a river takes the level of the nearest river within this distance (km) */
+export const RIVER_ANCHOR_KM = 2;
+
 /**
  * World position of local (0, 0, 0): the display position at the composite ground (after stamps), or
- * at the local water surface for `anchor: 'water'` landmarks (Lake-town).
+ * at the local water surface for `anchor: 'water'` landmarks (a lake, the sea, or the nearest river's ribbon).
  */
 export function landmarkOrigin(world: World, def: LandmarkDefinition): V3 {
   const place = world.place(def.placeId);
   const groundY = world.heights.sample(place.x, place.z);
-  const y = def.anchor === 'water' ? (world.waterLevelAt(place.x, place.z) ?? groundY) : groundY;
+  const y = def.anchor === 'water' ? (world.waterLevelAt(place.x, place.z) ?? world.riverLevelAt(place.x, place.z, RIVER_ANCHOR_KM) ?? groundY) : groundY;
   return [place.x, y, place.z];
 }

@@ -162,10 +162,27 @@
       "camera": {
         "orbit": {
           "targetKm": [
-            1343.4,
-            2327.4
+            1341.97,
+            2326.75
           ],
           "distanceKm": 20,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    },
+    {
+      "id": "site-riverrun",
+      "tod": 12.0,
+      "note": "top-down site check of Riverrun: the castle in the point between the Tumblestone and the Red Fork, the moat, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1264.86,
+            1937.46
+          ],
+          "distanceKm": 8,
           "elevationDeg": 89.5,
           "azimuthDeg": 180,
           "fov": 22

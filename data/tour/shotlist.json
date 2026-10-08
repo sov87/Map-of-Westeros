@@ -305,6 +305,29 @@
         "lod0Tris": 50000,
         "lights": 100
       }
+    },
+    "riverrun": {
+      "status": "s2",
+      "segment": "riverlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 5,
+      "contextKm": 35,
+      "tod": 9.5,
+      "screenSeconds": 7,
+      "framing": "from down the Red Fork in the morning: the castle's point where the Tumblestone joins the Red Fork, its walls rising from both rivers, the Wheel Tower's waterwheel and the Water Gate, the moat beyond",
+      "features": [
+        "walls rising from two rivers",
+        "the moat and its sluice gates",
+        "the Wheel Tower and its waterwheel",
+        "the Water Gate",
+        "the godswood"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 50000,
+        "lights": 100
+      }
     }
   }
 }

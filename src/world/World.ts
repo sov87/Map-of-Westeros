@@ -199,6 +199,33 @@ export class World {
     return this.heights.sample(x, z) < 0 ? 0 : null;
   }
 
+  /**
+   * Water level of the nearest river at (x, z): the baked level at the centreline's nearest point, when
+   * (x, z) lies within `reachKm` of it (default: that river's ribbon half width), else null.
+   */
+  riverLevelAt(x: number, z: number, reachKm?: number): number | null {
+    const R = this.spec.json.rivers;
+    let best = Infinity;
+    let level: number | null = null;
+    for (const r of this.rivers) {
+      if (!r.level) continue;
+      const reach = reachKm ?? Math.max((R.ribbonScale * r.widthKm) / 2, Math.max(r.widthKm / 2, 0.5) + R.ribbonMarginKm);
+      const p = r.points;
+      for (let i = 1; i < p.length; i++) {
+        const [ax, az] = p[i - 1];
+        const ex = p[i][0] - ax;
+        const ez = p[i][1] - az;
+        const t = Math.max(0, Math.min(1, ((x - ax) * ex + (z - az) * ez) / (ex * ex + ez * ez || 1)));
+        const d = Math.hypot(x - (ax + ex * t), z - (az + ez * t));
+        if (d < best && d <= reach) {
+          best = d;
+          level = r.level[i - 1] + (r.level[i] - r.level[i - 1]) * t;
+        }
+      }
+    }
+    return level;
+  }
+
   /** Ground height under a place's display position. */
   groundAt(x: number, z: number): number {
     return this.heights.sample(x, z);

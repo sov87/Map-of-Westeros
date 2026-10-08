@@ -11,18 +11,19 @@ import { defineLandmark } from '../types.ts';
  * (the-twins-position, kingsroad-twins-off-road). I: the plan, the grey stone, the forms of the keeps and
  * towers (the-twins-plan).
  *
- * Local frame: x east, z south, origin at the sheet's marker on the river's west bank; the traced river runs
- * north-north-west past it ~1 km east (its water ~0.33 below the origin's ground, the banks barely above it).
+ * Local frame: x east, z south, origin at the sheet's marker, local y = 0 the Green Fork's water (anchor
+ * 'water'); the baked river runs south-south-east past it ~0.4 km west; the crossing's banks are levelled just
+ * above the water (a hill rose from the east bank).
  */
 
 const STONE = 0x6f6c67;
 const STONE_LIT = 0x7d7a74;
 const SLATE = 0x45484c;
-const WATER_Y = -0.33;
+const WATER_Y = 0;
 
-/** the river's centre at the crossing and its downstream direction (the trace runs north-north-west) */
-const C0: V2 = [1.1, -0.5];
-const DIR: V2 = [-0.47, -0.88];
+/** the river's centre at the crossing and its downstream direction (south-south-east) */
+const C0: V2 = [-0.35, 0.18];
+const DIR: V2 = [0.47, 0.88];
 /** across the river, toward the east bank */
 const N: V2 = [0.88, -0.47];
 /** each castle's half-size, and how far its centre stands from the river's centre */
@@ -113,6 +114,10 @@ export default defineLandmark({
   id: 'the-twins',
   placeId: 'the-twins',
   tier: 'A',
+  anchor: 'water',
+  // the crossing's ground: both banks levelled to a floodplain just above the water, cutting back the hill
+  // that rises from the east bank (I: the-twins-plan)
+  stamps: [{ kind: 'flatten', at: C0, radius: 1.7, falloff: 0.9, height: WATER_Y + 0.07 }],
   proxy: (k) => {
     castle(k, 1, 0);
     castle(k, -1, 1);
@@ -134,12 +139,12 @@ export default defineLandmark({
       id: 'the-twins-close',
       distanceKm: 4.5,
       elevationDeg: 18,
-      azimuthDeg: 332,
+      azimuthDeg: 172,
       fov: 32,
       lift: 0.1,
-      aimKm: [1.1, 0.5],
+      aimKm: [-0.35, 0.18],
       tod: 16.5,
-      note: 'hero: from upstream, looking down the Green Fork in the afternoon: the twin grey castles face to face across the Green Fork, the arched bridge between their gatehouses and the Water Tower standing in the river at its middle',
+      note: 'hero: from downstream, looking up the Green Fork in the afternoon: the twin grey castles face to face across the Green Fork, the arched bridge between their gatehouses and the Water Tower standing in the river at its middle',
     },
     {
       id: 'the-twins-wide',

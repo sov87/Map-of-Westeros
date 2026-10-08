@@ -1,7 +1,7 @@
 import type { World } from '../world/World.ts';
 import { hash32, hashString } from '../core/rng.ts';
 import type { Rough, Stamp, Vec2 } from '../world/stamps.ts';
-import { landmarkOrigin, localToWorldXZ } from './frame.ts';
+import { landmarkOrigin, localToWorldXZ, RIVER_ANCHOR_KM } from './frame.ts';
 import { hexToLinear } from '../materials/families.ts';
 import type { EmitterRecord, ExclusionCircle, FallRecord, PoolRecord, ReflectorRecord, TreeCapRecord, V3 } from './records.ts';
 import type { LandmarkDefinition } from './types.ts';
@@ -21,7 +21,9 @@ export function landmarkStamps(world: World, defs: LandmarkDefinition[]): Stamp[
   for (const d of defs) {
     if (!d.stamps?.length) continue;
     const p = world.place(d.placeId);
-    const h0 = world.heights.sample(p.x, p.z, 'base');
+    // heights are local: above the base ground at the origin, or above the water for `anchor: 'water'`
+    const ground0 = world.heights.sample(p.x, p.z, 'base');
+    const h0 = d.anchor === 'water' ? (world.waterLevelAt(p.x, p.z) ?? world.riverLevelAt(p.x, p.z, RIVER_ANCHOR_KM) ?? ground0) : ground0;
     const w = (v: Vec2): Vec2 => localToWorldXZ(world, d, v);
     for (const [i, s] of d.stamps.entries()) {
       switch (s.kind) {

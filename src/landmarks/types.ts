@@ -136,7 +136,8 @@ export interface LandmarkDefinition {
   headingDeg?: number;
   /** fixed uniform DESIGN scale of the proxy/model (km multiplier) — never camera dependent; stamps are unscaled */
   scale?: number;
-  /** vertical anchor of local y = 0: the ground (default) or the local water surface (lake/sea) */
+  /** vertical anchor of local y = 0 and of stamp heights: the ground (default) or the local water surface
+   * (a lake, the sea, or the ribbon of the nearest river: World.riverLevelAt) */
   anchor?: 'ground' | 'water';
   stamps?: LocalStamp[];
   /** TS procedural kit: geometry plus kit-recorded lights / windows / trees */

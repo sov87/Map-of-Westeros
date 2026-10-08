@@ -1,0 +1,14 @@
+{
+  "notes": "Riverrun: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the point of land where the Tumblestone flows into the Red Fork, in the angle between them", "label": "T", "claims": ["riverrun-confluence", "tumblestone-course", "red-fork-course", "riverrun-position"] },
+    { "part": "walls rising straight out of the rivers on two sides", "label": "T", "claims": ["riverrun-moat-island"] },
+    { "part": "the deep moat on the third side, flooded through sluice gates, making the castle an island", "label": "T", "claims": ["riverrun-moat-island"] },
+    { "part": "the moat on the landward south-west face, the castle's point toward the confluence", "label": "I", "claims": ["riverrun-moat-side"] },
+    { "part": "the Water Gate letting boats out of the castle onto the river", "label": "T", "claims": ["riverrun-water-gate"] },
+    { "part": "the Wheel Tower and its great waterwheel turned by the river", "label": "T", "claims": ["riverrun-wheel-tower"] },
+    { "part": "the godswood of tall redwoods", "label": "T", "claims": ["riverrun-godswood"] },
+    { "part": "Lord Hoster Tully's seat at 298 AC (no siege works: those come later)", "label": "T", "claims": ["riverrun-tully-seat", "riverrun-siege-after"] },
+    { "part": "the plan: the sandstone curtain, the towers, the gate and drawbridge, the keep, hall, sept and outbuildings, which faces hold the Wheel Tower and the Water Gate, the inner basin, the grove's place", "label": "I", "claims": ["riverrun-plan"] }
+  ]
+}

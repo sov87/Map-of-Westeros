@@ -821,7 +821,8 @@
         "landmark:riverrun"
       ],
       "status": "draft",
-      "notes": "Brief confirmed. The AGOT description may fall in Catelyn XI instead; the AFFC siege chapter describes the same setting."
+      "notes": "Brief confirmed. The AGOT description may fall in Catelyn XI instead; the AFFC siege chapter describes the same setting.",
+      "conflict": "The westeros-crests sheet sets Riverrun's marker about 7 km north-west of the confluence it draws (the Tully and two other crests and the 'Stone Mill' label cover the meeting). The text puts the castle at the confluence. Settled with a display offset onto the dry point between the two rivers (places.json)."
     },
     {
       "id": "riverrun-moat-island",
@@ -865,11 +866,11 @@
         "red-fork"
       ],
       "kind": "relative-position",
-      "claim": "Build assumption: the moat cuts across the castle's landward west side, and the eastern point of the castle faces the confluence.",
+      "claim": "Build assumption: the moat cuts across the castle's landward south-west side, and its north-east point faces the confluence.",
       "label": "I",
-      "basis": "Both rivers flow in from the west and north-west and meet at Riverrun (riverrun-confluence, westerlands-hills-headwaters). A castle in the angle between them is closed by water on its north and south faces, leaving the upstream west side to be cut off by a dug moat.",
+      "basis": "On the traced map the Tumblestone comes in from the west-north-west and the Red Fork from the south (riverrun-confluence, tumblestone-course, red-fork-course). A castle in the angle between them is closed by water on its north and east faces, leaving the south-west side to be cut off by a dug moat.",
       "value": {
-        "dir": "w",
+        "dir": "sw",
         "approx": true
       },
       "use": [
@@ -979,6 +980,44 @@
         "landmark:riverrun"
       ],
       "status": "draft"
+    },
+    {
+      "id": "riverrun-plan",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a three-sided sandstone curtain fills the point between the rivers, with a drum tower on the point, the gate on the moat face, a keep, hall and sept, the Wheel Tower on the Tumblestone and the Water Gate on the Red Fork.",
+      "label": "I",
+      "basis": "The text gives walls rising from the rivers on two sides, the moat with sluice gates on the third, a Water Gate for boats and the Wheel Tower's waterwheel (riverrun-moat-island, -water-gate, -wheel-tower). The stone, the plan and which face holds the gates and towers are invented and contradict nothing.",
+      "use": [
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "Revise the stone's colour and the gates' faces if the corpus describes them."
+    },
+    {
+      "id": "riverrun-godswood",
+      "subjects": [
+        "riverrun"
+      ],
+      "kind": "form",
+      "claim": "Riverrun's godswood is a light, airy place, unlike Winterfell's: tall redwoods throw dappled shade over small streams, with birdsong and the scent of flowers.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn I",
+          "find": [
+            "tall redwoods"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:riverrun"
+      ],
+      "status": "draft",
+      "notes": "Recalled from Catelyn's comparison of the two godswoods when she seeks Ned at Winterfell's heart tree. The build places the grove in the ward's widest part (riverrun-plan)."
     },
     {
       "id": "riverrun-siege-after",
@@ -3116,7 +3155,7 @@
         "the-twins"
       ],
       "kind": "form",
-      "claim": "Build assumption: each castle is a square grey curtain with round corner towers, a gatehouse facing the bridge, a massive square keep and a hall. The bridge crosses on arches, and the Water Tower is square.",
+      "claim": "Build assumption: each castle is a square grey curtain with round corner towers, a gatehouse facing the bridge, a massive square keep and a hall. The bridge crosses on arches, the Water Tower is square, the banks are low and level.",
       "label": "I",
       "basis": "The text gives two massive castles, near mirror images face to face across the Green Fork, and the bridge with the Water Tower at its midpoint (the-twins-form, -bridge). The plan, the grey stone and the forms are invented and contradict nothing.",
       "use": [
