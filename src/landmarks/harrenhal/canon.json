@@ -2,10 +2,11 @@
   "notes": "Harrenhal: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
   "parts": [
     { "part": "site: on the north shore of the Gods Eye (display offset 4.4 km south onto the shore)", "label": "T", "claims": ["harrenhal-lakeshore", "harrenhal-north-shore", "gods-eye-lake"] },
-    { "part": "the largest castle in Westeros (the design scale doubles the other castles' walls)", "label": "C", "claims": ["harrenhal-largest-castle"] },
+    { "part": "the largest castle in Westeros: three times Winterfell's ground at the same design scale, its walls twice Winterfell's height", "label": "T", "claims": ["harrenhal-scale", "harrenhal-largest-castle"] },
+    { "part": "stables for a thousand horses; kitchens as large as Winterfell's Great Hall; a godswood of twenty acres", "label": "T", "claims": ["harrenhal-scale"] },
     { "part": "five great towers, melted and slumped like candles, named", "label": "T", "claims": ["harrenhal-tower-count", "harrenhal-towers-melted", "harrenhal-tower-names", "slice-harrenhal-slagged"] },
     { "part": "curtain walls high and sheer as mountain cliffs", "label": "T", "claims": ["harrenhal-walls"] },
-    { "part": "the Hall of a Hundred Hearths", "label": "T", "claims": ["harrenhal-hall"] },
+    { "part": "the Hall of a Hundred Hearths (some thirty hearths, a chimney row)", "label": "T", "claims": ["harrenhal-hall"] },
     { "part": "the bear pit", "label": "T", "claims": ["harrenhal-bear-pit"] },
     { "part": "the godswood and its heart tree", "label": "T", "claims": ["harrenhal-godswood"] },
     { "part": "the plan, the dark scorched stone, weedy yards, roofless outbuildings, few lights", "label": "I", "claims": ["harrenhal-plan", "harrenhal-state-298"] }

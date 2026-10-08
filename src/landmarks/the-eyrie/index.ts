@@ -247,6 +247,10 @@ function buildCastle(k: ProxyKit, top: number): void {
     const c = polar(G, 45 + i * 90, 0.055);
     k.extrude('foliage', Array.from({ length: 8 }, (_, j): V2 => polar(c, j * 45, 0.016)), 0.008, { at: [0, top, 0], color: [0xb0405a, 0xd8c060, 0x7a5ab0, 0xe8e0d0][i], lod: 0 });
   }
+  // the white marble statue of a weeping woman at the garden's centre (T: the-eyrie-garden-statue)
+  k.cylinder('stone', 0.012, 0.016, 0.012, { at: [G[0], top, G[1]], seg: 10, color: WHITE, lod: 0 });
+  k.cylinder('stone', 0.005, 0.008, 0.03, { at: [G[0], top + 0.012, G[1]], seg: 8, color: 0xf2f0ea, lod: 0 });
+  k.sphere('stone', 0.005, { at: [G[0], top + 0.044, G[1]], color: 0xf2f0ea, lod: 0 });
   // the yard round the towers: pale flags on the crag's top (I)
   k.extrude('stone', CRAG.map(([x, z]): V2 => [x * 0.97, z * 0.97]), 0.003, { at: [0, top, 0], color: 0xb8b4ab, lod: 1 });
   // the gate on the north, toward the stair cut down to Sky (I), a torch beside it

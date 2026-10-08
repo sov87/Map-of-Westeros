@@ -13,7 +13,8 @@ import { defineLandmark } from '../types.ts';
  * grey, the scorching, the weeds in the half-empty yards of the dwindled House Whent (harrenhal-state-298,
  * harrenhal-plan).
  *
- * Local frame: x east, z south, origin at the marker on the shoreline; the lake begins just south of it.
+ * Local frame: x east, z south, origin at the display position; the lake begins ~0.9 km south of it, where the
+ * south wall stands.
  * Design scale ≈ ×5 like the other castles, so Harrenhal's colossal walls stand twice Winterfell's.
  */
 
@@ -22,17 +23,37 @@ const STONE_LIT = 0x6e6a64;
 const SCORCH = 0x23201d;
 const SLATE = 0x3f4246;
 
+/**
+ * The plan's scale about the shore line (z = −0.5): three times Winterfell's ground (T: harrenhal-scale; the
+ * pentagon below covers 2.2× Winterfell's outer wall at 1, ≈ 3× at this factor)
+ */
+const K = 1.17;
+/** and shifted 0.9 km south so the south wall stands at the Gods Eye's edge (harrenhal-lakeshore) */
+const SHORE_SHIFT = 0.9;
+const sc = ([x, z]: V2): V2 => [x * K, -0.5 + (z + 0.5) * K + SHORE_SHIFT];
 /** the curtain: an irregular pentagon along the shore, the five towers at its corners (I: the plan) */
-const WALL: V2[] = [
-  [-2.6, -0.6],
-  [-2.9, -3.0],
-  [-0.3, -4.6],
-  [2.7, -3.3],
-  [2.4, -0.5],
+const WALL: V2[] = (
+  [
+    [-2.6, -0.6],
+    [-2.9, -3.0],
+    [-0.3, -4.6],
+    [2.7, -3.3],
+    [2.4, -0.5],
+  ] as V2[]
+).map(sc);
+const HALL = { at: sc([-0.1, -2.4]), w: 1.3, d: 0.4, h: 0.3, yaw: 8 };
+/** the kitchens, as large as Winterfell's Great Hall (T: harrenhal-scale), beside the hall */
+const KITCHENS = { at: sc([0.75, -3.05]), w: 0.62, d: 0.24, h: 0.2, yaw: 8 };
+/** the stables for a thousand horses (T: harrenhal-scale): long ranges along the east wall */
+const STABLES: { at: V2; w: number; yaw: number }[] = [
+  { at: sc([1.95, -1.4]), w: 1.0, yaw: 84 },
+  { at: sc([1.55, -1.25]), w: 0.9, yaw: 84 },
+  { at: sc([1.75, -2.55]), w: 0.8, yaw: 70 },
 ];
-const HALL = { at: [-0.2, -2.3] as V2, w: 1.3, d: 0.4, h: 0.3, yaw: 8 };
-const PIT: V2 = [1.15, -1.6];
-const GODSWOOD: V2 = [-1.6, -2.2];
+const PIT: V2 = sc([0.9, -1.35]);
+/** the godswood: twenty acres (T: harrenhal-scale) — ≈ 2 km² at the design scale, the ward's north-west */
+const GODSWOOD: V2 = sc([-1.55, -2.2]);
+const GODSWOOD_R = 0.8;
 
 /**
  * One melted tower (T): a huge round shaft whose upper third has run like wax — the profile swells and sags,
@@ -98,7 +119,7 @@ function buildInside(k: ProxyKit): void {
   // the yards: packed earth gone to weeds in a castle too big for its lords (I)
   k.drape('weathered', WALL.map(([x, z]): V2 => [x * 0.95, z * 0.95 - 0.1]), { step: 0.1, lift: 0.012, color: 0x6f6a5a, grain: 0.6 });
   for (let i = 0; i < 9; i++) {
-    const c: V2 = [-2 + k.r(600 + i) * 4, -4 + k.r(700 + i) * 3.2];
+    const c: V2 = sc([-2 + k.r(600 + i) * 4, -4 + k.r(700 + i) * 3.2]);
     const ring: V2[] = Array.from({ length: 10 }, (_, j): V2 => [c[0] + Math.cos((j * Math.PI) / 5) * (0.15 + k.r(800 + i) * 0.2), c[1] + Math.sin((j * Math.PI) / 5) * (0.1 + k.r(900 + i) * 0.15)]);
     k.drape('foliage', ring, { step: 0.04, lift: 0.016, color: 0x5d6a3c, grain: 0.7, lod: 1 });
   }
@@ -121,11 +142,16 @@ function buildInside(k: ProxyKit): void {
     k.ring('stone', 0.25, 0.05, 0.05, { at: [PIT[0], y, PIT[1]], seg: 28, color: STONE });
     k.cylinder('darkStone', 0.16, 0.16, 0.012, { at: [PIT[0], y + 0.002, PIT[1]], seg: 24, color: 0x2a241e, lod: 0 });
   }
-  // the godswood (T: Arya prays at its heart tree): a stand of old trees inside the walls
-  for (let i = 0; i < 14; i++) {
-    const a = k.r(1000 + i) * Math.PI * 2;
-    const rr = Math.sqrt(k.r(1100 + i)) * 0.45;
-    k.tree(i === 0 ? 'autumn' : 'oak', GODSWOOD[0] + Math.cos(a) * rr * (i === 0 ? 0 : 1), GODSWOOD[1] + Math.sin(a) * rr * (i === 0 ? 0 : 1), i === 0 ? { crownKm: 0.06, heightKm: 0.1, color: 0x7d1d1a } : { crownKm: 0.05 + k.r(1200 + i) * 0.03, heightKm: 0.09 });
+  // the godswood (T: Arya prays at its heart tree; twenty acres): the heart tree here, the wood a forest decl
+  k.tree('autumn', GODSWOOD[0], GODSWOOD[1], { crownKm: 0.07, heightKm: 0.11, color: 0x7d1d1a });
+  // the kitchens (T: as large as Winterfell's Great Hall) and the stables for a thousand horses
+  {
+    const { at, w, d, h, yaw } = KITCHENS;
+    k.house('stone', 'slate', w, d, h, { at: [at[0], 0, at[1]], rot: [0, yaw, 0], roof: 'gable', pitch: 32, dig: 0.4, color: STONE_LIT, roofColor: SLATE, windows: { count: 5, on: 0.4, sides: 2, size: 0.014 } });
+    for (const u of [-0.2, 0, 0.2]) k.box('stone', 0.05, 0.1, 0.05, { at: [at[0] + u, k.ground(at[0], at[1]) + h + d * 0.3, at[1] - u * Math.sin((yaw * Math.PI) / 180)], color: STONE, lod: 0 });
+  }
+  for (const [i, st] of STABLES.entries()) {
+    k.house('wood', 'slate', st.w, 0.13, 0.08, { at: [st.at[0], 0, st.at[1]], rot: [0, st.yaw, 0], roof: 'gable', pitch: 30, dig: 0.4, color: i === 2 ? 0x57534e : 0x6a5a48, roofColor: i === 2 ? 0x3a3631 : SLATE });
   }
   // ruined outbuildings, roofless shells along the walls (I: the castle half empty and decaying)
   for (let i = 0; i < 12; i++) {
@@ -147,12 +173,26 @@ export default defineLandmark({
   id: 'harrenhal',
   placeId: 'harrenhal',
   tier: 'A',
-  stamps: [{ kind: 'flatten', at: [0, -2.9], radius: 2.0, falloff: 0.8, height: 'auto', strength: 0.9 }],
+  stamps: [{ kind: 'flatten', at: sc([0, -2.9]), radius: 2.2, falloff: 0.8, height: 'auto', strength: 0.9 }],
   proxy: (k) => {
     buildWalls(k);
     buildInside(k);
   },
-  vegetationExclusion: [{ at: [0, -2.4], r: 3.6 }],
+  forests: [
+    {
+      area: { circle: { at: GODSWOOD, r: GODSWOOD_R } },
+      density: 420,
+      species: [
+        { kind: 'oak', share: 0.55, crownKm: [0.03, 0.05], colors: [0x4a5a32, 0x55633a, 0x5d6638] },
+        { kind: 'conifer', share: 0.3, crownKm: [0.024, 0.036], colors: [0x34463a, 0x2e3f35] },
+        { kind: 'poplar', share: 0.15, crownKm: [0.02, 0.03], colors: [0x56653a] },
+      ],
+      clump: { scaleKm: 0.3, amount: 0.3 },
+      edgeKm: 0.06,
+      avoid: [{ at: GODSWOOD, r: 0.12 }],
+    },
+  ],
+  vegetationExclusion: [{ at: sc([0, -2.4]), r: 4.1 }],
   contrast: 'dark',
   annotation: {
     title: 'Harrenhal',

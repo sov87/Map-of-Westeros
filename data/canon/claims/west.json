@@ -1578,7 +1578,7 @@
       ],
       "status": "draft",
       "notes": "Brief confirmed (beside the Gods Eye). The arrival may be Arya VI. Realm claim slice-harrenhal-slagged cites Arya V as well.",
-      "conflict": "The westeros-crests sheet puts Harrenhal's marker about 5 km north of the traced Gods Eye shore; the text has the castle on the shore. Settled with a display offset of 4.4 km south (places.json), so the castle's south wall stands at the water."
+      "conflict": "The westeros-crests sheet puts Harrenhal's marker about 5 km north of the traced Gods Eye shore; the text has the castle on the shore. Settled with a display offset of 4.4 km south (places.json) and the plan set 0.9 km further south in the landmark's frame, so the castle's south wall stands at the water."
     },
     {
       "id": "harrenhal-north-shore",
@@ -1792,7 +1792,7 @@
         "landmark:harrenhal"
       ],
       "status": "draft",
-      "notes": "The actual hearth count is not asserted, since the name may exaggerate. The chapter is uncertain; the hall also appears in ASOS Jaime chapters."
+      "notes": "The actual hearth count is not asserted, since the name may exaggerate. The chapter is uncertain; the hall also appears in ASOS Jaime chapters. Despite the name, Arya counts only thirty-odd hearths (ACOK, recalled by the lore critic): the model's chimneys stay well short of a hundred."
     },
     {
       "id": "harrenhal-bear-pit",
@@ -2220,7 +2220,7 @@
         "giants-lance"
       ],
       "kind": "form",
-      "claim": "Sky, the highest waycastle, is little more than a curved wall against the mountain. Above it the final climb is too steep for mules, and supplies are hauled up to the Eyrie by winch and basket.",
+      "claim": "Sky, the highest waycastle, is little more than a crescent-shaped wall of unmortared stone against the mountain. Above it the final climb is too steep for mules, and supplies are hauled up to the Eyrie by winch and basket.",
       "label": "T",
       "cites": [
         {
@@ -2357,9 +2357,16 @@
         "the-eyrie"
       ],
       "kind": "form",
-      "claim": "The towers enclose a small garden at the castle's heart, open to the sky. Sansa builds a snow model of Winterfell there.",
+      "claim": "A small garden lies at the castle's heart, open to the sky. Planted as a godswood, its soil proved too thin and stony for trees, so it holds grass, flowers and low shrubs. Sansa later builds a snow Winterfell there.",
       "label": "T",
       "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VII",
+          "find": [
+            "garden"
+          ]
+        },
         {
           "book": "ASOS",
           "chapter": "Sansa VII",
@@ -2372,7 +2379,7 @@
         "landmark:the-eyrie"
       ],
       "status": "draft",
-      "notes": "The snow is a 299 to 300 AC event. At 298 the garden is in late summer. Any statue in it is not asserted."
+      "notes": "The snow is a 299 to 300 AC event; at 298 the garden is in late summer. The failed godswood and the AGOT citation (Tyrion's trial by combat is held in the garden) come from the books-only lore critic (2026-10-08); verify."
     },
     {
       "id": "the-eyrie-alyssas-tears",
@@ -3048,6 +3055,60 @@
         "terrain"
       ],
       "status": "draft"
+    },
+    {
+      "id": "harrenhal-scale",
+      "subjects": [
+        "harrenhal",
+        "winterfell"
+      ],
+      "kind": "form",
+      "claim": "Harrenhal covers three times as much ground as Winterfell. Its stables hold a thousand horses, its godswood covers twenty acres and its kitchens are as large as Winterfell's Great Hall.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya VII",
+          "find": [
+            "thousand horses",
+            "twenty acres"
+          ]
+        }
+      ],
+      "value": {
+        "ratio": 3,
+        "approx": true,
+        "of": "winterfell ground area"
+      },
+      "use": [
+        "landmark:harrenhal",
+        "scale"
+      ],
+      "status": "draft",
+      "notes": "Raised by the books-only lore critic (2026-10-08) from Arya's first days in the castle. The chapter number is recalled (Arya VI or VII); verify. The build's walls enclose about 3x Winterfell's outer wall at the same design scale."
+    },
+    {
+      "id": "the-eyrie-garden-statue",
+      "subjects": [
+        "the-eyrie"
+      ],
+      "kind": "form",
+      "claim": "A white marble statue of a weeping woman, taken to be Alyssa Arryn, stands in the Eyrie's garden.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Catelyn VII",
+          "find": [
+            "weeping woman"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft",
+      "notes": "Raised by the books-only lore critic (2026-10-08), fairly confident; verify the chapter and wording."
     }
   ]
 }
