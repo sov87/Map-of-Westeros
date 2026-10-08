@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "notes": "Top-down site checks (Phase 3): each landmark from above, north up, about 23 km across \u2014 the castle against the traced coast, lakes and rivers it should sit by.",
+  "shots": [
+    {
+      "id": "site-kings-landing",
+      "tod": 12.0,
+      "note": "top-down site check of King's Landing: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1782.89,
+            1386.76
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    },
+    {
+      "id": "site-winterfell",
+      "tod": 12.0,
+      "note": "top-down site check of Winterfell: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1394.47,
+            3455.13
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    },
+    {
+      "id": "site-casterly-rock",
+      "tod": 12.0,
+      "note": "top-down site check of Casterly Rock: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            662.29,
+            1578.91
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    },
+    {
+      "id": "site-highgarden",
+      "tod": 12.0,
+      "note": "top-down site check of Highgarden: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            956.64,
+            848.74
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    },
+    {
+      "id": "site-harrenhal",
+      "tod": 12.0,
+      "note": "top-down site check of Harrenhal: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1623.68,
+            1792.74
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
+    }
+  ]
+}

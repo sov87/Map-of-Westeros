@@ -148,6 +148,29 @@
         "lod0Tris": 70000,
         "lights": 160
       }
+    },
+    "harrenhal": {
+      "status": "s2",
+      "segment": "riverlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 12,
+      "contextKm": 70,
+      "tod": 17.8,
+      "screenSeconds": 8,
+      "framing": "from across the Gods Eye at evening: the colossal dark curtain on the shore, the five slumped, melted towers, the Hall of a Hundred Hearths inside, a few lights in a castle too big for its household",
+      "features": [
+        "five melted towers",
+        "cliff-high curtain walls",
+        "the Hall of a Hundred Hearths",
+        "the bear pit",
+        "the Gods Eye shore"
+      ],
+      "budget": {
+        "minFeatureKm": 0.05,
+        "lod0Tris": 40000,
+        "lights": 60
+      }
     }
   }
 }

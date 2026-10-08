@@ -1577,7 +1577,8 @@
         "landmark:harrenhal"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (beside the Gods Eye). The arrival may be Arya VI. Realm claim slice-harrenhal-slagged cites Arya V as well."
+      "notes": "Brief confirmed (beside the Gods Eye). The arrival may be Arya VI. Realm claim slice-harrenhal-slagged cites Arya V as well.",
+      "conflict": "The westeros-crests sheet puts Harrenhal's marker about 5 km north of the traced Gods Eye shore; the text has the castle on the shore. Settled with a display offset of 4.4 km south (places.json), so the castle's south wall stands at the water."
     },
     {
       "id": "harrenhal-north-shore",
@@ -1859,6 +1860,44 @@
       ],
       "status": "draft",
       "notes": "No new structural damage is recalled from these occupations."
+    },
+    {
+      "id": "harrenhal-godswood",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "vegetation",
+      "claim": "Harrenhal has a godswood inside its walls with a heart tree, where Arya says her prayer of names.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ACOK",
+          "chapter": "Arya IX",
+          "find": [
+            "godswood",
+            "heart tree"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft",
+      "notes": "Chapter is a guess (one of Arya's later ACOK chapters at Harrenhal)."
+    },
+    {
+      "id": "harrenhal-plan",
+      "subjects": [
+        "harrenhal"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: an irregular five-sided curtain along the shore with the five towers at its corners, the Hall of a Hundred Hearths in the middle, dark grey scorched stone, yards gone to weeds and roofless outbuildings.",
+      "label": "I",
+      "basis": "The novels give the five melted towers, the cliff-like walls, the hall and the bear pit but no plan or stone colour; the dwindled Whent household of 298 AC (harrenhal-state-298) leaves most of it empty and decaying.",
+      "use": [
+        "landmark:harrenhal"
+      ],
+      "status": "draft"
     },
     {
       "id": "isle-of-faces-in-gods-eye",
