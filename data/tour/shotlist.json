@@ -350,6 +350,29 @@
         "lod0Tris": 50000,
         "lights": 100
       }
+    },
+    "oldtown": {
+      "status": "s2",
+      "segment": "reach",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 6,
+      "contextKm": 32,
+      "tod": 15.5,
+      "screenSeconds": 7,
+      "framing": "up the Whispering Sound in the afternoon: the Hightower on Battle Isle at the river mouth, its beacon lit, the walled city behind, the Citadel along the Honeywine",
+      "features": [
+        "the Hightower and its beacon",
+        "Battle Isle",
+        "the Citadel",
+        "the Starry Sept",
+        "the Honeywine"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 120000,
+        "lights": 400
+      }
     }
   }
 }

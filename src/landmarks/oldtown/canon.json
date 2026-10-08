@@ -1,0 +1,14 @@
+{
+  "notes": "Oldtown: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: the head of the Whispering Sound where the Honeywine flows into it", "label": "T", "claims": ["oldtown-position", "honeywine-course", "whispering-sound-shape", "whispering-sound-approach"] },
+    { "part": "the Hightower rising from Battle Isle in the harbour", "label": "T", "claims": ["oldtown-hightower-battle-isle"] },
+    { "part": "Battle Isle where the river meets the Sound", "label": "C", "claims": ["oldtown-battle-isle-river-mouth"] },
+    { "part": "the Hightower's ancient square base of seamless black stone; the tallest tower in Westeros", "label": "C", "claims": ["oldtown-hightower-base", "oldtown-hightower-height"] },
+    { "part": "the great beacon fire at the top", "label": "T", "claims": ["oldtown-hightower-beacon"] },
+    { "part": "the Citadel along the Honeywine, its ravenry on the Isle of Ravens in the river", "label": "T", "claims": ["oldtown-citadel", "honeywine-through-oldtown"] },
+    { "part": "the Starry Sept", "label": "T", "claims": ["oldtown-starry-sept"] },
+    { "part": "the stepped pale stages of the Hightower and its brazier", "label": "I", "claims": ["oldtown-hightower-form"] },
+    { "part": "the plan: the city wall and towers, the houses, the Citadel's halls and domes, the Seneschal's Court's tower, the sept's form, the ships, the widened valley floor", "label": "I", "claims": ["oldtown-plan"] }
+  ]
+}

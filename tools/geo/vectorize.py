@@ -292,13 +292,15 @@ def trace_rivers(rivers: np.ndarray, sea: np.ndarray, lakes: np.ndarray, min_len
     sizes = ndimage.sum(sk, lab, range(1, n + 1))
     sk = np.isin(lab, [k + 1 for k, s in enumerate(sizes) if s >= min_len_px])
     branches, nodes = skeleton_graph(sk)
-    # prune short spurs (one free end, short) twice
+    # prune short spurs (one free end, short) twice; a free end at the sea or a lake is a mouth, not a spur
+    mouth = cv2.dilate((sea | lakes).astype(np.uint8), disk(gap_px)) > 0
     for _ in range(2):
         endc = {}
         for b in branches:
             for e in (b[0], b[-1]):
                 endc[e] = endc.get(e, 0) + 1
-        branches = [b for b in branches if not (len(b) < min_len_px // 2 and (endc[b[0]] == 1 or endc[b[-1]] == 1) and not (endc[b[0]] == 1 and endc[b[-1]] == 1))]
+        free = lambda e: endc[e] == 1 and not mouth[e]
+        branches = [b for b in branches if not (len(b) < min_len_px // 2 and (free(b[0]) or free(b[-1])) and not (endc[b[0]] == 1 and endc[b[-1]] == 1))]
     # a river network is a tree. Where branches close a loop (a river's name lettered along it in the same blue,
     # a crest's ring, a bridge back into its own river) keep the darkest ink and drop the palest branch of each
     # loop: a minimum spanning forest by the branch's mean brightness on the sheet (bridged gaps read as paper)

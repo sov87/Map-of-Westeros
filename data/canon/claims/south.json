@@ -793,7 +793,8 @@
         { "book": "LOIAF", "chapter": "Westeros" }
       ],
       "use": ["vectors", "hydrology", "landmark:oldtown"],
-      "status": "draft"
+      "status": "draft",
+      "conflict": "The westeros-crests sheet sets Oldtown's marker about 8 km up the Honeywine from the head of the Sound (its crest beside it). The text has the city at the head of the Sound where the river meets it, the Hightower on an isle in the harbour. Settled with a display offset onto the river's mouth (places.json)."
     },
     {
       "id": "oldtown-hightower-battle-isle",
@@ -871,6 +872,27 @@
       "use": ["landmark:oldtown"],
       "status": "draft",
       "notes": "Chapter is a low-confidence guess; the Starry Sept is named in several AFFC chapters."
+    },
+    {
+      "id": "oldtown-plan",
+      "subjects": ["oldtown", "honeywine"],
+      "kind": "form",
+      "claim": "Build assumption: a walled city fills the Honeywine's valley floor at the head of the Sound; the Citadel's grey halls and domes line both banks above the mouth, the Starry Sept is domed and seven-sided.",
+      "label": "I",
+      "basis": "The text gives the city at the river's mouth, the Citadel along the Honeywine with the Isle of Ravens, the Starry Sept and the Hightower on Battle Isle (oldtown-position, -citadel, -starry-sept, honeywine-through-oldtown). The wall, the plan and the forms are invented and contradict nothing.",
+      "use": ["landmark:oldtown"],
+      "status": "draft",
+      "notes": "The synthesized terrain made the Sound a fjord between hills; the landmark widens the river's valley floor in steps that follow the water's level."
+    },
+    {
+      "id": "oldtown-hightower-form",
+      "subjects": ["oldtown"],
+      "kind": "form",
+      "claim": "Build assumption: above its black base the Hightower rises in seven pale octagonal stages, each narrower than the one below, to the beacon's brazier, about a kilometre at design scale: the tallest tower built.",
+      "label": "I",
+      "basis": "The companion gives the tallest tower in Westeros on an ancient square black fortress (oldtown-hightower-height, -base) and the text a beacon at the top (oldtown-hightower-beacon). The stages, their stone and number are invented.",
+      "use": ["landmark:oldtown"],
+      "status": "draft"
     },
 
     {

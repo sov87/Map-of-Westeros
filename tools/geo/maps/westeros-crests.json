@@ -362,7 +362,7 @@
     ]
   },
   "forceRivers": {
-    "notes": "px: polylines (sheet px, source → mouth) of river reaches hidden under labels or crests (the Blackwater Rush's last reach under the 'King's Landing' label). routes: waypoints (source → mouth) of rivers drawn too faintly for the colour rule; each snaps to the nearest river ink and the trace follows the least-cost path through the ink between them (map critic, 2026-10-08): the Red Fork from Riverrun to the forks' meeting, the Trident from there to the bay, the Mander from Bitterbridge past Highgarden to the sea by Dunstonbury, and the tributary that comes down from the north to join it at Highgarden. Riverrun (the confluence under its crests and the 'Stone Mill' label): the Tumblestone's last reach and the Red Fork from the Western Hills past Mummer's Ford and Stone Mill to the confluence, the Red Fork route starting below the confluence. The joined Green and Blue Forks' last reach to the forks' meeting, under the 'Nutten' label (without it the Green Fork had no outlet and ran north). The stream south of Winterfell under the 'Castle Cerwyn' label (its rivers had no outlet). erase: polygons (sheet px) of crest paint the river colour rule traces as stray streams, cleared before the forced reaches are drawn through them (the Tully and two neighbouring crests by Riverrun, the crest on the Tumblestone by Willow Wood, the Cerwyn crest).",
+    "notes": "px: polylines (sheet px, source → mouth) of river reaches hidden under labels or crests (the Blackwater Rush's last reach under the 'King's Landing' label). routes: waypoints (source → mouth) of rivers drawn too faintly for the colour rule; each snaps to the nearest river ink and the trace follows the least-cost path through the ink between them (map critic, 2026-10-08): the Red Fork from Riverrun to the forks' meeting, the Trident from there to the bay, the Mander from Bitterbridge past Highgarden to the sea by Dunstonbury, and the tributary that comes down from the north to join it at Highgarden; the Honeywine (both upper branches by Brightwater Keep and Honeyholt, and the tributary from the Uplands) down to the head of the Whispering Sound at Oldtown. Riverrun (the confluence under its crests and the 'Stone Mill' label): the Tumblestone's last reach and the Red Fork from the Western Hills past Mummer's Ford and Stone Mill to the confluence, the Red Fork route starting below the confluence. The joined Green and Blue Forks' last reach to the forks' meeting, under the 'Nutten' label (without it the Green Fork had no outlet and ran north). The stream south of Winterfell under the 'Castle Cerwyn' label (its rivers had no outlet). erase: polygons (sheet px) of crest paint the river colour rule traces as stray streams, cleared before the forced reaches are drawn through them (the Tully and two neighbouring crests by Riverrun, the crest on the Tumblestone by Willow Wood, the Cerwyn crest).",
     "px": [
       [
         [
@@ -734,6 +734,112 @@
         [
           752,
           3122
+        ]
+      ],
+      [
+        [
+          550,
+          3255
+        ],
+        [
+          538,
+          3268
+        ],
+        [
+          537,
+          3282
+        ],
+        [
+          546,
+          3295
+        ],
+        [
+          550,
+          3310
+        ],
+        [
+          552,
+          3330
+        ],
+        [
+          546,
+          3344
+        ],
+        [
+          541,
+          3352
+        ],
+        [
+          542,
+          3365
+        ],
+        [
+          538,
+          3378
+        ],
+        [
+          535,
+          3387
+        ],
+        [
+          528,
+          3394
+        ]
+      ],
+      [
+        [
+          593,
+          3258
+        ],
+        [
+          585,
+          3270
+        ],
+        [
+          570,
+          3276
+        ],
+        [
+          566,
+          3290
+        ],
+        [
+          562,
+          3305
+        ],
+        [
+          553,
+          3316
+        ]
+      ],
+      [
+        [
+          612,
+          3348
+        ],
+        [
+          603,
+          3360
+        ],
+        [
+          586,
+          3363
+        ],
+        [
+          584,
+          3373
+        ],
+        [
+          565,
+          3375
+        ],
+        [
+          548,
+          3370
+        ],
+        [
+          542,
+          3367
         ]
       ]
     ],
