@@ -5,7 +5,7 @@
     { "part": "a Martell palace laid out round pools and fountains", "label": "T", "claims": ["water-gardens-pools-fountains", "water-gardens-children"] },
     { "part": "terraces, pools and walks of pink marble", "label": "T", "claims": ["water-gardens-pink-marble"] },
     { "part": "blood orange trees beside the pools", "label": "T", "claims": ["water-gardens-blood-oranges"] },
-    { "part": "built by Prince Maron for his Targaryen bride", "label": "C", "claims": ["water-gardens-built-for-daenerys"] },
+    { "part": "built by Prince Maron for his Targaryen bride", "label": "T", "claims": ["water-gardens-built-for-daenerys"] },
     { "part": "the plan: the flat-roofed palace and its arcade, the chain of pools and side pools, the fountains' form, the rows of trees, the garden wall, the levelled ground", "label": "I", "claims": ["water-gardens-plan"] }
   ]
 }

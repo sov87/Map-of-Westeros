@@ -699,7 +699,7 @@
       "basis": "The text gives a burned-out summer palace with a ruined hall Rhaegar slept in (summerhall-ruin-298), destroyed by fire in 259 AC (summerhall-tragedy). Its plan, stone, towers and hill are not recalled; all invented and contradicting nothing.",
       "use": ["landmark:summerhall"],
       "status": "draft",
-      "notes": "Forty years after the fire: no roof, no inhabitants, no light. Dragon eggs, the pyre and anything of the night of the fire are not shown."
+      "notes": "Forty years after the fire: no roof, no inhabitants, no light. The soot on the stone and the charred beams are invented (the books give the fire, not its marks). Dragon eggs, the pyre and anything of the night of the fire are not shown."
     },
 
     {
@@ -1073,15 +1073,26 @@
       "status": "draft"
     },
     {
+      "id": "sunspear-spur",
+      "subjects": ["sunspear"],
+      "kind": "form",
+      "claim": "Sunspear stands at the eastern tip of a small spur of rock and sand, the sea on three sides, the Old Palace at its end and the Shadow City behind it.",
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["spur of rock and sand"] }, { "book": "TWOIAF", "chapter": "Dorne", "find": ["Sunspear"] }],
+      "use": ["landmark:sunspear"],
+      "status": "draft",
+      "notes": "Recalled by the build and a lore critic, medium confidence; verify the wording and chapter (it may be Arianne I) with the corpus."
+    },
+    {
       "id": "sunspear-plan",
       "subjects": ["sunspear"],
       "kind": "form",
-      "claim": "Build assumption: the Old Palace stands on the spit's corner with the sea on two sides; three serpentine walls ring the Shadow City and end at the shore; the Threefold Gate's road runs straight through; sandstone, adobe, flat roofs.",
+      "claim": "Build assumption: the spur is ~1 km long; three serpentine walls ring the Shadow City from shore to shore round its root; the Threefold Gate's road runs straight out along the spur to the palace; sandstone, adobe, flat roofs.",
       "label": "I",
       "basis": "The text gives the Old Palace with the Tower of the Sun and the Spear Tower, the Winding Walls round the Shadow City, the Threefold Gate's three gates in a line and the mud-brick sprawl beyond (sunspear-old-palace, -winding-walls, -threefold-gate, -mud-brick-quarter). The plan, the number of walls and the materials are invented and contradict nothing.",
       "use": ["landmark:sunspear"],
       "status": "draft",
-      "notes": "Revise the palace's place on the coast and the walls' count if the corpus describes them (AFFC The Captain of Guards, The Princess in the Tower)."
+      "notes": "The palace was first set on a corner of the coast with the sea on two sides; moved to the spur's tip after the lore critic (sunspear-spur). The spur is kit geometry: at the 1 km/px bake a spur this narrow is under a texel. Revise the walls' count if the corpus describes them (AFFC The Captain of Guards, The Princess in the Tower)."
     },
 
     {
@@ -1131,11 +1142,11 @@
       "subjects": ["water-gardens"],
       "kind": "form",
       "claim": "Prince Maron Martell built the Water Gardens for his bride Daenerys Targaryen, sister of King Daeron II, after the marriage that brought Dorne into the realm.",
-      "label": "C",
-      "cites": [{ "book": "TWOIAF", "chapter": "Dorne", "find": ["Water Gardens", "Maron"] }],
+      "label": "T",
+      "cites": [{ "book": "AFFC", "chapter": "The Captain of Guards", "find": ["Water Gardens", "Maron"] }, { "book": "TWOIAF", "chapter": "Dorne", "find": ["Water Gardens", "Maron"] }],
       "use": ["landmark:water-gardens"],
       "status": "draft",
-      "notes": "May also be told in the AFFC Dorne chapters; not pinned."
+      "notes": "Hotah's recollection in AFFC The Captain of Guards (build and lore critic agree, medium confidence; verify). TWOIAF tells it too. That Daenerys is Daeron II's sister comes from the companion and the histories."
     },
     {
       "id": "water-gardens-near-sunspear",

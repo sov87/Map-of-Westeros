@@ -95,7 +95,7 @@ function buildCastle(k: ProxyKit): void {
   const yaw = (-Math.atan2(AXIS[1], AXIS[0]) * 180) / Math.PI;
   k.tower('stone', 0.07, 0.24, { at: [KEEP[0], TOP, KEEP[1]], sides: 4, roof: 'crenel', color: STONE_LIT, rot: [0, yaw + 45, 0], windows: { rows: 3, on: 0.5, size: 0.011 } });
   // the hall along the ward, its roof of dark tile (I)
-  k.house('stone', 'slate', 0.2, 0.08, 0.08, { at: [HALL[0], TOP, HALL[1]], rot: [0, yaw, 0], roof: 'gable', pitch: 32, dig: 0, color: STONE, roofColor: ROOF, windows: { count: 5, on: 0.6, sides: 2, size: 0.01 } });
+  k.house('stone', 'slate', 0.2, 0.08, 0.08, { at: [HALL[0], TOP, HALL[1]], seat: false, rot: [0, yaw, 0], roof: 'gable', pitch: 32, color: STONE, roofColor: ROOF, windows: { count: 5, on: 0.6, sides: 2, size: 0.01 } });
   // the Palestone Sword (C): a tall, slender tower of pale stone at the seaward end, its spire a blade's point
   // over the sea (I: its proportions)
   k.tower('stone', 0.048, 0.56, { at: [SWORD[0], TOP, SWORD[1]], sides: 4, taper: 0.12, roof: 'spire', roofH: 0.16, roofColor: PALE, color: PALE, rot: [0, yaw + 45, 0], windows: { rows: 6, on: 0.35, size: 0.009 } });

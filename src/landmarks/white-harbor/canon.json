@@ -6,8 +6,10 @@
     { "part": "walls and buildings of white or whitewashed stone", "label": "T", "claims": ["white-harbor-white-stone"] },
     { "part": "the New Castle on a hill above the harbour, the city climbing to it; its great hall, the Merman's Court", "label": "T", "claims": ["white-harbor-new-castle", "white-harbor-mermans-court"] },
     { "part": "the Wolf's Den, the older grim fortress guarding the river mouth", "label": "T", "claims": ["white-harbor-wolfs-den"] },
-    { "part": "Seal Rock standing out of the water before the city, nothing built on it", "label": "T", "claims": ["white-harbor-seal-rock"] },
+    { "part": "Seal Rock standing out of the water before the city", "label": "T", "claims": ["white-harbor-seal-rock"] },
+    { "part": "Seal Rock's top bare (pending the corpus: ruins or a watchtower may crown it)", "label": "I", "claims": ["white-harbor-plan"] },
     { "part": "the domed Sept of the Snows", "label": "T", "claims": ["white-harbor-sept-of-the-snows"] },
-    { "part": "the plan: the wall's line and towers, the houses and slate roofs, the quays, wharves and ships, the castle's ring and towers, the stair, the sept's seven sides and spires, the waterfront shelf and the castle's hill", "label": "I", "claims": ["white-harbor-plan"] }
+    { "part": "the Castle Stair from the waterfront to the New Castle (its carved mermen not yet modelled)", "label": "T", "claims": ["white-harbor-castle-stair"] },
+    { "part": "the plan: the wall's line and towers, the houses and slate roofs, the quays, wharves and merchant ships (no war galleys: state-after), the castle's ring and towers, the stair's line, the sept's seven sides and spires, the waterfront shelf and the castle's hill", "label": "I", "claims": ["white-harbor-plan"] }
   ]
 }

@@ -4,7 +4,7 @@
     { "part": "site: an island in the Gods Eye, large and near the lake's middle, south of Harrenhal across the water", "label": "M", "claims": ["isle-of-faces-in-gods-eye", "isle-of-faces-map", "gods-eye-lake"] },
     { "part": "the place of the Pact between the First Men and the children of the forest", "label": "T", "claims": ["isle-of-faces-pact"] },
     { "part": "the green men, legend only: nobody shown", "label": "T", "claims": ["isle-of-faces-green-men"] },
-    { "part": "weirwoods with carved faces, white bark and red leaves", "label": "C", "claims": ["isle-of-faces-weirwoods", "winterfell-heart-tree"] },
+    { "part": "weirwoods, every one given a carved face at the Pact; white bark and red leaves", "label": "T", "claims": ["isle-of-faces-weirwoods", "winterfell-heart-tree"] },
     { "part": "no castle, town or quay: forest and shore only", "label": "I", "claims": ["isle-of-faces-no-settlement"] },
     { "part": "the wood's mix with oak, the grove of nine on the isle's crown, the faces' forms, the island's height over the lake", "label": "I", "claims": ["isle-of-faces-plan"] }
   ]

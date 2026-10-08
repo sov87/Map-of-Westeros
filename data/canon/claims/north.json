@@ -1763,7 +1763,7 @@
         "landmark:white-harbor"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (Seal Rock). I do not recall whether ruins crown it, so no structure on it should be modelled until that is verified."
+      "notes": "Brief confirmed (Seal Rock). Whether ruins or a watchtower crown it is not settled (a lore critic recalls something on top in ADWD Davos II, with low confidence): the build's bare top is an I under white-harbor-plan until the corpus decides."
     },
     {
       "id": "white-harbor-sept-of-the-snows",
@@ -1787,7 +1787,30 @@
         "look"
       ],
       "status": "draft",
-      "notes": "The dome is recalled with moderate confidence."
+      "notes": "The dome is recalled with moderate confidence. Statues of the Seven crowning the dome are recalled (lore critic, medium confidence): verify in ADWD Davos II and, if confirmed, add them to this claim and to the model; the invented spires must stay subordinate to the dome."
+    },
+    {
+      "id": "white-harbor-castle-stair",
+      "subjects": [
+        "white-harbor"
+      ],
+      "kind": "form",
+      "claim": "The Castle Stair, a broad stair of white stone lined with carved mermen, climbs from the waterfront to the New Castle.",
+      "label": "T",
+      "cites": [
+        {
+          "book": "ADWD",
+          "chapter": "Davos II",
+          "find": [
+            "Castle Stair"
+          ]
+        }
+      ],
+      "use": [
+        "landmark:white-harbor"
+      ],
+      "status": "draft",
+      "notes": "Recalled by the build and a lore critic, medium confidence; the mermen are not yet modelled. Verify the chapter (Davos II or III) and the statues with the corpus."
     },
     {
       "id": "white-harbor-plan",
@@ -1795,14 +1818,14 @@
         "white-harbor"
       ],
       "kind": "form",
-      "claim": "Build assumption: a walled city of whitewashed houses with slate roofs climbs from a quayed waterfront to the New Castle's ring of white towers; the Wolf's Den squats at the waterfront's north-west end; a stair runs up to the castle.",
+      "claim": "Build assumption: a walled city of whitewashed houses with slate roofs climbs from a quayed waterfront to the New Castle's ring of white towers; the Wolf's Den squats at the waterfront's north-west end; Seal Rock's top is bare.",
       "label": "I",
       "basis": "The text gives a walled white port, the New Castle on a hill above the harbour, the Wolf's Den guarding the river mouth, Seal Rock in the water and the domed Sept of the Snows (white-harbor-smallest-city, -white-stone, -new-castle, -wolfs-den, -seal-rock, -sept-of-the-snows). The plan, the stair and the forms are invented and contradict nothing.",
       "use": [
         "landmark:white-harbor"
       ],
       "status": "draft",
-      "notes": "The stair is recalled as the Castle Stair with stone mermen (ADWD Davos II); not claimed until verified."
+      "notes": "The stair is the Castle Stair with stone mermen (white-harbor-castle-stair). The harbour holds merchant ships and fishing craft only: the war galleys built in secret in the inner harbour belong to ADWD (300 AC), a later state."
     },
     {
       "id": "moat-cailin-position",
@@ -2022,13 +2045,13 @@
         "moat-cailin"
       ],
       "kind": "state-298",
-      "claim": "At 298 AC Moat Cailin is a Stark-held ruin: three standing towers among fallen basalt and bog, with no ironborn garrison and no flayed bodies.",
+      "claim": "At 298 AC Moat Cailin is an empty Stark-held ruin: three standing towers among fallen basalt and bog, no garrison, no fire, no ironborn and no flayed bodies.",
       "label": "I",
       "use": [
         "landmark:moat-cailin"
       ],
       "status": "draft",
-      "basis": "AGOT Catelyn VIII shows it as a ruin when Robb's host gathers there. The ironborn seizure comes in ACOK and the flaying in ADWD."
+      "basis": "AGOT Catelyn VIII shows it as a ruin when Robb's host gathers there; nobody is shown holding it before that. The ironborn seizure comes in ACOK and the flaying in ADWD."
     },
     {
       "id": "moat-cailin-plan",

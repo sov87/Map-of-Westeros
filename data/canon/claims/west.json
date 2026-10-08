@@ -1223,7 +1223,7 @@
         "landmark:inn-at-the-crossroads"
       ],
       "status": "draft",
-      "notes": "The forge Gendry works in AFFC belongs to the later state; the smithy here is invented for 298 and may be dropped if the corpus says the inn had none then."
+      "notes": "The forge Gendry works in AFFC belongs to the later state; the smithy here is invented for 298 and may be dropped if the corpus says the inn had none then. The fullest description of the building is in AFFC Brienne VII (its storeys, stone, history and earlier names): the building predates 298, so verify the plan's storeys and materials there before locking; the gibbet, the orphans and Gendry are state-after."
     },
     {
       "id": "trident-forks",
@@ -2016,9 +2016,17 @@
         "isle-of-faces"
       ],
       "kind": "vegetation",
-      "claim": "The isle is wooded with weirwoods whose trunks were carved with faces at the Pact so the gods could witness it, which gives the isle its name.",
-      "label": "C",
+      "claim": "The isle is wooded with weirwoods; at the Pact every tree on it was given a carved face so the gods could witness it, which gives the isle its name.",
+      "label": "T",
       "cites": [
+        {
+          "book": "AGOT",
+          "chapter": "Bran VI",
+          "find": [
+            "Isle of Faces",
+            "given a face"
+          ]
+        },
         {
           "book": "TWOIAF",
           "chapter": "The Coming of the First Men",
@@ -2032,7 +2040,7 @@
         "landmark:isle-of-faces"
       ],
       "status": "draft",
-      "notes": "Brief confirmed (weirwood island). The detail that faces were carved on its weirwoods is recalled with moderate confidence. It may come from Luwin's lesson in AGOT Bran VI rather than TWOIAF. No count of trees and no other vegetation is asserted."
+      "notes": "Luwin's lesson in AGOT Bran VI (build and lore critic agree, medium confidence; verify the wording). TWOIAF tells it at length. No count of trees and no other vegetation is asserted. The forest stands are too small at the vegetation's scale to carry faces; the grove's nine carry modelled faces."
     },
     {
       "id": "isle-of-faces-green-men",
@@ -2114,7 +2122,7 @@
         "landmark:isle-of-faces"
       ],
       "status": "draft",
-      "notes": "The island's outline and height come from the sheet (forceIslands) and the bake's island rule: a low dome over the lake level. No height is stated in the text."
+      "notes": "The island's outline and height come from the sheet (forceIslands) and the bake's island rule: a low dome over the lake level. No height is stated in the text. Every weirwood on the isle bears a face (isle-of-faces-weirwoods); the stands seen from afar are below the scale a face can be modelled at."
     },
     {
       "id": "gods-eye-lake",

@@ -11,7 +11,8 @@ import { defineLandmark } from '../types.ts';
  * slice-moat-cailin-three-towers); bog and swamp on either side of the causeway, the towers commanding the
  * road (moat-cailin-setting, the-neck-terrain). I: the plan, the ruined curtain's line, the Children's
  * Tower's broken top, the bog's pools (moat-cailin-plan, the-neck-vegetation); at 298 a Stark-held ruin
- * with no ironborn and no flayed men (moat-cailin-state-298).
+ * empty: no garrison, no fire, no ironborn and no flayed men
+ * (moat-cailin-state-298).
  *
  * Local frame: x east, z south, origin at the sheet's marker on the kingsroad, which runs north-north-east
  * through it out of the Neck's marshes (south-west on the sheet). The North's plain stands ~7.8 here; the
@@ -108,8 +109,6 @@ function buildTowers(k: ProxyKit): void {
   }
   // the Drunkard's Tower, leaning hard (T)
   k.tower('stone', 0.065, 0.31, { at: [DRUNKARDS[0], 0, DRUNKARDS[1]], seat: 'min', sides: 14, roof: 'crenel', color: BASALT_LIT, rot: [0, 0, -10], windows: { rows: 2, on: 0.15, size: 0.009 } });
-  // one fire kept in the gatehouse (I: a few Stark men watch the road)
-  k.light([GATEHOUSE[0] - 0.06, k.ground(GATEHOUSE[0], GATEHOUSE[1]) + 0.12, GATEHOUSE[1] - 0.06], { color: 0xffa04a, intensity: 0.6, radius: 0.012, kind: 'fire', flicker: 0.4 });
 }
 
 function buildRoad(k: ProxyKit): void {

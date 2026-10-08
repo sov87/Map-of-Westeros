@@ -6,7 +6,7 @@ import { defineLandmark } from '../types.ts';
  * The Water Gardens at 298 AC (ledger ids per part in canon.json). T: the Martells' palace near Sunspear,
  * laid out round pools and fountains (water-gardens-pools-fountains), its terraces, pools and walks of pink
  * marble (water-gardens-pink-marble), blood orange trees beside the pools (water-gardens-blood-oranges), the
- * pools open to the children of lords and commoners alike (water-gardens-children). C: built by Prince Maron
+ * pools open to the children of lords and commoners alike (water-gardens-children); built by Prince Maron
  * for his Targaryen bride (water-gardens-built-for-daenerys). M: a short way from Sunspear along the coast
  * (water-gardens-near-sunspear). I: the plan: a long, low palace with flat roofs and an arcaded terrace, a
  * chain of pools down the garden's axis toward the sea, fountains, the orange trees in rows, a low garden

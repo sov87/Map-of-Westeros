@@ -5,8 +5,8 @@ import { defineLandmark } from '../types.ts';
 /**
  * The Isle of Faces at 298 AC (ledger ids per part in canon.json). T: an island in the Gods Eye
  * (isle-of-faces-in-gods-eye) where the First Men and the children of the forest made the Pact
- * (isle-of-faces-pact); legend keeps the green men there, unseen (isle-of-faces-green-men). C: wooded with
- * weirwoods whose trunks bear carved faces, which gives the isle its name (isle-of-faces-weirwoods). M: a large
+ * (isle-of-faces-pact); legend keeps the green men there, unseen (isle-of-faces-green-men); wooded with
+ * weirwoods, every tree given a carved face at the Pact, which gives the isle its name (isle-of-faces-weirwoods). M: a large
  * island near the middle of the lake, south of Harrenhal (isle-of-faces-map). I: no castle, town or quay
  * (isle-of-faces-no-settlement); the wood's mix, the grove in its clearing and the faces' forms
  * (isle-of-faces-plan).
