@@ -657,7 +657,8 @@ tools/bake/bake/source.py → synth.py (elevation) → the inherited steps (coas
 - **Landmarks:** only the kit and the system remain; Phase 3 adds the 24 Westeros folders, each with a `canon.json`
   (parts → evidence label → ledger ids, validated by `pnpm canon`).
   - Kit additions: `drape(fam, outline, {step, lift, holes})` (a ground-hugging sheet: streets, yards, fields, roads);
-    `seaLevel` (local height of the sea surface); `loft(…, { rock: true })` (the rock noise class, for crags).
+    `seaLevel` (local height of the sea surface); `loft(…, { rock: true })` (the rock noise class, for crags);
+    `cliff(…, { jag })` (skyline jaggedness, default 1 as before).
   - `subjectKm {at?, r}` on a definition: the probe's subject is the build's geometry inside that local circle
     (the Eyrie's castle), not the whole build ∪ its raising stamps (its way down to the valley, the Lance).
   - HeightField: an `'auto'` flatten / basin whose radius holds no texel centre (coarse iteration bakes) takes the

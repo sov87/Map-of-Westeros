@@ -483,7 +483,8 @@
       "cites": [{ "book": "ACOK", "chapter": "Prologue", "find": ["Windproud", "Shipbreaker Bay"] }],
       "use": ["vectors", "landmark:storms-end"],
       "status": "draft",
-      "notes": "Brief confirmed ('above Shipbreaker Bay'). Recalled as Maester Cressen's memory; whether Robert watched too is not claimed."
+      "notes": "Brief confirmed ('above Shipbreaker Bay'). Recalled as Maester Cressen's memory; whether Robert watched too is not claimed.",
+      "conflict": "The westeros-crests sheet sets Storm's End's marker about 12 km inland of the traced shore (its own name is lettered on the bay below it, which the trace had taken for land; masked by forceSea). The text has the castle on the shore. Settled with a display offset of 12 km south-south-east (places.json), onto a headland over the bay."
     },
     {
       "id": "storms-end-curtain-wall-height",
@@ -561,6 +562,16 @@
       "use": ["landmark:storms-end"],
       "status": "draft",
       "notes": "Recalled loosely (a cave under the cliff with a portcullis at its inner end); confirm the wording before using it as geometry."
+    },
+    {
+      "id": "storms-end-plan",
+      "subjects": ["storms-end"],
+      "kind": "form",
+      "claim": "Build assumption: the castle stands on a cliff-girt headland over the bay, its round curtain of grey stone round the drum tower, a gate between two bastions on the landward side, and a road running inland.",
+      "label": "I",
+      "basis": "The text gives the curtain, the single drum tower and its battlements, the sheltered ward and the sea passage (storms-end-curtain-wall-*, -single-drum-tower, -spiked-fist, -sheltered-ward, -sea-cave). The headland and cliffs, the round plan, the grey stone, the gate's form and the road are invented and contradict nothing.",
+      "use": ["landmark:storms-end"],
+      "status": "draft"
     },
     {
       "id": "storms-end-durran-legend",

@@ -1,0 +1,14 @@
+{
+  "notes": "Storm's End: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: on the shore of Shipbreaker Bay, its western side (display offset 12 km onto the shore)", "label": "T", "claims": ["storms-end-on-shipbreaker-bay", "shipbreaker-bay-shape", "storms-end-from-kings-landing"] },
+    { "part": "the curtain wall a hundred feet high, sloping and curving all the way round, no arrow slits or posterns", "label": "T", "claims": ["storms-end-curtain-wall-height", "storms-end-curtain-wall-form"] },
+    { "part": "the curtain twice as thick on the sea side", "label": "T", "claims": ["storms-end-curtain-wall-thickness"] },
+    { "part": "one colossal drum tower, windowless toward the sea", "label": "T", "claims": ["storms-end-single-drum-tower"] },
+    { "part": "the heavy battlements crowning the tower: the spiked fist", "label": "T", "claims": ["storms-end-spiked-fist"] },
+    { "part": "stables, kitchens and yards inside the curtain", "label": "T", "claims": ["storms-end-sheltered-ward"] },
+    { "part": "the sea passage: a cave mouth at the waterline under the castle", "label": "T", "claims": ["storms-end-sea-cave"] },
+    { "part": "whole and unbesieged at 298 AC", "label": "T", "claims": ["storms-end-siege"] },
+    { "part": "the headland and its sea cliffs, the round plan, grey stone, the gate and bastions, the road inland, the buildings' places", "label": "I", "claims": ["storms-end-plan"] }
+  ]
+}

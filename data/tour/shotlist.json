@@ -194,6 +194,29 @@
         "lod0Tris": 60000,
         "lights": 120
       }
+    },
+    "storms-end": {
+      "status": "s2",
+      "segment": "stormlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 9.5,
+      "contextKm": 55,
+      "tod": 17.5,
+      "screenSeconds": 8,
+      "framing": "from Shipbreaker Bay south-south-west of the castle under a storm sky, the coast running away behind: the headland's sea cliffs, the sloping unbroken curtain and the colossal drum tower crowned with heavy battlements (the spiked fist on its arm)",
+      "features": [
+        "one colossal drum tower",
+        "heavy battlements: the spiked fist",
+        "the sloping curtain without slits or posterns",
+        "the sea cliffs and the sea passage",
+        "Shipbreaker Bay"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 40000,
+        "lights": 80
+      }
     }
   }
 }

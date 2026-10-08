@@ -103,6 +103,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-storms-end",
+      "tod": 12.0,
+      "note": "top-down site check of Storm's End: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            2147.3399999999997,
+            986.19
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

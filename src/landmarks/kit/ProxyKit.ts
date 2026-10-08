@@ -199,6 +199,11 @@ export interface CliffOpts extends PartOpts {
   taper?: number;
   /** 0 = fully faceted rock, 1 = smooth normals; default 0.55 (fractured stone) */
   soft?: number;
+  /**
+   * skyline jaggedness 0..1 (default 1: the height varies about ±40 % along the face — crags, teeth); lower for
+   * a massive, even-topped wall (a headland's sea cliffs that must meet the ground at its top)
+   */
+  jag?: number;
 }
 
 export type ScatterArea =
@@ -1578,6 +1583,7 @@ export class ProxyKit {
     const depth = o.depth ?? 0.6 * hmax;
     const taper = Math.min(total / 4, o.taper ?? Math.max(0.1, 1.2 * hmax));
     const soft = Math.min(1, Math.max(0, o.soft ?? 0.55));
+    const jag = Math.min(1, Math.max(0, o.jag ?? 1));
     const ends: number[] = [];
     const gen = (d: number): Geo => {
       const g = new Geo();
@@ -1603,7 +1609,7 @@ export class ProxyKit {
         // taper the ends to nothing so the face grows out of the slope; a jagged skyline along the top
         const endT = taper > 0 ? smoothstep01(Math.min(t, total - t) / taper) : 1;
         // a jagged skyline: broad steps plus sharper teeth
-        const H = hh * endT * (0.66 + 0.5 * noise3(t * 3.1, 0.3, 4.2, nseed) + 0.3 * (noise3(t * 12.5, 1.3, 2.2, nseed) - 0.5));
+        const H = hh * endT * (0.91 + jag * (0.5 * (noise3(t * 3.1, 0.3, 4.2, nseed) - 0.5) + 0.3 * (noise3(t * 12.5, 1.3, 2.2, nseed) - 0.5)));
         if (iu === 0 || iu === nu) ends[iu === 0 ? 0 : 1] = H;
         const y0 = (fg ? this.ground(x - nx * 0.02, z - nz * 0.02) - SINK : at[1]) - (1 - endT) * SINK * 2;
         // buttresses and gullies: a column-wise bulge, plus two octaves of face noise
