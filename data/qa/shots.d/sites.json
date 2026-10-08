@@ -120,6 +120,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-dragonstone",
+      "tod": 12.0,
+      "note": "top-down site check of Dragonstone: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            2250.17,
+            1651.03
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

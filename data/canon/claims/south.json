@@ -460,7 +460,8 @@
       "cites": [{ "book": "TPATQ", "chapter": "The Princess and the Queen", "find": ["Dragonmont"] }],
       "use": ["terrain", "landmark:dragonstone"],
       "status": "draft",
-      "notes": "Also in FAB. A mention in the main novels (ACOK Prologue or the ASOS Davos chapters) is likely but not pinned."
+      "notes": "Also in FAB. A mention in the main novels (ACOK Prologue or the ASOS Davos chapters) is likely but not pinned.",
+      "conflict": "The westeros-crests sheet letters 'Dragonmont' on the sea north-east of the island; the text has the mountain on the island behind the castle. Settled with a display offset of 9.3 km south-west (places.json) onto the island, about 6.5 km north-east of the castle; the landmark's massif stamp raises it there."
     },
     {
       "id": "dragonmont-smoking",
@@ -562,6 +563,16 @@
       "use": ["landmark:storms-end"],
       "status": "draft",
       "notes": "Recalled loosely (a cave under the cliff with a portcullis at its inner end); confirm the wording before using it as geometry."
+    },
+    {
+      "id": "dragonstone-plan",
+      "subjects": ["dragonstone", "dragonmont"],
+      "kind": "form",
+      "claim": "Build assumption: the castle of black stone stands on the Dragonmont's south-west spur, the mountain a cratered cone above it, with a fishing town and harbour on the island's south shore below and a road between them.",
+      "label": "I",
+      "basis": "The text gives the Dragonmont behind and above the castle, smoking, and the castle's dragon-shaped hall, kitchens and towers, its gargoyles and the Stone Drum (dragonmont-above-castle, -smoking, dragonstone-dragon-shaped-buildings, -towers, -gargoyles, -stone-drum). The plan, the black stone, each dragon's sculpted pose, the cone's form, the volcanic ground and the town are invented and contradict nothing.",
+      "use": ["landmark:dragonstone"],
+      "status": "draft"
     },
     {
       "id": "storms-end-plan",

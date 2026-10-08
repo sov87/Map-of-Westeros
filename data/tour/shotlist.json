@@ -217,6 +217,29 @@
         "lod0Tris": 40000,
         "lights": 80
       }
+    },
+    "dragonstone": {
+      "status": "s2",
+      "segment": "crownlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 6,
+      "contextKm": 40,
+      "tod": 18.4,
+      "screenSeconds": 8,
+      "framing": "from the south-west at dusk: the black castle of dragons on the Dragonmont's spur, towers crowned by crouching and rearing dragons, gargoyles along the walls, the Stone Drum lit at its top, the smoking Dragonmont behind",
+      "features": [
+        "towers that are dragons",
+        "the Great Hall a lying dragon",
+        "the coiled dragon kitchens",
+        "the Stone Drum",
+        "the smoking Dragonmont"
+      ],
+      "budget": {
+        "minFeatureKm": 0.02,
+        "lod0Tris": 80000,
+        "lights": 120
+      }
     }
   }
 }
