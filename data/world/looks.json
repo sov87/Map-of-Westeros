@@ -23,7 +23,7 @@
       "atmo": {"tint": [1.0, 1.0, 0.98], "density": 1}
     },
     "vale": {
-      "ground": {"ecotone": 0.8, "grass": "#5f9a58", "dry": "#a3a372", "soil": "#665c46", "rock": "#6a6e6e", "dryness": 0.3, "pattern": 0.35, "snowline": -6},
+      "ground": {"ecotone": 0.8, "grass": "#5f9a58", "dry": "#a3a372", "soil": "#665c46", "rock": "#6a6e6e", "dryness": 0.3, "pattern": 0.35, "snowline": -6, "spots": [{"place": "the-eyrie", "radiusKm": 30, "snowline": 28}]},
       "grade": {"tint": "#fff4e2", "saturation": 1.02, "contrast": 0.98, "bloom": 0.2},
       "atmo": {"tint": [1.08, 1.04, 0.95], "density": 1.05}
     },

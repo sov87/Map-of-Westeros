@@ -354,7 +354,11 @@ export class HeightField {
           if (Math.hypot(x - s.at[0], z - s.at[1]) <= s.radius) vals.push(this.data[r * this.width + c]);
         }
       vals.sort((a, b) => a - b);
-      auto = vals.length ? vals[vals.length >> 1] : 0;
+      // a radius below the texel spacing holds no texel centre (coarse iteration bakes): the nearest texel's
+      // height, never 0 (sea level would dig a pit)
+      const nc = Math.min(this.width - 1, Math.max(0, Math.round((s.at[0] - this.spec.xMin) / this.texel - 0.5)));
+      const nr = Math.min(this.height - 1, Math.max(0, Math.round((s.at[1] - this.spec.zMin) / this.texel - 0.5)));
+      auto = vals.length ? vals[vals.length >> 1] : this.data[nr * this.width + nc];
     }
     for (let r = r0; r <= r1; r++)
       for (let c = c0; c <= c1; c++) {

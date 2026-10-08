@@ -1887,9 +1887,9 @@ export class ProxyKit {
   /**
    * Loft through horizontal sections (same vertex count each): `outline` (x, z) at height `y`, rotated
    * by `rotDeg` and scaled by `scale` — twisted towers (Minas Morgul, Barad-dûr fins). Flat facets,
-   * capped at both ends. Base at `at`.
+   * capped at both ends. Base at `at`. `rock`: the rock noise class like `cliff` (a crag, not masonry).
    */
-  loft(fam: FamilyId, sections: { outline: V2[]; y: number; rotDeg?: number; scale?: number }[], o: PartOpts = {}): this {
+  loft(fam: FamilyId, sections: { outline: V2[]; y: number; rotDeg?: number; scale?: number }[], o: PartOpts & { rock?: boolean } = {}): this {
     this.begin();
     const gen = (): Geo => {
       const g = new Geo();
@@ -1913,7 +1913,8 @@ export class ProxyKit {
       capPolygon(g, rings[rings.length - 1], [0, 1, 0]);
       return g;
     };
-    this.place(fam, gen, o);
+    const part = this.place(fam, gen, o);
+    if (o.rock && part.key === 'structure') part.surf = [part.surf[0], part.surf[1], part.surf[2], NOISE.rock * 32 + (part.surf[3] % 32)];
     return this;
   }
 

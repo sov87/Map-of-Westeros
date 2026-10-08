@@ -377,7 +377,7 @@ shadow fit, no texel snap, radial far fade).
 ## Landmarks (src/landmarks)
 `defineLandmark({ id, placeId, tier, headingDeg, scale, anchor, stamps[], proxy(kit), model, lodPx,
 lights[], trees[], forests[], treeCaps[], emitters[], waterFeatures[], vegetationExclusion, contrast, lookOverride,
-annotation, bookmarks[], cameraConstraints, audioHooks })` (types.ts). S4 contracts (records.ts / world.ts):
+annotation, bookmarks[], cameraConstraints, subjectKm, audioHooks })` (types.ts). S4 contracts (records.ts / world.ts):
 lights (decl, kit, record) carry optional `LightExtras {event, spillKm, sprite}` (event channel; spill reach;
 `sprite: false` = spill-only source); emitters `{preset: smoke | ash | embers | steam | mist | sparks | beam, at,
 to?, rate, scale, color?, event?}` → world `EmitterRecord`s (`landmarkEmitters`), waterfalls / floods → world
@@ -654,4 +654,11 @@ tools/bake/bake/source.py → synth.py (elevation) → the inherited steps (coas
 - **Places:** `PlaceDef` gains `label` and `map`. The volcano look keys on `VOLCANO_PLACE = 'dragonmont'`, which has no lava flows yet.
 - **Vegetation:** forest channels are named in `world.json → forests.channels`: R haunted forest, G wolfswood, B unused, A southern woods (Kingswood, Rainwood).
   - `placement.ts` has the Westeros fertile and barren region tables.
-- **Landmarks:** only the kit and the system remain; Phase 3 adds the 24 Westeros folders.
+- **Landmarks:** only the kit and the system remain; Phase 3 adds the 24 Westeros folders, each with a `canon.json`
+  (parts → evidence label → ledger ids, validated by `pnpm canon`).
+  - Kit additions: `drape(fam, outline, {step, lift, holes})` (a ground-hugging sheet: streets, yards, fields, roads);
+    `seaLevel` (local height of the sea surface); `loft(…, { rock: true })` (the rock noise class, for crags).
+  - `subjectKm {at?, r}` on a definition: the probe's subject is the build's geometry inside that local circle
+    (the Eyrie's castle), not the whole build ∪ its raising stamps (its way down to the valley, the Lance).
+  - HeightField: an `'auto'` flatten / basin whose radius holds no texel centre (coarse iteration bakes) takes the
+    nearest texel's height (it took 0, sea level, and dug a pit).

@@ -86,6 +86,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-the-eyrie",
+      "tod": 12.0,
+      "note": "top-down site check of the Eyrie: landmark against the traced water and terrain, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1922.89,
+            2197.91
+          ],
+          "distanceKm": 60,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

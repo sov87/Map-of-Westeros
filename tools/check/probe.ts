@@ -11,7 +11,8 @@
  * `topVoid` is the void + edge share of the top 15 % of rows (a hero shot must show sky or land there).
  * The subject is measured from the landmark build (geometry bounds) united with its terrain stamps
  * (massifs, cones, raises: the mountain IS the landmark for Erebor / Mount Doom), projected at the
- * reference frame (1600×900 by default).
+ * reference frame (1600×900 by default) — or, where the landmark declares `subjectKm`, from its geometry
+ * inside that circle alone (the Eyrie's castle, not the Lance it stands on or its way down to the valley).
  */
 import type { CameraState } from '../../src/core/types.ts';
 import type { ShotSpecInput } from '../../src/camera/shots.ts';
@@ -98,6 +99,7 @@ export async function createProbeContext(
   const { buildLandmarks } = (await import(mod('src/landmarks/build.ts'))) as typeof import('../../src/landmarks/build.ts');
   const { landmarkStamps } = (await import(mod('src/landmarks/world.ts'))) as typeof import('../../src/landmarks/world.ts');
   const { stampBounds } = (await import(mod('src/world/stamps.ts'))) as typeof import('../../src/world/stamps.ts');
+  const { localToWorldXZ } = (await import(mod('src/landmarks/frame.ts'))) as typeof import('../../src/landmarks/frame.ts');
   const { resolveShot } = (await import(mod('src/camera/shots.ts'))) as typeof import('../../src/camera/shots.ts');
   const built = await buildLandmarks(world, landmarks, { geometry: false });
   const spec = world.spec;
@@ -144,7 +146,21 @@ export async function createProbeContext(
     const r = Math.max(b.bounds.r, 0.3);
     const min: [number, number, number] = [cx - r, b.origin[1], cz - r];
     const max: [number, number, number] = [cx + r, b.origin[1] + Math.max(b.bounds.h, 0.3), cz + r];
-    for (const s of landmarkStamps(world, [b.def])) {
+    // a declared subject circle clips the box to what the shots frame
+    const sub = b.def.subjectKm;
+    const clip = sub ? (() => {
+      const [sx, sz] = localToWorldXZ(world, b.def, sub.at ?? [0, 0], b.scale);
+      const sr = sub.r * b.scale;
+      return [sx - sr, sz - sr, sx + sr, sz + sr] as const;
+    })() : null;
+    if (clip) {
+      min[0] = Math.max(min[0], clip[0]);
+      min[2] = Math.max(min[2], clip[1]);
+      max[0] = Math.min(max[0], clip[2]);
+      max[2] = Math.min(max[2], clip[3]);
+    }
+    // a declared subject is the build's geometry inside its circle (its stamps are the setting)
+    for (const s of clip ? [] : landmarkStamps(world, [b.def])) {
       if (s.kind === 'flatten' || s.kind === 'carve') continue;
       if ('lowerOnly' in s && s.lowerOnly) continue;
       const [x0, z0, x1, z1] = stampBounds(s);

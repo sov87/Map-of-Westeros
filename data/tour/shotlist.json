@@ -171,6 +171,29 @@
         "lod0Tris": 40000,
         "lights": 60
       }
+    },
+    "the-eyrie": {
+      "status": "s2",
+      "segment": "vale",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 10,
+      "contextKm": 55,
+      "tod": 9.5,
+      "screenSeconds": 8,
+      "framing": "from the south-south-east, level with the shoulder in the morning: the seven slender white towers bunched on their crag at the end of the spur against the sky, the rope down to Sky, the Lance rising on the right toward its snowy head",
+      "features": [
+        "seven slender white towers",
+        "the crag and its sheer face",
+        "Sky, Snow, Stone and the trail",
+        "the Gates of the Moon",
+        "Alyssa's Tears"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 60000,
+        "lights": 120
+      }
     }
   }
 }

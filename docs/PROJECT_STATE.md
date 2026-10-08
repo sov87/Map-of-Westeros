@@ -11,7 +11,7 @@ instead of appending logs._
 | 0 · Fork and sources | **Done.** Engine forked from *Map of Middle-Earth* (MIT), its content stripped (24 landmark folders, Arda / ME-GIS sources, ME places / regions / tour); host rules rewritten for the RTX 5090 rig; boots on the placeholder slab. Ledger covers all 88 planned subjects (24 landmarks, ranges, rivers, regions, slice facts). |
 | 1 · Geography | **Good enough (user, 2026-10-08: "relatively book accurate, not 1:1").** The user's map is vectorized, scale-calibrated from the Wall, synthesized into terrain and baked at 1 km/px. Every river is monotone downhill. The map critic's high findings that landmarks depend on are fixed (see below); the rest are known issues. |
 | 2 · World look | Not started. Region looks are provisional ground palettes on Middle-earth grades. |
-| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal.** Next: the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, then the rest of the 24. All at shot-list status s2 (gates as warnings) until their looks are final. |
+| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal, the Eyrie.** Next: Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, then the rest of the 24. All at shot-list status s2 (gates as warnings) until their looks are final. |
 | 2, 4–6 | Not started. |
 
 ## Decisions taken (user)
@@ -31,7 +31,8 @@ instead of appending logs._
 - **Terrain** (`tools/bake/bake/synth.py`): Westeros has no DEM, so the bake makes one.
   - **Uplift:** from the traced relief density, then stream-power equilibrium on a 2 km work grid. The traced rivers are fixed receivers, so valleys follow the map.
   - **Range heights:** each range is scaled to its profile peak height (labels I: Frostfangs 3800 m, Mountains of the Moon 4300 m, Red Mountains 3300 m, and others).
-  - **The Giant's Lance:** set to 5630 m (about 3.5 mi, label T, draft).
+  - **The Giant's Lance:** set to 5630 m (about 3.5 mi, label T, draft), as a narrow summit (radius 5 km). Its
+    pointed head and the long spur that carries the Eyrie are the Eyrie landmark's massif stamp.
   - **Detail and finish:** fine detail, a gully pass, 38° talus, a 140 m inland rise, and a 70 km sea shelf.
   - **Bake:** 1 km/px takes about 3 minutes and about 2.2 GB of RAM.
 
@@ -50,6 +51,8 @@ instead of appending logs._
 - **Design scale ≈ ×5** of a plausible real size in all three axes, like Middle-earth's landmarks: the terrain is exaggerated ×12, so castles must be too to read. Harrenhal's walls stand twice Winterfell's (C: the largest castle).
 - **Book first:** T features are modelled as the text describes them. C (*The World of Ice & Fire*) fills in where the novels are silent (Casterly Rock, Highgarden). Everything else is an I claim per landmark (`<id>-plan`, `-city-fabric`, `-carving`, `-castle-form`), so the inventions are visible in the ledger.
 - **Text vs. map settled with display offsets** (places.json, logged in the claims' `conflict`): Casterly Rock moves 7.5 km west onto the shore (the sheet has it inland; C has it over the sea). Harrenhal moves 4.4 km south onto the Gods Eye shore (T). King's Landing keeps its marker, with the bay restored under the sheet's crests instead. Lannisport is modelled at the Rock's foot (C), not at the sheet's marker 48 km south.
+- **The Eyrie:** the summit constraint's 14 km radius had raised a ~60 km snow dome round the Lance, burying the Gates of the Moon's valley in snow. It is now 5 km. The landmark's massif gives the Lance a pointed, snow-capped head and a long south-south-west spur. The castle stands on a kit crag at the spur's shoulder, ~11 units above the valley and ~12 below the summit. Snow, Stone and the Gates of the Moon follow the spur's crest down to the valley floor. A Vale look spot raises the snowline round the Lance, so the shoulder is bare in late summer while the head keeps the massif's snow cap.
+- **Engine and kit changes this phase:** the kit's `loft({ rock: true })` (rock noise like `cliff`, for crags); `subjectKm` on a landmark (the probe frames the castle, not its whole setting); an `'auto'` flatten whose radius holds no texel centre took sea level as its target and dug a pit; it now takes the nearest texel.
 - **New tools:** `tools/check/site.ts` (local ground before and after stamps, for a landmark or a bare place); `data/qa/shots.d/sites.json` (top-down site checks); the kit's `drape()` (a ground-hugging sheet: streets, yards, fields, roads) and `seaLevel`.
 - **Map fixes made for landmarks:**
   - `forceSea` polygons: the bay under King's Landing's crests; the label slivers at Dragonstone, Eastwatch and Pyke; the Isle of Faces lettering.
@@ -57,13 +60,13 @@ instead of appending logs._
 
 ## Known issues (to fix in Phase 2 unless noted)
 - **Forests:** from far away they read as flat dark polygons. The vegetation channels are remapped to Westeros (Haunted Forest, Wolfswood, southern woods), but the tree look is still Middle-earth's.
-- **The Giant's Lance:** a synthesized massif (spurs that vary with the bearing, on a broad shoulder) inside the Mountains of the Moon. The Eyrie's shoulder shelf and its waycastles are Phase 3.
+- **Fins in the Mountains of the Moon:** the hydro carve lowers ground by up to 22 units along a few traced streams north and north-east of the Lance (stream-638, -581, -590). It leaves thin spires standing between them, visible behind the Lance in the Eyrie's wide shot. This predates the Lance change (the carve stats are unchanged) and is a Phase 1/2 terrain fix.
 - **The Wall:** not modelled yet (Phase 2 / 3). The Neck's marsh renders flat grey.
 - **Region looks:** the ground palettes are provisional on Middle-earth grades and haze; the westerlands read as sand. Phase 2 retunes all ten.
 - **Region borders:** a few are straight lines in the profile.
 - **Hydro gates:** at 1 km/px they report geometry warnings, softened until the bake is ≤ 0.5 km/px.
 - **Ledger:**
-  - All 410 claims are `draft` (226 T, 100 M, 46 C, 38 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
+  - All 432 claims are `draft` (236 T, 100 M, 46 C, 50 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
   - Claims become hard constraints only once they are `verified`. The Giant's Lance height enters the bake as a `summits` lower bound for now.
   - A books-only lore critic (a fresh subagent that saw only the ledger) found no contradiction of the books and no show detail. Its 13 low/medium findings (time-slice wording, duplicate claims, three ASOS Jon chapter numbers, one lower-bound travel time) are applied.
 

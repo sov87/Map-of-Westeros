@@ -3002,6 +3002,52 @@
       ],
       "status": "draft",
       "notes": "No text crossing point is recalled. If the traced map has the Blue Fork rising east of that route, drop this claim."
+    },
+    {
+      "id": "the-eyrie-plan",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the seven towers stand in a tight ring round the garden on a level-topped crag at the end of a spur, joined by a low pale curtain and capped with pale cones. The High Hall stands on the crag's south edge.",
+      "label": "I",
+      "basis": "The text gives the towers' number, whiteness and slenderness, the hall's marble, the Moon Door over the drop, the sky cells, the garden and the winch (the-eyrie-towers, -high-hall, -moon-door, -sky-cells, -garden, -sky). Their arrangement (sky cells in the face below the hall, the winch on the edge above Sky), the roofs and the crag's form are invented and contradict nothing.",
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "the-eyrie-way-forms",
+      "subjects": [
+        "the-eyrie",
+        "giants-lance",
+        "vale"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the trail climbs a spur's crest in switchbacks from the Gates of the Moon (a square grey castle with corner towers, keep and hall) past Stone and Snow (towers with walled yards) and the saddle to Sky, a crescent wall.",
+      "label": "I",
+      "basis": "The text gives the order of the castles, the narrow trail, the saddle between Snow and Sky and Sky's curved wall (the-eyrie-waycastles, -trail, -sky). The spur, the switchbacks and the castles' forms are invented and contradict nothing.",
+      "use": [
+        "landmark:the-eyrie"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "giants-lance-form",
+      "subjects": [
+        "giants-lance"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: the Giant's Lance is a single pointed peak with ridged spurs, snow-capped, rising from the range about 18 km north of the Eyrie's map position.",
+      "label": "I",
+      "basis": "The text gives the height and the snow (giants-lance-height, -snow) and the map places the peak. The pointed form follows the name and is invented. The design height is exaggerated with the terrain like every relief.",
+      "use": [
+        "landmark:the-eyrie",
+        "terrain"
+      ],
+      "status": "draft"
     }
   ]
 }

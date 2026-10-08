@@ -166,6 +166,12 @@ export interface LandmarkDefinition {
   annotation: { title: string; subtitle?: string; blurb?: string };
   bookmarks?: BookmarkDecl[];
   cameraConstraints?: { minDistance?: number };
+  /**
+   * The probe's subject (`pnpm check`: size, line of sight, framing), a local km circle: what the shots frame
+   * when the build and its stamps reach far beyond it — the Eyrie's castle, not its way down to the Gates of
+   * the Moon or the Giant's Lance it stands on. Default: the whole build ∪ its raising stamps.
+   */
+  subjectKm?: { at?: V2; r: number };
   audioHooks?: string[];
 }
 

@@ -1,0 +1,18 @@
+{
+  "notes": "The Eyrie: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: on a shoulder of the Giant's Lance, high above the Vale and well below the summit", "label": "T", "claims": ["the-eyrie-shoulder", "giants-lance-height"] },
+    { "part": "seven slender white towers bunched like arrows in a quiver; a small castle", "label": "T", "claims": ["the-eyrie-towers"] },
+    { "part": "the High Hall of pale marble veined with blue", "label": "T", "claims": ["the-eyrie-high-hall"] },
+    { "part": "the Moon Door in the hall's wall over the drop", "label": "T", "claims": ["the-eyrie-moon-door"] },
+    { "part": "sky cells open to the void in the face below the castle", "label": "T", "claims": ["the-eyrie-sky-cells"] },
+    { "part": "the garden at the castle's heart, open to the sky", "label": "T", "claims": ["the-eyrie-garden"] },
+    { "part": "the way up: the Gates of the Moon at the foot, then Stone, Snow and Sky, one narrow trail, the saddle between Snow and Sky", "label": "T", "claims": ["the-eyrie-waycastles", "the-eyrie-trail", "the-eyrie-impregnable", "vale-winter-descent"] },
+    { "part": "Sky a curved wall against the mountain; the castle some six hundred feet above it, supplied by winch and basket", "label": "T", "claims": ["the-eyrie-sky", "the-eyrie-above-sky"] },
+    { "part": "Alyssa's Tears, a tall thin fall off the heights that turns to mist before the valley", "label": "T", "claims": ["the-eyrie-alyssas-tears"] },
+    { "part": "the Lance's snowy head above the castle", "label": "T", "claims": ["giants-lance-snow"] },
+    { "part": "the plan: the tower ring, curtain and roofs, the crag, the hall's place, the winch's place", "label": "I", "claims": ["the-eyrie-plan"] },
+    { "part": "the spur, the switchbacks and the forms of the Gates of the Moon, Stone, Snow and Sky; where the fall leaps", "label": "I", "claims": ["the-eyrie-way-forms", "the-eyrie-alyssas-tears"] },
+    { "part": "the Lance's pointed head and spurs (a landmark massif over the synthesized range)", "label": "I", "claims": ["giants-lance-form"] }
+  ]
+}
