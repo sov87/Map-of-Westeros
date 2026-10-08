@@ -1148,6 +1148,17 @@
       "status": "draft",
       "notes": "Approximate; direction not claimed. No distance or travel time is recalled from the text, though Doran's party travels between the two by litter within one AFFC chapter."
     },
+    {
+      "id": "water-gardens-plan",
+      "subjects": ["water-gardens"],
+      "kind": "form",
+      "claim": "Build assumption: a long, low, flat-roofed palace of pink marble with an arcaded terrace, a chain of pools with fountains down the garden toward the sea, side pools, orange trees in rows, a low garden wall.",
+      "label": "I",
+      "basis": "The text gives a palace round pools and fountains, its terraces, pools and walks of pink marble, blood orange trees beside the pools (water-gardens-pools-fountains, -pink-marble, -blood-oranges). The plan, the roofs, the pools' number and order, the arcade and the wall are invented and contradict nothing.",
+      "use": ["landmark:water-gardens"],
+      "status": "draft",
+      "notes": "Deliberately no horseshoe arches or tiled courts (the show filmed the Alcazar of Seville). Revise from AFFC The Captain of Guards once the corpus is attached."
+    },
 
     {
       "id": "red-mountains-position",

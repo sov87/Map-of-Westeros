@@ -566,6 +566,27 @@
         "lod0Tris": 40000,
         "lights": 60
       }
+    },
+    "water-gardens": {
+      "status": "s2",
+      "segment": "dorne",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 1.7,
+      "contextKm": 30,
+      "tod": 17.2,
+      "screenSeconds": 5,
+      "framing": "from the sea side to the south in the late afternoon, up the chain of pools and fountains between the orange trees to the pink marble palace and its arcaded terrace",
+      "features": [
+        "the pools and fountains",
+        "the pink marble palace and terrace",
+        "the blood orange trees"
+      ],
+      "budget": {
+        "minFeatureKm": 0.004,
+        "lod0Tris": 30000,
+        "lights": 40
+      }
     }
   }
 }
