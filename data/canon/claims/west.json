@@ -2668,7 +2668,8 @@
         "landmark:pyke"
       ],
       "status": "draft",
-      "notes": "The ride is short (part of a day), but no distance is given, so no value is set."
+      "notes": "The ride is short (part of a day), but no distance is given, so no value is set.",
+      "conflict": "The westeros-crests sheet's Pyke marker stands about 5 km inland of the traced south-east coast of the isle, and the profile had read the position between it and Lordsport's marker. The text puts the castle on the coast, on sea stacks. Settled: the position is the castle's marker, with a display offset onto the cliff top above the coast (places.json)."
     },
     {
       "id": "pyke-sea-stacks",
@@ -2819,6 +2820,21 @@
       ],
       "status": "draft",
       "notes": "Where Pyke lies within the group (for example, which isle is east or south of which) is not recalled reliably and is left to the traced map."
+    },
+    {
+      "id": "pyke-plan",
+      "subjects": [
+        "pyke"
+      ],
+      "kind": "form",
+      "claim": "Build assumption: a curtain and gatehouse close the headland's root on the cliff top; off it four stacks carry the Great Keep (stone bridge), the Kitchen Keep (stone), the Bloody Keep and the Sea Tower (rope bridges); dark grey stone.",
+      "label": "I",
+      "basis": "The text gives keeps and towers on stacks cut from a headland, bridges of stone and of rope, the four named parts and the Sea Tower farthest out on a rope bridge (pyke-sea-stacks, -bridges, -parts, -sea-tower). The layout, which bridge is which and the forms are invented and contradict nothing.",
+      "use": [
+        "landmark:pyke"
+      ],
+      "status": "draft",
+      "notes": "Revise the bridges and the stacks' order if the corpus names them (ACOK Theon I)."
     },
     {
       "id": "casterly-rock-form",

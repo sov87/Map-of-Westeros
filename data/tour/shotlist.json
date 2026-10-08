@@ -328,6 +328,28 @@
         "lod0Tris": 50000,
         "lights": 100
       }
+    },
+    "pyke": {
+      "status": "s2",
+      "segment": "iron-islands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 6.5,
+      "contextKm": 30,
+      "tod": 15,
+      "screenSeconds": 7,
+      "framing": "from the sea to the south-west under a grey sky: the stacks in a row off the cliffs, the Great Keep, the Kitchen and Bloody Keeps and the Sea Tower farthest out, the stone and rope bridges between them",
+      "features": [
+        "keeps on sea stacks",
+        "stone and rope bridges",
+        "the Sea Tower",
+        "the cliff-top gatehouse"
+      ],
+      "budget": {
+        "minFeatureKm": 0.03,
+        "lod0Tris": 50000,
+        "lights": 100
+      }
     }
   }
 }
