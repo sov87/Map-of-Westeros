@@ -524,6 +524,27 @@
         "lod0Tris": 20000,
         "lights": 0
       }
+    },
+    "summerhall": {
+      "status": "s2",
+      "segment": "stormlands",
+      "role": "pause",
+      "heroClass": "close",
+      "heroKm": 2.4,
+      "contextKm": 24,
+      "tod": 18.3,
+      "screenSeconds": 5,
+      "framing": "from the south-west in the late light: the roofless great hall's window piers against the sky, the scorched towers and the broken curtain on the hill, trees grown up in the wards",
+      "features": [
+        "the roofless great hall",
+        "the burned towers",
+        "the broken curtain"
+      ],
+      "budget": {
+        "minFeatureKm": 0.008,
+        "lod0Tris": 30000,
+        "lights": 0
+      }
     }
   }
 }

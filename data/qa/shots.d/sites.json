@@ -341,6 +341,23 @@
           "fov": 22
         }
       }
+    },
+    {
+      "id": "site-summerhall",
+      "tod": 12.0,
+      "note": "top-down site check of Summerhall: the hall's shell, the curtain's broken ring and the towers on the hill's crown, north up",
+      "camera": {
+        "orbit": {
+          "targetKm": [
+            1726.62,
+            922.85
+          ],
+          "distanceKm": 3,
+          "elevationDeg": 89.5,
+          "azimuthDeg": 180,
+          "fov": 22
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "notes": "Summerhall: every modelled part, its evidence label (T text, M map, C companion, I invented) and the ledger claims it rests on (data/canon/claims). Validated by pnpm canon.",
+  "parts": [
+    { "part": "site: inland in the southern stormlands, in the Dornish Marches, west to south-west of Storm's End", "label": "M", "claims": ["summerhall-location", "summerhall-from-storms-end", "dornish-marches-holds"] },
+    { "part": "a burned-out ruin of the Targaryens' summer palace at 298, its hall ruined and open to the sky", "label": "T", "claims": ["summerhall-ruin-298"] },
+    { "part": "the fire of 259 AC: soot on the stone, the roof gone, charred beams in the hall", "label": "C", "claims": ["summerhall-tragedy"] },
+    { "part": "the plan: the low hill, the hall's shell and window piers, the broken curtain, the towers burned to stumps, the overgrown wards", "label": "I", "claims": ["summerhall-plan"] }
+  ]
+}

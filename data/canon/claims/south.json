@@ -690,6 +690,17 @@
       "status": "draft",
       "notes": "value: 'to' lies 'dir' of 'from'; direction approximate."
     },
+    {
+      "id": "summerhall-plan",
+      "subjects": ["summerhall"],
+      "kind": "form",
+      "claim": "Build assumption: a palace, not a fortress, on a low hill: the roofless shell of its great hall, a broken curtain, towers burned to stumps, soot on pale stone and the wards gone to grass and trees.",
+      "label": "I",
+      "basis": "The text gives a burned-out summer palace with a ruined hall Rhaegar slept in (summerhall-ruin-298), destroyed by fire in 259 AC (summerhall-tragedy). Its plan, stone, towers and hill are not recalled; all invented and contradicting nothing.",
+      "use": ["landmark:summerhall"],
+      "status": "draft",
+      "notes": "Forty years after the fire: no roof, no inhabitants, no light. Dragon eggs, the pyre and anything of the night of the fire are not shown."
+    },
 
     {
       "id": "highgarden-on-the-mander",

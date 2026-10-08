@@ -11,7 +11,7 @@ instead of appending logs._
 | 0 · Fork and sources | **Done.** Engine forked from *Map of Middle-Earth* (MIT), its content stripped (24 landmark folders, Arda / ME-GIS sources, ME places / regions / tour); host rules rewritten for the RTX 5090 rig; boots on the placeholder slab. Ledger covers all 88 planned subjects (24 landmarks, ranges, rivers, regions, slice facts). |
 | 1 · Geography | **Good enough (user, 2026-10-08: "relatively book accurate, not 1:1").** The user's map is vectorized, scale-calibrated from the Wall, synthesized into terrain and baked at 1 km/px. Every river is monotone downhill. The map critic's high findings that landmarks depend on are fixed (see below); the rest are known issues. |
 | 2 · World look | Not started. Region looks are provisional ground palettes on Middle-earth grades. |
-| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal, the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, Eastwatch, White Harbor, Greywater Watch (the setting only: the ledger forbids a fixed castle), the Inn at the Crossroads, the Isle of Faces.** Next: Summerhall, Starfall, the Water Gardens, the Fist of the First Men. All at shot-list status s2 (gates as warnings) until their looks are final. |
+| 3 · Landmarks | **In progress** (user's order: King's Landing → Winterfell → Casterly Rock → Highgarden → the rest, Harrenhal's ruins among the major ones). Done (v1, book-based, ledger ids per part in each folder's `canon.json`, seating clean, `pnpm check` OK): **King's Landing, Winterfell, Casterly Rock (+ Lannisport), Highgarden, Harrenhal, the Eyrie, Storm's End, Dragonstone, Castle Black and the Wall, the Twins, Riverrun, Pyke, Oldtown, Sunspear, Moat Cailin, Eastwatch, White Harbor, Greywater Watch (the setting only: the ledger forbids a fixed castle), the Inn at the Crossroads, the Isle of Faces, Summerhall.** Next: Starfall, the Water Gardens, the Fist of the First Men. All at shot-list status s2 (gates as warnings) until their looks are final. |
 | 2, 4–6 | Not started. |
 
 ## Decisions taken (user)
@@ -71,6 +71,7 @@ instead of appending logs._
   - the bake's island rule lifts an island's own relief onto a low dome over the level, with shallows round it (an island is far from any uplift, so the synthesis had left it a bowl below the water).
 
   The isle is ~40 × 22 km. Its wood is stands of weirwoods and oaks, and on its crown a clearing is ringed by nine great weirwoods (white kit trunks under the vegetation's red crowns), their carved faces turned inward (I). There is no settlement (I), and dawn mist lies on the water.
+- **Summerhall:** the burned summer palace (T) on a low raised hill (I). The great hall is a roofless shell of window piers, some still spanned by scorched wall-heads, with charred beams and fallen stone inside. The curtain survives in ragged stretches, its towers burned to stumps with charred tops (one standing taller), and oaks and thorn have grown up in the wards. There is no light and nobody there.
 - **Bookmark `aimKm` is map km [east, NORTH]** off the display position, not local [x, z-south] (`src/camera/shots.ts`; noted on `BookmarkDecl`). Riverrun, Pyke, Oldtown, the Twins and Sunspear had passed local z; fixed. The earlier landmarks' heroes were framed by eye on renders, so their values stand.
 - **Lore critic (books only) on Riverrun, Pyke, Oldtown and the Twins:** no contradiction of the books, no show detail except the Citadel's domes, now halls and towers. Applied:
   - Pyke on three bleak islands and a dozen stacks (ACOK Theon I, to verify), the bridge kind following the gap;
@@ -108,7 +109,7 @@ instead of appending logs._
 - **Region borders:** a few are straight lines in the profile.
 - **Hydro gates:** at 1 km/px they report geometry warnings, softened until the bake is ≤ 0.5 km/px.
 - **Ledger:**
-  - All 453 claims are `draft` (242 T, 100 M, 46 C, 65 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
+  - All 454 claims are `draft` (242 T, 100 M, 46 C, 66 I). No book corpus is attached in the cloud, so `pnpm canon --verify` has nothing to search.
   - Claims become hard constraints only once they are `verified`. The Giant's Lance height enters the bake as a `summits` lower bound for now.
   - A books-only lore critic (a fresh subagent that saw only the ledger) found no contradiction of the books and no show detail. Its 13 low/medium findings (time-slice wording, duplicate claims, three ASOS Jon chapter numbers, one lower-bound travel time) are applied.
 
